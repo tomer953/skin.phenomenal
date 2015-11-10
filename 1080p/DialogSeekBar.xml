@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<visible>Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding</visible>
+	<controls>
+		<control type="group">
+			<visible>Window.IsVisible(fullscreenvideo) | Window.IsVisible(musicosd)</visible>
+			<posx>0</posx>
+			<posy>0</posy>
+			<control type="label">
+				<description>Label</description>
+				<posx>1900</posx>
+				<posy>35</posy>
+				<width>1000</width>
+				<height>38</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font-40</font>
+				<textcolor>grey_a</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<label>$VAR[DialogSeekBarLabel]</label>
+				<animation effect="fade" end="62" time="0" condition="true">Conditional</animation>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">52</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<imagepath fallback="special://skin/backgrounds/background-login.jpg" background="true">$INFO[Skin.String(Custom_Back_Login_Folder)]</imagepath>
+			<aspectratio>scale</aspectratio>
+			<timeperimage>5000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>2000</fadetime>
+			<include condition="Skin.HasSetting(AnimateBackgrounds)">backgroundanimation</include>
+		</control>
+		<control type="group">
+			
+			<control type="group">
+				<include>Window_OpenClose_Animation</include>
+				<include condition="Skin.HasSetting(HateTransparency)">T-SettingsHeader2</include>
+				<control type="image">
+					<posx>360</posx>
+					<posy>212</posy>
+					<width>1200</width>
+					<height>78</height>
+					<texture border="20">settings-header.png</texture>
+				</control>
+				<control type="label">
+					<posx>360</posx>
+					<posy>228</posy>
+					<width>1200</width>
+					<height>45</height>
+					<font>font-32</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>[UPPERCASE][B]$LOCALIZE[10029][/B][/UPPERCASE]</label>
+				</control>
+			</control>
+			<include condition="Skin.HasSetting(HateTransparency)">T-Underlay120</include>
+			<control type="image">
+				<posx>0</posx>
+				<posy>278</posy>
+				<width>1920</width>
+				<height>630</height>
+				<texture diffuse="underlay-diffuse.png" border="0,10,0,10">underlay.png</texture>
+				<include>Window_OpenClose_Animation</include>
+			</control>
+			<control type="fixedlist" id="52">
+				<posx>0</posx>
+				<posy>398</posy>
+				<width>1920</width>
+				<height>502</height>
+				<onleft>52</onleft>
+				<onright>52</onright>
+				<onup>20</onup>
+				<ondown>20</ondown>
+				<viewtype label="536">list</viewtype>
+				<pagecontrol>61</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<preloaditems>2</preloaditems>
+				<focusposition>2</focusposition>
+				<orientation>horizontal</orientation>
+				<hitrect x="768" y="390" w="384" h="384" />
+				<itemlayout width="384" height="465">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>384</width>
+						<height>384</height>
+						<texture border="25">home-info-nofocus.png</texture>
+					</control>
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>345</width>
+						<height>345</height>
+						<texture diffuse="thumb-diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<bordertexture border="7">thumb-shadow.png</bordertexture>
+						<bordersize>10</bordersize>
+					</control>
+					<control type="image">
+						<posx>34</posx>
+						<posy>282</posy>
+						<width>315</width>
+						<height>42</height>
+						<texture>label-back-nofocus.png</texture>
+					</control>
+					<control type="label">
+						<posx>34</posx>
+						<posy>278</posy>
+						<width>315</width>
+						<height>42</height>
+						<font>font-28</font>
+						<textcolor>white</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.label][/B]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="384" height="465">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>384</width>
+						<height>384</height>
+						<texture border="25">home-info-focus.png</texture>
+						<animation reversible="false" effect="zoom" start="100" end="130" center="auto" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" start="130" end="100" center="auto" time="200">unfocus</animation>
+					</control>
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>345</width>
+						<height>345</height>
+						<texture diffuse="thumb-diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<bordertexture border="7">thumb-shadow.png</bordertexture>
+						<bordersize>10</bordersize>
+						<animation reversible="false" effect="zoom" start="100" end="130" center="auto" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" start="130" end="100" center="auto" time="200">unfocus</animation>
+					</control>
+					<control type="image">
+						<posx>34</posx>
+						<posy>282</posy>
+						<width>315</width>
+						<height>42</height>
+						<texture>label-back-focus.png</texture>
+						<animation reversible="false" effect="zoom" start="100" end="130" center="auto" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" start="130" end="100" center="auto" time="200">unfocus</animation>
+					</control>
+					<control type="label">
+						<posx>34</posx>
+						<posy>278</posy>
+						<width>315</width>
+						<height>42</height>
+						<font>font-28</font>
+						<textcolor>white</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.label][/B]</label>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="group">
+				<include>Window_OpenClose_Footer_Animation</include>
+				<include condition="Skin.HasSetting(HateTransparency)">T-Footer1</include>
+				<control type="image">
+					<posx>0</posx>
+					<posy>99r</posy>
+					<width>1920</width>
+					<height>99</height>
+					<texture>Footer.png</texture>
+				</control>
+				<control type="label">
+					<posx>60</posx>
+					<posy>1029</posy>
+					<height>45</height>
+					<width>1800</width>
+					<font>font-20</font>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>[B]$INFO[ListItem.label2][/B]</label>
+				</control>
+			</control>
+			<control type="group">
+				<include>Window_OpenClose_Header_Animation</include>
+				<include condition="Skin.HasSetting(HateTransparency)">T-Header1</include>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1920</width>
+					<height>111</height>
+					<texture>Header.png</texture>
+				</control>
+				<control type="grouplist">
+					<posx>1078</posx>
+					<posy>0</posy>
+					<width>794</width>
+					<height>45</height>
+					<align>right</align>
+					<orientation>horizontal</orientation>
+					<itemgap>0</itemgap>
+					<control type="label">
+						<description>date label</description>
+						<width min="15" max="600">auto</width>
+						<height>45</height>
+						<aligny>center</aligny>
+						<font>font-20</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[System.Date]</label>
+					</control>
+					<control type="image">
+						<width>44</width>
+						<height>45</height>
+						<texture>dot.png</texture>
+					</control>
+					<control type="label">
+						<description>time label</description>
+						<width min="15" max="150">auto</width>
+						<height>45</height>
+						<aligny>center</aligny>
+						<font>font-20</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[System.Time]</label>
+					</control>
+					<control type="image">
+						<width>44</width>
+						<height>45</height>
+						<texture>dot.png</texture>
+					</control>
+				</control>
+				<control type="button" id="20">
+					<description>Power push button</description>
+					<posx>1872</posx>
+					<posy>10</posy>
+					<width>30</width>
+					<height>30</height>
+					<label>-</label>
+					<font>-</font>
+					<onclick>ActivateWindow(ShutdownMenu)</onclick>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<pulseonselect>true</pulseonselect>
+					<onleft>52</onleft>
+					<onright>52</onright>
+					<onup>52</onup>
+					<ondown>52</ondown>
+				</control>
+				<control type="image">
+					<posx>1872</posx>
+					<posy>10</posy>
+					<width>30</width>
+					<height>30</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$VAR[HomePowerButton]</texture>
+					<animation effect="rotate" start="0" end="-360" center="auto" time="800" condition="Control.HasFocus(20)">Conditional</animation>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,962 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="widget_line1">
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[ListItem.TVshowTitle]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[ListItem.TVshowTitle]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[ListItem.Property(ChannelName)]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<variable name="widget_line2">
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[ListItem.Year]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[ListItem.Year]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[ListItem.Property(Addon.Version)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[ListItem.Label]</value>
+		<value></value>
+	</variable>
+	<variable name="widget_line3">
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[ListItem.Genre]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">[B]$INFO[ListItem.Season,$LOCALIZE[20373] ] $INFO[ListItem.Episode,$LOCALIZE[20359] ][/B]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">[B]$INFO[ListItem.Season,$LOCALIZE[20373] ] $INFO[ListItem.Episode,$LOCALIZE[20359] ][/B]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[ListItem.Artist]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[ListItem.Property(StartTime)]</value>
+		<value></value>
+	</variable>
+	<variable name="widget_line4">
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[ListItem.Rating] $INFO[Listitem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[Listitem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[Listitem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)"></value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)"></value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)"></value>
+		<value></value>
+	</variable>
+
+	<variable name="varBackground">
+		<value condition="[SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]">$VAR[password_fanart]</value>
+		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
+		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value>		
+		<value>$INFO[Container(9000).ListItem.Property(Background)]</value>
+	</variable>
+	<variable name="varBackground2">
+		<value condition="StringCompare(Container(9001).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="!IsEmpty(Container(9001).ListItem.Property(Background))">$INFO[Container(9001).ListItem.Property(Background)]</value>		
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value> 
+		<value>$INFO[Container(9000).ListItem.Property(Background)]</value>
+	</variable>
+	<variable name="varBackground_dialog">
+		<value condition="[SubString(Container(211).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]">$VAR[password_fanart]</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="IsEmpty(Container(211).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value> 
+		<value>$INFO[Container(211).ListItem.Property(Background)]</value>
+	</variable>
+	<!--END OF Super-Menu --> 
+
+	<include name="WeatherInfo">
+		<control type="group">
+			<posx>0</posx>
+			<posy>717</posy>
+			<visible>Container(5040).HasFocus(10) + ![Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)] + ![Player.HasAudio + !Skin.HasSetting(homepageMusicinfo)] + IsEmpty(Window(Weather).Property(Daily.IsFetched))</visible>
+			<include>HomeInfoAnimation</include>
+			<animation effect="slide" end="0,-102" time="0" condition="Skin.HasSetting(HorizontalHomeMenu)">Conditional</animation>
+			<control type="image">
+				<description>gradient</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>630</width>
+				<height>45</height>
+				<texture border="2">gradient2.png</texture>
+			</control>
+			<control type="image">
+				<description>gradient</description>
+				<posx>0</posx>
+				<posy>40</posy>
+				<width>630</width>
+				<height>266</height>
+				<texture border="3">gradient2.png</texture>
+			</control>
+			<include condition="Skin.HasSetting(Animate_Home_Weather_Icon)">Home_Weather_Icon</include>
+			<include condition="!Skin.HasSetting(Animate_Home_Weather_Icon)">Home_Animated_Weather_Icon</include>
+			<control type="label">
+				<description>Weather label</description>
+				<posx>180</posx>
+				<posy>4</posy>
+				<height>30</height>
+				<width>300</width>
+				<label>[B]$LOCALIZE[12600][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font-30</font>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>location label</description>
+				<posx>225</posx>
+				<posy>90</posy>
+				<height>45</height>
+				<width>1155</width>
+				<label>$INFO[Window(Weather).Property(Location)]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-23</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>Conditions Label</description>
+				<posx>225</posx>
+				<posy>128</posy>
+				<height>45</height>
+				<width>1155</width>
+				<label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-23</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>Temp Label</description>
+				<posx>225</posx>
+				<posy>165</posy>
+				<height>45</height>
+				<width>1155</width>
+				<label>$INFO[Weather.Temperature]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-23</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+		</control>
+	</include>
+	<include name="Home_Animated_Weather_Icon">
+		<control type="multiimage">
+			<description>Weather image</description>
+			<posx>0</posx>
+			<posy>52</posy>
+			<width>204</width>
+			<height>204</height>
+			<imagepath>weather/$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<randomize>false</randomize>
+			<fadetime>0</fadetime>
+		</control>
+	</include>
+	<include name="Home_Weather_Icon">
+		<control type="image">
+			<description>Weather image</description>
+			<posx>0</posx>
+			<posy>10</posy>
+			<width>204</width>
+			<height>204</height>
+			<texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+		</control>
+	</include>
+	<include name="WeatherExtendedInfo">
+		<control type="group">
+			<posx>0</posx>
+			<posy>717</posy>
+			<visible>Container(5040).HasFocus(10) + ![Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)] + ![Player.HasAudio + !Skin.HasSetting(homepageMusicinfo)] + !IsEmpty(Window(Weather).Property(Daily.IsFetched))</visible>
+			<include>HomeInfoAnimation</include>
+			<animation effect="slide" end="0,-102" time="0" condition="Skin.HasSetting(HorizontalHomeMenu)">Conditional</animation>
+			<control type="image">
+				<description>gradient</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>630</width>
+				<height>45</height>
+				<texture border="2">gradient2.png</texture>
+			</control>
+			<control type="image">
+				<description>gradient</description>
+				<posx>0</posx>
+				<posy>40</posy>
+				<width>630</width>
+				<height>266</height>
+				<texture border="3">gradient2.png</texture>
+			</control>
+			<include condition="Skin.HasSetting(Animate_Home_Weather_Icon)">Home_Weather_Icons</include>
+			<include condition="!Skin.HasSetting(Animate_Home_Weather_Icon)">Home_Animated_Weather_Icons</include>
+			<control type="label">
+				<description>location label</description>
+				<posx>225</posx>
+				<posy>1</posy>
+				<height>45</height>
+				<width>1155</width>
+				<label>[B]$INFO[Window(Weather).Property(Location)][/B]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-25</font>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>Conditions Label</description>
+				<posx>128</posx>
+				<posy>72</posy>
+				<height>45</height>
+				<width>1155</width>
+				<label>$INFO[Window(Weather).Property(Current.Condition)][COLOR=lightblue]$LOCALIZE[33020]: [/COLOR] $INFO[Window(Weather).Property(Daily.1.WindSpeed)] $INFO[Window(Weather).Property(Daily.1.ShortWindDirection)][COLOR=lightblue]$LOCALIZE[404]:[/COLOR]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-21</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>Temp Label</description>
+				<posx>128</posx>
+				<posy>102</posy>
+				<height>45</height>
+				<width>1155</width>
+				<label>$INFO[Weather.Temperature][COLOR=lightblue]$LOCALIZE[401]: [/COLOR]   $INFO[Window(Weather).Property(Daily.1.HighTemperature)][COLOR=lightblue]$LOCALIZE[419]: [/COLOR]   $INFO[Window(Weather).Property(Daily.1.LowTemperature)][COLOR=lightblue]$LOCALIZE[418]: [/COLOR]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-21</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>15</posx>
+				<posy>166</posy>
+				<width>120</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.1.ShortDay)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>lightblue</textcolor>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>105</posx>
+				<posy>166</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.2.ShortDay)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>lightblue</textcolor>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>195</posx>
+				<posy>166</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.3.ShortDay)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>lightblue</textcolor>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>285</posx>
+				<posy>166</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.4.ShortDay)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>lightblue</textcolor>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>375</posx>
+				<posy>166</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.5.ShortDay)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>lightblue</textcolor>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>465</posx>
+				<posy>166</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.6.ShortDay)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>lightblue</textcolor>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>555</posx>
+				<posy>166</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.7.ShortDay)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>lightblue</textcolor>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>15</posx>
+				<posy>196</posy>
+				<width>120</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.1.HighTemperature)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>105</posx>
+				<posy>196</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.2.HighTemperature)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>195</posx>
+				<posy>196</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.3.HighTemperature)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>285</posx>
+				<posy>196</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.4.HighTemperature)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>375</posx>
+				<posy>196</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.5.HighTemperature)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>465</posx>
+				<posy>196</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.6.HighTemperature)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<description>Day label</description>
+				<posx>555</posx>
+				<posy>196</posy>
+				<width>90</width>
+				<height>30</height>
+				<font>font-15</font>
+				<label>[B]$INFO[Window(Weather).Property(Daily.7.HighTemperature)][/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+		</control>
+	</include>
+	<include name="Home_Animated_Weather_Icons">
+		<control type="multiimage">
+			<description>Weather image</description>
+			<posx>8</posx>
+			<posy>52</posy>
+			<width>129</width>
+			<height>129</height>
+			<imagepath>weather/$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<randomize>false</randomize>
+			<fadetime>0</fadetime>
+		</control>
+		<control type="multiimage">
+			<description>Weather image</description>
+			<posx>22</posx>
+			<posy>224</posy>
+			<width>60</width>
+			<height>60</height>
+			<imagepath>weather/$INFO[Window(Weather).Property(Daily.1.FanartCode)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<randomize>false</randomize>
+			<fadetime>0</fadetime>
+		</control>
+		<control type="multiimage">
+			<description>Weather image</description>
+			<posx>112</posx>
+			<posy>224</posy>
+			<width>60</width>
+			<height>60</height>
+			<imagepath>weather/$INFO[Window(Weather).Property(Daily.2.FanartCode)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<randomize>false</randomize>
+			<fadetime>0</fadetime>
+		</control>
+		<control type="multiimage">
+			<description>Weather image</description>
+			<posx>202</posx>
+			<posy>224</posy>
+			<width>60</width>
+			<height>60</height>
+			<imagepath>weather/$INFO[Window(Weather).Property(Daily.3.FanartCode)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<randomize>false</randomize>
+			<fadetime>0</fadetime>
+		</control>
+		<control type="multiimage">
+			<description>Weather image</description>
+			<posx>292</posx>
+			<posy>224</posy>
+			<width>60</width>
+			<height>60</height>
+			<imagepath>weather/$INFO[Window(Weather).Property(Daily.4.FanartCode)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<randomize>false</randomize>
+			<fadetime>0</fadetime>
+		</control>
+		<control type="multiimage">
+			<description>Weather image</description>
+			<posx>382</posx>
+			<posy>224</posy>
+			<width>60</width>
+			<height>60</height>
+			<imagepath>weather/$INFO[Window(Weather).Property(Daily.5.FanartCode)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<randomize>false</randomize>
+			<fadetime>0</fadetime>
+		</control>
+		<control type="multiimage">
+			<description>Weather image</description>
+			<posx>472</posx>
+			<posy>224</posy>
+			<width>60</width>
+			<height>60</height>
+			<imagepath>weather/$INFO[Window(Weather).Property(Daily.6.FanartCode)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<randomize>false</randomize>
+			<fadetime>0</fadetime>
+		</control>
+		<control type="multiimage">
+			<description>Weather image</description>
+			<posx>562</posx>
+			<posy>224</posy>
+			<width>60</width>
+			<height>60</height>
+			<imagepath>weather/$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<randomize>false</randomize>
+			<fadetime>0</fadetime>
+		</control>
+	</include>
+	<include name="Home_Weather_Icons">
+		<control type="image">
+			<description>Weather image</description>
+			<posx>1380</posx>
+			<posy>0</posy>
+			<width>129</width>
+			<height>129</height>
+			<texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+		</control>
+		<control type="image">
+			<description>Weather image</description>
+			<posx>915</posx>
+			<posy>164</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</texture>
+		</control>
+		<control type="image">
+			<description>Weather image</description>
+			<posx>1005</posx>
+			<posy>164</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</texture>
+		</control>
+		<control type="image">
+			<description>Weather image</description>
+			<posx>1095</posx>
+			<posy>164</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>$INFO[Window(Weather).Property(Daily.3.OutlookIcon)]</texture>
+		</control>
+		<control type="image">
+			<description>Weather image</description>
+			<posx>1185</posx>
+			<posy>164</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</texture>
+		</control>
+		<control type="image">
+			<description>Weather image</description>
+			<posx>1275</posx>
+			<posy>164</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>$INFO[Window(Weather).Property(Daily.5.OutlookIcon)]</texture>
+		</control>
+		<control type="image">
+			<description>Weather image</description>
+			<posx>1365</posx>
+			<posy>164</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>$INFO[Window(Weather).Property(Daily.6.OutlookIcon)]</texture>
+		</control>
+		<control type="image">
+			<description>Weather image</description>
+			<posx>1455</posx>
+			<posy>164</posy>
+			<width>60</width>
+			<height>60</height>
+			<texture>$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>
+		</control>
+	</include>
+	<include name="SystemInfo">
+		<control type="group">
+			<posx>0</posx>
+			<posy>717</posy>
+			<visible>Container(5040).HasFocus(12) + ![Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)] + ![Player.HasAudio + !Skin.HasSetting(homepageMusicinfo)]</visible>
+			<include>HomeInfoAnimation</include>
+			<animation effect="slide" end="0,-102" time="0" condition="Skin.HasSetting(HorizontalHomeMenu)">Conditional</animation>
+			<control type="image">
+				<description>gradient</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>630</width>
+				<height>45</height>
+				<texture border="2">gradient2.png</texture>
+			</control>
+			<control type="image">
+				<description>gradient</description>
+				<posx>0</posx>
+				<posy>40</posy>
+				<width>630</width>
+				<height>266</height>
+				<texture border="3">gradient2.png</texture>
+			</control>
+			<control type="image">
+				<description>settings image</description>
+				<posx>8</posx>
+				<posy>60</posy>
+				<width>204</width>
+				<height>222</height>
+				<texture>homeinfo-system.png</texture>
+			</control>
+			<control type="label">
+				<description>Settings label</description>
+				<posx>180</posx>
+				<posy>4</posy>
+				<width>300</width>
+				<height>30</height>
+				<label>[B]$LOCALIZE[13000]:[/B]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font-30</font>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>CPU Speed Label</description>
+				<posx>210</posx>
+				<posy>105</posy>
+				<width>1155</width>
+				<height>45</height>
+				<label>$LOCALIZE[13284] $INFO[System.cpufrequency]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-20</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>Free Memory Label</description>
+				<posx>210</posx>
+				<posy>135</posy>
+				<width>1155</width>
+				<height>45</height>
+				<label>$LOCALIZE[158]: $INFO[System.FreeMemory] / $INFO[System.Memory(total)]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-20</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>GPU Make Label</description>
+				<posx>210</posx>
+				<posy>165</posy>
+				<width>1155</width>
+				<height>45</height>
+				<label>$INFO[System.videoencoderinfo]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-20</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>IP Address label</description>
+				<posx>210</posx>
+				<posy>195</posy>
+				<width>1155</width>
+				<height>45</height>
+				<label>$INFO[Network.IPAddress] :$LOCALIZE[150]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font-20</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+		</control>
+	</include>
+	<include name="VideoInfo"> 
+		<control type="group">
+			<posx>0</posx>
+			<posy>0</posy>
+			<animation effect="slide" end="245" tween="circle" easing="out" delay="0" time="700" condition="ControlGroup(9100).HasFocus">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="0" delay="2000" condition="True">Conditional</animation>
+			<animation effect="zoom" start="60" end="100" center="0,22" time="800" tween="back" easing="out">WindowOpen</animation>
+			<animation effect="zoom" start="100" end="60" center="0,22" time="800" tween="back" easing="in">WindowClose</animation>
+			<visible>Player.HasVideo</visible>
+			<control type="image">
+				<posx>45</posx>
+				<posy>30</posy>
+				<width>500</width>
+				<height>160</height>
+				<texture background="true" border="60,34,10,10">baloon.png</texture>
+			</control>
+
+			<control type="image">
+				<description>Thumb image for Episodes</description>
+				<posx>555</posx>
+				<posy>58</posy>
+				<height>128</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture >$INFO[Player.Art(thumb)]</texture>
+				<bordertexture colordiffuse="grey">white.png</bordertexture>
+				<bordersize>2</bordersize>
+				<visible>VideoPlayer.Content(Episodes)</visible>
+			</control>
+			<control type="image">
+				<description>Poster</description>
+				<posx>555</posx>
+				<posy>56</posy>
+				<width>140</width>
+				<height>134</height>
+				<aspectratio align="left">keep</aspectratio>
+				<bordertexture colordiffuse="FFe8e8e8">white.png</bordertexture>
+				<bordersize>3</bordersize>
+				<texture>$INFO[Player.Art(thumb)]</texture>
+				<visible>!VideoPlayer.Content(Episodes)</visible>
+			</control>
+
+			<control type="grouplist" id="9003">
+				<posx>432</posx>
+				<posy>143</posy>
+				<width>300</width>
+				<orientation>horizontal</orientation>
+				<itemgap>2</itemgap>
+				<onup condition="Window.IsActive(home)">9000</onup>
+				<onup condition="!Window.IsActive(home)">50</onup>
+				<ondown condition="Window.IsActive(home)">9000</ondown>
+				<ondown condition="!Window.IsActive(home)">50</ondown>
+				<onleft condition="Window.IsActive(home)">9000</onleft>
+				<onleft condition="!Window.IsActive(home)">9100</onleft>
+				<onright condition="Window.IsActive(home)">9000</onright>
+				<onright condition="!Window.IsActive(home)">50</onright>
+				<control type="togglebutton" id="9004">
+					<description>Play\Pause image</description>
+					<width>32</width>
+					<height>32</height>
+					<label>-</label>
+					<font>-</font>
+					<texturefocus colordiffuse="$VAR[main_color]">pause.png</texturefocus>
+					<texturenofocus colordiffuse="darkgrey">pause.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[main_color]">play.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="darkgrey">play.png</alttexturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<onclick>PlayerControl(Play)</onclick>
+				</control>
+				<control type="button"  id="9005">
+					<description>FullScreen - Expand image</description>
+					<width>32</width>
+					<height>32</height>
+					<onclick>PlayerControl(Stop)</onclick>
+					<texturefocus colordiffuse="$VAR[main_color]">stop.png</texturefocus>
+					<texturenofocus colordiffuse="darkgrey">stop.png</texturenofocus>
+				</control>
+
+				<control type="button"  id="9006">
+					<description>FullScreen - Expand image</description>
+					<width>28</width>
+					<height>28</height>
+					<onclick>FullScreen</onclick>
+					<texturefocus colordiffuse="$VAR[main_color]">expand.png</texturefocus>
+					<texturenofocus colordiffuse="darkgrey">expand.png</texturenofocus>
+				</control>
+			</control> 
+			<control type="label">
+				<description>Now Playing label</description>
+
+				<posx>540</posx>
+				<posy>10</posy>
+				<width>380</width>
+				<height>45</height>
+				<label>$VAR[Now_playing_status]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font-25</font>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="label">
+				<description>Title label</description>
+				<posx>530</posx>
+				<posy>60</posy>
+				<width>460</width>
+				<height>45</height>
+				<label>$INFO[VideoPlayer.Title]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font-25</font>
+				<scroll>true</scroll>
+				<textcolor>darkgrey</textcolor>
+			</control>
+			<control type="label">
+				<description>label2</description>
+				<posx>530</posx>
+				<posy>100</posy>
+				<width>460</width>
+				<height>45</height>
+				<label>$VAR[OSDLabel3]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font-20</font>
+				<scroll>true</scroll>
+				<textcolor>darkgrey</textcolor>
+			</control>
+
+			<control type="group">
+				<width>468</width>
+				<height>22</height>
+				<posx>60</posx>
+				<posy>145</posy>
+				<control type="label">
+					<posx>0</posx>
+					<posy>5</posy>
+					<description>Time Label</description>
+					<height>18</height>
+					<width>468</width>
+					<align>left</align>
+					<label>$INFO[VideoPlayer.Time][COLOR=grey_b][B] / [/B][/COLOR]$INFO[Player.Duration]</label>
+					<font>font-12</font>
+					<textcolor>grey_a</textcolor>
+				</control>
+				<control type="progress">
+					<description>Progressbar</description>
+					<posx>0</posx>
+					<posy>23</posy>
+					<width>468</width>
+					<height>22</height>
+					<info>Player.Progress</info>
+				</control>
+				<control type="slider" id="888">
+					<description>Slider</description>
+					<posx>0</posx>
+					<posy>23</posy>
+					<width>468</width>
+					<height>22</height>
+					<action>seek</action>
+				</control>
+			</control>
+
+		</control>
+	</include>
+	<include name="MusicInfo">
+		<control type="group">
+			<posx>0</posx>
+			<posy>0</posy>
+			<animation effect="slide" end="245" tween="circle" easing="out" delay="0" time="700" condition="ControlGroup(9100).HasFocus">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="0" delay="2000" condition="True">Conditional</animation>
+			<animation effect="zoom" start="60" end="100" center="0,22" time="800" tween="back" easing="out">WindowOpen</animation>
+			<animation effect="zoom" start="100" end="60" center="0,22" time="800" tween="back" easing="in">WindowClose</animation>
+			<visible>Player.HasAudio</visible>
+			<visible>IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+			<control type="image">
+				<posx>45</posx>
+				<posy>30</posy>
+				<width>500</width>
+				<height>160</height>
+				<texture background="true" border="60,34,10,10">baloon.png</texture>
+			</control>
+			<control type="image">
+				<description>cdart image</description>
+				<posx>555</posx>
+				<posy>62</posy>
+				<width>120</width>
+				<height>120</height>
+				<texture background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
+				<aspectratio>keep</aspectratio>
+				<include>cdartspinhome</include>
+				<visible>![substring(Player.FolderPath,pvr://) | substring(Player.FolderPath,http://) | substring(Player.FolderPath,https://) | substring(Player.FolderPath,htsp://)]</visible>
+			</control>
+			<control type="image">
+				<description>Cover image</description>
+				<posx>555</posx>
+				<posy>58</posy>
+				<height>128</height>
+				<width>128</width>
+				<aspectratio align="left">keep</aspectratio>
+				<texture >$INFO[Player.Art(thumb)]</texture>
+				<bordertexture colordiffuse="grey">white.png</bordertexture>
+				<bordersize>2</bordersize>
+				<texture>$INFO[MusicPlayer.Cover]</texture>
+				<visible>Player.HasAudio</visible>
+			</control>
+			<control type="grouplist" id="9003">
+				<posx>432</posx>
+				<posy>143</posy>
+				<width>300</width>
+				<orientation>horizontal</orientation>
+				<itemgap>2</itemgap>
+				<onup condition="Window.IsActive(home)">9000</onup>
+				<onup condition="!Window.IsActive(home)">50</onup>
+				<ondown condition="Window.IsActive(home)">9000</ondown>
+				<ondown condition="!Window.IsActive(home)">50</ondown>
+				<onleft condition="Window.IsActive(home)">9000</onleft>
+				<onleft condition="!Window.IsActive(home)">9100</onleft>
+				<onright condition="Window.IsActive(home)">9000</onright>
+				<onright condition="!Window.IsActive(home)">50</onright>
+				<control type="togglebutton" id="9004">
+					<description>Play\Pause image</description>
+					<width>32</width>
+					<height>32</height>
+					<label>-</label>
+					<font>-</font>
+					<texturefocus colordiffuse="$VAR[main_color]">pause.png</texturefocus>
+					<texturenofocus colordiffuse="darkgrey">pause.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[main_color]">play.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="darkgrey">play.png</alttexturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<onclick>PlayerControl(Play)</onclick>
+				</control>
+				<control type="button"  id="9005">
+					<description>FullScreen - Expand image</description>
+					<width>32</width>
+					<height>32</height>
+					<onclick>PlayerControl(Stop)</onclick>
+					<texturefocus colordiffuse="$VAR[main_color]">stop.png</texturefocus>
+					<texturenofocus colordiffuse="darkgrey">stop.png</texturenofocus>
+				</control>
+
+				<control type="button"  id="9006">
+					<description>FullScreen - Expand image</description>
+					<width>28</width>
+					<height>28</height>
+					<onclick>FullScreen</onclick>
+					<texturefocus colordiffuse="$VAR[main_color]">expand.png</texturefocus>
+					<texturenofocus colordiffuse="darkgrey">expand.png</texturenofocus>
+				</control>
+			</control> 
+			<control type="label">
+				<description>Now Playing label</description>
+				<posx>540</posx>
+				<posy>10</posy>
+				<width>380</width>
+				<height>45</height>
+				<label>$VAR[Now_playing_status]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font-25</font>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="label">
+				<description>Title label</description>
+				<posx>530</posx>
+				<posy>60</posy>
+				<width>460</width>
+				<height>45</height>
+				<label>$INFO[MusicPlayer.Title]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font-25</font>
+				<scroll>true</scroll>
+				<textcolor>darkgrey</textcolor>
+			</control>
+			<control type="label">
+				<description>label2</description>
+				<posx>530</posx>
+				<posy>100</posy>
+				<width>460</width>
+				<height>45</height>
+				<label>$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Album]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font-20</font>
+				<scroll>true</scroll>
+				<textcolor>darkgrey</textcolor>
+			</control>
+
+			<control type="group">
+				<width>468</width>
+				<height>22</height>
+				<posx>60</posx>
+				<posy>145</posy>
+				<control type="label">
+					<posx>0</posx>
+					<posy>5</posy>
+					<description>Time Label</description>
+					<height>18</height>
+					<width>468</width>
+					<align>left</align>
+					<label>$INFO[MusicPlayer.Time][COLOR=grey_b][B] / [/B][/COLOR]$INFO[Player.Duration]</label>
+					<font>font-12</font>
+					<textcolor>grey_a</textcolor>
+				</control>
+				<control type="progress">
+					<description>Progressbar</description>
+					<posx>0</posx>
+					<posy>23</posy>
+					<width>468</width>
+					<height>22</height>
+					<info>Player.Progress</info>
+				</control>
+				<control type="slider" id="888">
+					<description>Slider</description>
+					<posx>0</posx>
+					<posy>23</posy>
+					<width>468</width>
+					<height>22</height>
+					<action>seek</action>
+				</control>
+			</control>
+
+		</control>
+	</include>
+
+
+</includes>
