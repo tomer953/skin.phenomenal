@@ -1176,7 +1176,7 @@
 		<value condition="StringCompare(VideoPlayer.AudioChannels,9)">7.1</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,8)">6.1</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,7)">5.1</value>
-		<value condition="StringCompare(VideoPlayer.AudioChannels,6)">4.1</value>
+		<value condition="StringCompare(VideoPlayer.AudioChannels,6)">5.1</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,5)">4.1</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,4)">4.0</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,3)">2.1</value>
@@ -1189,7 +1189,7 @@
 		<value condition="StringCompare(ListItem.AudioChannels,9)">7.1</value>
 		<value condition="StringCompare(ListItem.AudioChannels,8)">6.1</value>
 		<value condition="StringCompare(ListItem.AudioChannels,7)">5.1</value>
-		<value condition="StringCompare(ListItem.AudioChannels,6)">4.1</value>
+		<value condition="StringCompare(ListItem.AudioChannels,6)">5.1</value>
 		<value condition="StringCompare(ListItem.AudioChannels,5)">4.1</value>
 		<value condition="StringCompare(ListItem.AudioChannels,4)">4.0</value>
 		<value condition="StringCompare(ListItem.AudioChannels,3)">2.1</value>
