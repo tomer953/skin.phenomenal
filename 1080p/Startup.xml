@@ -3,6 +3,7 @@
 	<onload condition="System.HasAddon(script.artistslideshow) + !Skin.HasSetting(ArtistSlide)">RunScript(script.artistslideshow,daemon=True)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(SkinHelper.RandomFanartDelay))">Skin.SetString(SkinHelper.RandomFanartDelay,10)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(SkinHelper.SkinHelper.AutoCloseVideoOSD))">Skin.SetString(SkinHelper.AutoCloseVideoOSD,5)</onload>
+	<onload condition="!System.HasAddon(script.skin.helper.service)">ReplaceWindow($INFO[System.StartupWindow])</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service) + Skin.HasSetting(Disable_Splash)">ReplaceWindow($INFO[System.StartupWindow])</onload>	
 	<onload condition="System.HasAddon(script.skin.helper.service) + !Skin.HasSetting(Disable_Splash)">RunScript(script.skin.helper.service,action=splashscreen,file=$VAR[splash_path],duration=6)</onload>
 	<controls>
