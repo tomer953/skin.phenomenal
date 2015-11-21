@@ -1242,7 +1242,7 @@
 		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!IsEmpty(ListItem.Plot) + Control.IsVisible(50) + Container.Content(Episodes)">$INFO[ListItem.Premiered,(,) ][COLOR=$VAR[main_color]]$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season, - S]$INFO[ListItem.Episode,E, -] $INFO[ListItem.Title][/COLOR][CR]$INFO[ListItem.Plot]</value>
 		<value condition="IsEmpty(ListItem.PlotOutline) + !IsEmpty(ListItem.Plot) + !substring(ListItem.Path,plugin://plugin.video.)">$INFO[ListItem.Plot]</value>		
-		<value condition="substring(ListItem.Path,plugin://plugin.video.) + Control.IsVisible(50)">[COLOR=$VAR[main_color]]$INFO[ListItem.Title][/COLOR][CR]$INFO[ListItem.Plot]</value>
+		<value condition="substring(ListItem.Path,plugin://plugin.video.) + Control.IsVisible(50)">[COLOR=$VAR[main_color]]$INFO[ListItem.Label][/COLOR][CR]$INFO[ListItem.Plot]</value>
 		<value condition="substring(ListItem.Path,plugin://plugin.video.) + !Control.IsVisible(50)">$INFO[ListItem.Plot]</value>
 		<value condition="!IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
 		<value condition="!IsEmpty(ListItem.Property(Artist_Description))">$INFO[Window(home).Property(SkinHelper.Music.AlbumCount),, $LOCALIZE[36919][CR]]] $INFO[ListItem.Property(Artist_Description)]</value>
@@ -1310,6 +1310,15 @@
 	<variable name="main_color">
 		<value condition="!IsEmpty(Skin.String(main_color))">$INFO[Skin.String(main_color)]</value>
 		<value>FFE66A4F</value>
+	</variable>
+	
+	<variable name="tile_main_color">
+		<value condition="!IsEmpty(Container(9000).ListItem.Property(TextColor))">$INFO[Container(9000).ListItem.Property(TextColor)]</value>
+		<value>$VAR[main_color]</value>
+	</variable>
+	<variable name="tile_sub_color">
+		<value condition="!IsEmpty(Container(9001).ListItem.Property(TextColor))">$INFO[Container(9001).ListItem.Property(TextColor)]</value>
+		<value>$VAR[main_color]</value>
 	</variable>
 	<variable name="topbar_text_color">
 		<value condition="!IsEmpty(Skin.String(topbar_text_color))">$INFO[Skin.String(topbar_text_color)]</value>
@@ -1417,7 +1426,7 @@
 		<value condition="StringCompare(Skin.String(color_picker),custom_color)">-</value>
 		<value condition="StringCompare(Skin.String(color_picker),list_bg_color)">$VAR[main_color]</value>
 		<value condition="StringCompare(Skin.String(color_picker),list_color_custom)">grey_b</value>
-		<value condition="StringCompare(Skin.String(color_picker),menu_bg_color)">FF242424</value>
+		<value condition="StringCompare(Skin.String(color_picker),menu_bg_color)">FF000000</value>
 		<value condition="StringCompare(Skin.String(color_picker),menu_icon_color_nf)">grey</value>
 		<value condition="StringCompare(Skin.String(color_picker),submenu_color) + Skin.HasSetting(Home_Horizontal)">FF444444</value>
 		<value condition="StringCompare(Skin.String(color_picker),submenu_color) + !Skin.HasSetting(Home_Horizontal)">grey_50</value>

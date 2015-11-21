@@ -110,9 +110,8 @@
 						<height>30</height>
 						<width>30</width>
 						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="grey" background="true">$INFO[ListItem.Thumb]</texture>
-						<visible>IsEmpty(ListItem.Property(Icon_Overlay2)) | StringCompare(ListItem.Property(Icon_Overlay2),$LOCALIZE[767])</visible>
 					</control>
-					<control type="image">
+				<!-- 	<control type="image">
 						<posx>285</posx>
 						<posy>15</posy>
 						<height>30</height>
@@ -127,7 +126,7 @@
 						<width>30</width>
 						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Thumb]</texture>
 						<visible>StringCompare(ListItem.Property(Icon_Overlay2),$LOCALIZE[31142])</visible>
-					</control>
+					</control> -->
 				</itemlayout>
 				<focusedlayout width="560" height="60">
 					<control type="image">
@@ -272,12 +271,13 @@
 				<!-- Change label Color .ListItem.Property(TextColor) -->
 				<control type="button" id="997">
 					<include>skinbuttons</include>
-					<onclick>Skin.SetString(color_picker,custom_color)</onclick>
+<!-- 					<onclick>Skin.SetString(color_picker,custom_color)</onclick>
 					<onclick>Skin.SetString(custom_color,$INFO[Container(211).ListItem.Property(TextColor)])</onclick>
 					<onclick>ActivateWindow(1130)</onclick>
 					<onclick>SetProperty(customProperty,TextColor)</onclick>
 					<onclick>SetProperty(customValue,$INFO[Skin.String(custom_color)])</onclick>
-					<onclick>SendClick(404)</onclick>			
+					<onclick>SendClick(404)</onclick> -->	
+					<onclick>RunScript(script.skin.helper.service,action=colorpicker,shortcutproperty=TextColor)</onclick>
 					<label>$LOCALIZE[31006]</label>
 					<visible>Skin.HasSetting(shortcuts_advanced)</visible>
 				</control>
@@ -307,6 +307,7 @@
 					<label>31143</label>			
 					<include>radio_button_settings</include>
 					<visible>Skin.HasSetting(shortcuts_advanced)</visible>
+					<visible>False</visible>
 				</control>
 				<!-- Change Icon NO-Focus Overlay .ListItem.Property(Icon_Overlay2) -->
 				<control type="button" id="994">
@@ -317,6 +318,7 @@
 					<label>31144</label>
 					<include>radio_button_settings</include>
 					<visible>Skin.HasSetting(shortcuts_advanced)</visible>
+					<visible>False</visible>
 				</control>
 				<!-- Password Protection -->
 				<control type="button" id="993">
@@ -360,8 +362,8 @@
 				<include name="shortcuts_label3"><param name="label" value="$INFO[Container(211).ListItem.Property(TextColor)]"/><param name="color" value="$INFO[Container(211).ListItem.Property(TextColor)]"/></include>
 				<include name="shortcuts_label2"><param name="label" value="$VAR[shortcuts_bgpath]"/></include>
 				<include name="shortcuts_label2"><param name="label" value=""/><param name="width" value="490"/></include>
-				<include name="shortcuts_label3"><param name="label" value="$INFO[Container(211).ListItem.Property(Icon_Overlay)]"/><param name="width" value="490"/></include>
-				<include name="shortcuts_label3"><param name="label" value="$INFO[Container(211).ListItem.Property(Icon_Overlay2)]"/><param name="width" value="490"/></include>	
+			<!-- 	<include name="shortcuts_label3"><param name="label" value="$INFO[Container(211).ListItem.Property(Icon_Overlay)]"/><param name="width" value="490"/></include>
+				<include name="shortcuts_label3"><param name="label" value="$INFO[Container(211).ListItem.Property(Icon_Overlay2)]"/><param name="width" value="490"/></include> -->	
 				<include name="shortcuts_label4"><param name="label" value="$VAR[passcode]"/><param name="hide" value="yes"/></include>		
 				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(widgetName)]"/></include>
 			</control>
@@ -373,14 +375,14 @@
 				<texture fallback="special://skin/extras/icons/default.png" background="true">$INFO[Container(211).ListItem.Thumb]</texture>
 				<animation effect="slide" end="0,-60" time="100" condition="!Skin.HasSetting(shortcuts_advanced)">Conditional</animation>
 			</control>
-			<control type="image">
+			<!-- <control type="image">
 				<posx>550</posx>
 				<posy>500</posy>
 				<height>45</height>
 				<width>45</width>
 				<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[dialog_icon_color]" background="true">$INFO[Container(211).ListItem.Thumb]</texture>
 				<visible>Skin.HasSetting(shortcuts_advanced)</visible>
-			</control>
+			</control> 
 			<control type="image">
 				<posx>550</posx>
 				<posy>560</posy>
@@ -388,7 +390,7 @@
 				<width>45</width>
 				<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[dialog_icon_color_nf]" background="true">$INFO[Container(211).ListItem.Thumb]</texture>
 				<visible>Skin.HasSetting(shortcuts_advanced)</visible>
-			</control>
+			</control>-->
 			<control type="grouplist">
 				<posx>20</posx>
 				<top>130</top>

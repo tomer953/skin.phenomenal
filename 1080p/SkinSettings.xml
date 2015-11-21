@@ -708,10 +708,21 @@
 				<onclick condition="skin.string(topbar_home_opacity, 20)">Skin.SetString(topbar_home_opacity, 10)</onclick>
 				<onclick condition="skin.string(topbar_home_opacity, 10)">Skin.SetString(topbar_home_opacity, 0)</onclick>
 				<onclick condition="skin.string(topbar_home_opacity, 0)">Skin.SetString(topbar_home_opacity, 100)</onclick>
-				<onclick>Skin.SetString(AfterReload,304)</onclick>
+				<!-- <onclick>Skin.SetString(AfterReload,304)</onclick>
 				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
-				<onclick>ReloadSkin()</onclick> 	
+				<onclick>ReloadSkin()</onclick>  -->	
 				<enable>!Skin.HasSetting(Home_HideTopBar)</enable>
+			</control>
+			<control type="radiobutton" id="321">
+				<posx>810</posx>
+				<posy>0</posy>
+				<width>860</width>
+				<radioposx>810</radioposx>
+				<label>31150</label>			
+				<onclick>Skin.ToggleSetting(Home_OnlyTime)</onclick>		
+				<selected>Skin.HasSetting(Home_OnlyTime)</selected>
+				<include>radio_button_settings</include>
+				<visible>Skin.HasSetting(Home_HideTopBar)</visible>
 			</control>
 			<control type="button" id="305">
 				<description>Top Bar: Choose Color Of text</description>
@@ -790,6 +801,34 @@
 				<selected>Skin.HasSetting(Home_Horizontal)</selected>
 				<include>radio_button_settings</include>
 			</control>	
+			<control type="radiobutton" id="320">
+				<posx>810</posx>
+				<posy>0</posy>
+				<width>860</width>
+				<radioposx>810</radioposx>
+				<label>Eminence Style</label>
+				<onclick>Skin.ToggleSetting(Home_Eminence_Layout)</onclick>
+				<onclick>Skin.SetString(AfterReload,320)</onclick>
+				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
+				<onclick>ReloadSkin()</onclick>
+				<selected>Skin.HasSetting(Home_Eminence_Layout)</selected>
+				<enable>Skin.HasSetting(Home_Horizontal)</enable>
+				<include>radio_button_settings</include>
+			</control>	
+			<control type="radiobutton" id="315">
+				<description>Pin Widgets</description>
+				<posx>810</posx>
+				<posy>0</posy>
+				<width>860</width>
+				<radioposx>810</radioposx>
+				<label>31061</label>
+				<onclick>Skin.ToggleSetting(PinWidgets)</onclick>
+				<onclick>Skin.SetString(AfterReload,315)</onclick>
+				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
+				<onclick>ReloadSkin()</onclick> 
+				<selected>Skin.HasSetting(PinWidgets)</selected>
+				<include>radio_button_settings</include>
+			</control>
 			<control type="button" id="312">
 				<description>menu bg color</description>
 				<posx>550</posx>
@@ -797,9 +836,9 @@
 				<width>860</width>
 				<align>right</align>
 				<label>31049</label>
-				<!-- <label2>$VAR[menu_bg_color]</label2> -->
 				<include>button_settings_2</include>
 				<onclick>Skin.SetString(color_picker,menu_bg_color)</onclick>
+				<!-- <onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=menu_bg_color)</onclick> -->
 				<onclick>ActivateWindow(1130)</onclick>
 			</control>
 			<control type="button" id="313">
@@ -825,21 +864,9 @@
 				<include>button_settings_2</include>
 				<onclick>Skin.SetString(color_picker,widget_color)</onclick>
 				<onclick>ActivateWindow(1130)</onclick>
+				<visible>!Skin.HasSetting(Home_Horizontal)</visible>
 			</control>
-			<control type="radiobutton" id="315">
-				<description>Pin Widgets</description>
-				<posx>810</posx>
-				<posy>0</posy>
-				<width>860</width>
-				<radioposx>810</radioposx>
-				<label>31061</label>
-				<onclick>Skin.ToggleSetting(PinWidgets)</onclick>
-				<onclick>Skin.SetString(AfterReload,315)</onclick>
-				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
-				<onclick>ReloadSkin()</onclick> 
-				<selected>Skin.HasSetting(PinWidgets)</selected>
-				<include>radio_button_settings</include>
-			</control>
+
 			<control type="button" id="316">
 				<description>Icons nf color</description>
 				<posx>550</posx>
@@ -851,6 +878,7 @@
 				<include>button_settings_2</include>
 				<onclick>Skin.SetString(color_picker,menu_icon_color_nf)</onclick>
 				<onclick>ActivateWindow(1130)</onclick>
+				<visible>!Skin.HasSetting(Home_Eminence_Layout)</visible>
 			</control>
 			<control type="button" id="317">
 				<description>Menu Background Home TLevel</description>
@@ -893,6 +921,7 @@
 				<onclick condition="Skin.String(widget_opacity, 20)">Skin.SetString(widget_opacity, 10)</onclick>
 				<onclick condition="Skin.String(widget_opacity, 10)">Skin.SetString(widget_opacity, 0)</onclick>
 				<onclick condition="Skin.String(widget_opacity, 0)">Skin.SetString(widget_opacity, 100)</onclick>
+				<visible>!Skin.HasSetting(Home_Horizontal)</visible>
 			</control>
 			<control type="button" id="319">
 				<description>Fanart Replace Time in seconds</description>
@@ -1118,7 +1147,7 @@
 					<height>120</height>
 					<align>right</align>
 					<font>font-18</font>
-					<label>[COLOR=$VAR[main_color]]Conq,Bello,Silvo[/COLOR][CR]Thanks to those skins about some png's, code lines, modes, and inspiration for my skin home and views.</label>
+					<label>[COLOR=$VAR[main_color]]Conq,Bello,Silvo,Eminence[/COLOR][CR]Thanks to those skins about some png's, code lines, modes, and inspiration for my skin home and views.</label>
 					<textcolor>grey_50</textcolor>
 				</control>
 				<!-- 8 -->

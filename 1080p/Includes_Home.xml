@@ -9,6 +9,15 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[ListItem.Property(ChannelName)]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
+	<variable name="widget_line1_horizontal">
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[Container(9002).ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[Container(9002).ListItem.TVshowTitle]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[Container(9002).ListItem.TVshowTitle]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[Container(9002).ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[Container(9002).ListItem.Property(ChannelName)]</value>
+		<value>$INFO[Container(9002).ListItem.Label]</value>
+	</variable>
 	<variable name="widget_line2">
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[ListItem.Year]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[ListItem.Label]</value>
@@ -16,6 +25,15 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[ListItem.Year]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[ListItem.Property(Addon.Version)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[ListItem.Label]</value>
+		<value></value>
+	</variable>
+	<variable name="widget_line2_horizontal">
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[Container(9002).ListItem.Year]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[Container(9002).ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[Container(9002).ListItem.Label]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[Container(9002).ListItem.Year]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.Property(Addon.Version)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[Container(9002).ListItem.Label]</value>
 		<value></value>
 	</variable>
 	<variable name="widget_line3">
@@ -27,12 +45,30 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[ListItem.Property(StartTime)]</value>
 		<value></value>
 	</variable>
+	<variable name="widget_line3_horizontal">
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[Container(9002).ListItem.Genre]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">[B]$INFO[Container(9002).ListItem.Season,$LOCALIZE[20373] ] $INFO[Container(9002).ListItem.Episode,$LOCALIZE[20359] ][/B]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">[B]$INFO[Container(9002).ListItem.Season,$LOCALIZE[20373] ] $INFO[Container(9002).ListItem.Episode,$LOCALIZE[20359] ][/B]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[Container(9002).ListItem.Artist]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.Property(Addon.Creator)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[Container(9002).ListItem.Property(StartTime)]</value>
+		<value></value>
+	</variable>
 	<variable name="widget_line4">
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[ListItem.Rating] $INFO[Listitem.Duration,, $LOCALIZE[12391]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[Listitem.Duration,, $LOCALIZE[12391]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[Listitem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[ListItem.Rating] $INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)"></value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)"></value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)"></value>
+		<value></value>
+	</variable>
+	<variable name="widget_line4_horizontal">
+	<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[Container(9002).ListItem.Year,, • ]$INFO[Container(9002).ListItem.Rating,, • ]$INFO[Container(9002).ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[Container(9002).ListItem.Year,, • ]$INFO[Container(9002).ListItem.Rating,, • ]$INFO[Container(9002).ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[Container(9002).ListItem.Year,, • ]$INFO[Container(9002).ListItem.Rating,, • ]$INFO[Container(9002).ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)"></value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.Property(Addon.Version)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)"></value>
 		<value></value>
 	</variable>

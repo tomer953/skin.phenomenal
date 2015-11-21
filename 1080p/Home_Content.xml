@@ -56,6 +56,7 @@
 			<visible>Player.HasAudio + IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 		</control>
 		<control type="group">
+			
 			<include condition="Skin.HasSetting(Home_Horizontal)">Home_Horizontal</include>
 			<include condition="!Skin.HasSetting(Home_Horizontal)">Home_Vertical</include>
 			<include>top_bar_home</include>
@@ -81,7 +82,5 @@
 			</focusedlayout>
 			<content>$INFO[Container(9000).ListItem.Property(backgroundPlaylist)]</content>
 		</control>
-
-
 	</include>
 </includes>
