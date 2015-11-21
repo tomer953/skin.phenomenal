@@ -7,7 +7,7 @@
 	<include name="fanart_view">
 		<control type="group">
 			<!-- Wating for content to load - showing splash screen -->
-			<visible>!IntegerGreaterThan(Container.NumItems,0)</visible>
+			<visible>!IntegerGreaterThan(Container.NumItems,0) + Window.Previous(home)</visible>
 			<control type="image">
 				<description>Splash Screen</description>
 				<posx>0</posx>

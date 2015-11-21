@@ -478,7 +478,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<font>font-17</font>
-							<textcolor>grey_a</textcolor>
+							<textcolor>white</textcolor>
 						</control>
 					</control>
 					<!-- Volume Bar -->
