@@ -470,6 +470,14 @@ msgctxt "#31149"
 msgid "Sorry, no Most Loved Videos found for this artist"
 msgstr "מצטערים, לא נמצאו סרטונים אהובים לאמן זה"
 
+msgctxt "#31150"
+msgid "Show Only Date and Time"
+msgstr "הצג שעה ותאריך בלבד"
+
+msgctxt "#31151"
+msgid "Use Tiles Layout (Eminence Style)"
+msgstr "השתמש בתצוגת אריחים (סגנון Eminence)"
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "

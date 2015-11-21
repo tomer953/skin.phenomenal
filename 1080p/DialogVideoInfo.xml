@@ -500,7 +500,8 @@
 					<height>55</height>
 					<label>31216</label>
 					<onclick condition="Container.Content(TVShows)">SetProperty(TVShowPath,$INFO[ListItem.FilenameAndPath],Home)</onclick>
-					<onclick>ActivateWindow(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
+					<onclick>ActivateWindow(1115)</onclick>					
 				</control>
 
 				<control type="button" id="195"> 

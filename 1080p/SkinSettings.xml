@@ -806,7 +806,7 @@
 				<posy>0</posy>
 				<width>860</width>
 				<radioposx>810</radioposx>
-				<label>Eminence Style</label>
+				<label>31151</label>
 				<onclick>Skin.ToggleSetting(Home_Eminence_Layout)</onclick>
 				<onclick>Skin.SetString(AfterReload,320)</onclick>
 				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	

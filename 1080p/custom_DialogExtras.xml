@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1115">
-	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
-	<onunload>ClearProperty(ActorName,Home)</onunload>
-	<onunload>ClearProperty(DirectorName,Home)</onunload>
-	<onunload>ClearProperty(WriterName,Home)</onunload>
 	<defaultcontrol always="true">3</defaultcontrol>
+	<onload condition="!System.HasAddon(script.artwork.downloader)">RunPlugin(plugin://script.artwork.downloader)</onload>
 	<animation effect="zoom" start="0" end="100" center="900,480" time="200">WindowOpen</animation>
 	<animation effect="zoom" start="100" end="0" center="900,480" time="200">WindowClose</animation>
 	<coordinates>
@@ -88,86 +85,68 @@
 			<content>
 				<item>
 					<label>13511</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>SendClick(2003,10)</onclick>
 				</item>
 				<item>
 					<label>31219</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],clearlogo)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + Container.Content(Movies)</visible>
 				</item>
 				<item>
 					<label>31224</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrathumbs)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + Container.Content(Movies)</visible>
 				</item>
 				<item>
 					<label>31221</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + Container.Content(Movies)</visible>
 				</item>
 				<item>
 					<label>31229</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],discart)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + Container.Content(Movies)</visible>
 				</item>
 				<item>
 					<label>31219</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,dbid=$INFO[ListItem.DBID],clearlogo)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + Container.Content(TVShows)</visible>
 				</item>
 				<item>
 					<label>31220</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,dbid=$INFO[ListItem.DBID],clearart)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + Container.Content(TVShows)</visible>
 				</item>
 				<item>
 					<label>31221</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + Container.Content(TVShows)</visible>
 				</item>
 				<item>
 					<label>31222</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.tvtunes,mode=solo&amp;tvpath=$INFO[Window(Home).Property(TVShowPath)]&amp;tvname=$INFO[ListItem.TVShowTitle])</onclick>
 					<visible>System.HasAddon(script.tvtunes) + IsEmpty(Window(movieinformation).Property("TvTunes_HideVideoInfoButton")) + [Container.Content(TVShows) | Container.Content(movies)]</visible>
 				</item>
 				<item>
-					<label>31223</label>
-					<onclick>Dialog.Close(1115)</onclick>
-					<onclick>RunScript(script.ratingupdate,Single=TVShow)</onclick>
-					<visible>System.HasAddon(script.ratingupdate) + Container.Content(TVShows)</visible>
-				</item>
-				<item>
-					<label>31223</label>
-					<onclick>Dialog.Close(1115)</onclick>
-					<onclick>RunScript(script.ratingupdate,Single=Movie)</onclick>
-					<visible>System.HasAddon(script.ratingupdate) + Container.Content(Movies)</visible>
-				</item>
-				<item>
 					<label>31224</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=musicvideo,dbid=$INFO[ListItem.DBID],extrathumbs)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + Container.Content(MusicVideos)</visible>
 				</item>
 				<item>
 					<label>31221</label>
-					<onclick>Dialog.Close(1115)</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=musicvideo,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + Container.Content(MusicVideos)</visible>
-				</item>
-				<item>
-					<label>$LOCALIZE[31002]</label>
-					<onclick>Dialog.Close(1115)</onclick>
-					<onclick>RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
-					<visible>System.HasAddon(script.videoextras) + !Container.Content(Seasons)</visible>
 				</item>
 			</content>
 		</control>
