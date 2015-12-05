@@ -5,4 +5,5 @@
 	<view id="Posters" value="51" languageid="31201" type="all" />
 	<view id="Thumbs" value="52" languageid="31202" type="all" />
 	<view id="Showcase" value="53" languageid="31203" type="movies,setmovies,tvshows,musicvideos,seasons,sets" />
+	<view id="Widelist" value="54" languageid="31204" type="all" />
 </views>

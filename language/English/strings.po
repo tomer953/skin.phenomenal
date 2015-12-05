@@ -583,6 +583,10 @@ msgctxt "#31203"
 msgid "Showcase"
 msgstr ""
 
+msgctxt "#31204"
+msgid "Wide List"
+msgstr ""
+
 msgctxt "#31216"
 msgid "Extras"
 msgstr ""

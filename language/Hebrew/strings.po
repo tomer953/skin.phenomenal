@@ -583,6 +583,10 @@ msgctxt "#31203"
 msgid "Showcase"
 msgstr "Showcase"
 
+msgctxt "#31204"
+msgid "Wide List"
+msgstr "רשימה רחבה"
+
 msgctxt "#31216"
 msgid "Extras"
 msgstr "גראפיקה"

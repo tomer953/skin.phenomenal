@@ -11,6 +11,7 @@
 	<include file="View51-Poster.xml" />
 	<include file="View52-Thumb.xml" />
 	<include file="View53-Showcase.xml" />
+	<include file="View54-WideList.xml" />
 	<include file="View-PVR.xml" />
 	<include file="Includes_MusicOSD.xml" />
 	<include file="Includes_Weather.xml" />
@@ -2053,6 +2054,19 @@
 		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(fanart_view_opacity),10)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(fanart_view_opacity),0)">Conditional</animation>
 	</include>
+	<!-- fade for widelist [54] list -->
+	<include name="widelist_fade_level">
+		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),90)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),80)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="70" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),70)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),60)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="50" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),50)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="40" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),40)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="30" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),30)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),20)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),10)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),0)">Conditional</animation>
+	</include>
 	<!-- fade for topbar - home -->
 	<include name="home_fade_level">
 		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),90)">Conditional</animation>
@@ -2123,12 +2137,12 @@
 			<posy>$PARAM[posy]</posy>
 			<width>10</width>
 			<height>$PARAM[height]</height>
-			<onleft>50</onleft>
+			<onleft>$PARAM[listid]</onleft>
 			<onright condition="!Player.HasVideo + !Player.HasAudio">555</onright>
 			<onright condition="Player.HasMedia">FullScreen</onright>
 			<include>scroll_bar</include>
 			<animation effect="slide" start="0,0" end="-20,0" time="200" condition="Container.Scrolling | Control.HasFocus($PARAM[id])">Conditional</animation>
-			<visible>Control.IsVisible(50)</visible>
+			<visible>Control.IsVisible($PARAM[listid])</visible>
 		</control>
 	</include>
 	<include name="flag_audiocodec">
@@ -2322,12 +2336,13 @@
 	</include>
 
 	<!-- View Options -->
-	<include name="view_numbers">50,51,52,53</include>
+	<include name="view_numbers">50,51,52,53,54</include>
 	<include name="view_conditions">
 		<include>Fanart-Videos</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.51)">View-Posters-51</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.52)">View-Thumbs-52</include>
-		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.53)">View-ShowCase-53</include>
+		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.53)">View-ShowCase-53</include>	
+		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.54)">View-WideList-54</include>
 	</include>
 
 	<include name="view_settings_radiobutton">
@@ -2604,7 +2619,86 @@
 			<include>view_settings_radiobutton</include>
 			<visible>Control.IsVisible(53) + [Container.Content(movies) | Container.Content(sets)] + [!Skin.HasSetting(showcasemod) | !Skin.HasSetting(boxsetmod)]</visible>
 		</control>
+		<control type="radiobutton" id="527">
+			<description>Item Overlay Option</description>
+			<label>$LOCALIZE[31034]</label>
+			<onclick>Skin.ToggleSetting(bold_list)</onclick>
+			<selected>!Skin.HasSetting(bold_list)</selected>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
+		<control type="button" id="528">
+			<description>Choose bg Color</description>
+			<width>326</width>
+			<label>$LOCALIZE[31035]</label>
+			<onclick>Skin.SetString(color_picker,list_bg_color)</onclick>
+			<onclick>ActivateWindow(1130)</onclick>
+			<include>view_settings_radiobutton</include>
+			<visible>!Skin.HasSetting(bold_list)</visible>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
+		<control type="button" id="529">
+			<description>Choose txt Color</description>
+			<width>326</width>
+			<label>$LOCALIZE[31036]</label>
+			<onclick>Skin.SetString(color_picker,list_color_custom)</onclick>
+			<onclick>ActivateWindow(1130)</onclick>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
 
+		<control type="button" id="531">
+			<description>Choose TLevel</description>
+			<width>326</width>
+			<label>$LOCALIZE[31039] $INFO[Skin.String(widelist_view_opacity),,%]</label>
+			<onclick condition="skin.string(widelist_view_opacity, 100) | IsEmpty(skin.string(widelist_view_opacity))">Skin.SetString(widelist_view_opacity, 90)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 90)">Skin.SetString(widelist_view_opacity, 80)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 80)">Skin.SetString(widelist_view_opacity, 70)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 70)">Skin.SetString(widelist_view_opacity, 60)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 60)">Skin.SetString(widelist_view_opacity, 50)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 50)">Skin.SetString(widelist_view_opacity, 40)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 40)">Skin.SetString(widelist_view_opacity, 30)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 30)">Skin.SetString(widelist_view_opacity, 20)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 20)">Skin.SetString(widelist_view_opacity, 10)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 10)">Skin.SetString(widelist_view_opacity, 0)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 0)">Skin.SetString(widelist_view_opacity, 100)</onclick>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
+		<control type="radiobutton" id="532">
+			<description>Show Seperators</description>
+			<label>31040</label>
+			<onclick>Skin.ToggleSetting(widelist_seps)</onclick>
+			<selected>!Skin.HasSetting(widelist_seps)</selected>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
+
+		<control type="radiobutton" id="534">
+			<description>Show DiscArt</description>
+			<label>31229</label>
+			<onclick>Skin.ToggleSetting(widelist_Disable_CDART)</onclick>
+			<selected>!Skin.HasSetting(widelist_Disable_CDART)</selected>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
+		<control type="radiobutton" id="535">
+			<description>Show Fake DiscArt</description>
+			<align>center</align>
+			<label>31230</label>
+			<onclick>Skin.ToggleSetting(widelist_Disable_FAKECDART)</onclick>
+			<selected>!Skin.HasSetting(widelist_Disable_FAKECDART)</selected>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
+		<control type="radiobutton" id="536">
+			<description>Show Fake DiscArt for tvshows</description>
+			<label>$LOCALIZE[31231]</label>
+			<onclick>Skin.ToggleSetting(widelist_Disable_TVFAKECDART)</onclick>
+			<selected>!Skin.HasSetting(widelist_Disable_TVFAKECDART)</selected>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54) + !Skin.HasSetting(widelist_Disable_FAKECDART)</visible>
+		</control>
 	</include>
 
 	<include name="views_animation">

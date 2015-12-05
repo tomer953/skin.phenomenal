@@ -1182,7 +1182,6 @@
 		<value condition="StringCompare(VideoPlayer.AudioChannels,3)">2.1</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,2)">2.0</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,1)">1.0</value>
-		<value>0.0</value>
 	</variable>
 	<variable name="AudioChannels2">
 		<value condition="StringCompare(ListItem.AudioChannels,10)">9.1</value>
@@ -1195,7 +1194,6 @@
 		<value condition="StringCompare(ListItem.AudioChannels,3)">2.1</value>
 		<value condition="StringCompare(ListItem.AudioChannels,2)">2.0</value>
 		<value condition="StringCompare(ListItem.AudioChannels,1)">1.0</value>
-		<value>0.0</value>
 	</variable>
 	<variable name="AudioCodec">
 		<value condition="StringCompare(VideoPlayer.AudioCodec,aac)">aac</value>
@@ -1531,6 +1529,11 @@
 	<variable name="password_notification_icon">
 		<value condition="StringCompare(Skin.String(mypassword),Skin.String(passcode))">key.png</value>
 		<value condition="!StringCompare(Skin.String(mypassword),Skin.String(passcode))">defaulticonerror.png</value>
+	</variable>
+	<variable name="widelist_fakecdart">
+	<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+	<value condition="Container.Content(seasons)">$INFO[ListItem.Art(poster)]</value>
+	<value>$INFO[ListItem.Art(poster)]</value>
 	</variable>
 	
 </includes>

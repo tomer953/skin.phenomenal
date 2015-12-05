@@ -229,7 +229,7 @@
 					<posy>290</posy>
 					<width>380</width>
 					<height>30</height>
-					<label>$INFO[ListItem.Premiered] aa</label>
+					<label>$INFO[ListItem.Premiered]</label>
 					<font>font-22</font>
 					<align>left</align>
 					<textcolor>grey</textcolor>
