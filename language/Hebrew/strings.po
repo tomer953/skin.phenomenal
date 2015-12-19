@@ -418,9 +418,57 @@ msgctxt "#31114"
 msgid "Multi Image"
 msgstr "מספר תמונות"
 
+msgctxt "#31115"
+msgid "Forced Views"
+msgstr "תצוגות ברירת-מחדל"
+
+msgctxt "#31116"
+msgid "Enable Forced Views"
+msgstr "תצוגות ברירת מחדל"
+
+msgctxt "#31117"
+msgid "For Movies"
+msgstr "תצוגה לסרטים"
+
+msgctxt "#31118"
+msgid "For TV Shows"
+msgstr "תצוגה לסדרות"
+
+msgctxt "#31119"
+msgid "For Seasons"
+msgstr "תצוגה לעונות"
+
+msgctxt "#31120"
+msgid "For Episodes"
+msgstr "תצוגה לפרקים"
+
+msgctxt "#31121"
+msgid "For Sets"
+msgstr "תצוגה למארזים"
+
 msgctxt "#31122"
-msgid "Conditional"
-msgstr "מותנה"
+msgid "For Inside Sets"
+msgstr "תצוגה בתוך מארזים"
+
+msgctxt "#31123"
+msgid "For Artists"
+msgstr "תצוגה לאמנים"
+
+msgctxt "#31124"
+msgid "For Albums"
+msgstr "תצוגה לאלבומים"
+
+msgctxt "#31125"
+msgid "For Songs"
+msgstr "תצוגה לשירים"
+
+msgctxt "#31126"
+msgid "For Pictures"
+msgstr "תצוגה לתמונות"
+
+msgctxt "#31127"
+msgid "For Files"
+msgstr "תצוגה לקבצים"
 
 msgctxt "#31134"
 msgid "Animated backgrounds"

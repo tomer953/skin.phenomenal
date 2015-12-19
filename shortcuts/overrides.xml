@@ -148,6 +148,7 @@
 	<!--<property property="Icon_Overlay2">31140</property>   Same as Text color -->
 	<property property="Icon_Overlay2" label="31142">31142</property> <!-- Same as Skin color -->
 	<property property="Icon_Overlay2" label="31141">31141</property> <!-- Original Icon Color (no overlay) -->
+	<!-- <propertyfallback property="TextColor">blue</propertyfallback> -->
 
 	<!-- Parental control -->
 		<override action="globaloverride">

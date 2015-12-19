@@ -12,6 +12,7 @@
 	<include file="View52-Thumb.xml" />
 	<include file="View53-Showcase.xml" />
 	<include file="View54-WideList.xml" />
+	<include file="‏‏View55-Icons.xml" />
 	<include file="View-PVR.xml" />
 	<include file="Includes_MusicOSD.xml" />
 	<include file="Includes_Weather.xml" />
@@ -2336,13 +2337,14 @@
 	</include>
 
 	<!-- View Options -->
-	<include name="view_numbers">50,51,52,53,54</include>
+	<include name="view_numbers">50,51,52,53,54,55</include>
 	<include name="view_conditions">
 		<include>Fanart-Videos</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.51)">View-Posters-51</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.52)">View-Thumbs-52</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.53)">View-ShowCase-53</include>	
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.54)">View-WideList-54</include>
+		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.55)">View-Icons-55</include>
 	</include>
 
 	<include name="view_settings_radiobutton">
@@ -2405,8 +2407,7 @@
 			<description>Choose bg Color</description>
 			<width>326</width>
 			<label>$LOCALIZE[31035]</label>
-			<onclick>Skin.SetString(color_picker,list_bg_color)</onclick>
-			<onclick>ActivateWindow(1130)</onclick>
+			<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=list_bg_color)</onclick>
 			<include>view_settings_radiobutton</include>
 			<visible>!Skin.HasSetting(bold_list)</visible>
 			<visible>Control.IsVisible(50)</visible>
@@ -2415,8 +2416,7 @@
 			<description>Choose txt Color</description>
 			<width>326</width>
 			<label>$LOCALIZE[31036]</label>
-			<onclick>Skin.SetString(color_picker,list_color_custom)</onclick>
-			<onclick>ActivateWindow(1130)</onclick>
+			<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=list_color_custom)</onclick>
 			<include>view_settings_radiobutton</include>
 			<visible>Control.IsVisible(50)</visible>
 		</control>
@@ -2631,8 +2631,7 @@
 			<description>Choose bg Color</description>
 			<width>326</width>
 			<label>$LOCALIZE[31035]</label>
-			<onclick>Skin.SetString(color_picker,list_bg_color)</onclick>
-			<onclick>ActivateWindow(1130)</onclick>
+			<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=list_bg_color)</onclick>
 			<include>view_settings_radiobutton</include>
 			<visible>!Skin.HasSetting(bold_list)</visible>
 			<visible>Control.IsVisible(54)</visible>
@@ -2641,8 +2640,7 @@
 			<description>Choose txt Color</description>
 			<width>326</width>
 			<label>$LOCALIZE[31036]</label>
-			<onclick>Skin.SetString(color_picker,list_color_custom)</onclick>
-			<onclick>ActivateWindow(1130)</onclick>
+			<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=list_color_custom)</onclick>
 			<include>view_settings_radiobutton</include>
 			<visible>Control.IsVisible(54)</visible>
 		</control>

@@ -104,6 +104,7 @@
 				<onup>50</onup>
 				<ondown>50</ondown>
 				<viewtype label="31200">list</viewtype>
+				<visible>StringCompare(Window(Home).Property(SkinHelper.ForcedView),50) | IsEmpty(Window(Home).Property(SkinHelper.ForcedView))</visible>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime tween="circle" easing="inout">400</scrolltime>
 				<preloaditems>2</preloaditems>

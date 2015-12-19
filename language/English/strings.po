@@ -418,8 +418,56 @@ msgctxt "#31114"
 msgid "Multi Image"
 msgstr ""
 
+msgctxt "#31115"
+msgid "Forced Views"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Enable Forced Views"
+msgstr ""
+
+msgctxt "#31117"
+msgid "For Movies"
+msgstr ""
+
+msgctxt "#31118"
+msgid "For TV Shows"
+msgstr ""
+
+msgctxt "#31119"
+msgid "For Seasons"
+msgstr ""
+
+msgctxt "#31120"
+msgid "For Episodes"
+msgstr ""
+
+msgctxt "#31121"
+msgid "For Sets"
+msgstr ""
+
 msgctxt "#31122"
-msgid "Conditional"
+msgid "For Inside Sets"
+msgstr ""
+
+msgctxt "#31123"
+msgid "For Artists"
+msgstr ""
+
+msgctxt "#31124"
+msgid "For Albums"
+msgstr ""
+
+msgctxt "#31125"
+msgid "For Songs"
+msgstr ""
+
+msgctxt "#31126"
+msgid "For Pictures"
+msgstr ""
+
+msgctxt "#31127"
+msgid "For Files"
 msgstr ""
 
 msgctxt "#31134"

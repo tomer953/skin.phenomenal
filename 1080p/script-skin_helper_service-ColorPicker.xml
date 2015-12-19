@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">3110</defaultcontrol>
+		<animation effect="slide" start="-400" end="0" time="400">WindowOpen</animation>
+	<animation effect="slide" start="0" end="-400" time="400">WindowClose</animation>
 	<controls>
 		<control type="image">
 			<description>background image</description>
 			<posx>0</posx>
 			<posy>70</posy>
 			<width>380</width>
-			<height>970</height>
+			<height>1010</height>
 			<texture background="true" colordiffuse="grey_50">white.png</texture>
 			<bordertexture colordiffuse="grey">white.png</bordertexture>
 			<bordersize>2</bordersize>
@@ -28,6 +30,7 @@
 				<width>260</width>
 				<textoffsetx>5</textoffsetx>			
 				<label>532</label>
+				<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 				<include>button_dialogs</include>
 			</control>
 
@@ -36,6 +39,7 @@
 				<width>260</width>
 				<textoffsetx>5</textoffsetx>
 				<label>190</label>
+				<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 				<include>button_dialogs</include>			
 			</control>
 
@@ -50,9 +54,10 @@
 
 		<control type="group" id="3020">
 			<posx>60</posx>
-			<posy>170</posy>
+			<posy>110</posy>
 			<width>300</width>
 			<height>60</height>
+			<onup>3012</onup>
 			<control type="label" id="3016">
 				<!-- label opacity-->
 				<posx>0</posx>
@@ -70,7 +75,7 @@
 				<posy>135</posy>
 				<width>250</width>
 				<height>38</height>
-				<onup>3011</onup>
+				<onup>3012</onup>
 				<ondown>3110</ondown>
 				<texturesliderbar colordiffuse="grey_a" border="1,1,1,1">osd/2.png</texturesliderbar>
 				<textureslidernib>osd/3.png</textureslidernib>
@@ -92,34 +97,40 @@
 
 		<control type="label">
 			<posx>60</posx>
-			<posy>334</posy>
+			<posy>300</posy>
 			<width>300</width>
 			<height>45</height>
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font-22</font>
 			<textcolor>$INFO[Window.Property(colorstring)]</textcolor>
-			<label>$LOCALIZE[737]: $INFO[Window.Property(colorstring)]</label>
+			<label>$INFO[Window.Property(colorstring)]</label>
 		</control> 
+		<control type="image">
+			<left>200</left>
+			<top>300</top>
+			<width>120</width>
+			<height>40</height>
+			<texture background="true" diffuse="posterdiffuse.png" colordiffuse="$INFO[Window.Property(colorstring)]">white.png</texture>
+		</control>
 
 		<control type="panel" id="3110">
 			<left>10</left>
-			<top>380</top>
+			<top>360</top>
 			<width>360</width>
-			<height>740</height>
+			<height>720</height>
 			<onup>3015</onup>
 			<ondown>3010</ondown>
 			<onleft>3110</onleft>
 			<onright>3110</onright>
 			<orientation>vertical</orientation>
 			<scrolltime>200</scrolltime>
-			<itemlayout height="44" width="44">
+			<itemlayout height="23" width="44">
 				<control type="image">
-					<left>7</left>
-					<top>7</top>
+					<left>0</left>
+					<top>0</top>
 					<width>46</width>
-					<height>46</height>
-					<aspectratio>keep</aspectratio>
+					<height>23</height>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 				</control>
 				<!-- <control type="image">
@@ -131,13 +142,12 @@
 					<visible>StringCompare(ListItem.Label,Window.Property(colorstring)) + !IsEmpty(Window.Property(colorstring))</visible>
 				</control> -->
 			</itemlayout>
-			<focusedlayout height="44" width="44">
+			<focusedlayout height="23" width="44">
 				<control type="image">
-					<left>7</left>
-					<top>7</top>
+					<left>0</left>
+					<top>0</top>
 					<width>46</width>
-					<height>46</height>
-					<aspectratio>keep</aspectratio>
+					<height>23</height>
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 				</control>
 				<!-- <control type="image">
@@ -151,10 +161,10 @@
 				<control type="image">
 					<left>0</left>
 					<top>0</top>
-					<width>44</width>
-					<height>44</height>
-					<texture colordiffuse="$VAR[main_color]">thumbnail_focused.png</texture>
-					<animation effect="zoom" start="100" end="97" time="150" condition="Control.HasFocus(100)" pulse="true" >Conditional</animation>
+					<width>46</width>
+					<height>23</height>
+					<texture colordiffuse="white">thumbnail_focused.png</texture>
+					<animation effect="zoom" start="100" end="97" time="150" condition="Control.HasFocus(3110)" pulse="true" >Conditional</animation>
 				</control>
 			</focusedlayout>
 		</control>

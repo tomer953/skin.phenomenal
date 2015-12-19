@@ -450,8 +450,9 @@
 		<onright>53</onright>
 		<onup>9100</onup>
 		<ondown>72</ondown>
-		<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(genres) | Container.Content(sets)</visible>
+		<!-- <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(genres) | Container.Content(sets)</visible> -->
 		<viewtype label="31203">list</viewtype>
+		<visible>StringCompare(Window(Home).Property(SkinHelper.ForcedView),53) | IsEmpty(Window(Home).Property(SkinHelper.ForcedView))</visible>
 		<pagecontrol>72</pagecontrol>
 		<scrolltime tween="quadratic">300</scrolltime>
 		<focusposition>3</focusposition>
