@@ -470,6 +470,10 @@ msgctxt "#31127"
 msgid "For Files"
 msgstr ""
 
+msgctxt "#31128"
+msgid "Hey my name is Tomer and I'm the owner of the skin. The skin is totally free to use,[CR] but if you liked it and want to thank me, please concider to make a donation.[CR] please visit my website: phenomenal-skin.com"
+msgstr ""
+
 msgctxt "#31134"
 msgid "Animated backgrounds"
 msgstr ""

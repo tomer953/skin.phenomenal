@@ -2697,6 +2697,14 @@
 			<include>view_settings_radiobutton</include>
 			<visible>Control.IsVisible(54) + !Skin.HasSetting(widelist_Disable_FAKECDART)</visible>
 		</control>
+		<control type="radiobutton" id="537">
+			<description>Show Label on thumbs</description>
+			<label>31074</label>
+			<onclick>Skin.ToggleSetting(Hide_label_view_55)</onclick>
+			<selected>!Skin.HasSetting(Hide_label_view_55)</selected>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(55)</visible>
+		</control>
 	</include>
 
 	<include name="views_animation">
