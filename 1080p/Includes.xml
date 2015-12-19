@@ -12,7 +12,7 @@
 	<include file="View52-Thumb.xml" />
 	<include file="View53-Showcase.xml" />
 	<include file="View54-WideList.xml" />
-	<include file="‏‏View55-Icons.xml" />
+	<include file="View55-Icon.xml" />
 	<include file="View-PVR.xml" />
 	<include file="Includes_MusicOSD.xml" />
 	<include file="Includes_Weather.xml" />
