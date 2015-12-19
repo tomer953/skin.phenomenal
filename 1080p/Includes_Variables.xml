@@ -1173,9 +1173,7 @@
 	</variable>
 	<variable name="AudioChannels">
 		<value condition="StringCompare(VideoPlayer.AudioChannels,10)">9.1</value>
-		<value condition="StringCompare(VideoPlayer.AudioChannels,9)">7.1</value>
-		<value condition="StringCompare(VideoPlayer.AudioChannels,8)">6.1</value>
-		<value condition="StringCompare(VideoPlayer.AudioChannels,7)">5.1</value>
+		<value condition="StringCompare(VideoPlayer.AudioChannels,8)">7.1</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,6)">5.1</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,5)">4.1</value>
 		<value condition="StringCompare(VideoPlayer.AudioChannels,4)">4.0</value>
@@ -1185,9 +1183,7 @@
 	</variable>
 	<variable name="AudioChannels2">
 		<value condition="StringCompare(ListItem.AudioChannels,10)">9.1</value>
-		<value condition="StringCompare(ListItem.AudioChannels,9)">7.1</value>
-		<value condition="StringCompare(ListItem.AudioChannels,8)">6.1</value>
-		<value condition="StringCompare(ListItem.AudioChannels,7)">5.1</value>
+		<value condition="StringCompare(ListItem.AudioChannels,8)">7.1</value>
 		<value condition="StringCompare(ListItem.AudioChannels,6)">5.1</value>
 		<value condition="StringCompare(ListItem.AudioChannels,5)">4.1</value>
 		<value condition="StringCompare(ListItem.AudioChannels,4)">4.0</value>
@@ -1433,8 +1429,8 @@
 	</variable>
 
 	<variable name="DialogSeekBarLabel">
-		<value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekStepSize][/B]</value>
-		<!-- <value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekOffset][/B]</value> -->
+		<!-- <value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekStepSize][/B]</value>
+		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekOffset][/B]</value> -->
 		<value condition="Player.Playing + !Player.Seeking + !Player.DisplayAfterSeek">[B]$LOCALIZE[31042][/B]</value>
 		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[B]$LOCALIZE[112][/B]</value>
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[B]$LOCALIZE[15107] $INFO[Player.CacheLevel]%[/B]</value>
