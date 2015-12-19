@@ -534,7 +534,7 @@
 				<width>1250</width>
 				<include>button_settings_2</include>
 			</control>
-				<control type="button" id="125">
+			<control type="button" id="125">
 				<description>password_fanart</description>
 				<label>$LOCALIZE[31088]</label>
 				<align>right</align>
@@ -542,7 +542,7 @@
 				<include>button_settings_2</include>
 				<onclick>Skin.SetImage(password_fanart,.,special://skin/backgrounds)</onclick>
 			</control>
-			
+
 		</control>
 
 		<!-- Home Screen Settings skin shortcuts -->
@@ -659,12 +659,10 @@
 			<control type="button" id="301">
 				<description>Main-Color</description>
 				<label>$LOCALIZE[31022]</label>
-				<!-- <label2>$INFO[Skin.String(main_color)]</label2> -->
 				<align>right</align>
 				<width>860</width>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetString(color_picker,main_color)</onclick>
-				<onclick>ActivateWindow(1130)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=main_color)</onclick>
 			</control>
 			<control type="label" id="302">
 				<description>Top Bar</description>
@@ -727,33 +725,27 @@
 			<control type="button" id="305">
 				<description>Top Bar: Choose Color Of text</description>
 				<label>$LOCALIZE[31023]</label>
-				<!-- <label2>$INFO[Skin.String(topbar_text_color)]</label2> -->
 				<align>right</align>
 				<width>860</width>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetString(color_picker,topbar_text_color)</onclick>
-				<onclick>ActivateWindow(1130)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=topbar_text_color)</onclick>
 				<enable>!Skin.HasSetting(Home_HideTopBar)</enable>
 			</control>
 			<control type="button" id="306">
 				<description>Top Bar: rss header color</description>
 				<label>$LOCALIZE[31024]</label>
-				<!-- <label2>$INFO[Skin.String(topbar_rss1_color)]</label2> -->
 				<align>right</align>
 				<width>860</width>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetString(color_picker,topbar_rss1_color)</onclick>
-				<onclick>ActivateWindow(1130)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=topbar_rss1_color)</onclick>
 			</control>
 			<control type="button" id="307">
 				<description>Top Bar: rss text color</description>
 				<label>$LOCALIZE[31025]</label>
-				<!-- <label2>$INFO[Skin.String(topbar_rss2_color)]</label2> -->
 				<align>right</align>
 				<width>860</width>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetString(color_picker,topbar_rss2_color)</onclick>
-				<onclick>ActivateWindow(1130)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=topbar_rss2_color)</onclick>
 			</control>
 			<control type="radiobutton" id="308">
 				<description>Show Weather Icon</description>
@@ -769,12 +761,10 @@
 			<control type="button" id="309">
 				<description>Top Bar: weather color</description>
 				<label>$LOCALIZE[31027]</label>
-				<!-- <label2>$INFO[Skin.String(weather_color)]</label2> -->
 				<align>right</align>
 				<width>860</width>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetString(color_picker,weather_color)</onclick>
-				<onclick>ActivateWindow(1130)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=weather_color)</onclick>
 				<enable>!Skin.HasSetting(Home_Weather_Icon)</enable>
 			</control>
 			<control type="label" id="310">
@@ -837,9 +827,7 @@
 				<align>right</align>
 				<label>31049</label>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetString(color_picker,menu_bg_color)</onclick>
-				<!-- <onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=menu_bg_color)</onclick> -->
-				<onclick>ActivateWindow(1130)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=menu_bg_color)</onclick>
 			</control>
 			<control type="button" id="313">
 				<description>SubMenu BG color</description>
@@ -847,11 +835,9 @@
 				<posy>0</posy>
 				<width>860</width>
 				<label>31054</label>
-				<!-- <label2>$VAR[widget_color]</label2> -->
 				<align>right</align>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetString(color_picker,submenu_color)</onclick>
-				<onclick>ActivateWindow(1130)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=submenu_color)</onclick>
 			</control>
 			<control type="button" id="314">
 				<description>Widgets BG color</description>
@@ -859,11 +845,9 @@
 				<posy>0</posy>
 				<width>860</width>
 				<label>31062</label>
-				<!-- <label2>$VAR[widget_color]</label2> -->
 				<align>right</align>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetString(color_picker,widget_color)</onclick>
-				<onclick>ActivateWindow(1130)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=widget_color)</onclick>
 				<visible>!Skin.HasSetting(Home_Horizontal)</visible>
 			</control>
 
@@ -873,11 +857,9 @@
 				<posy>0</posy>
 				<width>860</width>
 				<label>31051</label>
-				<!-- <label2>$VAR[menu_icon_color_nf]</label2> -->
 				<align>right</align>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetString(color_picker,menu_icon_color_nf)</onclick>
-				<onclick>ActivateWindow(1130)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=menu_icon_color_nf)</onclick>
 				<visible>!Skin.HasSetting(Home_Eminence_Layout)</visible>
 			</control>
 			<control type="button" id="317">
@@ -938,7 +920,7 @@
 		<control type="grouplist" id="350">
 			<posx>40</posx>
 			<posy>117</posy>
-			<width>340</width>
+			<width>360</width>
 			<height>860</height>
 			<itemgap>0</itemgap>
 			<onleft>noop</onleft>
@@ -947,7 +929,7 @@
 			<ondown>350</ondown>
 			<orientation>vertical</orientation>
 			<visible>StringCompare(Skin.String(Section),3)</visible>
-			<animation effect="slide" end="-400" time="200" condition="Window.IsActive(custom_colorpicker.xml)">Conditional</animation>
+			<animation effect="slide" end="-400" time="200" condition="Window.IsActive(script-skin_helper_service-ColorPicker.xml)">Conditional</animation>
 			<control type="label" id="351">
 				<description>Theme Options</description>
 				<label>31063</label>
@@ -982,6 +964,104 @@
 				<width>340</width>
 				<include>button_settings_2</include>
 				<onclick>RunScript(script.skin.helper.service,action=enableviews)</onclick>
+			</control>
+			<control type="label" id="357">
+				<description>Force Views</description>
+				<label>31115</label>
+				<align>center</align>
+				<width>340</width>
+				<height>40</height>
+				<font>font-18</font>
+				<textcolor>$VAR[main_color]</textcolor>
+			</control>
+			<control type="radiobutton" id="358">
+				<label>31116</label>
+				<align>center</align>
+				<width>360</width>
+				<radioposx>315</radioposx>
+				<textoffsetx>0</textoffsetx>
+				<align>right</align>
+				<textwidth>315</textwidth>
+				<include>radio_button_settings</include>
+				<onclick>Skin.ToggleSetting(SkinHelper.ForcedViews.Enabled)</onclick>
+				<selected>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</selected>
+			</control>
+			<control type="button" id="359">
+				<description>Force For Movies</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=movies)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31117]: $INFO[Skin.String(SkinHelper.ForcedViews.movies)]</label>			
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="360">
+				<description>Force For tvshows</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=tvshows)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31118]:  $INFO[Skin.String(SkinHelper.ForcedViews.tvshows)]</label>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="361">
+				<description>Force For Seasons</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=seasons)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31119]:  $INFO[Skin.String(SkinHelper.ForcedViews.seasons)]</label>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="362">
+				<description>Force For Episodes</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=episodes)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31120]: $INFO[Skin.String(SkinHelper.ForcedViews.episodes)]</label>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="363">
+				<description>Force For Sets</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=sets)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31121]: $INFO[Skin.String(SkinHelper.ForcedViews.sets)]</label>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="364">
+				<description>Force For Inside Sets</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=setmovies)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31122]: $INFO[Skin.String(SkinHelper.ForcedViews.setmovies)]</label>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="365">
+				<description>Force For Artists</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=artists)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31123]: $INFO[Skin.String(SkinHelper.ForcedViews.artists)]</label>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="366">
+				<description>Force For Albums</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=albums)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31124]: $INFO[Skin.String(SkinHelper.ForcedViews.albums)]</label>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="367">
+				<description>Force For Songs</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=songs)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31125]: $INFO[Skin.String(SkinHelper.ForcedViews.songs)]</label>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="368">
+				<description>Force For Pictures</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=pictures)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31126]: $INFO[Skin.String(SkinHelper.ForcedViews.pictures)]</label>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="369">
+				<description>Force For Files</description>
+				<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=files)</onclick>
+				<enable>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</enable>
+				<label>$LOCALIZE[31127]: $INFO[Skin.String(SkinHelper.ForcedViews.files)]</label>
+				<include>button_settings_2</include>
 			</control>
 		</control>
 
