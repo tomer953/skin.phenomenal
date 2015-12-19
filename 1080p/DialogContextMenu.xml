@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol>1000</defaultcontrol>
+	<defaultcontrol>996</defaultcontrol>
 	<animation effect="fade" time="400">WindowOpen</animation>
 	<animation effect="fade" time="100">WindowClose</animation>
 	<coordinates>
 		<system>1</system>
 		<left>0</left>
 		<top>0</top>
-<!-- 		<origin x="1305" y="200" /> -->
+		<!-- 		<origin x="1305" y="200" /> -->
 	</coordinates>
 	<controls>
 		<control type="image" id="999">
@@ -47,6 +47,18 @@
 			<width>390</width>
 			<height min="15" max="892">auto</height>
 			<itemgap>0</itemgap>
+			<control type="button" id="994">
+				<label>$LOCALIZE[14098] $LOCALIZE[20410]</label>
+				<onclick>PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
+				<visible>!IsEmpty(ListItem.Trailer) + Container.Content(movies)</visible>
+				<posx>0</posx>
+			<posy>0</posy>
+			<width>390</width>
+			<height>52</height>
+			<font>menu-30</font>
+			<align>center</align>
+			<include>shutdown_buttons</include>
+			</control>
 		</control>
 		<control type="button" id="1000">
 			<description>button template</description>
