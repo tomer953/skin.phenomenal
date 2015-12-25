@@ -290,12 +290,13 @@
 							<altlabel>-</altlabel>
 						</control>
 						<!-- Filter -->
-						<control type="edit" id="19">
+						<control type="button" id="19">
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>270</width>
 							<height>45</height>
 							<label>587</label>
+							<align>left</align>
 							<textcolor>grey_b</textcolor>
 							<focusedcolor>darkgrey</focusedcolor>
 							<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>

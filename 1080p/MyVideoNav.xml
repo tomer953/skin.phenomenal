@@ -107,7 +107,7 @@
 						<label>137</label>
 						<include>view_settings_radiobutton</include>
 					</control>
-					<control type="edit" id="19">
+					<control type="button" id="19">
 						<description>Filter</description>
 						<label>587</label>
 						<include>view_settings_radiobutton</include>

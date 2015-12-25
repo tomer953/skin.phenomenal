@@ -13,7 +13,7 @@
 			<posy>140</posy>
 			<height>710</height>
 			<width>20</width>
-			<onleft>11</onleft>
+			<onleft>52</onleft>
 			<include>scroll_bar</include>
 			<orientation>vertical</orientation>
 			<showonepage>false</showonepage>

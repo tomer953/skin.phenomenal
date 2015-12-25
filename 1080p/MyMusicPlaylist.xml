@@ -102,8 +102,9 @@
 						<include>view_settings_radiobutton</include>
 						<label>137</label>
 					</control>
-					<control type="edit" id="19">
+					<control type="button" id="19">
 						<description>Filter</description>
+						<align>left</align>
 						<label>587</label>
 						<include>view_settings_radiobutton</include>
 						<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
