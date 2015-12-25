@@ -1305,6 +1305,10 @@
 		<value condition="!IsEmpty(Skin.String(main_color))">$INFO[Skin.String(main_color)]</value>
 		<value>FFE66A4F</value>
 	</variable>
+	<variable name="mouse_color">
+		<value condition="!IsEmpty(Skin.String(mouse_color))">$INFO[Skin.String(mouse_color)]</value>
+		<value>$VAR[main_color]</value>
+	</variable>
 	
 	<variable name="tile_main_color">
 		<value condition="!IsEmpty(Container(9000).ListItem.Property(TextColor))">$INFO[Container(9000).ListItem.Property(TextColor)]</value>
@@ -1429,8 +1433,8 @@
 	</variable>
 
 	<variable name="DialogSeekBarLabel">
-		<!-- <value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekStepSize][/B]</value>
-		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekOffset][/B]</value> -->
+		<value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekStepSize][/B]</value>
+		<!-- <value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekOffset][/B]</value> -->
 		<value condition="Player.Playing + !Player.Seeking + !Player.DisplayAfterSeek">[B]$LOCALIZE[31042][/B]</value>
 		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[B]$LOCALIZE[112][/B]</value>
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[B]$LOCALIZE[15107] $INFO[Player.CacheLevel]%[/B]</value>

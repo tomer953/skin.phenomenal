@@ -452,7 +452,7 @@
 				<align>left</align>
 				<width>1250</width>
 				<include>button_settings_2</include>
-				<onclick>Skin.SetFile(splash_path,,special://skin/extras)</onclick>
+				<onclick>Skin.SetFile(splash_path)</onclick>
 				<enable>!Skin.HasSetting(Disable_Splash)</enable>
 			</control>
 			<control type="label" id="116">
@@ -663,6 +663,14 @@
 				<width>860</width>
 				<include>button_settings_2</include>
 				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=main_color)</onclick>
+			</control>
+			<control type="button" id="370">
+				<description>Mouse-Color</description>
+				<label>$LOCALIZE[31129]</label>
+				<align>right</align>
+				<width>860</width>
+				<include>button_settings_2</include>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=mouse_color)</onclick>
 			</control>
 			<control type="label" id="302">
 				<description>Top Bar</description>
