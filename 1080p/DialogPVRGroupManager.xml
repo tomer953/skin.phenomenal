@@ -1,508 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol>29</defaultcontrol>
+	<defaultcontrol>13</defaultcontrol>
+	<animation effect="zoom" start="0" end="100" center="900,480" time="300">WindowOpen</animation>
+			<animation effect="zoom" start="100" end="0" center="900,480" time="300">WindowClose</animation>
 	<controls>
+
+		<!-- Hidden labels -->
+		<control type="label" id="21">
+			<font>-</font>
+		</control>
+		<control type="label" id="22">
+			<font>-</font>
+		</control>
+
 		<control type="image">
 			<posx>0</posx>
-			<posy>0</posy>
+			<posy>80</posy>
 			<width>1920</width>
-			<height>1080</height>
-			<texture>black.png</texture>
-			<animation effect="fade" start="0" end="70" time="300">WindowOpen</animation>
-			<animation effect="fade" start="70" end="0" time="300">WindowClose</animation>
-			<visible>!Window.IsVisible(DialogPVRChannelManager.xml)</visible>
+			<height>1000</height>
+			<texture background="true" colordiffuse="grey_50">white.png</texture>
+			<bordertexture colordiffuse="grey">white.png</bordertexture>
+			<bordersize>2</bordersize>
 		</control>
 		<control type="group">
-			
-			<control type="button">
-				<posx>1860</posx>
-				<posy>30</posy>
-				<width>30</width>
-				<height>30</height>
-				<texturefocus>close-window-focus.png</texturefocus>
-				<texturenofocus>close-window-nofocus.png</texturenofocus>
-				<onclick>Dialog.Close(pvrgroupmanager)</onclick>
-				<visible>Skin.HasSetting(TouchScreenMode)</visible>
-			</control>
+			<posy>80</posy>
 			<control type="label">
-				<description>Item Title value</description>
-				<posx>60</posx>
-				<posy>22</posy>
-				<width>1800</width>
+				<description>Header</description>
+				<posx>0</posx>
+				<posy>30</posy>
+				<width>1920</width>
 				<height>45</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>blue</textcolor>
+				<textcolor>white</textcolor>
 				<label>19143</label>
 				<font>font-32</font>
 			</control>
+			<!-- Seperators -->
 			<control type="image">
-				<posx>0</posx>
-				<posy>81</posy>
-				<width>1920</width>
-				<height>3</height>
-				<texture>separator.png</texture>
+				<posx>75</posx>
+				<posy>115</posy>
+				<width>1770</width>
+				<height>2</height>
+				<texture>white.png</texture>
 			</control>
-			<control type="group">
-				<description>Channels</description>
-				<control type="label">
-					<description>name label</description>
-					<posx>210</posx>
-					<posy>90</posy>
-					<width>675</width>
-					<height>52</height>
-					<font>font-23</font>
-					<label>19144</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<textcolor>lightblue</textcolor>
-				</control>
-				<control type="list" id="11">
-					<posx>210</posx>
-					<posy>147</posy>
-					<width>675</width>
-					<height>436</height>
-					<onup>11</onup>
-					<ondown>11</ondown>
-					<onleft>29</onleft>
-					<onright>60</onright>
-					<pagecontrol>60</pagecontrol>
-					<scrolltime>200</scrolltime>
-					<itemlayout width="675" height="44">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>675</width>
-							<height>45</height>
-							<texture border="7">list-nofocus.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>6</posy>
-							<width>33</width>
-							<height>33</height>
-							<texture>$INFO[ListItem.Icon]</texture>
-							<aspectratio>keep</aspectratio>
-						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>90</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>right</align>
-							<aligny>center</aligny>
-							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel]</label>
-						</control>
-						<control type="label">
-							<posx>105</posx>
-							<posy>0</posy>
-							<width>540</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.ChannelName]</label>
-						</control>
-					</itemlayout>
-					<focusedlayout width="675" height="44">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>675</width>
-							<height>45</height>
-							<texture border="7">list-nofocus.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>675</width>
-							<height>45</height>
-							<include>ListFocusScroll26</include>
-							<texture border="7">list-focus2.png</texture>
-							<visible>Control.HasFocus(11)</visible>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>6</posy>
-							<width>33</width>
-							<height>33</height>
-							<texture>$INFO[ListItem.Icon]</texture>
-							<aspectratio>keep</aspectratio>
-						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>90</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>right</align>
-							<aligny>center</aligny>
-							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel]</label>
-						</control>
-						<control type="label">
-							<posx>105</posx>
-							<posy>0</posy>
-							<width>540</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.ChannelName]</label>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="60">
-					<posx>900</posx>
-					<posy>147</posy>
-					<width>30</width>
-					<height>440</height>
-					<texturesliderbackground border="0,10,0,10">scrollbar-back.png</texturesliderbackground>
-					<texturesliderbar border="0,10,0,10">scrollbar-front-nofocus.png</texturesliderbar>
-					<texturesliderbarfocus border="0,10,0,10">scrollbar-front.png</texturesliderbarfocus>
-					<textureslidernib>scrollbar-nib-nofocus.png</textureslidernib>
-					<textureslidernibfocus>scrollbar-nib.png</textureslidernibfocus>
-					<onleft>11</onleft>
-					<onright>12</onright>
-					<ondown>60</ondown>
-					<onup>60</onup>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
-				</control>
+			<!-- Groups -->
+			<control type="label">
+				<left>150</left>
+				<top>120</top>
+				<width>526</width>
+				<height>36</height>
+				<font>font-24</font>
+				<align>center</align>
+				<textcolor>grey_b</textcolor>
+				<label>[B]$LOCALIZE[19146][/B]</label>
 			</control>
-			<control type="group">
-				<description>Channels in Group</description>
-				<control type="label">
-					<posx>1035</posx>
-					<posy>90</posy>
-					<width>675</width>
-					<height>52</height>
-					<font>font-23</font>
-					<label>19145</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<textcolor>lightblue</textcolor>
-				</control>
-				<control type="list" id="12">
-					<posx>1035</posx>
-					<posy>147</posy>
-					<width>675</width>
-					<height>436</height>
-					<onup>12</onup>
-					<ondown>12</ondown>
-					<onleft>11</onleft>
-					<onright>61</onright>
-					<pagecontrol>61</pagecontrol>
-					<scrolltime>200</scrolltime>
-					<itemlayout width="675" height="44">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>675</width>
-							<height>45</height>
-							<texture border="7">list-nofocus.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>6</posy>
-							<width>33</width>
-							<height>33</height>
-							<texture>$INFO[ListItem.Icon]</texture>
-							<aspectratio>keep</aspectratio>
-						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>90</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>right</align>
-							<aligny>center</aligny>
-							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel]</label>
-						</control>
-						<control type="label">
-							<posx>105</posx>
-							<posy>0</posy>
-							<width>540</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.ChannelName]</label>
-						</control>
-					</itemlayout>
-					<focusedlayout width="675" height="44">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>675</width>
-							<height>45</height>
-							<texture border="7">list-nofocus.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>675</width>
-							<height>45</height>
-							<include>ListFocusScroll27</include>
-							<texture border="7">list-focus2.png</texture>
-							<visible>Control.HasFocus(12)</visible>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>6</posy>
-							<width>33</width>
-							<height>33</height>
-							<texture>$INFO[ListItem.Icon]</texture>
-							<aspectratio>keep</aspectratio>
-						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>90</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>right</align>
-							<aligny>center</aligny>
-							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel]</label>
-						</control>
-						<control type="label">
-							<posx>105</posx>
-							<posy>0</posy>
-							<width>540</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.ChannelName]</label>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="61">
-					<posx>1725</posx>
-					<posy>147</posy>
-					<width>30</width>
-					<height>440</height>
-					<texturesliderbackground border="0,10,0,10">scrollbar-back.png</texturesliderbackground>
-					<texturesliderbar border="0,10,0,10">scrollbar-front-nofocus.png</texturesliderbar>
-					<texturesliderbarfocus border="0,10,0,10">scrollbar-front.png</texturesliderbarfocus>
-					<textureslidernib>scrollbar-nib-nofocus.png</textureslidernib>
-					<textureslidernibfocus>scrollbar-nib.png</textureslidernibfocus>
-					<onleft>12</onleft>
-					<onright>13</onright>
-					<ondown>61</ondown>
-					<onup>61</onup>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
-				</control>
+
+			<control type="image">
+				<left>150</left>
+				<top>170</top>
+				<width>526</width>
+				<height>660</height>
+				<texture colordiffuse="darkgrey">white.png</texture>
+				<visible>!Control.HasFocus(13)</visible>
 			</control>
 			<control type="image">
-				<posx>0</posx>
-				<posy>630</posy>
-				<width>1920</width>
-				<height>3</height>
-				<texture>separator.png</texture>
+				<left>150</left>
+				<top>170</top>
+				<width>526</width>
+				<height>660</height>
+				<texture colordiffuse="grey_a">white.png</texture>
+				<visible>Control.HasFocus(13)</visible>
 			</control>
-			<control type="group">
-				<description>Groups</description>
-				<control type="label">
-					<description>name label</description>
-					<posx>622</posx>
-					<posy>660</posy>
-					<width>675</width>
-					<height>52</height>
-					<font>font-23</font>
-					<label>19146</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<textcolor>lightblue</textcolor>
-				</control>
-				<control type="list" id="13">
-					<posx>622</posx>
-					<posy>717</posy>
-					<width>675</width>
-					<height>219</height>
-					<onup>13</onup>
-					<ondown>29</ondown>
-					<onleft>12</onleft>
-					<onright>62</onright>
-					<pagecontrol>62</pagecontrol>
-					<scrolltime>200</scrolltime>
-					<itemlayout width="675" height="44">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>675</width>
-							<height>45</height>
-							<texture border="7">list-nofocus.png</texture>
-						</control>
-						<control type="label">
-							<posx>15</posx>
-							<posy>0</posy>
-							<width>645</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<selectedcolor>green</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-					</itemlayout>
-					<focusedlayout width="675" height="44">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>675</width>
-							<height>45</height>
-							<texture border="7">list-nofocus.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>675</width>
-							<height>45</height>
-							<include>ListFocusScroll28</include>
-							<texture border="7">list-focus2.png</texture>
-							<visible>Control.HasFocus(13)</visible>
-						</control>
-						<control type="label">
-							<posx>15</posx>
-							<posy>0</posy>
-							<width>645</width>
-							<height>45</height>
-							<font>font-20</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<selectedcolor>green</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="62">
-					<posx>1312</posx>
-					<posy>712</posy>
-					<width>30</width>
-					<height>222</height>
-					<texturesliderbackground border="0,10,0,10">scrollbar-back.png</texturesliderbackground>
-					<texturesliderbar border="0,10,0,10">scrollbar-front-nofocus.png</texturesliderbar>
-					<texturesliderbarfocus border="0,10,0,10">scrollbar-front.png</texturesliderbarfocus>
-					<textureslidernib>scrollbar-nib-nofocus.png</textureslidernib>
-					<textureslidernibfocus>scrollbar-nib.png</textureslidernibfocus>
-					<onleft>13</onleft>
-					<onright>29</onright>
-					<ondown>62</ondown>
-					<onup>62</onup>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
-				</control>
+			<!-- Groups list -->			
+			<control type="list" id="13">
+				<left>150</left>
+				<top>140</top>
+				<width>526</width>
+				<height>660</height>
+				<onup>noop</onup>
+				<ondown>29</ondown>
+				<onleft>9001</onleft>
+				<onright>11</onright>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+
+				<itemlayout width="526" height="66">
+					<control type="label">
+						<width>526</width>
+						<textcolor>grey_b</textcolor>
+						<font>font-22</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="526" height="66">
+
+					<control type="label">
+						<width>526</width>
+						<textcolor>$VAR[main_color]</textcolor>
+						<font>font-22</font>
+						<label>$INFO[ListItem.Label]</label>
+						<animation effect="fade" start="100" end="75" condition="!Control.HasFocus(13)">Conditional</animation>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+			<!-- Name -->
+			<control type="label">
+				<centerleft>960</centerleft>
+				<top>120</top>
+				<width>526</width>
+				<height>36</height>
+				<align>center</align>
+				<font>font-24</font>
+				<textcolor>grey_b</textcolor>
+				<label>[B]$INFO[Control.GetLabel(21)][/B]</label>
 			</control>
 			<control type="image">
-				<posx>0</posx>
-				<posy>975</posy>
-				<width>1920</width>
-				<height>3</height>
-				<texture>separator.png</texture>
+				<centerleft>960</centerleft>
+				<top>170</top>
+				<width>526</width>
+				<height>660</height>
+				<texture colordiffuse="darkgrey">white.png</texture>
+				<visible>!Control.HasFocus(11)</visible>
 			</control>
-			<control type="group">
+			<control type="image">
+				<centerleft>960</centerleft>
+				<top>170</top>
+				<width>526</width>
+				<height>660</height>
+				<texture colordiffuse="grey_a">white.png</texture>
+				<visible>Control.HasFocus(11)</visible>
+			</control>
+			<!-- Grouped Channels list -->			
+			<control type="list" id="11">
+				<left>640</left>
+				<top>140</top>
+				<width>526</width>
+				<height>654</height>
+				<onup>noop</onup>
+				<ondown>29</ondown>
+				<onleft>13</onleft>
+				<onright>12</onright>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+
+				<itemlayout width="526" height="66">
+
+					<control type="label">
+						<width>526</width>
+						<font>font-22</font>
+						<textcolor>grey_b</textcolor>
+						<label>$INFO[ListItem.ChannelNumber,(,) ]$INFO[ListItem.ChannelName]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="526" height="66">
+
+					<control type="label">
+						<width>526</width>
+						<font>font-22</font>
+						<textcolor>$VAR[main_color]</textcolor>
+						<label>$INFO[ListItem.ChannelNumber,(,) ]$INFO[ListItem.ChannelName]</label>
+						<animation effect="fade" start="100" end="75" condition="!Control.HasFocus(11)">Conditional</animation>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+			<!-- Name -->
+			<control type="label">
+				<right>150</right>
+				<top>120</top>
+				<width>526</width>
+				<height>36</height>
+				<font>font-24</font>
+				<align>center</align>
+				<textcolor>grey_b</textcolor>
+				<label>[B]$INFO[Control.GetLabel(22)][/B]</label>
+			</control>
+			<control type="image">
+				<right>150</right>
+				<top>170</top>
+				<width>526</width>
+				<height>660</height>
+				<texture colordiffuse="darkgrey">white.png</texture>
+				<visible>!Control.HasFocus(12)</visible>
+			</control>
+			<control type="image">
+				<right>150</right>
+				<top>170</top>
+				<width>526</width>
+				<height>660</height>
+				<texture colordiffuse="grey_a">white.png</texture>
+				<visible>Control.HasFocus(12)</visible>
+			</control>
+			<!-- Channels list -->			
+			<control type="list" id="12">
+				<left>1180</left>
+				<top>140</top>
+				<width>526</width>
+				<height>654</height>
+				<onup>noop</onup>
+				<ondown>29</ondown>
+				<onleft>11</onleft>
+				<onright>9001</onright>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+
+				<itemlayout width="526" height="66">
+
+					<control type="label">
+						<width>526</width>
+						<font>font-22</font>
+						<textcolor>grey_b</textcolor>
+						<label>$INFO[ListItem.ChannelNumber,(,) ]$INFO[ListItem.ChannelName]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="526" height="66">
+
+					<control type="label">
+						<width>526</width>
+						<font>font-22</font>
+						<textcolor>$VAR[main_color]</textcolor>
+						<label>$INFO[ListItem.ChannelNumber,(,) ]$INFO[ListItem.ChannelName]</label>
+						<animation effect="fade" start="100" end="75" condition="!Control.HasFocus(12)">Conditional</animation>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+			<!-- Button grouplist -->
+			<control type="grouplist" id="9001">
+				<left>200</left>
+				<top>926</top>
+				<width>1620</width>
+				<itemgap>5</itemgap>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>13</onup>
+				<ondown>noop</ondown>
+				<defaultcontrol>29</defaultcontrol>
+				<orientation>horizontal</orientation>
+
+				<!-- OK Button -->
 				<control type="button" id="29">
-					<description>Ok button</description>
-					<posx>360</posx>
-					<posy>1005</posy>
 					<width>300</width>
-					<height>52</height>
-					<font>font-20</font>
-					<textcolor>white</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<shadowcolor>black</shadowcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<texturefocus border="7">button-nofocus.png</texturefocus>
-					<texturenofocus border="7">button-nofocus.png</texturenofocus>
+					<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
+					<include>skinbuttons</include>
 					<label>186</label>
-					<onleft>28</onleft>
-					<onright>26</onright>
-					<onup>13</onup>
-					<ondown>11</ondown>
 				</control>
-				<control type="button" id="26">
-					<posx>660</posx>
-					<posy>1005</posy>
-					<description>Add button</description>
+
+				<!-- Hide Button -->
+				<control type="button" id="25">
 					<width>300</width>
-					<height>52</height>
-					<font>font-20</font>
-					<textcolor>white</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<shadowcolor>black</shadowcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<texturefocus border="7">button-nofocus.png</texturefocus>
-					<texturenofocus border="7">button-nofocus.png</texturenofocus>
-					<label>15019</label>
-					<onleft>29</onleft>
-					<onright>27</onright>
-					<onup>13</onup>
-					<ondown>11</ondown>
+					<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
+					<include>skinbuttons</include>
+					<label>19289</label>
 				</control>
-				<control type="button" id="27">
-					<description>Rename button</description>
-					<posx>960</posx>
-					<posy>1005</posy>
-					<width>300</width>
-					<height>52</height>
-					<font>font-20</font>
-					<textcolor>white</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<shadowcolor>black</shadowcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<texturefocus border="7">button-nofocus.png</texturefocus>
-					<texturenofocus border="7">button-nofocus.png</texturenofocus>
-					<label>118</label>
-					<onleft>26</onleft>
-					<onright>28</onright>
-					<onup>13</onup>
-					<ondown>11</ondown>
-				</control>
+
+				<!-- Delete Button -->
 				<control type="button" id="28">
-					<description>Delete button</description>
-					<posx>1260</posx>
-					<posy>1005</posy>
 					<width>300</width>
-					<height>52</height>
-					<font>font-20</font>
-					<textcolor>white</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<shadowcolor>black</shadowcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<texturefocus border="7">button-nofocus.png</texturefocus>
-					<texturenofocus border="7">button-nofocus.png</texturenofocus>
-					<label>117</label>
-					<onleft>27</onleft>
-					<onright>29</onright>
-					<onup>13</onup>
-					<ondown>11</ondown>
+					<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
+					<include>skinbuttons</include>
+					<label>$LOCALIZE[117] $LOCALIZE[19141]</label>
 				</control>
-				<control type="image">
-					<posx>360</posx>
-					<posy>1005</posy>
+
+				<!-- Rename Button -->
+				<control type="button" id="27">
 					<width>300</width>
-					<height>52</height>
-					<texture border="7">button-focus.png</texture>
-					<animation effect="slide" start="0,0" end="300,0" time="200" condition="Control.HasFocus(26)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="600,0" time="200" condition="Control.HasFocus(27)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="900,0" time="200" condition="Control.HasFocus(28)">Conditional</animation>
-					<visible>Control.HasFocus(29) | Control.HasFocus(26) | Control.HasFocus(27) | Control.HasFocus(28)</visible>
+					<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
+					<include>skinbuttons</include>
+					<label>$LOCALIZE[118] $LOCALIZE[19141]</label>
 				</control>
+
+				<!-- Add Button -->
+				<control type="button" id="26">
+					<width>300</width>
+					<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
+					<include>skinbuttons</include>
+					<label>$LOCALIZE[15019] $LOCALIZE[19141]</label>
+				</control>
+
 			</control>
 		</control>
 	</controls>
