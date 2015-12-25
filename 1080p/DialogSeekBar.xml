@@ -63,7 +63,7 @@
 					<font>font-30</font>
 					<textcolor>grey_b</textcolor>
 					<shadowcolor>-</shadowcolor>
-					<label>$INFO[VideoPlayer.Time][B] / [/B]$INFO[Player.Duration] $INFO[Player.SeekStepSize,,]</label>
+					<label>$INFO[VideoPlayer.Time][B] / [/B]$INFO[Player.Duration]</label>
 				</control>
 				<control type="label">
 					<description>time label</description>
