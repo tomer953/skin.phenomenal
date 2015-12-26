@@ -27,6 +27,7 @@
 				<texturefocus>-</texturefocus>
 			</control>
 			<control type="group">
+				<visible>IntegerGreaterThan(Container.NumItems,-1) | !Container.IsUpdating</visible>
 				<animation effect="slide" end="350" tween="cubic" easing="out" time="200" condition="ControlGroup(9100).HasFocus | Control.HasFocus(9101)">Conditional</animation>
 				<control type="image">
 					<posx>-340</posx>

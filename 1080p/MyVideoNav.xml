@@ -7,6 +7,7 @@
 		<include>FS_Video</include>
 		<control type="group">
 			<control type="group">
+				
 				<include>view_conditions</include>
 				<include condition="!Skin.HasSetting(hide_fanart_topbar)">top_bar</include>
 				<include>VideoInfo</include>
@@ -28,7 +29,8 @@
 				<texturenofocus>-</texturenofocus>
 				<texturefocus>-</texturefocus>
 			</control>
-			<control type="group">
+			<control type="group"> 
+				<visible>IntegerGreaterThan(Container.NumItems,-1) | !Container.IsUpdating</visible>
 				<animation effect="slide" end="350" tween="cubic" easing="out" time="200" condition="ControlGroup(9100).HasFocus | Control.HasFocus(9101)">Conditional</animation>
 				<control type="image">
 					<posx>-340</posx>

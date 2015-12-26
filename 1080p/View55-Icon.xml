@@ -7,7 +7,7 @@
 
 		<control type="group">
 			<visible>Control.IsVisible(55)</visible>
-			<visible>IntegerGreaterThan(Container.NumItems,0) | !Container.IsUpdating</visible>
+			<visible>IntegerGreaterThan(Container.NumItems,-1) | !Container.IsUpdating</visible>
 			<include>views_animation</include>
 			<control type="group">
 				<control type="image">

@@ -6,7 +6,7 @@
 	<include name="Posters_view">
 		<control type="group">
 			<visible>Control.IsVisible(51)</visible>
-			<visible>IntegerGreaterThan(Container.NumItems,0) | !Container.IsUpdating</visible>
+			<visible>IntegerGreaterThan(Container.NumItems,-1) | !Container.IsUpdating</visible>
 			<include>views_animation</include>
 			<control type="image">
 				<description>Fanart</description>

@@ -6,30 +6,8 @@
 	</include>
 	<include name="fanart_view">
 		<control type="group">
-			<!-- Wating for content to load - showing splash screen -->
-			<visible>Container.IsUpdating</visible>
-			<control type="image">
-				<description>Splash Screen</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1920</width>
-				<height>1080</height>
-				<texture>special://skin/extras/splash.jpg</texture>
-				<animation effect="zoom" start="110" end="150" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="True">Conditional</animation>
-				<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="True">Conditional</animation>
-			</control>
-			<control type="image">
-				<description>Busy animation</description>
-				<posx>832</posx>
-				<posy>416</posy>
-				<width>128</width>
-				<height>128</height>
-				<texture fallback="special://skin/extras/busy/8.gif" colordiffuse="orange_1">$INFO[Skin.String(busy)]</texture>
-			</control>
-		</control>
-		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
-			<visible>IntegerGreaterThan(Container.NumItems,0) | !Container.IsUpdating</visible>
+			<visible>IntegerGreaterThan(Container.NumItems,-1) | !Container.IsUpdating</visible>
 			<include>views_animation</include>
 			<control type="group">
 				<control type="image">
