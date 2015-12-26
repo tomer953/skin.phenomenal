@@ -53,7 +53,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<textcolor>grey</textcolor>
-				<label></label>
+				<label>-</label>
 				<font>font-18</font>
 				<visible>false</visible>
 			</control>

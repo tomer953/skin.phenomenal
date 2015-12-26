@@ -428,7 +428,7 @@
 							<posy>17</posy>
 							<width>200</width>
 							<height>200</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture fallback="defaultmusicalbums.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -459,7 +459,7 @@
 							<posy>17</posy>
 							<width>200</width>
 							<height>200</height>
-							<aspectratio scalediffuse="false">strech</aspectratio>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture fallback="defaultmusicalbums.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -532,7 +532,7 @@
 							<posy>17</posy>
 							<width>200</width>
 							<height>200</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture fallback="defaultmusicalbums.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -563,7 +563,7 @@
 							<posy>17</posy>
 							<width>200</width>
 							<height>200</height>
-							<aspectratio scalediffuse="false">strech</aspectratio>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture fallback="defaultmusicalbums.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -638,7 +638,7 @@
 							<posy>17</posy>
 							<width>306</width>
 							<height>200</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture fallback="defaultvideo.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -669,7 +669,7 @@
 							<posy>17</posy>
 							<width>306</width>
 							<height>200</height>
-							<aspectratio scalediffuse="false">strech</aspectratio>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture fallback="defaultvideo.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -754,7 +754,7 @@
 							<posy>17</posy>
 							<width>306</width>
 							<height>200</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture fallback="defaultvideo.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -785,7 +785,7 @@
 							<posy>17</posy>
 							<width>306</width>
 							<height>200</height>
-							<aspectratio scalediffuse="false">strech</aspectratio>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture fallback="defaultvideo.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 							<bordersize>3</bordersize>

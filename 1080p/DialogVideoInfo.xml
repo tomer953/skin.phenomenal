@@ -559,7 +559,7 @@
 						<posy>17</posy>
 						<width>156</width>
 						<height>200</height>
-						<aspectratio>strech</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture>$INFO[ListItem.Icon]</texture>
 						<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 						<bordersize>3</bordersize>
@@ -590,7 +590,7 @@
 						<posy>17</posy>
 						<width>156</width>
 						<height>200</height>
-						<aspectratio scalediffuse="false">strech</aspectratio>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<texture>$INFO[ListItem.Icon]</texture>
 						<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 						<bordersize>3</bordersize>
@@ -624,7 +624,7 @@
 				<posy>138</posy>
 				<width>410</width>
 				<height>410</height>
-				<aspect>keep</aspect>
+				<aspectratio>keep</aspectratio>
 				<texture>$INFO[ListItem.Art(discart)]</texture>
 				<visible>!ListItem.IsFolder + !IsEmpty(ListItem.Art(discart)) + !stringcompare(ListItem.Label,..) + !Skin.HasSetting(Disable_CDART) + Window.IsActive(movieinformation)</visible>
 				<animation type="WindowOpen" reversible="false" condition="!IsEmpty(ListItem.Art(discart))">
@@ -637,11 +637,11 @@
 				<posy>138</posy>
 				<width>410</width>
 				<height>410</height>
-				<aspect>keep</aspect>
+				<aspectratio>keep</aspectratio>
 				<visible>!Skin.HasSetting(fanart_Disable_FAKECDART) + !IsEmpty(ListItem.Art(poster)) + Window.IsActive(movieinformation)</visible>
 				<animation effect="fade" end="0" time="0" condition="Skin.HasSetting(fanart_Disable_TVFAKECDART)">Conditional</animation>
 				<control type="image">	
-					<aspect>keep</aspect>
+					<aspectratio>keep</aspectratio>
 					<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[ListItem.Art(poster)]</texture>
 					<visible>IsEmpty(ListItem.Art(discart)) + !stringcompare(ListItem.Label,..)</visible>
 					<animation type="WindowOpen" reversible="true" condition="IsEmpty(ListItem.Art(discart))">
@@ -665,7 +665,7 @@
 				<posy>400</posy>
 				<width>430</width>
 				<height>640</height>
-				<aspectratio>strech</aspectratio>
+				<aspectratio>stretch</aspectratio>
 				<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 				<fadetime>300</fadetime>
 				<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)</visible> 

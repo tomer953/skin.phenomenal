@@ -430,7 +430,7 @@
 					<posy>390</posy>
 					<width>320</width>
 					<height>320</height>
-					<aspect>keep</aspect>
+					<aspectratio>keep</aspectratio>
 					<texture>$INFO[ListItem.Art(discart)]</texture>
 					<visible>!IsEmpty(ListItem.Art(discart)) + !Skin.HasSetting(widelist_Disable_CDART)</visible>
 					<animation type="Conditional" reversible="true" condition="!IsEmpty(ListItem.Art(discart))">
@@ -449,7 +449,7 @@
 					<animation effect="rotate" center="auto" start="0" end="-10800" time="500000" reversible="false" pulse="true" delay="400" condition="True">Conditional</animation>
 					<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(widelist_Disable_TVFAKECDART) + !Container.Content(movies)">Conditional</animation>
 					<control type="image">	
-						<aspect>keep</aspect>
+						<aspectratio>keep</aspectratio>
 						<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$VAR[widelist_fakecdart]</texture>
 					</control>
 					<control type="image">
@@ -466,7 +466,7 @@
 				<posy>555</posy>
 				<width>320</width>
 				<height>470</height>
-				<aspectratio aligny="top">strech</aspectratio>
+				<aspectratio aligny="top">stretch</aspectratio>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<bordersize>1,1,1,1</bordersize>
@@ -478,7 +478,7 @@
 				<posy>555</posy>
 				<width>320</width>
 				<height>470</height>
-				<aspectratio aligny="top">strech</aspectratio>
+				<aspectratio aligny="top">stretch</aspectratio>
 				<texture background="true">$VAR[widelist_fakecdart]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<bordersize>1,1,1,1</bordersize>

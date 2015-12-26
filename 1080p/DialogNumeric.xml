@@ -24,7 +24,6 @@
 			<textcolor>white</textcolor>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>selected</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<wrapmultiline>true</wrapmultiline>
 		</control>
@@ -47,8 +46,6 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<textcolor>darkgrey</textcolor>
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
 		</control>
 
 		<control type="group">

@@ -363,7 +363,6 @@
 							<font>font-16</font>
 							<align>center</align>
 							<textcolor>grey_b</textcolor>
-							<focusedcolor>darkgrey</focusedcolor>
 							<label>$INFO[Window(AddonBrowser).Property(Updated)]</label>
 						</control>
 
@@ -632,7 +631,7 @@
 				<control type="button">
 					<width>300</width>
 					<height>57</height>
-					<label>Phenomenal</label>
+					<label>31002</label>
 					<font>menu</font>
 					<textcolor>white</textcolor>
 					<include>button_settings</include>

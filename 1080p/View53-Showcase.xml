@@ -42,8 +42,8 @@
 
 			<!-- settings for cdart -->
 			<control type="label" id="4444">
-				<description>ShowCase Open Case Movies</description>
-				<label>Enable OpenCase mod</label>
+				<description>ShowCase Open Case Movies - Enable OpenCase mod</description>
+				<label>-</label>
 				<include>HiddenObject</include>
 				<include>ShowCaseDelayAnimation</include>
 				<animation effect="fade" end="100" time="120" delay="1600">WindowOpen</animation>
@@ -51,8 +51,8 @@
 				<visible>Control.IsVisible(53) + !Skin.HasSetting(showcasemod) + !Container.Content(genres) + [Container.Content(movies) | Container.Content(tvshows) |  Container.Content(seasons) | Container.Content(sets)] + !ListItem.IsCollection</visible>
 			</control>
 			<control type="label" id="4445">
-				<description>ShowCase Boxset Mod</description>
-				<label>Enable BoxSet mod</label>
+				<description>ShowCase Boxset Mod - Enable BoxSet mod</description>
+				<label>-</label>
 				<include>HiddenObject</include>
 				<include>ShowCaseDelayAnimation</include>
 				<animation effect="fade" end="100" time="120" delay="1600">WindowOpen</animation>
@@ -60,8 +60,8 @@
 				<visible>Control.IsVisible(53) + !Skin.HasSetting(boxsetmod) + ListItem.IsCollection + !Container.Content(genres)</visible>
 			</control>
 			<control type="label" id="4446">
-				<description>ShowCase Open Case Sets</description>
-				<label>Enable OpenCase mod</label>
+				<description>ShowCase Open Case Sets - Enable OpenCase mod</description>
+				<label>-</label>
 				<include>HiddenObject</include>
 				<include>ShowCaseDelayAnimation</include>
 				<animation effect="fade" end="100" time="120" delay="1600">WindowOpen</animation>

@@ -266,7 +266,7 @@
 				<control type="button">
 					<width>300</width>
 					<height>57</height>
-					<label>Phenomenal</label>
+					<label>31002</label>
 					<font>menu</font>
 					<textcolor>white</textcolor>
 					<include>button_settings</include>

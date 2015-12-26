@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol>20</defaultcontrol>
 	<animation effect="zoom" start="0" end="100" center="900,480" time="300">WindowOpen</animation>
-			<animation effect="zoom" start="100" end="0" center="900,480" time="300">WindowClose</animation>
+	<animation effect="zoom" start="100" end="0" center="900,480" time="300">WindowClose</animation>
 	<controls>
 		<control type="image">
 			<posx>0</posx>
@@ -35,15 +35,15 @@
 				<height>2</height>
 				<texture>white.png</texture>
 			</control>
-			
+
 			<control type="label">
-					<top>162</top>
-					<posx>80</posx>
-					<width>700</width>
-					<height>66</height>
-					<align>center</align>
-					<label>$LOCALIZE[19019]</label>
-				</control>
+				<top>162</top>
+				<posx>80</posx>
+				<width>700</width>
+				<height>66</height>
+				<align>center</align>
+				<label>$LOCALIZE[19019]</label>
+			</control>
 			<!-- Left list -->			
 			<control type="list" id="20">
 				<left>80</left>
@@ -185,7 +185,6 @@
 					<texturefocus colordiffuse="grey_a">white.png</texturefocus>
 					<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
 					<disabledcolor>grey_a</disabledcolor>
-					<height>50</height>
 					<font>font-22</font>
 					<textoffsetx>30</textoffsetx>
 					<textwidth>900</textwidth>
@@ -236,7 +235,6 @@
 					<texturefocus colordiffuse="grey_a">white.png</texturefocus>
 					<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
 					<disabledcolor>grey_a</disabledcolor>
-					<height>50</height>
 					<font>font-22</font>
 					<textoffsetx>30</textoffsetx>
 					<textwidth>900</textwidth>
@@ -266,7 +264,6 @@
 					<texturefocus colordiffuse="grey_a">white.png</texturefocus>
 					<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
 					<disabledcolor>grey_a</disabledcolor>
-					<height>50</height>
 					<font>font-22</font>
 					<textoffsetx>30</textoffsetx>
 					<textwidth>900</textwidth>
@@ -316,7 +313,7 @@
 					<width>366</width>
 					<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
 					<include>skinbuttons</include>
-					<label>$LOCALIZE[19023]\$LOCALIZE[19024]</label>
+					<label>$VAR[DialogPVRChannelManagerButton]</label>
 				</control>
 
 				<!-- Group Manager Button -->
@@ -342,13 +339,13 @@
 			</control>
 
 			<control type="image" id="10">
-					<top>600</top>
-					<left>1237</left>
-					<width>256</width>
-					<height>256</height>
-					<texture>$INFO[ListItem.Icon]</texture>
-					<aspectratio>keep</aspectratio>
-				</control>
+				<top>600</top>
+				<left>1237</left>
+				<width>256</width>
+				<height>256</height>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
 		</control>
 
 

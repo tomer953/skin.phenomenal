@@ -55,7 +55,7 @@
 						<posx>0</posx>
 						<width>330</width>
 						<height>190</height>
-						<aspectratio>strech</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture diffuse="posterdiffuse.png" background="true" colordiffuse="grey_50">white.png</texture>
 					</control>
 					<control type="image">
@@ -63,7 +63,7 @@
 						<posy>5</posy>
 						<width>320</width>
 						<height>180</height>
-						<aspectratio>strech</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 						<visible>!StringCompare(Listitem.Label,..)</visible>
 					</control>
@@ -72,7 +72,7 @@
 						<posy>5</posy>
 						<width>320</width>
 						<height>180</height>
-						<aspectratio>strech</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
 						<visible>StringCompare(Listitem.Label,..)</visible>
 					</control>
@@ -81,7 +81,7 @@
 						<posy>205</posy>
 						<width>320</width>
 						<height>180</height>
-						<aspectratio>strech</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
 						<animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
 					</control> 
@@ -117,7 +117,7 @@
 						<posx>0</posx>
 						<width>330</width>
 						<height>190</height>
-						<aspectratio>strech</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture diffuse="posterdiffuse.png" background="true" colordiffuse="grey_50">white.png</texture>
 					</control>
 					<control type="image">
@@ -125,7 +125,7 @@
 						<posy>5</posy>
 						<width>320</width>
 						<height>180</height>
-						<aspectratio>strech</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 						<visible>!StringCompare(Listitem.Label,..)</visible>
 					</control>
@@ -134,7 +134,7 @@
 						<posy>5</posy>
 						<width>320</width>
 						<height>180</height>
-						<aspectratio>strech</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
 						<visible>StringCompare(Listitem.Label,..)</visible>
 					</control>
@@ -143,7 +143,7 @@
 						<posy>205</posy>
 						<width>320</width>
 						<height>180</height>
-						<aspectratio>strech</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
 						<animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
 					</control> 
@@ -181,7 +181,7 @@
 				<posy>800</posy>
 				<width>330</width>
 				<height>190</height>
-				<aspectratio>strech</aspectratio>
+				<aspectratio>stretch</aspectratio>
 				<texture diffuse="posterdiffuse.png" background="true" colordiffuse="$VAR[main_color]">views/poster_stroke.png</texture>
 			</control>
 

@@ -166,7 +166,7 @@
 					<description>Concerts</description>
 					<width>213</width>
 					<height>52</height>
-					<label>Concerts</label>
+					<label>31146</label>
 					<ondown>9508</ondown>
 					<onclick>SetFocus(9508)</onclick>
 					<visible>Container.Content(artists)</visible>
@@ -678,7 +678,7 @@
 							<posy>17</posy>
 							<width>200</width>
 							<height>200</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture fallback="defaultmusicalbums.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -709,7 +709,7 @@
 							<posy>17</posy>
 							<width>200</width>
 							<height>200</height>
-							<aspectratio scalediffuse="false">strech</aspectratio>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture fallback="defaultmusicalbums.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -782,7 +782,7 @@
 							<posy>17</posy>
 							<width>200</width>
 							<height>200</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture fallback="defaultmusicalbums.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -813,7 +813,7 @@
 							<posy>17</posy>
 							<width>200</width>
 							<height>200</height>
-							<aspectratio scalediffuse="false">strech</aspectratio>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture fallback="defaultmusicalbums.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -888,7 +888,7 @@
 							<posy>17</posy>
 							<width>306</width>
 							<height>200</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture fallback="defaultvideo.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -919,7 +919,7 @@
 							<posy>17</posy>
 							<width>306</width>
 							<height>200</height>
-							<aspectratio scalediffuse="false">strech</aspectratio>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture fallback="defaultvideo.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -1004,7 +1004,7 @@
 							<posy>17</posy>
 							<width>306</width>
 							<height>200</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture fallback="defaultvideo.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -1035,7 +1035,7 @@
 							<posy>17</posy>
 							<width>306</width>
 							<height>200</height>
-							<aspectratio scalediffuse="false">strech</aspectratio>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<texture fallback="defaultvideo.png">$INFO[ListItem.Icon]</texture>
 							<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 							<bordersize>3</bordersize>
@@ -1126,7 +1126,7 @@
 				<posy>30</posy>
 				<width>620</width>
 				<height>620</height>
-				<aspectratio scalediffuse="false">strech</aspectratio>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
 				<texture>$INFO[Container(9508).ListItem.Property(GoogleMap)]</texture>
 				<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 				<bordersize>3</bordersize>

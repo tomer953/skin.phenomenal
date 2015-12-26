@@ -196,7 +196,6 @@
 					<height>64</height>
 					<posx>874</posx>
 					<posy>810</posy>
-					<font>-</font>
 					<texture colordiffuse="red">osd/record.png</texture>
 					<visible>Player.IsRecording</visible>
 				</control>
@@ -249,8 +248,6 @@
 						<width>64</width>
 						<height>64</height>
 						<posx>-64</posx>
-						<label>indicator</label>
-						<font>-</font>
 						<texture colordiffuse="$VAR[main_color]">osd/subs2.png</texture>
 						<visible>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled + IsEmpty(VideoPlayer.SubtitlesLanguage)</visible>
 					</control>
@@ -259,8 +256,6 @@
 						<width>64</width>
 						<height>64</height>
 						<posx>-64</posx>
-						<label>off</label>
-						<font>-</font>
 						<texture colordiffuse="grey_a">osd/subs2.png</texture>
 						<visible>!VideoPlayer.HasSubtitles | !VideoPlayer.SubtitlesEnabled</visible>
 					</control>

@@ -77,8 +77,7 @@
 				<posy>103</posy>
 				<width>300</width>
 				<height>505</height>
-				<itemgap>-2</itemgap>
-				
+				<itemgap>-2</itemgap>				
 				<onup>9</onup>
 				<ondown>9</ondown>
 				<onleft>2</onleft>
@@ -101,15 +100,13 @@
 			<control type="button" id="13">
 				<description>default Section Button</description>
 				<width>300</width>
-				<align>center</align>
-				
+				<align>center</align>				
 				<texturenofocus>-</texturenofocus>
 			</control>
 			<control type="radiobutton" id="4">
 				<description>default RadioButton</description>
 				<height>45</height>
 				<font>font-22</font>
-
 				<radioposy>3</radioposy>
 				<textoffsetx>75</textoffsetx>
 				<align>right</align>
@@ -140,7 +137,7 @@
 			</control>
 			<control type="label" id="7">
 				<description>separator label</description>
-				<label />
+				<label>-</label>
 				<height>48</height>
 				<font>font-20</font>
 				<align>center</align>

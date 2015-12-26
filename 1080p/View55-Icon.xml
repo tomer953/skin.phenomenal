@@ -62,7 +62,7 @@
 							<posx>0</posx>
 							<width>240</width>
 							<height>355</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture diffuse="posterdiffuse.png" background="true" colordiffuse="grey_50">white.png</texture>
 						</control>
 						<control type="image">
@@ -70,7 +70,7 @@
 							<posy>10</posy>
 							<width>220</width>
 							<height>335</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!StringCompare(Listitem.Label,..)</visible>
 						</control>
@@ -79,7 +79,7 @@
 							<posy>10</posy>
 							<width>220</width>
 							<height>335</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
 							<visible>StringCompare(Listitem.Label,..)</visible>
 						</control>
@@ -118,7 +118,7 @@
 							<posx>0</posx>
 							<width>240</width>
 							<height>355</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture diffuse="posterdiffuse.png" background="true" colordiffuse="grey_50">white.png</texture>
 						</control>
 						<control type="image">
@@ -126,7 +126,7 @@
 							<posy>10</posy>
 							<width>220</width>
 							<height>335</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!StringCompare(Listitem.Label,..)</visible>
 						</control>
@@ -135,7 +135,7 @@
 							<posy>10</posy>
 							<width>220</width>
 							<height>335</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
 							<visible>StringCompare(Listitem.Label,..)</visible>
 						</control>
@@ -170,7 +170,7 @@
 							<posx>0</posx>
 							<width>240</width>
 							<height>355</height>
-							<aspectratio>strech</aspectratio>
+							<aspectratio>stretch</aspectratio>
 							<texture diffuse="posterdiffuse.png" background="true" colordiffuse="$VAR[main_color]">views/poster_stroke.png</texture>
 						</control>
 					</focusedlayout>

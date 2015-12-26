@@ -54,7 +54,7 @@
 			<width>500</width>
 			<height>60</height>
 			<font>font-30</font>
-			<label>CODE:</label>
+			<label>-</label>
 			<align>center</align>
 			<onclick>Skin.SetString(temp2)</onclick>
 			<onclick>Skin.SetString(mypassword,$INFO[Skin.String(temp2)])</onclick>
