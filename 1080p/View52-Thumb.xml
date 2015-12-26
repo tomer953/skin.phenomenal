@@ -6,7 +6,8 @@
 	</include>
 	<include name="Thumbs_View">
 		<control type="group">
-			<visible>Control.IsVisible(52) + IntegerGreaterThan(Container.NumItems,0)</visible>
+			<visible>Control.IsVisible(52)</visible>
+			<visible>IntegerGreaterThan(Container.NumItems,0) | !Container.IsUpdating</visible>
 			<include>views_animation</include>
 			<control type="image">
 				<description>Fanart</description>
@@ -183,6 +184,7 @@
 				<height>190</height>
 				<aspectratio>stretch</aspectratio>
 				<texture diffuse="posterdiffuse.png" background="true" colordiffuse="$VAR[main_color]">views/poster_stroke.png</texture>
+				<visible>!Container.IsUpdating + !IsEmpty(Control.GetLabel(52))</visible>
 			</control>
 
 

@@ -1910,9 +1910,9 @@
 	</include>
 	<include name="scroll_letter_fanart">
 		<control type="group">
-			<visible>Container.Scrolling + !Control.HasFocus(555)</visible>
-			<animation effect="fade" time="300">Visible</animation>
-			<animation effect="fade" time="300" delay="200">Hidden</animation>
+			<visible>Container.Scrolling + IntegerGreaterThan(Container.NumItems,0) + !Control.HasFocus(555)</visible>
+			<animation effect="fade" time="300" condition="IntegerGreaterThan(Container.NumItems,0)">Visible</animation>
+			<animation effect="fade" time="300" delay="200" condition="IntegerGreaterThan(Container.NumItems,0)">Hidden</animation>
 			<posx>1288</posx>
 			<posy>80</posy>
 			<width>100</width>
@@ -1941,7 +1941,7 @@
 	</include>
 	<include name="scroll_letter">
 		<control type="group">
-			<visible>Container.Scrolling</visible>
+			<visible>Container.Scrolling + IntegerGreaterThan(Container.NumItems,0)</visible>
 			<animation effect="fade" time="300">Visible</animation>
 			<animation effect="fade" time="300" delay="200">Hidden</animation>
 			<posx>0</posx>

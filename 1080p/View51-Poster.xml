@@ -5,7 +5,8 @@
 	</include>
 	<include name="Posters_view">
 		<control type="group">
-			<visible>Control.IsVisible(51) + IntegerGreaterThan(Container.NumItems,0)</visible>
+			<visible>Control.IsVisible(51)</visible>
+			<visible>IntegerGreaterThan(Container.NumItems,0) | !Container.IsUpdating</visible>
 			<include>views_animation</include>
 			<control type="image">
 				<description>Fanart</description>
@@ -184,6 +185,7 @@
 				<height>300</height>
 				<aspectratio>stretch</aspectratio>
 				<texture diffuse="posterdiffuse.png" background="true" colordiffuse="$VAR[main_color]">views/poster_stroke.png</texture>
+				<visible>!Container.IsUpdating + !IsEmpty(Control.GetLabel(51))</visible>
 			</control>
 
 

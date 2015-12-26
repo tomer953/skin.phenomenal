@@ -5,7 +5,8 @@
 	</include>
 	<include name="ShowCase_View">
 		<control type="group">
-			<visible>Control.IsVisible(53) + IntegerGreaterThan(Container.NumItems,0)</visible>
+			<visible>Control.IsVisible(53)</visible>
+			<visible>IntegerGreaterThan(Container.NumItems,0) | !Container.IsUpdating</visible>
 			<include>views_animation</include>
 			<control type="image">
 				<description>Fanart</description>
@@ -43,7 +44,7 @@
 			<!-- settings for cdart -->
 			<control type="label" id="4444">
 				<description>ShowCase Open Case Movies - Enable OpenCase mod</description>
-				<label>-</label>
+				<label>1</label>
 				<include>HiddenObject</include>
 				<include>ShowCaseDelayAnimation</include>
 				<animation effect="fade" end="100" time="120" delay="1600">WindowOpen</animation>
@@ -52,7 +53,7 @@
 			</control>
 			<control type="label" id="4445">
 				<description>ShowCase Boxset Mod - Enable BoxSet mod</description>
-				<label>-</label>
+				<label>1</label>
 				<include>HiddenObject</include>
 				<include>ShowCaseDelayAnimation</include>
 				<animation effect="fade" end="100" time="120" delay="1600">WindowOpen</animation>
@@ -61,7 +62,7 @@
 			</control>
 			<control type="label" id="4446">
 				<description>ShowCase Open Case Sets - Enable OpenCase mod</description>
-				<label>-</label>
+				<label>1</label>
 				<include>HiddenObject</include>
 				<include>ShowCaseDelayAnimation</include>
 				<animation effect="fade" end="100" time="120" delay="1600">WindowOpen</animation>
@@ -73,7 +74,7 @@
 			<control type="group">
 				<posx>90</posx>
 				<posy>130</posy>
-				<visible>!StringCompare(ListItem.label,..) + !ListItem.IsCollection + !Skin.HasSetting(Showcase_HidePanel)</visible>
+				<visible>!StringCompare(ListItem.label,..) + !ListItem.IsCollection + !Skin.HasSetting(Showcase_HidePanel) + IntegerGreaterThan(Container.NumItems,0)</visible>
 				<visible>![Container.OnNext | Container.OnPrevious]</visible>
 				<animation effect="slide" start="0,350" end="0,0" time="300" delay="600">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,350" time="300" delay="0" condition="Skin.HasSetting(Showcase_HidePanel)">Hidden</animation>
@@ -260,8 +261,6 @@
 					<texture background="true" fallback="special://skin/backgrounds/videos.jpg">$INFO[ListItem.Art(fanart)]</texture>
 					<fadetime>300</fadetime>
 					<animation effect="fade" start="100" end="90" time="300" condition="true">Conditional</animation>
-					<visible>!Window.IsActive(mypics.xml)</visible>
-					<visible>True</visible>
 				</control>
 
 				<control type="image">

@@ -7,7 +7,7 @@
 	<include name="fanart_view">
 		<control type="group">
 			<!-- Wating for content to load - showing splash screen -->
-			<visible>!IntegerGreaterThan(Container.NumItems,0) + Window.Previous(home)</visible>
+			<visible>Container.IsUpdating</visible>
 			<control type="image">
 				<description>Splash Screen</description>
 				<posx>0</posx>
@@ -28,7 +28,8 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>Control.IsVisible(50) + IntegerGreaterThan(Container.NumItems,0)</visible>
+			<visible>Control.IsVisible(50)</visible>
+			<visible>IntegerGreaterThan(Container.NumItems,0) | !Container.IsUpdating</visible>
 			<include>views_animation</include>
 			<control type="group">
 				<control type="image">
