@@ -641,7 +641,6 @@
 				<visible>!Skin.HasSetting(fanart_Disable_FAKECDART) + !IsEmpty(ListItem.Art(poster)) + Window.IsActive(movieinformation)</visible>
 				<animation effect="fade" end="0" time="0" condition="Skin.HasSetting(fanart_Disable_TVFAKECDART)">Conditional</animation>
 				<control type="image">	
-					<aspectratio>keep</aspectratio>
 					<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[ListItem.Art(poster)]</texture>
 					<visible>IsEmpty(ListItem.Art(discart)) + !stringcompare(ListItem.Label,..)</visible>
 					<animation type="WindowOpen" reversible="true" condition="IsEmpty(ListItem.Art(discart))">

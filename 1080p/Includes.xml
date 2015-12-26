@@ -1317,7 +1317,6 @@
 				<posy>648</posy>
 				<width>213</width>
 				<height>213</height>
-				<aspectratio>keep</aspectratio>
 				<texture>$INFO[ListItem.Art(discart)]</texture>
 				<visible>!IsEmpty(ListItem.Art(discart)) + !Skin.HasSetting(fanart_Disable_CDART)</visible>
 				<animation type="Conditional" reversible="true" condition="!IsEmpty(ListItem.Art(discart))">
@@ -1340,7 +1339,6 @@
 					 <effect type="slide" start="0,200" end="0,0" time="400"/> 
 				</animation> -->
 				<control type="image">	
-					<aspectratio>keep</aspectratio>
 					<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[ListItem.Art(poster)]</texture>
 				</control>
 				<control type="image">
@@ -1357,7 +1355,6 @@
 				<posy>790</posy>
 				<width>263</width>
 				<height>263</height>
-				<aspectratio>keep</aspectratio>
 				<texture>$INFO[ListItem.Art(discart)]</texture>
 				<visible>!IsEmpty(ListItem.Art(discart)) + !Skin.HasSetting(fanart_Disable_CDART)</visible>
 				<animation type="Conditional" reversible="true" condition="!IsEmpty(ListItem.Art(discart))">
@@ -1375,9 +1372,7 @@
 				<animation effect="slide" start="0,0" end="-145,0" time="400" condition="True">Conditional</animation>
 				<animation effect="rotate" center="auto" start="0" end="-10800" time="500000" reversible="false" pulse="true" delay="400" condition="True">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(fanart_Disable_TVFAKECDART) + !Container.Content(movies)">Conditional</animation>
-
 				<control type="image">
-					<aspectratio>keep</aspectratio>
 					<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[ListItem.Art(poster)]</texture>
 				</control>
 				<control type="image">
