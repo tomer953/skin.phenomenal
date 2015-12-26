@@ -17,8 +17,8 @@ msgid "Settings Level"
 msgstr "Настройки уровня"
 
 msgctxt "#31002"
-msgid "Video Extras"
-msgstr "Дополнительно для видео"
+msgid "Phenomenal"
+msgstr "Phenomenal"
 
 #Skin.Shortcuts
 

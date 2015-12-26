@@ -17,7 +17,7 @@ msgid "Settings Level"
 msgstr ""
 
 msgctxt "#31002"
-msgid "Video Extras"
+msgid "Phenomenal"
 msgstr ""
 
 #Skin.Shortcuts
@@ -472,6 +472,10 @@ msgstr ""
 
 msgctxt "#31128"
 msgid "Hey my name is Tomer and I'm the owner of the skin. The skin is totally free to use,[CR] but if you liked it and want to thank me, please concider to make a donation.[CR] please visit my website: phenomenal-skin.com"
+msgstr ""
+
+msgctxt "#31129"
+msgid "Mouse Pointer Color"
 msgstr ""
 
 msgctxt "#31134"
