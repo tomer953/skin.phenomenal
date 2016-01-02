@@ -56,13 +56,12 @@
 			<visible>Player.HasAudio + IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 		</control>
 		<control type="group">
-			<!-- <include>hex_fanart</include> -->
 			<include condition="Skin.HasSetting(Home_Horizontal)">Home_Horizontal</include>
 			<include condition="!Skin.HasSetting(Home_Horizontal)">Home_Vertical</include>
 			<include>top_bar_home</include>
 			<include condition="system.getbool(lookandfeel.enablerssfeeds)">RSS</include>
 		</control>
-		<!-- 		<control type="list" id="30">			
+ 		<control type="list" id="30">			
 			<description>hidden container for playlist background</description>
 			<posx>-20</posx>
 			<posy>-20</posy>
@@ -81,183 +80,6 @@
 			<focusedlayout height="1" width="1">
 			</focusedlayout>
 			<content>$INFO[Container(9000).ListItem.Property(backgroundPlaylist)]</content>
-		</control> -->
-	</include>
-
-	<include name="hex_fanart">
-
-		<control type="list" id="31">
-			<include>hex_listcontent</include>
-			<description>hidden container for playlist background</description>
-			<scrolltime tween="sine" easing="inout">10000</scrolltime>
 		</control>
-		<control type="list" id="32">
-			<include>hex_listcontent</include>
-			<description>hidden container for playlist background</description>
-			<scrolltime tween="sine" easing="inout">13000</scrolltime>	
-		</control>
-		<control type="list" id="33">
-			<include>hex_listcontent</include>
-			<description>hidden container for playlist background</description>
-			<scrolltime tween="sine" easing="inout">16000</scrolltime>	
-		</control>
-		<control type="list" id="34">
-			<include>hex_listcontent</include>
-			<description>hidden container for playlist background</description>
-			<scrolltime tween="sine" easing="inout">19000</scrolltime>	
-		</control>
-		<control type="list" id="35">
-			<include>hex_listcontent</include>
-			<description>hidden container for playlist background</description>
-			<scrolltime tween="sine" easing="inout">21000</scrolltime>	
-		</control>
-		<control type="list" id="36">
-			<include>hex_listcontent</include>
-			<description>hidden container for playlist background</description>
-			<scrolltime tween="sine" easing="inout">24000</scrolltime>	
-		</control>
-
-		<control type="multiimage">
-			<!-- 1\1 -->
-			<posx>-13</posx>
-			<posy>-116</posy>
-			<include>hex_size</include>	
-			<imagepath diffuse="hex.png">$INFO[Container(31).ListItemNoWrap(1).Art(fanart)]</imagepath>
-			<include>hex_animation</include>
-		</control>
-		<control type="multiimage">
-			<!-- 1\2 -->
-			<posx>495</posx>
-			<posy>-116</posy>
-			<include>hex_size</include>		
-			<imagepath diffuse="hex.png">$INFO[Container(32).ListItemNoWrap(5).Art(fanart)]</imagepath>
-			<include>hex_animation2</include>
-		</control>
-		<control type="multiimage">
-			<!-- 1\3 -->
-			<posx>999</posx>
-			<posy>-116</posy>
-			<include>hex_size</include>	
-			<imagepath diffuse="hex.png">$INFO[Container(33).ListItemNoWrap(10).Art(fanart)]</imagepath>
-			<include>hex_animation3</include>
-		</control>
-		<control type="multiimage">
-			<!-- 1\4 -->
-			<posx>1503</posx>
-			<posy>-116</posy>
-			<include>hex_size</include>	
-			<imagepath diffuse="hex.png">$INFO[Container(34).ListItemNoWrap(15).Art(fanart)]</imagepath>
-			<include>hex_animation</include>
-		</control>
-
-		<control type="multiimage">
-			<!-- 2\1 -->		
-			<posx>-265</posx>
-			<posy>318</posy>
-			<include>hex_size</include>		
-			<imagepath diffuse="hex.png">$INFO[Container(35).ListItemNoWrap(20).Art(fanart)]</imagepath>
-			<include>hex_animation2</include>
-		</control>
-		<control type="multiimage">
-			<!-- 2\2 -->		
-			<posx>242</posx>
-			<posy>318</posy>
-			<include>hex_size</include>		
-			<imagepath diffuse="hex.png">$INFO[Container(36).ListItemNoWrap(25).Art(fanart)]</imagepath>
-			<include>hex_animation3</include>
-		</control>
-		<control type="multiimage">
-			<!-- 2\3 -->		
-			<posx>1250</posx>
-			<posy>318</posy>
-			<include>hex_size</include>		
-			<imagepath diffuse="hex.png">$INFO[Container(31).ListItemNoWrap(30).Art(fanart)]</imagepath>
-			<include>hex_animation</include>
-		</control>
-		<control type="multiimage">
-			<!-- 2\4 -->		
-			<posx>1754</posx>
-			<posy>318</posy>
-			<include>hex_size</include>		
-			<imagepath diffuse="hex.png">$INFO[Container(32).ListItemNoWrap(35).Art(fanart)]</imagepath>
-			<include>hex_animation2</include>
-		</control>
-
-		<control type="multiimage">
-			<!-- 3\1 -->
-			<posx>-13</posx>
-			<posy>749</posy>
-			<include>hex_size</include>	
-			<imagepath diffuse="hex.png">$INFO[Container(33).ListItemNoWrap(40).Art(fanart)]</imagepath>
-			<include>hex_animation3</include>
-		</control>
-
-		<control type="multiimage">
-			<!-- 3\2 -->
-			<posx>495</posx>
-			<posy>749</posy>
-			<include>hex_size</include>	
-			<imagepath diffuse="hex.png">$INFO[Container(34).ListItemNoWrap(45).Art(fanart)]</imagepath>
-			<include>hex_animation</include>
-		</control>
-		<control type="multiimage">
-			<!-- 3\3 -->
-			<posx>999</posx>
-			<posy>749</posy>
-			<include>hex_size</include>	
-			<imagepath diffuse="hex.png">$INFO[Container(35).ListItemNoWrap(50).Art(fanart)]</imagepath>
-			<include>hex_animation2</include>
-		</control>
-		<control type="multiimage">
-			<!-- 3\4 -->
-			<posx>1503</posx>
-			<posy>749</posy>
-			<include>hex_size</include>	
-			<imagepath diffuse="hex.png">$INFO[Container(36).ListItemNoWrap(12).Art(fanart)]</imagepath>
-			<include>hex_animation3</include>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1920</width>
-			<height>1080</height>
-			<texture>test1.png</texture>
-		</control>
-	</include>
-	<include name="hex_size">
-		<width>424</width>
-		<height>473</height>
-		<timeperimage>5000</timeperimage>
-		<fadetime>1000</fadetime>
-		<pauseatend>1000</pauseatend>
-		<randomize>true</randomize>
-		<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
-	</include>
-	<!-- 	<include name="hex_animation">
-		<animation effect="zoom" start="110" end="130" center="auto" time="8000" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
-	</include>
-	<include name="hex_animation2">
-		<animation effect="zoom" start="110" end="130" center="auto" time="6000" tween="sine" easing="inout" pulse="true" condition="true" delay="0">Conditional</animation>
-	</include>
-	<include name="hex_animation3">
-		<animation effect="zoom" start="110" end="130" center="auto" time="4000" tween="sine" easing="inout" pulse="true" condition="true" delay="0">Conditional</animation>
-	</include> -->
-	<include name="hex_listcontent">
-		<posx>-20</posx>
-		<posy>-20</posy>
-		<width>1</width>
-		<height>1</height>
-		<visible>true</visible>
-		<onup>50</onup>
-		<ondown>50</ondown>
-		<onleft>50</onleft>
-		<onright>50</onright>
-		<autoscroll>true</autoscroll>
-		<fadetime>1000</fadetime>
-		<itemlayout width="1" height="1">
-		</itemlayout>
-		<focusedlayout height="1" width="1">
-		</focusedlayout>
-		<content target="video">videodb://movies/titles</content>
 	</include>
 </includes>
