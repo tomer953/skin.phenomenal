@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="953">
+<window>
 	<!-- script-skinshortcuts -->
 	<defaultcontrol always="true">211</defaultcontrol>
 	<controls>
-
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>
@@ -28,7 +27,7 @@
 			<width>1920</width>
 			<height>1080</height>
 			<texture>black.png</texture>
-			<animation effect="fade" start="0" end="60" time="0" condition="True">Conditional</animation>
+			<animation effect="fade" start="0" end="60" time="0" condition="true">Conditional</animation>
 		</control>
 		<control type="group">
 			<posx>390</posx>
@@ -111,22 +110,6 @@
 						<width>30</width>
 						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="grey" background="true">$INFO[ListItem.Thumb]</texture>
 					</control>
-				<!-- 	<control type="image">
-						<posx>285</posx>
-						<posy>15</posy>
-						<height>30</height>
-						<width>30</width>
-						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="white" background="true">$INFO[ListItem.Thumb]</texture>
-						<visible>StringCompare(ListItem.Property(Icon_Overlay2),$LOCALIZE[31141])</visible>
-					</control>
-					<control type="image">
-						<posx>285</posx>
-						<posy>15</posy>
-						<height>30</height>
-						<width>30</width>
-						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Thumb]</texture>
-						<visible>StringCompare(ListItem.Property(Icon_Overlay2),$LOCALIZE[31142])</visible>
-					</control> -->
 				</itemlayout>
 				<focusedlayout width="560" height="60">
 					<control type="image">
@@ -188,11 +171,6 @@
 				<animation effect="slide" end="0,60" condition="IntegerGreaterThan(Container(211).Position,8)">Conditional</animation>
 				<animation effect="slide" end="0,60" condition="IntegerGreaterThan(Container(211).Position,9)">Conditional</animation>
 				<animation effect="slide" end="0,60" condition="IntegerGreaterThan(Container(211).Position,10)">Conditional</animation>
-				<!--<animation effect="slide" end="0,60" condition="IntegerGreaterThan(Container(211).Position,11)">Conditional</animation>
-				<animation effect="slide" end="0,60" condition="IntegerGreaterThan(Container(211).Position,12)">Conditional</animation>
-				<animation effect="slide" end="0,60" condition="IntegerGreaterThan(Container(211).Position,13)">Conditional</animation>
-				<animation effect="slide" end="0,60" condition="IntegerGreaterThan(Container(211).Position,14)">Conditional</animation> -->
-
 
 				<control type="button" id="303">
 				<posx>5</posx>
@@ -252,6 +230,7 @@
 				<usecontrolcoords>true</usecontrolcoords>
 				<scrolltime tween="sine" easing="out">240</scrolltime>
 				<animation effect="fade" end="90" time="0" condition="true">Conditional</animation>
+			
 				<!-- Change shortcut -->
 				<control type="button" id="401">
 					<include>skinbuttons</include>
@@ -268,24 +247,14 @@
 					<include>skinbuttons</include>
 					<label>$LOCALIZE[31005]</label>
 				</control>
-				<!-- Change label Color .ListItem.Property(TextColor) -->
-				<control type="button" id="997">
+					<!-- Change label Color .ListItem.Property(TextColor) -->
+				<control type="button" id="997">				
 					<include>skinbuttons</include>
-<!-- 					<onclick>Skin.SetString(color_picker,custom_color)</onclick>
-					<onclick>Skin.SetString(custom_color,$INFO[Container(211).ListItem.Property(TextColor)])</onclick>
-					<onclick>ActivateWindow(1130)</onclick>
-					<onclick>SetProperty(customProperty,TextColor)</onclick>
-					<onclick>SetProperty(customValue,$INFO[Skin.String(custom_color)])</onclick>
-					<onclick>SendClick(404)</onclick> -->	
-					<onclick>RunScript(script.skin.helper.service,action=colorpicker,shortcutproperty=TextColor)</onclick>
 					<label>$LOCALIZE[31006]</label>
+					<onclick>RunScript(script.skin.helper.service,action=colorpicker,shortcutproperty=TextColor)</onclick>
 					<visible>Skin.HasSetting(shortcuts_advanced)</visible>
 				</control>
-				<!-- Custom Property: TextColor Icon_Overlay Icon_Overlay2 -->
-				<control type="button" id="404">
-					<include>skinbuttons</include>
-					<visible>False</visible>
-				</control>
+				<control type="button" id="404"><visible>false</visible></control>
 				<!-- Change background .ListItem.Property(Background) -->
 				<control type="button" id="310">
 					<include>skinbuttons</include>
@@ -297,28 +266,6 @@
 					<width>420</width>
 					<include>skinbuttons</include>
 					<label>$LOCALIZE[31008]</label>
-				</control>
-				<!-- Change Icon Focus Overlay .ListItem.Property(Icon_Overlay) -->
-				<control type="button" id="995">
-					<description>Overlay Icon focus</description>					
-					<posx>600</posx>
-					<width>420</width>
-					<include>skinbuttons</include>
-					<label>31143</label>			
-					<include>radio_button_settings</include>
-					<visible>Skin.HasSetting(shortcuts_advanced)</visible>
-					<visible>False</visible>
-				</control>
-				<!-- Change Icon NO-Focus Overlay .ListItem.Property(Icon_Overlay2) -->
-				<control type="button" id="994">
-					<description>Overlay Icon no focus</description>	
-					<posx>600</posx>
-					<width>420</width>
-					<include>skinbuttons</include>
-					<label>31144</label>
-					<include>radio_button_settings</include>
-					<visible>Skin.HasSetting(shortcuts_advanced)</visible>
-					<visible>False</visible>
 				</control>
 				<!-- Password Protection -->
 				<control type="button" id="993">
@@ -362,8 +309,6 @@
 				<include name="shortcuts_label3"><param name="label" value="$INFO[Container(211).ListItem.Property(TextColor)]"/><param name="color" value="$INFO[Container(211).ListItem.Property(TextColor)]"/></include>
 				<include name="shortcuts_label2"><param name="label" value="$VAR[shortcuts_bgpath]"/></include>
 				<include name="shortcuts_label2"><param name="label" value=""/><param name="width" value="490"/></include>
-			<!-- 	<include name="shortcuts_label3"><param name="label" value="$INFO[Container(211).ListItem.Property(Icon_Overlay)]"/><param name="width" value="490"/></include>
-				<include name="shortcuts_label3"><param name="label" value="$INFO[Container(211).ListItem.Property(Icon_Overlay2)]"/><param name="width" value="490"/></include> -->	
 				<include name="shortcuts_label4"><param name="label" value="$VAR[passcode]"/><param name="hide" value="yes"/></include>		
 				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(widgetName)]"/></include>
 			</control>
@@ -375,55 +320,7 @@
 				<texture fallback="special://skin/extras/icons/default.png" background="true">$INFO[Container(211).ListItem.Thumb]</texture>
 				<animation effect="slide" end="0,-60" time="100" condition="!Skin.HasSetting(shortcuts_advanced)">Conditional</animation>
 			</control>
-			<!-- <control type="image">
-				<posx>550</posx>
-				<posy>500</posy>
-				<height>45</height>
-				<width>45</width>
-				<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[dialog_icon_color]" background="true">$INFO[Container(211).ListItem.Thumb]</texture>
-				<visible>Skin.HasSetting(shortcuts_advanced)</visible>
-			</control> 
-			<control type="image">
-				<posx>550</posx>
-				<posy>560</posy>
-				<height>45</height>
-				<width>45</width>
-				<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[dialog_icon_color_nf]" background="true">$INFO[Container(211).ListItem.Thumb]</texture>
-				<visible>Skin.HasSetting(shortcuts_advanced)</visible>
-			</control>-->
-			<control type="grouplist">
-				<posx>20</posx>
-				<top>130</top>
-				<width>980</width>
-				<itemgap>-2</itemgap>
-				<onleft>noop</onleft>
-				<onright>noop</onright>
-				<onup>noop</onup>
-				<ondown>noop</ondown>
-				<orientation>vertical</orientation>
-				<visible>False</visible>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-				<include name="stroke"></include>
-			</control>
-			<control type="image">
-				<posx>600</posx>
-				<posy>180</posy>
-				<width>2</width>
-				<height>600</height>
-				<texture>white.png</texture>
-				<visible>False</visible>
-			</control>
+
 			<!-- Button grouplist -->
 			<control type="grouplist" id="9001">
 				<posx>20</posx>
