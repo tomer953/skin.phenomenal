@@ -662,7 +662,7 @@
 				<align>right</align>
 				<width>860</width>
 				<include>button_settings_2</include>
-				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=main_color)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=main_color,header=main_color)</onclick>
 			</control>
 			<control type="button" id="370">
 				<description>Mouse-Color</description>
@@ -670,7 +670,7 @@
 				<align>right</align>
 				<width>860</width>
 				<include>button_settings_2</include>
-				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=mouse_color)</onclick>
+				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=mouse_color,header=mouse_color)</onclick>
 			</control>
 			<control type="label" id="302">
 				<description>Top Bar</description>
