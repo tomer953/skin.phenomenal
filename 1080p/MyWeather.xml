@@ -1,278 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">6000</defaultcontrol>
+	<defaultcontrol always="true">100</defaultcontrol>
+	<menucontrol>9100</menucontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
-		<include condition="Skin.HasSetting(VideoBackgrounds)">CommonVideoPlayingBackground</include>
+		<!-- Hidden button -->
+		<control type="button" id="100">
+			<onclick condition="!Skin.HasSetting(KioskMode)">SetFocus(9100)</onclick>
+			<onup condition="!Skin.HasSetting(KioskMode)">9100</onup>
+			<ondown condition="!Skin.HasSetting(KioskMode)">9100</ondown>
+			<onleft condition="!Skin.HasSetting(KioskMode)">9100</onleft>
+			<onright condition="!Skin.HasSetting(KioskMode)">9100</onright>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+
 		<control type="multiimage">
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1920</width>
 			<height>1080</height>
-			<imagepath fallback="special://skin/backgrounds/background-weather.jpg" background="true">$INFO[Skin.String(Custom_Back_Weather_Folder)]</imagepath>
+			<imagepath background="true">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
 			<aspectratio>scale</aspectratio>
 			<timeperimage>5000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>2000</fadetime>
-			<include condition="Skin.HasSetting(AnimateBackgrounds)">backgroundanimation</include>
-			<visible>!Skin.HasSetting(Weather_Conditional_Backgrounds) + ![Player.HasVideo + Skin.HasSetting(VideoBackgrounds)]</visible>
 		</control>
-		<control type="multiimage">
-			<posx>0</posx>
-			<posy>0</posy>
+		<control type="image">
+			<left>0</left>
+			<top>300</top>
 			<width>1920</width>
-			<height>1080</height>
-			<imagepath background="true">$INFO[Skin.String(Custom_Back_Weather_Conditional_Folder)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
-			<aspectratio>scale</aspectratio>
-			<timeperimage>5000</timeperimage>
-			<randomize>true</randomize>
-			<fadetime>2000</fadetime>
-			<include condition="Skin.HasSetting(AnimateBackgrounds)">backgroundanimation</include>
-			<visible>Skin.HasSetting(Weather_Conditional_Backgrounds) + ![Player.HasVideo + Skin.HasSetting(VideoBackgrounds)]</visible>
+			<height>780</height>
+			<texture>views\showcase_floor.png</texture>
+			<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
 		</control>
-		<include condition="Skin.HasSetting(VizBackgrounds)">CommonVisualizationBackground</include>
-		<control type="group">
-			
-			<include condition="IsEmpty(Window(Weather).Property(Daily.IsFetched))">weather</include>
-			<include condition="!IsEmpty(Window(Weather).Property(Daily.IsFetched))">weatherextended</include>
+		<control type="grouplist">
+			<posx>20</posx>
+			<posy>800</posy>
+			<orientation>horizontal</orientation>
+			<height>340</height>
+			<itemgap>80</itemgap>
+
+			<include name="weather_data">
+				<param name="day" value="Day4" />
+				<param name="dayname" value="$INFO[Window(weather).Property(Day4.Title)]" />
+			</include>
+			<include name="weather_data">
+				<param name="day" value="Day3" />
+				<param name="dayname" value="$INFO[Window(weather).Property(Day3.Title)]" />
+			</include>
+			<include name="weather_data">
+				<param name="day" value="Day2" />
+				<param name="dayname" value="$INFO[Window(weather).Property(Day2.Title)]" />
+			</include>
+			<include name="weather_data">
+				<param name="day" value="Day1" />
+				<param name="dayname" value="$INFO[Window(weather).Property(Day1.Title)]" />
+			</include>
+			<include name="weather_data">
+				<param name="day" value="Day0" />
+				<param name="dayname" value="$LOCALIZE[33006]" />
+			</include>
 		</control>
-		<control type="group">
-			<posy>34</posy>
-			
-			<include>Window_OpenClose_Left_Panel_Animation</include>
-			<include condition="IsEmpty(Window(Weather).Property(Daily.IsFetched))">CommonNowPlaying</include>
-			<control type="group" id="9000">
-				<include condition="!Skin.HasSetting(WideSideMenuButtons)">Window_OpenClose_Left_Panel_Position_Normal</include>
-				<include condition="Skin.HasSetting(WideSideMenuButtons)">Window_OpenClose_Left_Panel_Position_Wide</include>
-				<include>SideMenuAnim</include>
-				<control type="image">
-					<posx>0</posx>
-					<posy>-24</posy>
-					<height>24</height>
-					<texture border="0,0,10,0">shadow-top2.png</texture>
-					<include condition="!Skin.HasSetting(WideSideMenuButtons)">ButtonCommonValuesNormal</include>
-					<include condition="Skin.HasSetting(WideSideMenuButtons)">ButtonCommonValuesWide</include>
-				</control>
-				<control type="spincontrolex" id="3">
-					<description>change location button</description>
-					<posx>0</posx>
-					<posy>0</posy>
-					<font>-</font>
-					<textoffsetx>8</textoffsetx>
-					<include>ButtonCommonValues</include>
-					<onleft>6000</onleft>
-					<onright>6000</onright>
-					<onup>610</onup>
-					<ondown>101</ondown>
-					<visible>!Skin.HasSetting(KioskMode)</visible>
-				</control>
-				<control type="label">
-					<description>change location label</description>
-					<posx>20</posx>
-					<posy>0</posy>
-					<height>66</height>
-					<width>405</width>
-					<font>font-20b</font>
-					<label>21873</label>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<visible>!Control.HasFocus(3) + !Skin.HasSetting(KioskMode)</visible>
-				</control>
-				<control type="label">
-					<description>change location label</description>
-					<posx>20</posx>
-					<posy>0</posy>
-					<height>66</height>
-					<width>405</width>
-					<font>font-20b</font>
-					<label>21873</label>
-					<textcolor>blue</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<visible>Control.HasFocus(3) + !Skin.HasSetting(KioskMode)</visible>
-				</control>
-				<control type="button" id="101">
-					<description>Current button</description>
-					<posx>0</posx>
-					<posy>68</posy>
-					<include>ButtonCommonValues</include>
-					<label>33006</label>
-					<onleft>6000</onleft>
-					<onright>6000</onright>
-					<onup>3</onup>
-					<ondown>102</ondown>
-					<onfocus>Skin.SetString(WeatherExtended,1)</onfocus>
-					<animation effect="slide" end="0,-68" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<visible>!IsEmpty(Window(Weather).Property(Current.IsFetched))</visible>
-				</control>
-				<control type="button" id="102">
-					<description>Hourly button</description>
-					<posx>0</posx>
-					<posy>135</posy>
-					<include>ButtonCommonValues</include>
-					<label>33036</label>
-					<onleft>6000</onleft>
-					<onright>6000</onright>
-					<onup>101</onup>
-					<ondown>103</ondown>
-					<onfocus>Skin.SetString(WeatherExtended,2)</onfocus>
-					<animation effect="slide" end="0,-68" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<visible>!IsEmpty(Window(Weather).Property(Hourly.IsFetched))</visible>
-				</control>
-				<control type="button" id="103">
-					<description>36 hour button</description>
-					<posx>0</posx>
-					<posy>202</posy>
-					<include>ButtonCommonValues</include>
-					<label>33034</label>
-					<onleft>6000</onleft>
-					<onright>6000</onright>
-					<onup>102</onup>
-					<ondown>104</ondown>
-					<onfocus>Skin.SetString(WeatherExtended,3)</onfocus>
-					<animation effect="slide" end="0,-68" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<visible>!IsEmpty(Window(Weather).Property(36Hour.IsFetched))</visible>
-				</control>
-				<control type="button" id="104">
-					<description>weekend button</description>
-					<posx>0</posx>
-					<posy>270</posy>
-					<include>ButtonCommonValues</include>
-					<label>33037</label>
-					<onleft>6000</onleft>
-					<onright>6000</onright>
-					<onup>103</onup>
-					<ondown>105</ondown>
-					<onfocus>Skin.SetString(WeatherExtended,4)</onfocus>
-					<animation effect="slide" end="0,-68" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<visible>!IsEmpty(Window(Weather).Property(Weekend.IsFetched))</visible>
-				</control>
-				<control type="button" id="105">
-					<description>daily button</description>
-					<posx>0</posx>
-					<posy>338</posy>
-					<include>ButtonCommonValues</include>
-					<label>31600</label>
-					<onleft>6000</onleft>
-					<onright>6000</onright>
-					<onup>104</onup>
-					<ondown>106</ondown>
-					<onfocus>Skin.SetString(WeatherExtended,5)</onfocus>
-					<animation effect="slide" end="0,-68" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<visible>!IsEmpty(Window(Weather).Property(Daily.IsFetched))</visible>
-				</control>
-				<control type="button" id="106">
-					<description>alerts button</description>
-					<posx>0</posx>
-					<posy>405</posy>
-					<include>ButtonCommonValues</include>
-					<label>33050</label>
-					<onleft>6000</onleft>
-					<onright>6000</onright>
-					<onup>105</onup>
-					<ondown>2</ondown>
-					<onfocus>Skin.SetString(WeatherExtended,7)</onfocus>
-					<animation effect="slide" end="0,-68" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<visible>!IsEmpty(Window(Weather).Property(Alerts.IsFetched))</visible>
-				</control>
-				<control type="button" id="2">
-					<description>Refresh button</description>
-					<posx>0</posx>
-					<posy>472</posy>
-					<include>ButtonCommonValues</include>
-					<label>-</label>
-					<onleft>6000</onleft>
-					<onright>6000</onright>
-					<onup>106</onup>
-					<ondown>610</ondown>
-					<animation effect="slide" end="0,-135" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Current.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Hourly.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(36Hour.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Weekend.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Daily.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Alerts.IsFetched))">Conditional</animation>
-				</control>
-				<control type="button" id="610">
-					<description>PlayerControls</description>
-					<posx>0</posx>
-					<posy>540</posy>
-					<include>ButtonCommonValues</include>
-					<label>16003</label>
-					<onleft>6000</onleft>
-					<onright>6000</onright>
-					<onup>2</onup>
-					<ondown>3</ondown>
-					<onclick>ActivateWindow(playercontrols)</onclick>
-					<animation effect="slide" end="0,-135" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Current.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Hourly.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(36Hour.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Weekend.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Daily.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Alerts.IsFetched))">Conditional</animation>
-					<visible>Player.HasAudio | Player.HasVideo</visible>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>543</posy>
-					<height>24</height>
-					<texture border="0,0,10,0">shadow-bottom2.png</texture>
-					<animation effect="slide" end="0,-135" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Current.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Hourly.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(36Hour.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Weekend.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Daily.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="IsEmpty(Window(Weather).Property(Alerts.IsFetched))">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,68" time="0" condition="Player.HasAudio | Player.HasVideo">Conditional</animation>
-					<include condition="!Skin.HasSetting(WideSideMenuButtons)">ButtonCommonValuesNormal</include>
-					<include condition="Skin.HasSetting(WideSideMenuButtons)">ButtonCommonValuesWide</include>
-				</control>
-			</control>
-		</control>
-		<control type="group">
-			
-			<include>Window_OpenClose_Header_Animation</include>
-			<include condition="Skin.HasSetting(HateTransparency)">T-Header1</include>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1920</width>
-				<height>111</height>
-				<texture>Header.png</texture>
-			</control>
-			<control type="grouplist">
-				<include>Breadcrumbs</include>
-				<include>Breadcrumbs-Weather</include>
-			</control>
-			<control type="label">
-				<description>weather location label</description>
-				<posx>1902</posx>
-				<posy>8</posy>
-				<width>750</width>
-				<height>30</height>
-				<font>font-20</font>
-				<textcolor>white</textcolor>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>$INFO[Window(Weather).Property(Location)]</label>
-			</control>
-		</control>
-		<include condition="Skin.HasSetting(TouchScreenMode)">TouchScreenControls</include>
 		<control type="label">
-			<posx>1902</posx>
-			<posy>1044</posy>
-			<width>1800</width>
-			<height>30</height>
-			<label>[B]$LOCALIZE[31605] $INFO[Window(Weather).Property(WeatherProvider)][/B]</label>
-			<font>font-15</font>
-			<align>right</align>
+			<posx>15</posx>
+			<posy>15</posy>
+			<width>1920</width>
+			<font>font-30</font>
+			<height>90</height>
 			<textcolor>white</textcolor>
-			<animation effect="fade" start="50" end="50" time="0" condition="true">Conditional</animation>
+			<shadowcolor>$VAR[main_color]</shadowcolor>
+			<label>[B]$INFO[Window(Weather).Property(Location)][/B]</label>
+			<align>center</align>
+		</control>
+		<!-- Menu -->
+		<control type="group"> 
+			<animation effect="slide" end="350" tween="cubic" easing="out" time="200" condition="ControlGroup(9100).HasFocus">Conditional</animation>
+			<control type="image">
+				<posx>-340</posx>
+				<posy>90</posy>
+				<width>340</width>
+				<height>430</height>
+				<texture colordiffuse="darkgrey">white.png</texture>
+				<bordertexture>main/main_focus.png</bordertexture>
+				<bordersize>7,45,7,7</bordersize>
+				<animation effect="fade" end="75" time="0" condition="true">Conditional</animation>
+			</control>
+
+			<control type="label">
+				<posx>-340</posx>
+				<posy>80</posy>
+				<height>40</height>
+				<width>340</width>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<label>33063</label>
+				<font>font-28</font>
+			</control>
+
+
+			<control type="grouplist" id="9100">
+				<posx>-334</posx>
+				<posy>150</posy>
+				<align>left</align>
+				<width>326</width>
+				<height>350</height>
+				<onleft>100</onleft>
+				<onright>100</onright>
+				<onup>9100</onup>
+				<ondown>9100</ondown>
+				<onback>100</onback>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<orientation>vertical</orientation>
+
+				<!-- Refresh -->
+				<control type="button" id="2">
+					<include>view_settings_radiobutton</include>
+					<visible>Control.IsEnabled(2)</visible>
+				</control>
+				<!-- Change Location -->
+				<control type="button" id="9001">
+					<include>view_settings_radiobutton</include>
+					<onclick>Weather.LocationNext</onclick>
+					<label>$INFO[Weather.Location]</label>
+				</control>
+				<!-- Settings -->
+				<control type="button" id="9004">
+					<label>$LOCALIZE[5]</label>
+					<onclick>activatewindow(WeatherSettings)</onclick>
+					<include>view_settings_radiobutton</include>
+				</control>
+			</control>
 		</control>
 	</controls>
 </window>
