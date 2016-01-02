@@ -11,13 +11,13 @@
 		<control type="group" id="250">
 			<control type="group">
 				<posx>0</posx>
-				<posy>100</posy>
+				<posy>130</posy>
 				<control type="image">
 					<description>left area</description>
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>1200</width>
-					<height>702</height>
+					<height>672</height>
 					<texture colordiffuse="grey_50">white.png</texture>
 				</control>
 				<control type="image">
@@ -25,13 +25,13 @@
 					<posx>1200</posx>
 					<posy>0</posy>
 					<width>300</width>
-					<height>702</height>
+					<height>672</height>
 					<texture colordiffuse="grey">white.png</texture>
 				</control>
 				<control type="image">
 					<description>right area</description>
 					<posx>0</posx>
-					<posy>700</posy>
+					<posy>670</posy>
 					<width>1500</width>
 					<height>3</height>
 					<texture colordiffuse="$VAR[main_color]">white.png</texture>
@@ -96,7 +96,7 @@
 			<control type="group" id="130">
 				<control type="grouplist">
 					<posx>472</posx>
-					<posy>120</posy>
+					<posy>150</posy>
 					<width>668</width>
 					<height>45</height>
 					<align>right</align>
@@ -128,9 +128,9 @@
 
 			<control type="list" id="120">
 				<posx>40</posx>
-				<posy>195</posy>
+				<posy>225</posy>
 				<width>1145</width>
-				<height>580</height>
+				<height>550</height>
 				<onleft>121</onleft>
 				<onright>150</onright>
 				<onup>120</onup>
@@ -200,10 +200,18 @@
 				<focusedlayout width="1065" height="44">
 					<control type="image">
 						<posx>0</posx>
+						<posy>0</posy>
+						<width>1025</width>
+						<height>44</height>
+						<texture colordiffuse="$VAR[main_color]">white.png</texture>
+						<visible>Control.HasFocus(120)</visible>
+					</control>
+					<control type="image">
+						<posx>0</posx>
 						<posy>10</posy>
 						<width>30</width>
 						<height>30</height>
-						<texture colordiffuse="$VAR[main_color]">flags/subs/check.png</texture>
+						<texture>flags/subs/check.png</texture>
 						<visible>ListItem.Property(sync)</visible>
 					</control>
 					<control type="image">
@@ -221,7 +229,7 @@
 						<height>45</height>
 						<font>font-18</font>
 						<aligny>center</aligny>
-						<textcolor>$VAR[main_color]</textcolor>
+						<textcolor>white</textcolor>
 						<selectedcolor>blue</selectedcolor>
 						<align>left</align>
 						<label>$INFO[ListItem.Label]</label>
@@ -234,7 +242,7 @@
 						<height>45</height>
 						<font>font-18</font>
 						<aligny>center</aligny>
-						<textcolor>$VAR[main_color]</textcolor>
+						<textcolor>white</textcolor>
 						<selectedcolor>blue</selectedcolor>
 						<align>left</align>
 						<label>$INFO[ListItem.Label2]</label>
@@ -260,7 +268,7 @@
 		</control>
 		<control type="group" id="250">
 			<posx>0</posx>
-			<posy>100</posy>
+			<posy>130</posy>
 
 			<control type="button" id="160">
 				<posx>1200</posx>
@@ -274,8 +282,8 @@
 				<focusedcolor>white</focusedcolor>
 				<selectedcolor>$VAR[main_color]</selectedcolor>
 				<align>center</align>
-				<texturefocus colordiffuse="grey_50">white.png</texturefocus>
-				<texturenofocus colordiffuse="grey_50">-</texturenofocus>
+				<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
 				<onleft>120</onleft>
 				<onright>120</onright>
 				<onup>150</onup>
@@ -286,12 +294,11 @@
 				<posy>188</posy>
 				<width>488</width>
 				<height>472</height>
-				<onleft>122</onleft>
+				<onleft>120</onleft>
 				<onright>120</onright>
 				<onup>160</onup>
 				<ondown>150</ondown>
 				<viewtype label="535">list</viewtype>
-				<pagecontrol>122</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout width="398" height="51">
 					<control type="label">
@@ -313,14 +320,7 @@
 						<posy>0</posy>
 						<width>300</width>
 						<height>52</height>
-						<texture colordiffuse="grey_50">white.png</texture>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>300</width>
-						<height>52</height>
-						<texture colordiffuse="grey_50">white.png</texture>
+						<texture colordiffuse="$VAR[main_color]">white.png</texture>
 						<visible>Control.HasFocus(150)</visible>
 					</control>
 					<control type="label">
@@ -334,6 +334,20 @@
 						<selectedcolor>$VAR[main_color]</selectedcolor>
 						<align>left</align>
 						<label>$INFO[ListItem.Label]</label>
+						<visible>!Control.HasFocus(150)</visible>
+					</control>
+					<control type="label">
+						<posx>18</posx>
+						<posy>0</posy>
+						<width>280</width>
+						<height>52</height>
+						<font>font-18</font>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<selectedcolor>white</selectedcolor>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>Control.HasFocus(150)</visible>
 					</control>
 				</focusedlayout>
 			</control>

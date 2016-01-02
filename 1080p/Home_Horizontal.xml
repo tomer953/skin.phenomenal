@@ -38,6 +38,16 @@
 				<animation effect="slide" end="188" condition="IntegerGreaterThan(Container(9000).Position,7)">Conditional</animation>
 				<animation effect="slide" end="188" condition="IntegerGreaterThan(Container(9000).Position,8)">Conditional</animation>
 				<animation effect="slide" end="188" condition="IntegerGreaterThan(Container(9000).Position,9)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,0)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,1)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,2)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,3)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,4)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,5)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,6)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,7)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,8)">Conditional</animation>
+				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,9)">Conditional</animation>
 			</control>
 			<control type="Panel" id="9000">
 				<orientation>horizontal</orientation>
@@ -51,7 +61,8 @@
 				<ondown>9001</ondown>
 				<onleft>9000</onleft>
 				<onright>9000</onright>		
-				<animation effect="slide" end="-16,85" time="0" condition="!Skin.HasSetting(Home_Eminence_Layout)">Conditional</animation>
+				<animation effect="slide" end="0,85" time="0" condition="!Skin.HasSetting(Home_Eminence_Layout)">Conditional</animation>
+				<animation effect="slide" end="-94,0" time="0" condition="!Skin.HasSetting(Home_Eminence_Layout) + !IntegerGreaterThan(Container(9000).NumItems,9)">Conditional</animation>
 				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,0)">Conditional</animation>
 				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,1)">Conditional</animation>
 				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,2)">Conditional</animation>
