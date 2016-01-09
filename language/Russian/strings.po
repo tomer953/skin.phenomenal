@@ -126,6 +126,10 @@ msgctxt "#31028"
 msgid "Use Custom Splash Screen (video or image)"
 msgstr "Использовать собственную заставку (фото или видео)"
 
+msgctxt "#31029"
+msgid "Hexagon Wall"
+msgstr ""
+
 msgctxt "#31030"
 msgid "Enable Addon -"
 msgstr "Разрешить аддон -"

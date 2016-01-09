@@ -62,6 +62,7 @@
 			<shortcut label="1039" type="32020" icon="DefaultAddonPicture.png" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image</shortcut>
 		</node>
 		<shortcut label="22082" icon="special://home/addons/script.skin.helper.service/icon.png" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=widgets&amp;path=skinplaylists,scriptwidgets,extendedinfo,pvr,smartishwidgets</shortcut>	
+		<shortcut label="Smart Shortcuts" type="32010">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>
 	</widget-groupings>
 	<!-- Sub Menu As Widget -->
 	<widget label="1034" type="submenu" icon="special://skin/extras/icons/default.png">submenuaswidget</widget>
@@ -96,14 +97,25 @@
 	<widgetPlaylists>True</widgetPlaylists>
 	<!-- Backgrounds -->
 	<background label="400">weather</background>
-	<background label="31511">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</background>
-	<background label="Movies-Wall">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]</background>
+<!-- 	<background label="31511">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</background>
 	<background label="31512">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</background>
 	<background label="31513">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</background>
-	<background label="Music-Wall">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall]</background>
-	<background label="Songs-Wall">$INFO[Window(Home).Property(SkinHelper.AllMusicSongsBackground.Wall]</background>
-	<background label="31515">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]</background>
-	<background label="Images From ::PLAYLIST::">$INFO[Container(30).ListItem.Art(fanart)]</background>
+	<background label="31515">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]</background> -->
+	<background label="$VAR[wall_movieslabel]">wallmovies</background>
+	<background label="$VAR[wall_tvshowslabel]">walltvshows</background>
+	<background label="$VAR[wall_musiclabel]">wallmusic</background>
+	<background label="$VAR[wall_musicvideoslabel]">wallmusicvideos</background>
+	<background label="$VAR[wall_label1]" condition="!IsEmpty(Window(home).Property(playlist.0.label))">wallcustom1</background>
+	<background label="$VAR[wall_label2]" condition="!IsEmpty(Window(home).Property(playlist.1.label))">wallcustom2</background>
+	<background label="$VAR[wall_label3]" condition="!IsEmpty(Window(home).Property(playlist.2.label))">wallcustom3</background>
+	<background label="$VAR[wall_label4]" condition="!IsEmpty(Window(home).Property(playlist.3.label))">wallcustom4</background>
+	<background label="$VAR[wall_label5]" condition="!IsEmpty(Window(home).Property(playlist.4.label))">wallcustom5</background>
+	<background label="$VAR[wall_label6]" condition="!IsEmpty(Window(home).Property(playlist.5.label))">wallcustom6</background>
+	<background label="$VAR[wall_label7]" condition="!IsEmpty(Window(home).Property(playlist.6.label))">wallcustom7</background>
+	<background label="$VAR[wall_label8]" condition="!IsEmpty(Window(home).Property(playlist.7.label))">wallcustom8</background>
+
+	<background label="smartshortcuts">||BROWSE||plugin://script.skin.helper.service/?action=backgrounds</background>
+	<!-- <background label="Images From ::PLAYLIST::">$INFO[Container(30).ListItem.Art(fanart)]</background> -->
 
 	<backgrounddefault labelID="weather">weather</backgrounddefault>
 	<backgrounddefault labelID="videos">special://skin/backgrounds/videos.jpg</backgrounddefault>
@@ -136,8 +148,6 @@
 	<thumbnail label="settings">special://skin/extras/icons/settings.png</thumbnail>
 	<thumbnail label="DVD">special://skin/extras/icons/dvd.png</thumbnail>
 
-	<!-- Backgrounds -->
-	<!-- <thumbnailBrowseDefault>special://skin/extras/icons/</thumbnailBrowseDefault> -->
 	<backgroundBrowse>True</backgroundBrowse>
 
 	<!-- Parental control -->

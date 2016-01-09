@@ -171,6 +171,12 @@
 			<style>bold</style>
 			<aspect>1</aspect>
 		</font>
+		<font>
+			<name>sans-85</name>
+			<filename>OpenSansHebrew-Bold.ttf</filename>
+			<size>70</size>
+		</font>
+		
 	</fontset>
 		<fontset id="Russian">
 		<font>
@@ -342,6 +348,11 @@
 			<size>20</size>
 			<style>bold</style>
 			<aspect>1</aspect>
+		</font>
+		<font>
+			<name>sans-85</name>
+			<filename>OpenSansHebrew-Bold.ttf</filename>
+			<size>70</size>
 		</font>
 	</fontset>
 </fonts>

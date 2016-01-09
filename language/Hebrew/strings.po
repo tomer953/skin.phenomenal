@@ -126,6 +126,10 @@ msgctxt "#31028"
 msgid "Use Custom Splash Screen (video or image)"
 msgstr "השתמש במסך פתיחה מותאם אישית (תמונה או סרטון)"
 
+msgctxt "#31029"
+msgid "Hexagon Wall"
+msgstr "קיר משושים"
+
 msgctxt "#31030"
 msgid "Enable Addon -"
 msgstr "אפשר הרחבת -"
