@@ -247,6 +247,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.0)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.0)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.0)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.0)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.0)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.0)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.0)]</value>
@@ -261,6 +262,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.1)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.1)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.1)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.1)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.1)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.1)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.1)]</value>
@@ -275,6 +277,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.2)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.2)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.2)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.2)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.2)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.2)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.2)]</value>
@@ -289,6 +292,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.3)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.3)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.3)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.3)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.3)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.3)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.3)]</value>
@@ -303,6 +307,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.4)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.4)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.4)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.4)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.4)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.4)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.4)]</value>
@@ -317,6 +322,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.5)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.5)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.5)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.5)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.5)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.5)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.5)]</value>
@@ -331,6 +337,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.6)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.6)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.6)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.6)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.6)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.6)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.6)]</value>
@@ -345,6 +352,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.7)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.7)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.7)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.7)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.7)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.7)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.7)]</value>
@@ -359,6 +367,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.8)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.8)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.8)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.8)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.8)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.8)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.8)]</value>
@@ -373,6 +382,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.9)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.9)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.9)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.9)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.9)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.9)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.9)]</value>
@@ -387,6 +397,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.10)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.10)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.10)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.10)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.10)]</value>	
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.10)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.10)]</value>
@@ -401,6 +412,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),walltvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground.Wall.11)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusic)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground.Wall.11)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmusicvideos)">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground.Wall.11)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallpictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground.Wall.11)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom1)">$INFO[Window(Home).Property(playlist.0.image.Wall.11)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom2)">$INFO[Window(Home).Property(playlist.1.image.Wall.11)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom3)">$INFO[Window(Home).Property(playlist.2.image.Wall.11)]</value>
@@ -417,6 +429,7 @@
 	<variable name="wall_musiclabel"><value>$LOCALIZE[31029] - $LOCALIZE[10005]</value></variable>
 	<variable name="wall_musicvideoslabel"><value>$LOCALIZE[31029] - $LOCALIZE[20389]</value></variable>
 	<variable name="wall_livetvlabel"><value>$LOCALIZE[31029] - $LOCALIZE[19023]</value></variable>
+	<variable name="wall_pictureslabel"><value>$LOCALIZE[31029] - $LOCALIZE[1]</value></variable>
 	<variable name="wall_label1"><value>$LOCALIZE[31029] - $INFO[Window(home).Property(playlist.0.label)]</value></variable>
 	<variable name="wall_label2"><value>$LOCALIZE[31029] - $INFO[Window(home).Property(playlist.1.label)]</value></variable>
 	<variable name="wall_label3"><value>$LOCALIZE[31029] - $INFO[Window(home).Property(playlist.2.label)]</value></variable>

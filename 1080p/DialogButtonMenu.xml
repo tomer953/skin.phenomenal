@@ -145,6 +145,7 @@
 					<label>13014</label>
 					<onclick>Dialog.Close(shutdownmenu)</onclick>
 					<onclick>XBMC.Minimize()</onclick>
+					<visible>!System.Platform.Linux</visible>
 				</control>
 				<control type="button" id="6016">
 					<include>shutdown_buttons</include>

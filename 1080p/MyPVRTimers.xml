@@ -4,122 +4,157 @@
 	<allowoverlay>no</allowoverlay>
 	<views>52</views>
 	<controls>
-		<include condition="Skin.HasSetting(VideoBackgrounds)">CommonVideoPlayingBackground</include>
-		<control type="multiimage">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1920</width>
-			<height>1080</height>
-			<imagepath fallback="special://skin/backgrounds/background-tv.jpg" background="true">$INFO[Skin.String(Custom_Back_TV_Folder)]</imagepath>
-			<aspectratio>scale</aspectratio>
-			<timeperimage>5000</timeperimage>
-			<randomize>true</randomize>
-			<fadetime>2000</fadetime>
-			<include condition="Skin.HasSetting(AnimateBackgrounds)">backgroundanimation</include>
-			<visible>![Player.HasVideo + Skin.HasSetting(VideoBackgrounds)]</visible>
-		</control>
-		<include condition="Skin.HasSetting(VizBackgrounds)">CommonVisualizationBackground</include>
 		<control type="group">
-			
-			<include>Window_OpenClose_Right_Panel_Animation</include>
 			<control type="group">
-				<animation effect="slide" start="0,0" end="112,0" time="200" delay="200" tween="quadratic" easing="out" condition="Skin.HasSetting(WideSideMenuButtons) + ControlGroup(9000).HasFocus">Conditional</animation>
-				<include>ContentPanel</include>
+				<include>PVR-BG</include>
 				<include>FullList-PVRTimers</include>
-				<include>ScrollOffsetLabel</include>
-				<include>AllViewCommonPageControls</include>
+				<include>top_bar</include>
+				<include>VideoInfo</include>
+				<include>MusicInfo</include>
 			</control>
 		</control>
 		<control type="group">
-			<include>ContentFade2</include>
-			<include>FullList-PVRTimers_Extras</include>
-		</control>
-		<control type="group">
-			<posy>34</posy>
-			
-			<include>Window_OpenClose_Left_Panel_Animation</include>
-			<control type="group" id="9000">
-				<include condition="!Skin.HasSetting(WideSideMenuButtons)">Window_OpenClose_Left_Panel_Position_Normal</include>
-				<include condition="Skin.HasSetting(WideSideMenuButtons)">Window_OpenClose_Left_Panel_Position_Wide</include>
-				<include>SideMenuAnim2</include>
-				<control type="image">
-					<posx>0</posx>
-					<posy>-24</posy>
-					<height>24</height>
-					<texture border="0,0,10,0">shadow-top2.png</texture>
-					<include condition="!Skin.HasSetting(WideSideMenuButtons)">ButtonCommonValuesNormal</include>
-					<include condition="Skin.HasSetting(WideSideMenuButtons)">ButtonCommonValuesWide</include>
-				</control>
-				<control type="button" id="2">
+			<posy>80</posy>
+			<animation effect="slide" end="270" tween="linear" easing="out" time="400" condition="ControlGroup(9100).HasFocus">Conditional</animation>
+			<control type="image">
+				<posx>-270</posx>
+				<posy>0</posy>
+				<width>270</width>
+				<height>780</height>
+				<texture>main/main_focus.png</texture>
+			</control>
+			<control type="label">
+				<posx>-270</posx>
+				<posy>0</posy>
+				<height>40</height>
+				<width>270</width>
+				<textcolor>grey_b</textcolor>
+				<align>center</align>
+				<label>5</label>
+				<font>font-28</font>
+			</control>
+			<control type="image">
+				<posx>-270</posx>
+				<posy>54</posy>
+				<width>270</width>
+				<height>2</height>
+				<texture colordiffuse="grey_b">white.png</texture>
+			</control>
+			<control type="grouplist" id="9100">
+				<posx>-270</posx>
+				<posy>60</posy>
+				<align>left</align>
+				<width>270</width>
+				<height>1000</height>
+				<onleft>52</onleft>
+				<onright>52</onright>
+				<onup>9100</onup>
+				<ondown>9100</ondown>
+				<onback>52</onback>
+				<itemgap>2</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<orientation>vertical</orientation>
+				<visible>!Skin.HasSetting(KioskMode)</visible>
+				<!-- <control type="button" id="2">
 					<description>View As button</description>
-					<posx>0</posx>
-					<posy>0</posy>
-					<include>ButtonCommonValues</include>
+					<width>270</width>
 					<label>-</label>
-					<onleft>52</onleft>
-					<onright>52</onright>
-					<onup>905</onup>
-					<ondown>3</ondown>
-					<visible>!Skin.HasSetting(KioskMode)</visible>
-				</control>
+				</control> -->
 				<control type="button" id="3">
 					<description>Sort by button</description>
-					<posx>0</posx>
-					<posy>68</posy>
-					<include>ButtonCommonValues</include>
+					<posx>40</posx>
+					<width>230</width>
 					<label>103</label>
-					<onleft>52</onleft>
-					<onright>4</onright>
-					<onup>2</onup>
-					<ondown>901</ondown>
-					<visible>!Skin.HasSetting(KioskMode)</visible>
 				</control>
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
-					<posy>94</posy>
-					<width>22</width>
-					<height>22</height>
-					<label>-</label>
-					<onleft>3</onleft>
-					<onright>52</onright>
-					<onup>2</onup>
-					<ondown>901</ondown>
-					<include condition="!Skin.HasSetting(WideSideMenuButtons)">ToggleButtonNormal</include>
-					<include condition="Skin.HasSetting(WideSideMenuButtons)">ToggleButtonWide</include>
-					<visible>!Skin.HasSetting(KioskMode)</visible>
-				</control>
-				<include>PVR-Menu</include>
-				<control type="image">
 					<posx>0</posx>
-					<posy>476</posy>
-					<height>24</height>
-					<texture border="0,0,10,0">shadow-bottom2.png</texture>
-					<animation effect="slide" end="0,-135" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
-					<include condition="!Skin.HasSetting(WideSideMenuButtons)">ButtonCommonValuesNormal</include>
-					<include condition="Skin.HasSetting(WideSideMenuButtons)">ButtonCommonValuesWide</include>
+					<posy>-45</posy>
+					<width>45</width>
+					<align>left</align>
+					<label>-</label>
+					<altlabel>-</altlabel>
 				</control>
+				<control type="button" id="28">
+					<description>Change Channel Groups</description>
+					<width>270</width>
+					<label>-</label>
+				</control>
+				<control type="radiobutton" id="31">
+					<description>Filter</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>270</width>
+					<height>45</height>
+					<align>center</align>
+					<textcolor>grey_b</textcolor>
+					<focusedcolor>darkgrey</focusedcolor>
+					<label>587</label>
+					<selected>Container.Filtered</selected>
+					<onclick>right</onclick>
+					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+				</control>
+				<control type="radiobutton" id="5">
+					<description>Group recording items by folder structure</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>270</width>
+					<height>45</height>
+					<align>center</align>
+					<textcolor>grey_b</textcolor>
+					<focusedcolor>darkgrey</focusedcolor>
+					<label>19270</label>
+					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				</control>
+				<control type="radiobutton" id="6">
+					<description>Show hidden channels</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>270</width>
+					<height>45</height>
+					<align>center</align>
+					<textcolor>grey_b</textcolor>
+					<focusedcolor>darkgrey</focusedcolor>
+					<label>19051</label>
+					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+				</control>
+				<control type="button" id="901">
+					<description>Channels</description>
+					<width>270</width>
+					<label>$LOCALIZE[19019]</label>
+					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
+					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
+				</control>
+				<control type="button" id="902">
+					<description>Guide</description>
+					<width>270</width>
+					<label>$LOCALIZE[22020]</label>
+					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
+					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
+				</control>
+				<control type="button" id="903">
+					<description>Recordings</description>
+					<width>270</width>
+					<label>$LOCALIZE[19163]</label>
+					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
+					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
+				</control>
+				<control type="button" id="904">
+					<description>Search</description>
+					<width>270</width>
+					<label>$LOCALIZE[137]</label>
+					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
+					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
+				</control>
+				<control type="button" id="905">
+					<description>Timers</description>
+					<width>270</width>
+					<label>$LOCALIZE[31048]</label>
+					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
+					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
+				</control>
+
 			</control>
 		</control>
-		<control type="group">
-			
-			<include>Window_OpenClose_Header_Animation</include>
-			<include condition="Skin.HasSetting(HateTransparency)">T-Header1</include>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1920</width>
-				<height>111</height>
-				<texture>Header.png</texture>
-			</control>
-			<control type="group">
-				
-			</control>
-			<control type="grouplist">
-				<include>Breadcrumbs</include>
-				<include>Breadcrumbs-TV</include>
-			</control>
-		</control>
-		<include condition="Skin.HasSetting(TouchScreenMode)">TouchScreenControls</include>
-		
 	</controls>
 </window>

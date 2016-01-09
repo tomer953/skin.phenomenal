@@ -365,7 +365,8 @@
 		<value condition="Control.IsVisible(11)">$LOCALIZE[19222] - $LOCALIZE[19030]</value>
 		<value condition="Control.IsVisible(12)">$LOCALIZE[19222] - $LOCALIZE[19031]</value>
 		<value condition="Control.IsVisible(50)">$LOCALIZE[20007]</value>
-		<value condition="Control.IsVisible(52)">$LOCALIZE[19142]</value>
+		<value condition="Control.IsVisible(52) + !Window.IsActive(MyPVRTimers.xml)">$LOCALIZE[19142]</value>
+		<value condition="Control.IsVisible(52) + Window.IsActive(MyPVRTimers.xml)">$LOCALIZE[19026]</value>
 	</variable>
 	<variable name="settings_description">
 		<value condition="Control.HasFocus(1)">$LOCALIZE[31167]</value><!-- Appearance Description -->

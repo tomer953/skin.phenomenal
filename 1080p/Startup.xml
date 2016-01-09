@@ -8,7 +8,7 @@
 	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(SkinHelper.AllTvShowsBackground.EnableWallImages))">Skin.SetString(SkinHelper.AllTvShowsBackground.EnableWallImages,12)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(SkinHelper.AllMusicBackground.EnableWallImages))">Skin.SetString(SkinHelper.AllMusicBackground.EnableWallImages,12)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(SkinHelper.AllMusicVideosBackground.EnableWallImages))">Skin.SetString(SkinHelper.AllMusicVideosBackground.EnableWallImages,12)</onload>
-	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(SkinHelper.PvrBackground.EnableWallImages))">Skin.SetString(SkinHelper.PvrBackground.EnableWallImages,12)</onload>
+	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(SkinHelper.PicturesBackground.EnableWallImages))">Skin.SetString(SkinHelper.PicturesBackground.EnableWallImages,12)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(playlist.0.image.EnableWallImages))">Skin.SetString(playlist.0.image.EnableWallImages,12)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(playlist.1.image.EnableWallImages))">Skin.SetString(playlist.1.image.EnableWallImages,12)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service) + IsEmpty(Skin.String(playlist.2.image.EnableWallImages))">Skin.SetString(playlist.2.image.EnableWallImages,12)</onload>

@@ -625,7 +625,50 @@
 				<texturefocus colordiffuse="red">white.png</texturefocus>
 				<include>button_settings_2</include>
 			</control>
-
+				<control type="label" id="325">
+				<description>Seperator</description>
+				<label>-</label>
+				<font>font-18</font>
+			</control>
+			<control type="label" id="324">
+				<posx>0</posx>
+				<posy>0</posy>
+				<description>Rotating Fanart Options</description>
+				<label>31097</label>
+				<align>center</align>
+				<width>1250</width>
+				<height>40</height>
+				<font>font-18</font>
+				<textcolor>$VAR[main_color]</textcolor>
+			</control>
+			<control type="button" id="319">
+				<description>Fanart Replace Time in seconds</description>
+				<align>left</align>
+				<width>1250</width>
+				<label>31052</label>
+				<label2>$INFO[Skin.String(SkinHelper.RandomFanartDelay)]</label2>
+				<align>left</align>
+				<include>button_settings_2</include>
+				<onclick>Skin.SetNumeric(SkinHelper.RandomFanartDelay)</onclick>
+			</control>
+			<control type="button" id="322">
+				<description>Fanart Replace Time in seconds</description>
+				<align>left</align>
+				<width>1250</width>
+				<label>31095</label>
+				<label2>$INFO[Skin.String(SkinHelper.WallImagesDelay)]</label2>
+				<align>left</align>
+				<include>button_settings_2</include>
+				<onclick>Skin.SetNumeric(SkinHelper.WallImagesDelay)</onclick>
+			</control>
+			<control type="button" id="323">
+				<label>31096</label>
+				<label2>$INFO[Skin.String(CustomPicturesBackgroundPath)]</label2>
+				<onclick>Skin.SetPath(CustomPicturesBackgroundPath)</onclick>
+				<align>left</align>
+				<width>1250</width>
+				<include>button_settings_2</include>
+			</control>
 		</control>
 
 		<!-- Design -->
@@ -714,9 +757,6 @@
 				<onclick condition="skin.string(topbar_home_opacity, 20)">Skin.SetString(topbar_home_opacity, 10)</onclick>
 				<onclick condition="skin.string(topbar_home_opacity, 10)">Skin.SetString(topbar_home_opacity, 0)</onclick>
 				<onclick condition="skin.string(topbar_home_opacity, 0)">Skin.SetString(topbar_home_opacity, 100)</onclick>
-				<!-- <onclick>Skin.SetString(AfterReload,304)</onclick>
-				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
-				<onclick>ReloadSkin()</onclick>  -->	
 				<enable>!Skin.HasSetting(Home_HideTopBar)</enable>
 			</control>
 			<control type="radiobutton" id="321">
@@ -913,17 +953,6 @@
 				<onclick condition="Skin.String(widget_opacity, 0)">Skin.SetString(widget_opacity, 100)</onclick>
 				<visible>!Skin.HasSetting(Home_Horizontal)</visible>
 			</control>
-			<control type="button" id="319">
-				<description>Fanart Replace Time in seconds</description>
-				<posx>550</posx>
-				<posy>0</posy>
-				<width>860</width>
-				<label>31052</label>
-				<label2>$INFO[Skin.String(SkinHelper.RandomFanartDelay)]</label2>
-				<align>left</align>
-				<include>button_settings_2</include>
-				<onclick>Skin.SetNumeric(SkinHelper.RandomFanartDelay)</onclick>
-			</control>
 		</control>
 		<control type="grouplist" id="350">
 			<posx>40</posx>
@@ -1073,7 +1102,7 @@
 			</control>
 		</control>
 
-		<!-- General -->
+		<!-- Credits -->
 		<control type="group">
 			<posx>40</posx>
 			<posy>117</posy>
