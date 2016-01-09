@@ -219,7 +219,7 @@ msgid "Icons Color (when no focus)"
 msgstr "צבע אייקונים (כאשר לא בפוקוס)"
 
 msgctxt "#31052"
-msgid "Random Fanart Delay (seconds)"
+msgid "Rotating Fanarts Delay (seconds)"
 msgstr "זמן מעבר בין פאנארט במסך הבית (בשניות)"
 
 msgctxt "#31053"
@@ -389,6 +389,18 @@ msgstr "מידע מורחב - סדרה"
 msgctxt "#31094"
 msgid "Season Info"
 msgstr "מידע מורחב - עונה"
+
+msgctxt "#31095"
+msgid "Rotating Fanarts inside Wall - Delay (seconds)"
+msgstr "זמן מעבר בין פאנארט בקיר התמונות (בשניות)"
+
+msgctxt "#31096"
+msgid "Set Path for Pictures Rotating Fanart"
+msgstr "בחר נתיב עבור תמונות מתחלפות מספריית התמונות"
+
+msgctxt "#31097"
+msgid "Rotating Fanarts - Settings"
+msgstr "הגדרות רקעים מתחלפים"
 
 msgctxt "#31099"
 msgid "Items"

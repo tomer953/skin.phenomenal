@@ -219,7 +219,7 @@ msgid "Icons Color (when no focus)"
 msgstr ""
 
 msgctxt "#31052"
-msgid "Random Fanart Delay (seconds)"
+msgid "Rotating Fanarts Delay (seconds)"
 msgstr ""
 
 msgctxt "#31053"
@@ -388,6 +388,18 @@ msgstr ""
 
 msgctxt "#31094"
 msgid "Season Info"
+msgstr ""
+
+msgctxt "#31095"
+msgid "Rotating Fanarts inside Wall - Delay (seconds)"
+msgstr ""
+
+msgctxt "#31096"
+msgid "Set Path for Pictures Rotating Fanart"
+msgstr ""
+
+msgctxt "#31097"
+msgid "Rotating Fanarts - Settings"
 msgstr ""
 
 msgctxt "#31099"

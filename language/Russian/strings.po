@@ -219,7 +219,7 @@ msgid "Icons Color (when no focus)"
 msgstr "Цвет иконок (когда не в фокусе)"
 
 msgctxt "#31052"
-msgid "Random Fanart Delay (seconds)"
+msgid "Rotating Fanarts Delay (seconds)"
 msgstr "Время перехода между фанартом на главном экране (в секундах)"
 
 msgctxt "#31053"
@@ -389,6 +389,18 @@ msgstr "Расширенная информация - Сериал"
 msgctxt "#31094"
 msgid "Season Info"
 msgstr "Расширенная информация - Сезон"
+
+msgctxt "#31095"
+msgid "Rotating Fanarts inside Wall - Delay (seconds)"
+msgstr ""
+
+msgctxt "#31096"
+msgid "Set Path for Pictures Rotating Fanart"
+msgstr ""
+
+msgctxt "#31097"
+msgid "Rotating Fanarts - Settings"
+msgstr ""
 
 msgctxt "#31099"
 msgid "Items"

@@ -105,6 +105,7 @@
 	<background label="$VAR[wall_tvshowslabel]">walltvshows</background>
 	<background label="$VAR[wall_musiclabel]">wallmusic</background>
 	<background label="$VAR[wall_musicvideoslabel]">wallmusicvideos</background>
+	<background label="$VAR[wall_pictureslabel]">wallpictures</background>
 	<background label="$VAR[wall_label1]" condition="!IsEmpty(Window(home).Property(playlist.0.label))">wallcustom1</background>
 	<background label="$VAR[wall_label2]" condition="!IsEmpty(Window(home).Property(playlist.1.label))">wallcustom2</background>
 	<background label="$VAR[wall_label3]" condition="!IsEmpty(Window(home).Property(playlist.2.label))">wallcustom3</background>
