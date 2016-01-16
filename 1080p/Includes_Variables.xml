@@ -422,7 +422,7 @@
 		<value condition="!IsEmpty(Skin.String(mouse_color))">$INFO[Skin.String(mouse_color)]</value>
 		<value>$VAR[main_color]</value>
 	</variable>
-	
+
 	<variable name="tile_main_color">
 		<value condition="!IsEmpty(Container(9000).ListItem.Property(TextColor))">$INFO[Container(9000).ListItem.Property(TextColor)]</value>
 		<value>$VAR[main_color]</value>
@@ -644,9 +644,23 @@
 		<value condition="!StringCompare(Skin.String(mypassword),Skin.String(passcode))">defaulticonerror.png</value>
 	</variable>
 	<variable name="widelist_fakecdart">
-	<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
-	<value condition="Container.Content(seasons)">$INFO[ListItem.Art(poster)]</value>
-	<value>$INFO[ListItem.Art(poster)]</value>
+		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(poster)]</value>
+		<value>$INFO[ListItem.Art(poster)]</value>
 	</variable>
-	
+
+	<variable name="camera_brand">
+		<value condition="SubString(ListItem.PictureCamMake,nikon)">nikon.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,canon)">canon.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,apple)">apple.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,samsung)">samsung.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,sony)">sony.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,pentax)">pentax.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,htc)">htc.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,casio)">casio.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,fujifilm)">fujifilm.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,nokia)">nokia.png</value>
+		<value condition="SubString(ListItem.PictureCamMake,panasonic)">panasonic.png</value>	
+		<value>default.png</value>
+	</variable>
 </includes>

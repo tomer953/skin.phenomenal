@@ -128,7 +128,7 @@
 							<width>220</width>
 							<height>335</height>
 							<aspectratio>stretch</aspectratio>
-							<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
 							<visible>!StringCompare(Listitem.Label,..)</visible>
 						</control>
 						<control type="image">
@@ -137,7 +137,7 @@
 							<width>220</width>
 							<height>335</height>
 							<aspectratio>stretch</aspectratio>
-							<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
 							<visible>StringCompare(Listitem.Label,..)</visible>
 						</control>
 						<!-- Title Tag on image -->
@@ -177,103 +177,103 @@
 					</focusedlayout>
 				</control>
 
-							<control type="image">
-				<posx>0</posx>
-				<bottom>0</bottom>
-				<height>120</height>
-				<width>1920</width>
-				<texture>black.png</texture>
-				<animation type="Conditional" condition="true">
-					<effect type="fade" end="70" time="0"/>
-				</animation>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>960</posy>
-				<width>1920</width>
-				<height>60</height>
-				<font>font-30</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>$var[main_color]</shadowcolor>
-				<align>center</align>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<bottom>0</bottom>
-				<width>1920</width>
-				<height>60</height>
-				<font>font-20</font>
-				<textcolor>white</textcolor>
-				<align>center</align>
-				<label>$VAR[icons_sublabel]</label>
-			</control>
-			
-						<control type="group">
-				<posx>30</posx>
-				<posy>555</posy>
-				<animation effect="zoom" start="100" end="125" time="0" condition="true">Conditional</animation>
-				<!-- HD\SD\3D Indicator flag -->
 				<control type="image">
-					<posx>45</posx>
-					<posy>330</posy>
-					<width>42</width>
-					<height>48</height>
-					<aspectratio>keep</aspectratio>
-					<texture>$VAR[UnFocusHDIndicator]</texture>
-					<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+					<posx>0</posx>
+					<bottom>0</bottom>
+					<height>120</height>
+					<width>1920</width>
+					<texture>black.png</texture>
+					<animation type="Conditional" condition="true">
+						<effect type="fade" end="70" time="0"/>
+					</animation>
 				</control>
 				<control type="label">
-					<posx>10</posx>
-					<posy>370</posy>
-					<label>$INFO[ListItem.VideoResolution]</label>
-					<font>font-16</font>
+					<posx>0</posx>
+					<posy>960</posy>
+					<width>1920</width>
+					<height>60</height>
+					<font>font-30</font>
 					<textcolor>white</textcolor>
-					<width>110</width>
-					<height>52</height>
+					<shadowcolor>$var[main_color]</shadowcolor>
 					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
 				</control>
-				<!-- Dubbed Language -->
+				<control type="label">
+					<posx>0</posx>
+					<bottom>0</bottom>
+					<width>1920</width>
+					<height>60</height>
+					<font>font-20</font>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<label>$VAR[icons_sublabel]</label>
+				</control>
+
 				<control type="group">
-					<posx>175</posx>
-					<posy>340</posy>
-					<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemLanguages)) + !ListItem.IsFolder + Container.Content(Movies) + !substring(ListItem.Path,plugin://)</visible>
-					<include>ListItemLanguage</include>
+					<posx>30</posx>
+					<posy>555</posy>
+					<animation effect="zoom" start="100" end="125" time="0" condition="true">Conditional</animation>
+					<!-- HD\SD\3D Indicator flag -->
+					<control type="image">
+						<posx>45</posx>
+						<posy>330</posy>
+						<width>42</width>
+						<height>48</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[UnFocusHDIndicator]</texture>
+						<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+					</control>
 					<control type="label">
-						<label>21447</label>
+						<posx>10</posx>
+						<posy>370</posy>
+						<label>$INFO[ListItem.VideoResolution]</label>
 						<font>font-16</font>
 						<textcolor>white</textcolor>
-						<width>240</width>
+						<width>110</width>
 						<height>52</height>
-						<posx>20</posx>
-						<posy>28</posy>
-						<align>left</align>
+						<align>center</align>
+					</control>
+					<!-- Dubbed Language -->
+					<control type="group">
+						<posx>175</posx>
+						<posy>340</posy>
+						<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemLanguages)) + !ListItem.IsFolder + Container.Content(Movies) + !substring(ListItem.Path,plugin://)</visible>
+						<include>ListItemLanguage</include>
+						<control type="label">
+							<label>21447</label>
+							<font>font-16</font>
+							<textcolor>white</textcolor>
+							<width>240</width>
+							<height>52</height>
+							<posx>20</posx>
+							<posy>28</posy>
+							<align>left</align>
+						</control>
+					</control>
+
+
+					<!-- Audio Codec -->
+					<control type="image">
+						<colordiffuse>white</colordiffuse>
+						<posx>100</posx>
+						<posy>325</posy>
+						<width>90</width>
+						<height>58</height>
+						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
+					</control>
+					<control type="label">
+						<posx>90</posx>
+						<posy>370</posy>
+						<label>$VAR[AudioChannels2]</label>
+						<font>font-16</font>
+						<textcolor>white</textcolor>
+						<width>110</width>
+						<height>52</height>
+						<align>center</align>
 					</control>
 				</control>
 
 
-				<!-- Audio Codec -->
-				<control type="image">
-					<colordiffuse>white</colordiffuse>
-					<posx>100</posx>
-					<posy>325</posy>
-					<width>90</width>
-					<height>58</height>
-					<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
-				</control>
-				<control type="label">
-					<posx>90</posx>
-					<posy>370</posy>
-					<label>$VAR[AudioChannels2]</label>
-					<font>font-16</font>
-					<textcolor>white</textcolor>
-					<width>110</width>
-					<height>52</height>
-					<align>center</align>
-				</control>
-			</control>
-
-				
 				<!-- גלילה -->
 				<include name="fanart_scroll">
 					<param name="id" value="60" />

@@ -380,6 +380,7 @@
 			<texture background="true">main/main_menu.png</texture>
 			<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
 		</control>
+		<include>skin_version_label</include>
 		<control type="group">
 			<!-- Dummy list -->
 			<control type="grouplist" id="9000">

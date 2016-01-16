@@ -7,4 +7,5 @@
 	<view id="Showcase" value="53" languageid="31203" type="movies,setmovies,tvshows,musicvideos,seasons,sets" />
 	<view id="Widelist" value="54" languageid="31204" type="all" />
 	<view id="Icons" value="55" languageid="536" type="all" />
+	<view id="Pictures" value="56" languageid="1" type="all" />
 </views>

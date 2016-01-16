@@ -224,8 +224,7 @@
 		<fadetime>800</fadetime>		
 		<pauseatend>1000</pauseatend>		
 		<randomize>true</randomize>		
-		<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
-		<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+		<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 	</include>
 	<!-- <variable name="hex_label">
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallmovies)">$INFO[Container(9000).ListItem.Label]</value>

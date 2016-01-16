@@ -185,7 +185,7 @@
 					<onclick>ActivateWindow(pvrsettings)</onclick>
 					<visible>!Window.IsActive(pvrsettings)</visible>
 				</control>
-								<!-- Seperator -->
+				<!-- Seperator -->
 				<control type="image">
 					<width>290</width>
 					<height>2</height>
@@ -279,18 +279,19 @@
 				<height>135</height>
 				<texture background="true">main/widget_title.png</texture>
 			</control>
-		<control type="image">
-			<posx>1342</posx>
-			<posy>80</posy>
-			<texture background="true">main/main_menu.png</texture>
-			<height>1000</height>
-			<width>290</width>
-			<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
-			<animation effect="zoom" start="1632,80,1,1000" end="1632,80,290,1000" time="300">WindowOpen</animation>
-			<animation effect="zoom" start="1632,80,290,1000" end="1632,80,1,1000" time="300">WindowClose</animation>
-			<visible>True</visible>
-		</control>
+			<include>skin_version_label</include>
+			<control type="image">
+				<posx>1342</posx>
+				<posy>80</posy>
+				<texture background="true">main/main_menu.png</texture>
+				<height>1000</height>
+				<width>290</width>
+				<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
+				<animation effect="zoom" start="1632,80,1,1000" end="1632,80,290,1000" time="300">WindowOpen</animation>
+				<animation effect="zoom" start="1632,80,290,1000" end="1632,80,1,1000" time="300">WindowClose</animation>
+				<visible>True</visible>
 			</control>
+		</control>
 
 		<!-- Main list -->
 		<control type="grouplist" id="50">
@@ -304,7 +305,7 @@
 			<onup>noop</onup>
 			<ondown>noop</ondown>
 			<orientation>vertical</orientation>
-<animation effect="zoom" start="1632,80,1,726" end="1632,80,290,726" time="300">WindowOpen</animation>
+			<animation effect="zoom" start="1632,80,1,726" end="1632,80,290,726" time="300">WindowOpen</animation>
 			<animation effect="zoom" start="1632,80,290,726" end="1632,80,1,726" time="300">WindowClose</animation>
 			<!-- Summary -->
 			<control type="button" id="95">
@@ -376,7 +377,7 @@
 			<ondown>noop</ondown>
 			<orientation>vertical</orientation>
 			<defaultcontrol always="true">102</defaultcontrol>
-			
+
 
 			<control type="button" id="102">
 				<width>1220</width>

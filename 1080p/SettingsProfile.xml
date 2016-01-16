@@ -283,7 +283,7 @@
 			</control>
 
 		</control>
-
+		<include>skin_version_label</include>
 		<!-- default list -->
 		<control type="grouplist" id="500">
 			<left>430</left>

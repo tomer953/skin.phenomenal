@@ -13,6 +13,7 @@
 	<include file="View53-Showcase.xml" />
 	<include file="View54-WideList.xml" />
 	<include file="View55-Icon.xml" />
+	<include file="View56-Pictures.xml" />
 	<include file="View-PVR.xml" />
 	<include file="Includes_MusicOSD.xml" />
 	<include file="Includes_Weather.xml" />
@@ -1708,7 +1709,7 @@
 			<posy>0</posy>
 			<animation effect="slide" end="245" tween="circle" easing="out" delay="0" time="700" condition="ControlGroup(9100).HasFocus">Conditional</animation>
 			<animation effect="slide" end="0,-55" tween="circle" easing="out" delay="0" time="200" condition="Control.IsVisible(55)">Conditional</animation>
-			
+
 			<visible>[Player.HasAudio + !IsEmpty(Window(10025).Property(PlayingBackgroundMedia))] | !Player.HasVideo</visible>
 			<!-- <visible>!Player.HasMedia</visible> -->
 			<visible>!IsEmpty(Window(Home).Property(NextAired.Label)) + !stringcompare(ListItem.Label,..) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !IsEmpty(ListItem.TVShowTitle) + !IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Control.HasFocus(555)</visible>
@@ -2069,7 +2070,7 @@
 	</include>
 
 	<!-- View Options -->
-	<include name="view_numbers">50,51,52,53,54,55</include>
+	<include name="view_numbers">50,51,52,53,54,55,56</include>
 	<include name="view_conditions">
 		<include>Fanart-Videos</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.51)">View-Posters-51</include>
@@ -2077,7 +2078,8 @@
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.53)">View-ShowCase-53</include>	
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.54)">View-WideList-54</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.55)">View-Icons-55</include>
-				<control type="group">
+		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.56)">View-Pictures-56</include>
+		<control type="group">
 			<!-- Wating for content to load - showing splash screen -->
 			<visible>[!IntegerGreaterThan(Container.NumItems,-1) | Container.IsUpdating]</visible>
 			<control type="image">
@@ -2459,6 +2461,14 @@
 			<include>view_settings_radiobutton</include>
 			<visible>Control.IsVisible(55)</visible>
 		</control>
+		<control type="radiobutton" id="538">
+			<description>Show Panel Info for pictures view</description>
+			<label>31092</label>
+			<onclick>Skin.ToggleSetting(Pictures_hide_panel)</onclick>
+			<selected>!Skin.HasSetting(Pictures_hide_panel)</selected>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(56)</visible>
+		</control>
 	</include>
 
 	<include name="views_animation">
@@ -2524,6 +2534,19 @@
 				<include>hide_topbar_options</include>
 				<include>view_options</include>		
 			</control>			
+		</control>
+	</include>
+
+	<include name="skin_version_label">
+		<control type="label">
+			<posx>1630</posx>
+			<posy>1040</posy>
+			<width>300</width>
+			<height>30</height>
+			<align>center</align>
+			<label>$INFO[Window(Home).Property(SkinHelper.skinTitle)]</label>
+			<textcolor>grey</textcolor>
+			<font>font-14</font>
 		</control>
 	</include>
 

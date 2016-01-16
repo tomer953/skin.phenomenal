@@ -323,7 +323,9 @@
 			<animation effect="zoom" start="1632,80,290,1000" end="1632,80,1,1000" time="300">WindowClose</animation>
 			<visible>IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 		</control>
-
+		
+		<include>skin_version_label</include>
+				
 		<!-- Main list List Of groups -->
 		<control type="grouplist" id="3">
 			<posx>1342</posx>

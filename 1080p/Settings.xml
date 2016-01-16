@@ -7,7 +7,7 @@
 	<controls>
 		<include>top_bar_solid</include>
 		<control type="group">
-			<!--$LOCALIZE[31158] - שינוי הגדרות -->
+			<!--$LOCALIZE[31158] - Change Settings -->
 
 			<control type="group">
 				<control type="image">
@@ -56,7 +56,7 @@
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<orientation>vertical</orientation>
-				
+
 				<!-- Appearance -->
 				<control type="button" id="1">
 					<width>300</width>
@@ -233,6 +233,8 @@
 				</control>
 
 			</control>
+
+			<include>skin_version_label</include>
 
 		</control>
 

@@ -300,7 +300,7 @@
 				<animation effect="zoom" start="1632,80,290,1000" end="1632,80,1,1000" time="300" condition="IsEmpty(Skin.String(AfterReload))">WindowClose</animation>
 			</control>
 		</control>
-
+		<include>skin_version_label</include>
 		<!-- Main list -->
 		<control type="grouplist" id="50">
 			<posx>1342</posx>
