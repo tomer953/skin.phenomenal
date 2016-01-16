@@ -661,6 +661,8 @@
 		<value condition="SubString(ListItem.PictureCamMake,fujifilm)">fujifilm.png</value>
 		<value condition="SubString(ListItem.PictureCamMake,nokia)">nokia.png</value>
 		<value condition="SubString(ListItem.PictureCamMake,panasonic)">panasonic.png</value>	
+		<value condition="SubString(ListItem.PictureCamMake,gopro)">gopro.png</value>	
+		<value condition="SubString(ListItem.PictureCamMake,olympus)">olympus.png</value>	
 		<value>default.png</value>
 	</variable>
 </includes>

@@ -663,8 +663,8 @@
 			</control>
 			<control type="button" id="323">
 				<label>31096</label>
-				<label2>$INFO[Skin.String(CustomPicturesBackgroundPath)]</label2>
-				<onclick>Skin.SetPath(CustomPicturesBackgroundPath)</onclick>
+				<label2>$INFO[Skin.String(SkinHelper.CustomPicturesBackgroundPath)]</label2>
+				<onclick>Skin.SetPath(SkinHelper.CustomPicturesBackgroundPath)</onclick>
 				<align>left</align>
 				<width>1250</width>
 				<include>button_settings_2</include>

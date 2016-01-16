@@ -692,7 +692,7 @@
 						<textcolor>white</textcolor>
 						<shadowcolor>$var[main_color]</shadowcolor>
 						<align>center</align>
-						<label>$INFO[Container.FolderName,, - ]$INFO[ListItem.Label]</label>
+						<label>$VAR[pictures_mainlabel]</label>
 					</control>
 					<control type="label">
 						<posx>0</posx>
@@ -785,6 +785,10 @@
 			</control>
 		</control>
 	</include>
+	<variable name="pictures_mainlabel">
+	<value condition="Window.IsActive(mypics.xml)">$INFO[Container.FolderName,, - ]$INFO[ListItem.Label]</value>
+	<value>$INFO[ListItem.Label]</value>
+	</variable>
 	<variable name="pictures_sublabel">
 		<value condition="Window.IsActive(mypics.xml)">$INFO[ListItem.Size]$INFO[ListItem.PictureResolution,  • ,]$INFO[ListItem.PictureDatetime,  • ,]</value>
 		<value condition="Container.Content(episodes)"></value>
