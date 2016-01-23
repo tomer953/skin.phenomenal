@@ -347,7 +347,8 @@
 	<variable name="ViewFanartText">
 		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!IsEmpty(ListItem.Plot) + Control.IsVisible(50) + Container.Content(Episodes)">$INFO[ListItem.Premiered,(,) ][COLOR=$VAR[main_color]]$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season, - S]$INFO[ListItem.Episode,E, -] $INFO[ListItem.Title][/COLOR][CR]$INFO[ListItem.Plot]</value>
-		<value condition="IsEmpty(ListItem.PlotOutline) + !IsEmpty(ListItem.Plot) + !substring(ListItem.Path,plugin://plugin.video.)">$INFO[ListItem.Plot]</value>		
+		<value condition="IsEmpty(ListItem.PlotOutline) + !IsEmpty(ListItem.Plot) + !substring(ListItem.Path,plugin://plugin.video.) + IsEmpty(ListItem.OriginalTitle)">[COLOR=$VAR[main_color]]$INFO[ListItem.Label][/COLOR][CR]$INFO[ListItem.Plot]</value>	
+		<value condition="IsEmpty(ListItem.PlotOutline) + !IsEmpty(ListItem.Plot) + !substring(ListItem.Path,plugin://plugin.video.) + !IsEmpty(ListItem.OriginalTitle)">[COLOR=$VAR[main_color]]$INFO[ListItem.OriginalTitle][/COLOR][CR]$INFO[ListItem.Plot]</value>		
 		<value condition="substring(ListItem.Path,plugin://plugin.video.) + Control.IsVisible(50)">[COLOR=$VAR[main_color]]$INFO[ListItem.Label][/COLOR][CR]$INFO[ListItem.Plot]</value>
 		<value condition="substring(ListItem.Path,plugin://plugin.video.) + !Control.IsVisible(50)">$INFO[ListItem.Plot]</value>
 		<value condition="!IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>

@@ -499,7 +499,7 @@
 							<height>35</height>
 							<visible>!IsEmpty(Container.FolderName)</visible>	
 							<control type="textbox">
-								<posx>30</posx>
+								<posx>0</posx>
 								<posy>0</posy>
 								<width>320</width>
 								<height>75</height>
