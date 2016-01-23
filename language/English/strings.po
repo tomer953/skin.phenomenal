@@ -426,6 +426,10 @@ msgctxt "#31104"
 msgid "Use widget fanart as background"
 msgstr ""
 
+msgctxt "#31105"
+msgid "Pulsar - use original title instead of default title"
+msgstr ""
+
 msgctxt "#31106"
 msgid "Miscellaneous options"
 msgstr ""

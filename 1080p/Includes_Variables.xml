@@ -340,7 +340,7 @@
 		<value condition="!IsEmpty(Window(home).Property(SeasonNumber))">$INFO[Window(home).Property(SeasonNumber)]</value>
 	</variable>
 	<variable name="movie_label">
-		<value condition="substring(ListItem.Path,plugin://plugin.video.pulsar) + !IsEmpty(ListItem.OriginalTitle)">$INFO[ListItem.OriginalTitle]</value>
+		<value condition="substring(ListItem.Path,plugin://plugin.video.pulsar) + !IsEmpty(ListItem.OriginalTitle) + !Skin.HasSetting(Pulsar_ShowTitle)">$INFO[ListItem.OriginalTitle]</value>
 		<value condition="[Container.Content(Episodes) | Container.Content(songs)] + !IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
