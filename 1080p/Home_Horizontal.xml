@@ -468,31 +468,16 @@
 
 			<control type="wraplist" id="9002">
 				<include>widget_content_horizontal</include>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + !StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
 				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
-				<scrolltime tween="back" easing="Out">500</scrolltime>
-			</control>
+			</control>	
 			<control type="wraplist" id="9002">
 				<include>widget_content_horizontal</include>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
-				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
-				<autoscroll>true</autoscroll>
-				<scrolltime tween="sine" easing="Out">6000</scrolltime>
-			</control>		
-			<control type="wraplist" id="9002">
-				<include>widget_content_horizontal</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + !StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
 				<content><include>skinshortcuts-submenu</include></content>
-				<scrolltime tween="back" easing="Out">500</scrolltime>
+				<!-- <scrolltime tween="back" easing="Out">500</scrolltime> -->
 			</control>
-			<control type="wraplist" id="9002">
-				<include>widget_content_horizontal</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
-				<content><include>skinshortcuts-submenu</include></content>
-				<autoscroll>true</autoscroll>
-				<scrolltime tween="sine" easing="Out">6000</scrolltime>
-			</control>
-			
+
 			<!-- Right Part of wiget -->
 			<!-- Widget Tag Name -->
 			<control type="image">
@@ -547,7 +532,7 @@
 			<include>widget_details_horizontal</include>
 		</control>
 	</include>
-
+	
 	<!-- Widget Content for Horizontal layout -->
 	<include name="widget_content_horizontal">
 		<orientation>Horizontal</orientation>
@@ -559,7 +544,8 @@
 		<ondown>9000</ondown>
 		<onleft>9002</onleft>
 		<onright>9002</onright>
-		<focusposition>5</focusposition>				
+		<focusposition>5</focusposition>
+		<autoscroll time="6000">!Control.HasFocus(9002) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</autoscroll>		
 		<animation effect="fade" start="100" end="0" time="0" condition="Container(9002).IsUpdating">Conditional</animation>
 		<animation effect="slide" start="650" end="0" time="300" condition="!Container(9002).IsUpdating">Conditional</animation>
 		<scrolltime tween="back" easing="Out">500</scrolltime>

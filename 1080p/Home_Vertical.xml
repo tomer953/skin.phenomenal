@@ -429,29 +429,13 @@
 			</control>
 			<control type="wraplist" id="9002">
 				<include>widget_content_vertical</include>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + !StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
-				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
-				<scrolltime tween="back" easing="Out">500</scrolltime>
-			</control>
-			<control type="wraplist" id="9002">
-				<include>widget_content_vertical</include>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
-				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
-				<autoscroll>true</autoscroll>
-				<scrolltime tween="sine" easing="Out">6000</scrolltime>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
+				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>			
 			</control>		
 			<control type="wraplist" id="9002">
 				<include>widget_content_vertical</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + !StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
 				<content><include>skinshortcuts-submenu</include></content>
-				<scrolltime tween="back" easing="Out">500</scrolltime>
-			</control>
-			<control type="wraplist" id="9002">
-				<include>widget_content_vertical</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
-				<content><include>skinshortcuts-submenu</include></content>
-				<autoscroll>true</autoscroll>
-				<scrolltime tween="sine" easing="Out">6000</scrolltime>
 			</control>
 			<control type="image">
 				<description>Busy animation</description>
@@ -465,7 +449,9 @@
 			</control>
 		</control>
 	</include>
-
+	<variable name="abctest">
+	<value>5000</value>
+	</variable>
 	<!-- Widget Content for Vertical layout -->
 	<include name="widget_content_vertical">
 		<orientation>vertical</orientation>
@@ -478,6 +464,7 @@
 		<onleft>9000</onleft>
 		<onright>9000</onright>
 		<focusposition>3</focusposition>
+		<autoscroll time="6000">!Control.HasFocus(9002) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</autoscroll>
 		<animation effect="fade" start="100" end="0" time="0" condition="Container(9002).IsUpdating">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,-50" time="0" condition="Skin.HasSetting(Home_HideTopBar)">Conditional</animation>
 		<itemlayout  width="398" height="110">
