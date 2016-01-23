@@ -468,14 +468,31 @@
 
 			<control type="wraplist" id="9002">
 				<include>widget_content_horizontal</include>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + !StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
 				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
+				<scrolltime tween="back" easing="Out">500</scrolltime>
 			</control>
 			<control type="wraplist" id="9002">
 				<include>widget_content_horizontal</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
-				<content><include>skinshortcuts-submenu</include></content> 
+				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
+				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
+				<autoscroll>true</autoscroll>
+				<scrolltime tween="sine" easing="Out">6000</scrolltime>
+			</control>		
+			<control type="wraplist" id="9002">
+				<include>widget_content_horizontal</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + !StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
+				<content><include>skinshortcuts-submenu</include></content>
+				<scrolltime tween="back" easing="Out">500</scrolltime>
 			</control>
+			<control type="wraplist" id="9002">
+				<include>widget_content_horizontal</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
+				<content><include>skinshortcuts-submenu</include></content>
+				<autoscroll>true</autoscroll>
+				<scrolltime tween="sine" easing="Out">6000</scrolltime>
+			</control>
+			
 			<!-- Right Part of wiget -->
 			<!-- Widget Tag Name -->
 			<control type="image">

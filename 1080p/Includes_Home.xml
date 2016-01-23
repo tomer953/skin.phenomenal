@@ -75,8 +75,8 @@
 
 	<variable name="varBackground">
 		<value condition="[SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]">$VAR[password_fanart]</value>
-		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
-		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
+		<value condition="[Control.HasFocus(9002) | StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)] + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
+		<value condition="[Control.HasFocus(9002) | StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)] + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(Background),wall,left)">black.png</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
 		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value>		
@@ -84,9 +84,13 @@
 	</variable>
 	<variable name="varBackground2">
 		<value condition="StringCompare(Container(9001).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="StringCompare(Container(9001).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
+		<value condition="StringCompare(Container(9001).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container(9001).ListItem.Property(Background))">$INFO[Container(9001).ListItem.Property(Background)]</value>		
 		<value condition="SubString(Container(9001).ListItem.Property(Background),wall,left)">black.png</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
 		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value> 
 		<value>$INFO[Container(9000).ListItem.Property(Background)]</value>
 	</variable>

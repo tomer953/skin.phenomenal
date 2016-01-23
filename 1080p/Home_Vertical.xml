@@ -429,13 +429,29 @@
 			</control>
 			<control type="wraplist" id="9002">
 				<include>widget_content_vertical</include>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + !StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
 				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
+				<scrolltime tween="back" easing="Out">500</scrolltime>
 			</control>
 			<control type="wraplist" id="9002">
 				<include>widget_content_vertical</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
+				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
+				<autoscroll>true</autoscroll>
+				<scrolltime tween="sine" easing="Out">6000</scrolltime>
+			</control>		
+			<control type="wraplist" id="9002">
+				<include>widget_content_vertical</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + !StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
 				<content><include>skinshortcuts-submenu</include></content>
+				<scrolltime tween="back" easing="Out">500</scrolltime>
+			</control>
+			<control type="wraplist" id="9002">
+				<include>widget_content_vertical</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</visible>
+				<content><include>skinshortcuts-submenu</include></content>
+				<autoscroll>true</autoscroll>
+				<scrolltime tween="sine" easing="Out">6000</scrolltime>
 			</control>
 			<control type="image">
 				<description>Busy animation</description>
@@ -464,7 +480,6 @@
 		<focusposition>3</focusposition>
 		<animation effect="fade" start="100" end="0" time="0" condition="Container(9002).IsUpdating">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,-50" time="0" condition="Skin.HasSetting(Home_HideTopBar)">Conditional</animation>
-		<scrolltime tween="back" easing="Out">500</scrolltime>
 		<itemlayout  width="398" height="110">
 			<include name="stroke">
 				<param name="posx" value="8" />

@@ -97,6 +97,7 @@
 	<widgetPlaylists>True</widgetPlaylists>
 	<!-- Backgrounds -->
 	<background label="400">weather</background>
+	<background label="31104">widgetbackground</background>
 <!-- 	<background label="31511">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</background>
 	<background label="31512">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</background>
 	<background label="31513">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</background>

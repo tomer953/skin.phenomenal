@@ -422,6 +422,10 @@ msgctxt "#31103"
 msgid "Show scrolling titles"
 msgstr ""
 
+msgctxt "#31104"
+msgid "Use widget fanart as background"
+msgstr ""
+
 msgctxt "#31106"
 msgid "Miscellaneous options"
 msgstr ""
