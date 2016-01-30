@@ -4,11 +4,11 @@
 		<pulseonselect>false</pulseonselect>
 		<align>center</align>
 		<textcolor>grey_b</textcolor>
-		<focusedcolor>darkgrey</focusedcolor>
+		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey_a</disabledcolor>
 		<invalidcolor>red</invalidcolor>
 		<aligny>center</aligny>
-		<texturefocus>dialogs/grey1.png</texturefocus>
+		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<label>-</label>
 		<font>font-20</font>
@@ -90,8 +90,8 @@
 	<default type="resize">
 		<posx>90</posx>
 		<posy>288</posy>
-		<texturefocus border="7">list-focus.png</texturefocus>
-		<texturenofocus border="7">list-nofocus.png</texturenofocus>
+		<texturefocus>calibrate/CalibratePixelRatioFO.png</texturefocus>
+		<texturenofocus>calibrate/CalibratePixelRatioNF.png</texturenofocus>
 	</default>
 	<default type="selectbutton">
 		<posx>735</posx>

@@ -298,7 +298,7 @@
 							<label>587</label>
 							<align>left</align>
 							<textcolor>grey_b</textcolor>
-							<focusedcolor>darkgrey</focusedcolor>
+							<focusedcolor>white</focusedcolor>
 							<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 						</control>
 						<control type="button" id="5">
@@ -350,7 +350,7 @@
 							<height>45</height>
 							<align>center</align>
 							<textcolor>grey_b</textcolor>
-							<focusedcolor>darkgrey</focusedcolor>
+							<focusedcolor>white</focusedcolor>
 							<label>24034</label>
 						</control>
 

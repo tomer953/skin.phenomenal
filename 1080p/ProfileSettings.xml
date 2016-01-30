@@ -7,7 +7,7 @@
 			<posy>0</posy>
 			<width>1920</width>
 			<height>1080</height>
-			<texture>dialogs\black.png</texture>
+			<texture>black.png</texture>
 			<animation effect="fade" start="0" end="87" time="300">WindowOpen</animation>
 			<animation effect="fade" start="87" end="0" time="300">WindowClose</animation>
 		</control>
@@ -30,7 +30,7 @@
 			<width>256</width>
 			<height>256</height>
 			<aspectratio aligny="center">keep</aspectratio>
-			<texture>defaultUser.png</texture>
+			<texture>defaultuser.png</texture>
 		</control>
 
 		<!-- Grouplist -->
@@ -86,8 +86,8 @@
 				<width>280</width>
 				<label>186</label>
 				<textcolor>darkgrey</textcolor>
-				<focusedcolor>grey_b</focusedcolor>
-				<texturefocus>dialogs/grey2.png</texturefocus>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 				<texturenofocus>dialogs/grey1.png</texturenofocus>
 			</control>
 
@@ -96,8 +96,8 @@
 				<width>280</width>
 				<label>222</label>
 				<textcolor>darkgrey</textcolor>
-				<focusedcolor>grey_b</focusedcolor>
-				<texturefocus>dialogs/grey2.png</texturefocus>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 				<texturenofocus>dialogs/grey1.png</texturenofocus>
 			</control>
 

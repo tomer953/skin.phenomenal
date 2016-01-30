@@ -38,7 +38,7 @@
 				<texture background="true">$INFO[Listitem.Icon]</texture>
 				<bordertexture colordiffuse="grey_b">white.png</bordertexture>
 				<bordersize>2</bordersize>
-				<fadetime>IconCrossfadeTime</fadetime>
+				<fadetime>300</fadetime>
 				<visible>!stringcompare(ListItem.Label,..)</visible>
 			</control>
 
@@ -75,7 +75,7 @@
 					<align>left</align>
 					<width>213</width>
 					<height>320</height>
-					<itemgap>10</itemgap>
+					<itemgap>0</itemgap>
 					<orientation>vertical</orientation>
 					<onup>9000</onup>
 					<ondown>9000</ondown>
@@ -84,48 +84,48 @@
 					<control type="button" id="6">
 						<description>Enable</description>
 						<width>213</width>
-						<height>35</height>
+						<height>45</height>
 						<label>24022</label>
 					</control>
 					<control type="button" id="7">
 						<description>Disable</description>
 						<width>213</width>
-						<height>35</height>
+						<height>45</height>
 						<label>24021</label>
 
 					</control>
 					<control type="button" id="8">
 						<description>Update</description>
 						<width>213</width>
-						<height>35</height>
+						<height>45</height>
 						<label>24069</label>
 
 					</control>
 					<control type="button" id="11">
 						<description>Rollback</description>
 						<width>213</width>
-						<height>35</height>
+						<height>45</height>
 						<label>24048</label>
 
 					</control>
 					<control type="button" id="9">
 						<description>Settings</description>
 						<width>213</width>
-						<height>35</height>
+						<height>45</height>
 						<label>5</label>
 
 					</control>
 					<control type="button" id="10">
 						<description>Changelog</description>
 						<width>213</width>
-						<height>35</height>
+						<height>45</height>
 						<label>24054</label>
 
 					</control>
 					<control type="button" id="12">
 						<description>Run</description>
 						<width>213</width>
-						<height>35</height>
+						<height>45</height>
 						<label>518</label>
 					</control>
 				</control>
@@ -199,7 +199,7 @@
 						<control type="label">
 							<posx>820</posx>
 							<posy>4</posy>
-							<height>40</height>
+							<height>20</height>
 							<width>810</width>
 							<textcolor>grey_a</textcolor>
 							<align>right</align>

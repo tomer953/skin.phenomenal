@@ -2,23 +2,16 @@
 <window>
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<views>50</views>
+	<views><include>view_numbers</include></views>
 	<controls>
 		<include>FS_Video</include>
-
-		<!-- 		<control type="videowindow">
-			<posx>38</posx>
-			<posy>33</posy>
-			<width>1238</width>
-			<height>758</height>
-			<visible>Player.HasVideo + !Skin.HasSetting(VideoBackgrounds)</visible>
-		</control> -->
-
 		<control type="group">
-			<include>PVRChannels</include>
-			<include>top_bar</include>
-			<include>VideoInfo</include>
-			<include>MusicInfo</include>
+			<control type="group">
+				<include>view_conditions</include>
+				<include condition="!Skin.HasSetting(hide_fanart_topbar)">top_bar</include>
+				<include>VideoInfo</include>
+				<include>MusicInfo</include>
+			</control>
 		</control>
 		<control type="group">
 			<posy>80</posy>
@@ -67,6 +60,18 @@
 					<width>270</width>
 					<label>-</label>
 				</control> -->
+				<control type="button" id="4000">
+					<description>View As button</description>
+					<label>$LOCALIZE[457]: $INFO[Container.Viewmode]</label>
+					<onclick>RunScript(script.skin.helper.service,action=SETVIEW)</onclick>
+					<include>view_settings_radiobutton</include>
+				</control>
+				<control type="button" id="498">
+					<description>Show View Options</description>
+					<label>14018</label>
+					<include>view_settings_radiobutton</include>
+					<onclick>SetFocus(8000)</onclick>
+				</control>
 				<control type="button" id="3">
 					<description>Sort by button</description>
 					<posx>40</posx>
@@ -163,6 +168,6 @@
 
 			</control>
 		</control>
-
+	<include>view_options_panel</include>
 	</controls>
 </window>

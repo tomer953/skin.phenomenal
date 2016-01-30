@@ -102,7 +102,7 @@
 					<visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
 					<visible>System.Loggedon</visible>
 				</control>
-				<control type="togglebutton" id="6008">
+				<control type="button" id="6008">
 					<include>shutdown_buttons</include>
 					<label>20046</label>
 					<altlabel>20045</altlabel>

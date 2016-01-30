@@ -31,12 +31,9 @@
 				<posx>1635</posx>
 				<posy>444</posy>
 				<width>30</width>
-				<height>315</height>
-				<texturesliderbackground border="0,10,0,10">scrollbar-back.png</texturesliderbackground>
-				<texturesliderbar border="0,10,0,10">scrollbar-front-nofocus.png</texturesliderbar>
-				<texturesliderbarfocus border="0,10,0,10">scrollbar-front.png</texturesliderbarfocus>
-				<textureslidernib>scrollbar-nib-nofocus.png</textureslidernib>
-				<textureslidernibfocus>scrollbar-nib.png</textureslidernibfocus>
+				<height>315</height>			
+				<width>15</width>
+				<include>scroll_bar</include>			
 				<onleft>5</onleft>
 				<onright>5</onright>
 				<showonepage>false</showonepage>
@@ -91,7 +88,7 @@
 				<posy>840</posy>
 				<width>1920</width>
 				<height>3</height>
-				<texture>separator.png</texture>
+				<texture>white.png</texture>
 				<visible>!Window.IsVisible(ProfileSettings)</visible>
 			</control>
 			<control type="button" id="28">

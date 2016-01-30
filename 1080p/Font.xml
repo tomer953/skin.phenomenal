@@ -162,7 +162,7 @@
 		<font>
 			<name>date</name>
 			<filename>NE.ttf</filename>
-			<size>35</size>
+			<size>30</size>
 		</font>
 		<font>
 			<name>weather</name>
@@ -340,7 +340,7 @@
 		<font>
 			<name>date</name>
 			<filename>arial.ttf</filename>
-			<size>28</size>
+			<size>24</size>
 		</font>
 		<font>
 			<name>weather</name>
