@@ -70,7 +70,7 @@
 				<description>date label</description>
 				<posx>1700</posx>
 				<posy>42</posy>
-				<width min="10" max="500">auto</width>
+				<width min="10" max="140">auto</width>
 				<align>right</align>
 				<font>date</font>
 				<textcolor>$VAR[topbar_text_color]</textcolor>
