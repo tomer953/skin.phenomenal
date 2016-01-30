@@ -2,7 +2,7 @@
 <includes>
 	<variable name="ArtistSlide">
 		<value condition="!IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + Skin.HasSetting(Vis-ArtistSlide)">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</value> 
-		<value condition="!IsEmpty(MusicPlayer.Property(Fanart_Image))">$INFO[MusicPlayer.Property(Fanart_Image)]</value>
+		<value condition="!IsEmpty(MusicPlayer.Art(fanart))">$INFO[MusicPlayer.Art(fanart)]</value>
 		<value>special://skin/backgrounds/music.jpg</value>
 	</variable>
 	<variable name="DialogAlbumInfoTitle">
@@ -453,6 +453,15 @@
 		<value condition="!IsEmpty(Skin.String(menu_icon_color_nf))">$INFO[Skin.String(menu_icon_color_nf)]</value>
 		<value>grey</value>
 	</variable>
+	
+	<variable name="menu_vertical_item_bg">
+		<value condition="!IsEmpty(ListItem.Property(TextColor))">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</value>
+		<value>white.png</value>
+	</variable>
+		<variable name="menu_vertical_item_diffuse">
+		<value condition="!IsEmpty(Container(9000).ListItem.Property(TextColor))">white</value>
+		<value>$VAR[main_color]</value>
+	</variable>
 	<variable name="dialog_icon_color">
 		<value condition="IsEmpty(Container(211).ListItem.Property(Icon_Overlay)) + !IsEmpty(Container(211).ListItem.Property(TextColor))">$INFO[Container(211).ListItem.Property(TextColor)]</value>
 		<value condition="IsEmpty(Container(211).ListItem.Property(Icon_Overlay)) + IsEmpty(Container(211).ListItem.Property(TextColor))">$VAR[main_color]</value>
@@ -666,5 +675,14 @@
 		<value condition="SubString(ListItem.PictureCamMake,olympus)">olympus.png</value>
 		<value condition="SubString(ListItem.PictureCamMake,lg electronics)">lg.png</value>
 		<value>default.png</value>
+	</variable>
+
+	<variable name="fanart_bg">
+		<value condition="Window.IsActive(mypics.xml) + !IsEmpty(ListItem.FilenameAndPath) + !StringCompare(ListItem.Label,..) + !ListItem.IsFolder">$INFO[ListItem.FilenameAndPath]</value>
+		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="IsEmpty(ListItem.Art(fanart)) + Window.IsActive(mypics.xml)">special://skin/backgrounds/camera.jpg</value>
+		<value condition="IsEmpty(ListItem.Art(fanart)) + Window.IsActive(MyPVRChannels.xml)">special://skin/backgrounds/livetv.jpg</value>
+		<value condition="Window.IsActive(LoginScreen.xml)">special://skin/backgrounds/camera.jpg</value>
+		<value>special://skin/backgrounds/videos.jpg</value>
 	</variable>
 </includes>

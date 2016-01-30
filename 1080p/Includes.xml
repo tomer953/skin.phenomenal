@@ -99,8 +99,6 @@
 				<visible>!IsEmpty(Container.NumItems)</visible>
 			</control>
 		</control>
-		<include>Home_Top_Weather_Icon</include>
-
 	</include>
 
 	<include name="top_bar">
@@ -116,21 +114,39 @@
 				<include>topbar_nothome_fade_level</include>
 			</control>
 			<include>top_bar_content</include>
+			<include>Home_Top_Weather_Icon</include>
 		</control>
 
 	</include>
 	<include name="top_bar_home">
 		<control type="group">
 			<visible>!Skin.HasSetting(Home_HideTopBar)</visible>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1920</width>
-				<height>80</height>
-				<texture colordiffuse="$VAR[main_color]">white.png</texture>
-				<include>home_fade_level</include>
+			<control type="group">
+				<animation effect="slide" start="290,0" end="0,0" delay="100" time="500" condition="!Skin.HasSetting(Home_Horizontal)">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300" condition="!Skin.HasSetting(Home_Horizontal)">WindowClose</animation>
+				<control type="image">
+					<posx>1630</posx>
+					<posy>0</posy>
+					<width>290</width>
+					<height>80</height>
+					<texture colordiffuse="$VAR[main_color]">white.png</texture>
+					<bordertexture colordiffuse="white">white.png</bordertexture>
+					<bordersize>0,0,0,3</bordersize>
+					<include>home_fade_level</include>
+					<visible>!Skin.HasSetting(Home_Horizontal)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1920</width>
+					<height>80</height>
+					<texture colordiffuse="$VAR[main_color]">white.png</texture>
+					<include>home_fade_level</include>
+					<visible>Skin.HasSetting(Home_Horizontal)</visible>
+				</control>
+				<include>top_bar_content</include>
 			</control>
-			<include>top_bar_content</include>
+			<include>Home_Top_Weather_Icon</include>
 		</control>
 		<control type="group">
 			<visible>Skin.HasSetting(Home_HideTopBar) + Skin.HasSetting(Home_OnlyTime)</visible>
@@ -1460,9 +1476,8 @@
 			<width>100</width>
 			<height>20</height>
 			<font>font-30</font>
-			<textcolor>$VAR[main_color]</textcolor>
-			<selectedcolor>$VAR[main_color]</selectedcolor>
-
+			<textcolor>$VAR[list_color]</textcolor>
+			<selectedcolor>$VAR[list_color]</selectedcolor>
 			<align>right</align>
 			<aligny>center</aligny>
 			<label>.$INFO[ListItem.ChannelNumberLabel]</label>
@@ -1474,9 +1489,8 @@
 			<width>100</width>
 			<height>20</height>
 			<font>font-30</font>
-			<textcolor>$VAR[main_color]</textcolor>
-			<selectedcolor>$VAR[main_color]</selectedcolor>
-
+			<textcolor>$VAR[list_color]</textcolor>
+			<selectedcolor>$VAR[list_color]</selectedcolor>
 			<align>right</align>
 			<aligny>center</aligny>
 			<label>.0$INFO[ListItem.ChannelNumberLabel]</label>
@@ -1516,9 +1530,43 @@
 
 	<include name="RSS">
 		<control type="group">
+			<posy>0</posy>
+			<posx>0</posx>
+			<visible>!Window.IsActive(extendedprogressdialog) + !Skin.HasSetting(Home_Horizontal)</visible>			
+			<control type="image">
+				<left>0</left>
+				<posy>1000</posy>
+				<width>1630</width>
+				<height>80</height>
+				<texture colordiffuse="black">main/widget_title.png</texture>
+				<animation effect="fade" end="100" condition="true">Conditional</animation>
+				<animation type="WindowOpen">
+					<effect type="slide" start="0,100" end="0,0" delay="100" time="300" tween="circle" easing="out" />
+				</animation>
+				<animation effect="slide" start="0,0" end="0,100" delay="0" time="300">WindowClose</animation>
+			</control>
+			<control type="rss">
+				<description>rss feed</description>
+				<posx>11</posx>
+				<posy>1010</posy>
+				<width>1620</width>
+				<height>30</height>
+				<font>font-22</font>
+				<urlset>1</urlset>
+				<textcolor>$VAR[topbar_rss2_color]</textcolor>
+				<titlecolor>$VAR[topbar_rss1_color]</titlecolor>
+				<headlinecolor>$VAR[topbar_rss2_color]</headlinecolor>
+				<shadowcolor>black</shadowcolor>
+				<animation type="WindowOpen">
+					<effect type="slide" start="0,100" end="0,0" delay="100" time="300" tween="circle" easing="out" />
+				</animation>
+				<animation effect="slide" start="0,0" end="0,100" delay="0" time="300">WindowClose</animation>
+			</control>
+		</control>
+		<control type="group">
 			<posy>7</posy>
 			<posx>60</posx>
-			<visible>!Window.IsActive(extendedprogressdialog)</visible>
+			<visible>!Window.IsActive(extendedprogressdialog) + Skin.HasSetting(Home_Horizontal)</visible>	
 			<control type="image">
 				<posx>1500</posx>
 				<posy>6</posy>
