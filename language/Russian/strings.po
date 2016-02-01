@@ -402,6 +402,10 @@ msgctxt "#31097"
 msgid "Rotating Fanarts - Settings"
 msgstr ""
 
+msgctxt "#31098"
+msgid "Bitrate"
+msgstr "Bitrate"
+
 msgctxt "#31099"
 msgid "Items"
 msgstr "Предметов"
@@ -433,6 +437,10 @@ msgstr ""
 msgctxt "#31106"
 msgid "Miscellaneous options"
 msgstr "Другие варианты"
+
+msgctxt "#31107"
+msgid "bit"
+msgstr "bit"
 
 msgctxt "#31113"
 msgid "Single Image"

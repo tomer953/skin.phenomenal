@@ -404,7 +404,7 @@
 			<height>284</height>
 			<aspectratio aligny="bottom" align="left">keep</aspectratio>
 			<texture>$INFO[Player.Art(tvshow.poster)]</texture>
-			<visible>!IsEmpty(Player.Art(tvshow.poster) + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(clearlogo))</visible>
+			<visible>!IsEmpty(Player.Art(tvshow.poster)) + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(clearlogo))</visible>
 		</control>
 
 		<control type="image">
@@ -416,7 +416,7 @@
 			<!-- 0*309*320*203 -->
 			<aspectratio align="center">stretch</aspectratio>
 			<texture>$INFO[Player.Art(thumb)]</texture>
-			<visible>!IsEmpty(Player.Art(thumb)) + IsEmpty(Player.Art(clearlogo)) + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)</visible>
+			<visible>!IsEmpty(Player.Art(thumb)) + IsEmpty(Player.Art(clearlogo)) + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))</visible>
 		</control>
 	</include>
 
@@ -885,7 +885,8 @@
 			<texture>osd/flag.png</texture>
 		</control>
 		<control type="label">
-			<label>bit</label>
+			<description>bit</description>
+			<label>31107</label>
 			<font>font-14</font>
 			<textcolor>grey</textcolor>
 			<width>110</width>
@@ -916,7 +917,8 @@
 			<include>fanart_fade_level</include>
 		</control>
 		<control type="label">
-			<label>Bitrate</label>
+			<description>Bitrate</description>
+			<label>31098</label>
 			<font>font-14</font>
 			<textcolor>grey</textcolor>
 			<width>140</width>
@@ -946,7 +948,7 @@
 			<texture>osd/flag.png</texture>
 		</control>
 		<control type="label">
-			<label>Channels</label>
+			<label>19019</label>
 			<font>font-14</font>
 			<textcolor>grey</textcolor>
 			<width>110</width>

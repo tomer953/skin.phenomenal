@@ -402,6 +402,10 @@ msgctxt "#31097"
 msgid "Rotating Fanarts - Settings"
 msgstr "הגדרות רקעים מתחלפים"
 
+msgctxt "#31098"
+msgid "Bitrate"
+msgstr "Bitrate"
+
 msgctxt "#31099"
 msgid "Items"
 msgstr "פריטים"
@@ -433,6 +437,10 @@ msgstr "Pulsar - השתמש בכותרת בשפה המקומית במקום כו
 msgctxt "#31106"
 msgid "Miscellaneous options"
 msgstr "אפשרויות שונות"
+
+msgctxt "#31107"
+msgid "bit"
+msgstr "bit"
 
 msgctxt "#31113"
 msgid "Single Image"
