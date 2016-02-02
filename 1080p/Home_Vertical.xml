@@ -38,7 +38,7 @@
 				<ondown>20</ondown>
 				<onleft>9001</onleft>
 				<onright>9002</onright>
-				<animation effect="slide" start="290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
+				<animation effect="slide" start="580,0" end="0,0" delay="0" time="600">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
 				<scrolltime tween="circle" easing="Out">650</scrolltime>
 				<itemlayout width="290" height="100">

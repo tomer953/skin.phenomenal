@@ -73,7 +73,7 @@
 				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,7)">Conditional</animation>
 				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,8)">Conditional</animation>
 				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,9)">Conditional</animation>
-				<animation effect="slide" start="0,290" end="0,0" delay="100" time="500">WindowOpen</animation>
+				<animation effect="slide" start="0,580" end="0,0" delay="0" time="600">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="0,290" delay="0" time="300">WindowClose</animation>
 				<scrolltime tween="circle" easing="out">650</scrolltime>
 				<itemlayout width="213" height="266" condition="!Skin.HasSetting(Home_Eminence_Layout)">
