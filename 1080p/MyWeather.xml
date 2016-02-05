@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">100</defaultcontrol>
 	<menucontrol>9100</menucontrol>
-	<allowoverlay>no</allowoverlay>
+	
 	<controls>
 		<!-- Hidden button -->
 		<control type="button" id="100">
@@ -19,7 +19,7 @@
 			<posy>0</posy>
 			<width>1920</width>
 			<height>1080</height>
-			<imagepath background="true">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+			<imagepath background="true">$VAR[weather_fanart]</imagepath>
 			<aspectratio>scale</aspectratio>
 			<timeperimage>5000</timeperimage>
 			<randomize>true</randomize>
@@ -124,6 +124,18 @@
 					<onclick>Weather.LocationNext</onclick>
 					<label>$INFO[Weather.Location]</label>
 				</control>
+				<!-- Fanart -->
+                <control type="button" id="9002">
+                    <label>20413</label>
+                    <onclick>RunScript(script.image.resource.select,property=weather.fanart&amp;type=resource.images.weatherfanart)</onclick>
+                    <include>view_settings_radiobutton</include>
+                </control>
+                <!-- Icon -->
+                <control type="button" id="9003">
+                    <label>19284</label>
+                    <onclick>RunScript(script.image.resource.select,property=weather.icons&amp;type=resource.images.weathericons)</onclick>
+                    <include>view_settings_radiobutton</include>
+                </control>
 				<!-- Settings -->
 				<control type="button" id="9004">
 					<label>$LOCALIZE[5]</label>

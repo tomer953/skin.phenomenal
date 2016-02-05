@@ -119,8 +119,8 @@ msgid "Show Weather Icon"
 msgstr "Показать иконку погоды"
 
 msgctxt "#31027"
-msgid "Weather Icon Color"
-msgstr "Цвет иконки погоды"
+msgid "Choose Weather Icons"
+msgstr ""
 
 msgctxt "#31028"
 msgid "Use Custom Splash Screen (video or image)"
@@ -441,6 +441,10 @@ msgstr "Другие варианты"
 msgctxt "#31107"
 msgid "bit"
 msgstr "bit"
+
+msgctxt "#31108"
+msgid "Choose Weather Fanart"
+msgstr ""
 
 msgctxt "#31113"
 msgid "Single Image"

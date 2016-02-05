@@ -78,6 +78,8 @@
 		<textureradiooffnofocus>dialogs/off.png</textureradiooffnofocus>
 		<texturefocus>dialogs/grey1.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
+		<textureradioondisabled colordiffuse="$VAR[main_color]">dialogs/on.png</textureradioondisabled>
+		<textureradiooffdisabled>dialogs/off.png</textureradiooffdisabled>
 		<label>-</label>
 		<font>font-20</font>
 		<textcolor>white</textcolor>
@@ -138,6 +140,8 @@
 		<texturedown colordiffuse="grey">main/arrowdown.png</texturedown>
 		<textureupfocus colordiffuse="$VAR[main_color]">main/arrowup.png</textureupfocus>
 		<texturedownfocus colordiffuse="$VAR[main_color]">main/arrowdown.png</texturedownfocus>
+		<textureupdisabled colordiffuse="grey">main/arrowup.png</textureupdisabled>
+		<texturedowndisabled colordiffuse="grey">main/arrowdown.png</texturedowndisabled>
 		<align>right</align>
 		<width>50</width>
 		<height>33</height>
@@ -163,6 +167,8 @@
 		<texturedown colordiffuse="grey">main/arrowdown.png</texturedown>
 		<textureupfocus colordiffuse="$VAR[main_color]">main/arrowup.png</textureupfocus>
 		<texturedownfocus colordiffuse="$VAR[main_color]">main/arrowdown.png</texturedownfocus>
+		<textureupdisabled colordiffuse="grey">main/arrowup.png</textureupdisabled>
+		<texturedowndisabled colordiffuse="grey">main/arrowdown.png</texturedowndisabled>
 		<font>font-20</font>
 		<textcolor>white</textcolor>
 		<disabledcolor>darkgrey</disabledcolor>

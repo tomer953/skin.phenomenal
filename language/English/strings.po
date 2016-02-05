@@ -119,7 +119,7 @@ msgid "Show Weather Icon"
 msgstr ""
 
 msgctxt "#31027"
-msgid "Weather Icon Color"
+msgid "Choose Weather Icons"
 msgstr ""
 
 msgctxt "#31028"
@@ -441,6 +441,10 @@ msgstr ""
 msgctxt "#31107"
 msgid "bit"
 msgstr "bit"
+
+msgctxt "#31108"
+msgid "Choose Weather Fanart"
+msgstr ""
 
 msgctxt "#31113"
 msgid "Single Image"

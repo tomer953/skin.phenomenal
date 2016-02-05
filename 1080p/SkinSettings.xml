@@ -814,12 +814,21 @@
 				<include>radio_button_settings</include>
 			</control>
 			<control type="button" id="309">
-				<description>Top Bar: weather color</description>
+				<description>Choose Weather Icons</description>
 				<label>$LOCALIZE[31027]</label>
 				<align>right</align>
 				<width>860</width>
 				<include>button_settings_2</include>
-				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=weather_color)</onclick>
+				<onclick>RunScript(script.image.resource.select,property=weather.icons&amp;type=resource.images.weathericons)</onclick>
+				<enable>!Skin.HasSetting(Home_Weather_Icon)</enable>
+			</control>
+			<control type="button" id="372">
+				<description>Choose Weather Fanarts</description>
+				<label>$LOCALIZE[31108]</label>
+				<align>right</align>
+				<width>860</width>
+				<include>button_settings_2</include>
+				<onclick>RunScript(script.image.resource.select,property=weather.fanart&amp;type=resource.images.weatherfanart)</onclick>
 				<enable>!Skin.HasSetting(Home_Weather_Icon)</enable>
 			</control>
 			<control type="label" id="310">

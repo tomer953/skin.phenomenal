@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<allowoverlay>yes</allowoverlay>
+	
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onload>
 	<onload condition="Window.Previous(startup)">Skin.Reset(mypassword)</onload>

@@ -8,7 +8,7 @@
 	<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
 	<controls>
 		<control type="group">
-			<visible>![Window.IsVisible(Seekbar) | Window.IsVisible(KaraokeSelector) | Window.IsVisible(KaraokeLargeSelector) | Window.IsVisible(InfoDialog) | Window.IsVisible(BusyDialog) | Window.IsVisible(SliderDialog) | Window.IsVisible(extendedprogressdialog)]</visible>
+			<visible>![Window.IsVisible(Seekbar) | Window.IsVisible(InfoDialog) | Window.IsVisible(BusyDialog) | Window.IsVisible(SliderDialog) | Window.IsVisible(extendedprogressdialog)]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>10</posy>

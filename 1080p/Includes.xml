@@ -1658,14 +1658,37 @@
 			<visible>!Skin.HasSetting(Home_Weather_Icon)</visible>
 			<visible>!IsEmpty(Weather.Temperature) + !isEmpty(Window(Weather).Property(Current.FanartCode)) + !Player.HasAudio + !Player.HasVideo</visible>
 			<posx>10</posx>
-			<control type="image">
-				<description>Top Weather image</description>
+			<control type="multiimage">
 				<posx>0</posx>
 				<posy>2</posy>
 				<width>80</width>
 				<height>80</height>
-				<texture colordiffuse="$VAR[weather_color]">weather_/$INFO[Window(Weather).Property(Current.FanartCode)].png</texture>			
+				<aspectratio>keep</aspectratio>
+				<imagepath>$INFO[Skin.String(weather.icons.path)]$INFO[Window(weather).Property(Current.FanartCode)]$INFO[Skin.String(weather.icons.ext)]</imagepath>
+				<visible>!IsEmpty(Skin.String(weather.icons.path)) + !IsEmpty(Skin.String(weather.icons.ext)) + !Skin.HasSetting(weather.icons.multi)</visible>
 			</control>
+			<control type="multiimage">
+				<posx>0</posx>
+				<posy>2</posy>
+				<width>80</width>
+				<height>80</height>
+				<aspectratio>keep</aspectratio>
+				<imagepath>$INFO[Skin.String(weather.icons.path)]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
+				<timeperimage>29</timeperimage>
+				<randomize>false</randomize>
+				<animation effect="fade" start="0" end="100" time="3000" delay="100">WindowOpen</animation>
+				<visible>!IsEmpty(Skin.String(weather.icons.path)) + Skin.HasSetting(weather.icons.multi)</visible>
+			</control>
+			<control type="multiimage">
+				<posx>0</posx>
+				<posy>2</posy>
+				<width>80</width>
+				<height>80</height>
+				<aspectratio>keep</aspectratio>
+				<imagepath>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Current.FanartCode,,.png]</imagepath>
+				<visible>IsEmpty(Skin.String(weather.icons.path))  + System.HasAddon(resource.images.weathericons.default)</visible>
+			</control>
+
 			<control type="label">
 				<description>Conditions Label</description>
 				<posx>90</posx>

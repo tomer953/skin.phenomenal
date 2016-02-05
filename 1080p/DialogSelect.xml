@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
-	<zorder>1</zorder>
 	<coordinates>
 		<posx>360</posx>
 		<posy>100</posy>

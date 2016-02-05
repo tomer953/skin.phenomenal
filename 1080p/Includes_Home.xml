@@ -78,17 +78,17 @@
 		<value condition="[Control.HasFocus(9002) | StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)] + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
 		<value condition="[Control.HasFocus(9002) | StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)] + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(Background),wall,left)">black.png</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
 		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value>		
 		<value>$INFO[Container(9000).ListItem.Property(Background)]</value>
 	</variable>
 	<variable name="varBackground2">
-		<value condition="StringCompare(Container(9001).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="StringCompare(Container(9001).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
 		<value condition="StringCompare(Container(9001).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
 		<value condition="StringCompare(Container(9001).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container(9001).ListItem.Property(Background))">$INFO[Container(9001).ListItem.Property(Background)]</value>		
 		<value condition="SubString(Container(9001).ListItem.Property(Background),wall,left)">black.png</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
 		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value> 
@@ -425,8 +425,8 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom7)">$INFO[Window(Home).Property(playlist.6.image.Wall.11)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),wallcustom8)">$INFO[Window(Home).Property(playlist.7.image.Wall.11)]</value>
 	</variable>
-	
-	
+
+
 	<variable name="wall_movieslabel"><value>$LOCALIZE[31029] - $LOCALIZE[20342]</value></variable>
 	<variable name="wall_tvshowslabel"><value>$LOCALIZE[31029] - $LOCALIZE[20343]</value></variable>
 	<variable name="wall_musiclabel"><value>$LOCALIZE[31029] - $LOCALIZE[10005]</value></variable>
@@ -441,16 +441,48 @@
 	<variable name="wall_label6"><value>$LOCALIZE[31029] - $INFO[Window(home).Property(playlist.5.label)]</value></variable>
 	<variable name="wall_label7"><value>$LOCALIZE[31029] - $INFO[Window(home).Property(playlist.6.label)]</value></variable>
 	<variable name="wall_label8"><value>$LOCALIZE[31029] - $INFO[Window(home).Property(playlist.7.label)]</value></variable>
-	
+
 	<include name="Home_Weather_Icon">
-		<control type="image">
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>10</posy>
+			<width>204</width>
+			<height>204</height>
+			<aspectratio>keep</aspectratio>
+			<imagepath>$INFO[Skin.String(weather.icons.path)]$INFO[Window(weather).Property(Current.ConditionIcon)]$INFO[Skin.String(weather.icons.ext)]</imagepath>
+			<visible>!IsEmpty(Skin.String(weather.icons.path)) + !IsEmpty(Skin.String(weather.icons.ext)) + !Skin.HasSetting(weather.icons.multi)</visible>
+		</control>
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>10</posy>
+			<width>204</width>
+			<height>204</height>
+			<aspectratio>keep</aspectratio>
+			<imagepath>$INFO[Skin.String(weather.icons.path)]$INFO[Window(weather).Property(Current.ConditionIcon)]</imagepath>
+			<timeperimage>29</timeperimage>
+			<randomize>false</randomize>
+			<animation effect="fade" start="0" end="100" time="3000" delay="100">WindowOpen</animation>
+			<visible>!IsEmpty(Skin.String(weather.icons.path)) + Skin.HasSetting(weather.icons.multi)</visible>
+		</control>
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>10</posy>
+			<width>204</width>
+			<height>204</height>
+			<aspectratio>keep</aspectratio>
+			<imagepath>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Current.ConditionIcon,,.png]</imagepath>
+			<visible>IsEmpty(Skin.String(weather.icons.path))  + System.HasAddon(resource.images.weathericons.default)</visible>
+		</control>
+
+
+		<!-- 		<control type="image">
 			<description>Weather image</description>
 			<posx>0</posx>
 			<posy>10</posy>
 			<width>204</width>
 			<height>204</height>
 			<texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
-		</control>
+		</control> -->
 	</include>
 	<include name="VideoInfo"> 
 		<control type="group">

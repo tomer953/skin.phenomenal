@@ -24,4 +24,12 @@
 		<icon />
 		<thumb />
 	</shortcut>
+		<shortcut>
+		<action>ActivateWindow(EventLog)</action>
+		<label>14111</label>
+		<label2>32034</label2>
+		<defaultID>14111</defaultID>
+		<icon />
+		<thumb />
+	</shortcut>
 </shortcuts>

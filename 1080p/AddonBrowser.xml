@@ -5,7 +5,7 @@
 	<defaultcontrol always="true">50</defaultcontrol>
 	<backgroundcolor>ffdadad7</backgroundcolor>
 	<views>50,500</views>
-
+	<menucontrol>9100</menucontrol>
 	<controls>
 		<control type="group">
 

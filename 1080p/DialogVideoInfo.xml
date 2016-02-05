@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">8</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+
 	<controls>
 
 		<control type="group">
@@ -251,6 +251,29 @@
 					</control>
 				</control>
 				<control type="group">
+					<visible>!IsEmpty(ListItem.UserRating)</visible>	
+					<control type="label">
+						<posx>1120</posx>
+						<posy>0</posy>
+						<height>40</height>
+						<width>140</width>
+						<textcolor>grey_b</textcolor>
+						<align>right</align>
+						<label>$LOCALIZE[38018]:</label>
+						<font>font-20</font>
+					</control>
+					<control type="label">
+						<posx>980</posx>
+						<posy>4</posy>
+						<height>40</height>
+						<width>990</width>
+						<textcolor>grey_a</textcolor>
+						<align>right</align>
+						<label>$INFO[ListItem.UserRating]</label>
+						<font>font-18</font>
+					</control>
+				</control>
+				<control type="group">
 					<visible>!IsEmpty(ListItem.PlayCount)</visible>	
 					<control type="label">
 						<posx>1120</posx>
@@ -444,12 +467,12 @@
 
 
 			<control type="grouplist" id="9000">		
-				<posx>0</posx>
+				<posx>3</posx>
 				<posy>940</posy>
 				<align>right</align>
 				<width>1450</width>
 				<height>300</height>
-				<itemgap>10</itemgap>
+				<itemgap>0</itemgap>
 				<orientation>Horizontal</orientation>
 				<onup>50</onup>
 				<ondown>50</ondown>
@@ -467,11 +490,11 @@
 					<label>208</label>
 					<altlabel>1024</altlabel>
 					<textcolor>grey_b</textcolor>
-					<focusedcolor>darkgrey</focusedcolor>
+					<focusedcolor>white</focusedcolor>
 					<usealttexture>Container.Content(TVShows)</usealttexture>
-					<texturefocus colordiffuse="grey_b">white.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<alttexturefocus colordiffuse="grey_b">white.png</alttexturefocus>
+					<alttexturefocus colordiffuse="$VAR[main_color]">white.png</alttexturefocus>
 					<alttexturenofocus>-</alttexturenofocus>
 
 				</control>
@@ -492,6 +515,12 @@
 					<width>213</width>
 					<height>55</height>
 					<label>184</label>
+				</control>
+				<control type="button" id="7">
+					<description>User ratings</description>
+					<width>213</width>
+					<height>55</height>
+					<label>38023</label>
 				</control>
 				<control type="button" id="1113">
 					<description>Extras</description>

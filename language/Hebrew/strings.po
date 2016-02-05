@@ -119,8 +119,8 @@ msgid "Show Weather Icon"
 msgstr "הצג סמל מזג האוויר"
 
 msgctxt "#31027"
-msgid "Weather Icon Color"
-msgstr "צבע סמל מזג האוויר"
+msgid "Choose Weather Icons"
+msgstr "בחר סמלים למזג האוויר"
 
 msgctxt "#31028"
 msgid "Use Custom Splash Screen (video or image)"
@@ -441,6 +441,10 @@ msgstr "אפשרויות שונות"
 msgctxt "#31107"
 msgid "bit"
 msgstr "bit"
+
+msgctxt "#31108"
+msgid "Choose Weather Fanart"
+msgstr "בחר פאנארט למזג האוויר"
 
 msgctxt "#31113"
 msgid "Single Image"

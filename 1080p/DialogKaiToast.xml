@@ -26,33 +26,6 @@
 				<aspectratio>keep</aspectratio>
 				<texture colordiffuse="grey">defaulticoninfo.png</texture>
 			</control>
-			<!--<control type="image" id="403">
-				<description>avatar</description>
-				<posx>30</posx>
-				<width>45</width>
-				<height>45</height>
-				<aspectratio>keep</aspectratio>
-				<texture>kai-information.png</texture>
-				<visible>false</visible>
-			</control>
-			<control type="image" id="404">
-				<description>avatar</description>
-				<posx>30</posx>
-				<width>45</width>
-				<height>45</height>
-				<aspectratio>keep</aspectratio>
-				<texture>kai-warning.png</texture>
-				<visible>false</visible>
-			</control>
-			<control type="image" id="405">
-				<description>avatar</description>
-				<posx>30</posx>
-				<width>45</width>
-				<height>45</height>
-				<aspectratio>keep</aspectratio>
-				<texture>kai-error.png</texture>
-				<visible>false</visible>
-			</control> -->
 			<control type="label" id="401">
 				<description>Line 1 Label</description>
 				<posx>75</posx>
