@@ -97,7 +97,7 @@
 	<variable name="varBackground_dialog">
 		<value condition="[SubString(Container(211).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]">$VAR[password_fanart]</value>
 		<value condition="SubString(Container(211).ListItem.Property(Background),wall,left)">hex_bg.png</value>
-		<value condition="StringCompare(Container(211).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
 		<value condition="IsEmpty(Container(211).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value> 
 		<value>$INFO[Container(211).ListItem.Property(Background)]</value>
 	</variable>

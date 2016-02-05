@@ -1685,7 +1685,7 @@
 				<width>80</width>
 				<height>80</height>
 				<aspectratio>keep</aspectratio>
-				<imagepath>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Current.FanartCode,,.png]</imagepath>
+				<imagepath>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Current.FanartCode),,.png]</imagepath>
 				<visible>IsEmpty(Skin.String(weather.icons.path))  + System.HasAddon(resource.images.weathericons.default)</visible>
 			</control>
 

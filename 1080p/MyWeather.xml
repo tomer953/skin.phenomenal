@@ -24,6 +24,7 @@
 			<timeperimage>5000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>2000</fadetime>
+			<visible>!IsEmpty(Window(Weather).Property(Current.FanartCode))</visible>
 		</control>
 		<control type="image">
 			<left>0</left>
