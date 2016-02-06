@@ -876,11 +876,11 @@
 		</control>
 	</include>
 	<variable name="osd_samplerate_label_color">
-		<value condition="!StringCompare(MusicPlayer.BitsPerSample,24) + ![StringCompare(MusicPlayer.samplerate,96) | StringCompare(MusicPlayer.samplerate,192)]">[B][COLOR=gold]$LOCALIZE[613][/COLOR][/B]</value>
+		<value condition="StringCompare(MusicPlayer.BitsPerSample,24) + [StringCompare(MusicPlayer.samplerate,96) | StringCompare(MusicPlayer.samplerate,192)]">[B][COLOR=gold]$LOCALIZE[613][/COLOR][/B]</value>
 		<value>$LOCALIZE[613]</value>
 	</variable>
 	<variable name="osd_samplerate_value_color">
-		<value condition="!StringCompare(MusicPlayer.BitsPerSample,24) + ![StringCompare(MusicPlayer.samplerate,96) | StringCompare(MusicPlayer.samplerate,192)]">[B][COLOR=gold]$INFO[MusicPlayer.samplerate] kHz[/COLOR][/B]</value>
+		<value condition="StringCompare(MusicPlayer.BitsPerSample,24) + [StringCompare(MusicPlayer.samplerate,96) | StringCompare(MusicPlayer.samplerate,192)]">[B][COLOR=gold]$INFO[MusicPlayer.samplerate] kHz[/COLOR][/B]</value>
 		<value>$INFO[MusicPlayer.samplerate] kHz</value>
 	</variable>
 	<include name="flag_bitspersample">
@@ -915,11 +915,11 @@
 		</control>
 	</include>
 		<variable name="osd_bitspersample_label_color">
-		<value condition="!StringCompare(MusicPlayer.BitsPerSample,24)">[B][COLOR=gold]$LOCALIZE[31107][/COLOR][/B]</value>
+		<value condition="StringCompare(MusicPlayer.BitsPerSample,24)">[B][COLOR=gold]$LOCALIZE[31107][/COLOR][/B]</value>
 		<value>$LOCALIZE[31107]</value>
 	</variable>
 	<variable name="osd_bitspersample_value_color">
-		<value condition="!StringCompare(MusicPlayer.BitsPerSample,24)">[B][COLOR=gold]$INFO[MusicPlayer.BitsPerSample][/COLOR][/B]</value>
+		<value condition="StringCompare(MusicPlayer.BitsPerSample,24)">[B][COLOR=gold]$INFO[MusicPlayer.BitsPerSample][/COLOR][/B]</value>
 		<value>$INFO[MusicPlayer.BitsPerSample]</value>
 	</variable>
 	<include name="flag_bitrate">
