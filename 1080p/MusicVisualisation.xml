@@ -229,30 +229,35 @@
 			</control>
 			<control type="grouplist">
 				<posy>988</posy>
-				<posx>1298</posx>
+				<posx>1270</posx>
 				<align>left</align>
 				<width>800</width>
 				<height>52</height>
-				<itemgap>110</itemgap>
+				<itemgap>140</itemgap>
 				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
 				<control type="group">
 					<visible>!IsEmpty(MusicPlayer.Codec)</visible>
 					<include>flag_audiocodec</include>
 				</control>
 
 				<control type="group">
+					<posx>-30</posx>
 					<visible>!IsEmpty(MusicPlayer.Channels)</visible>
 					<include>flag_audiochannels</include>
 				</control>
 				<control type="group">
+					<posx>-60</posx>
 					<visible>!IsEmpty(MusicPlayer.BitsPerSample)</visible>
 					<include>flag_bitspersample</include>
 				</control>
 				<control type="group">
+					<posx>-90</posx>
 					<visible>!IsEmpty(MusicPlayer.samplerate)</visible>
 					<include>flag_samplerate</include>
 				</control>
 				<control type="group">
+					<posx>-90</posx>
 					<visible>!IsEmpty(MusicPlayer.bitrate)</visible>
 					<include>flag_bitrate</include>
 				</control>	

@@ -254,7 +254,7 @@
 		<textoffsetx>35</textoffsetx>
 		<aligny>center</aligny>
 		<font>font-23</font>
-		<texturefocus colordiffuse="grey_a">white.png</texturefocus>
+		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 		<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
 		<label>-</label>
 	</include>
@@ -848,33 +848,41 @@
 	<include name="flag_samplerate">
 		<control type="image">						
 			<description>flags image</description>
-			<width>110</width>
+			<width>140</width>
 			<height>52</height>
 			<posx>0</posx>
 			<posy>0</posy>
 			<texture>osd/flag.png</texture>
 		</control>
 		<control type="label">
-			<label>613</label>
+			<label>$VAR[osd_samplerate_label_color]</label>
 			<font>font-14</font>
 			<textcolor>grey</textcolor>
-			<width>110</width>
+			<width>140</width>
 			<height>52</height>
 			<posx>0</posx>
 			<posy>25</posy>
 			<align>center</align>
 		</control>
 		<control type="label">
-			<label>$INFO[MusicPlayer.samplerate] kHz</label>
+			<label>$VAR[osd_samplerate_value_color]</label>
 			<font>font-18</font>
 			<textcolor>white</textcolor>
-			<width>110</width>
+			<width>140</width>
 			<height>52</height>
 			<posx>0</posx>
 			<posy>-5</posy>
 			<align>center</align>
 		</control>
 	</include>
+	<variable name="osd_samplerate_label_color">
+		<value condition="!StringCompare(MusicPlayer.BitsPerSample,24) + ![StringCompare(MusicPlayer.samplerate,96) | StringCompare(MusicPlayer.samplerate,192)]">[B][COLOR=gold]$LOCALIZE[613][/COLOR][/B]</value>
+		<value>$LOCALIZE[613]</value>
+	</variable>
+	<variable name="osd_samplerate_value_color">
+		<value condition="!StringCompare(MusicPlayer.BitsPerSample,24) + ![StringCompare(MusicPlayer.samplerate,96) | StringCompare(MusicPlayer.samplerate,192)]">[B][COLOR=gold]$INFO[MusicPlayer.samplerate] kHz[/COLOR][/B]</value>
+		<value>$INFO[MusicPlayer.samplerate] kHz</value>
+	</variable>
 	<include name="flag_bitspersample">
 		<control type="image">						
 			<description>flags image</description>
@@ -886,7 +894,7 @@
 		</control>
 		<control type="label">
 			<description>bit</description>
-			<label>31107</label>
+			<label>$VAR[osd_bitspersample_label_color]</label>
 			<font>font-14</font>
 			<textcolor>grey</textcolor>
 			<width>110</width>
@@ -896,7 +904,7 @@
 			<align>center</align>
 		</control>
 		<control type="label">
-			<label>$INFO[MusicPlayer.BitsPerSample]</label>
+			<label>$VAR[osd_bitspersample_value_color]</label>
 			<font>font-18</font>
 			<textcolor>white</textcolor>
 			<width>110</width>
@@ -906,6 +914,14 @@
 			<align>center</align>
 		</control>
 	</include>
+		<variable name="osd_bitspersample_label_color">
+		<value condition="!StringCompare(MusicPlayer.BitsPerSample,24)">[B][COLOR=gold]$LOCALIZE[31107][/COLOR][/B]</value>
+		<value>$LOCALIZE[31107]</value>
+	</variable>
+	<variable name="osd_bitspersample_value_color">
+		<value condition="!StringCompare(MusicPlayer.BitsPerSample,24)">[B][COLOR=gold]$INFO[MusicPlayer.BitsPerSample][/COLOR][/B]</value>
+		<value>$INFO[MusicPlayer.BitsPerSample]</value>
+	</variable>
 	<include name="flag_bitrate">
 		<control type="image">						
 			<description>flags image</description>
