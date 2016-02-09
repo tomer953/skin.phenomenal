@@ -836,7 +836,7 @@
 					</control>
 				</control>
 
-				<!-- גלילה -->
+				<!-- scroll -->
 				<include name="fanart_scroll">
 					<param name="id" value="60" />
 					<param name="listid" value="56" />

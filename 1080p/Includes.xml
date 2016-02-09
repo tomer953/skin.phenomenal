@@ -1154,7 +1154,7 @@
 
 
 	<include name="cdart_sets">
-		<!-- CDART FOR MOVIE SETS  - אוסף מארז סרטים שורה של דיסקים -->
+		<!-- CDART FOR MOVIE SETS -->
 		<control type="grouplist">
 			<posx>235</posx>
 			<posy>826</posy>
