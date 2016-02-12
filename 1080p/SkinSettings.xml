@@ -483,7 +483,7 @@
 				<label>$LOCALIZE[31105]</label>
 				<onclick>Skin.ToggleSetting(Pulsar_ShowTitle)</onclick>
 				<selected>!Skin.HasSetting(Pulsar_ShowTitle)</selected>
-				<visible>System.HasAddon(plugin.video.pulsar)</visible>
+				<visible>System.HasAddon(plugin.video.pulsar) | System.HasAddon(plugin.video.quasar)</visible>
 				<include>radio_button_settings</include>
 			</control>
 			<control type="label" id="119">
