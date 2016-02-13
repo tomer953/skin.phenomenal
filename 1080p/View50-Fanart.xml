@@ -10,24 +10,28 @@
 			<visible>IntegerGreaterThan(Container.NumItems,-1) | !Container.IsUpdating</visible>
 			<include>views_animation</include>
 			<control type="group">
-				<control type="image">
+				<control type="multiimage">
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>1920</width>
 					<height>1080</height>
-					<texture background="true">$VAR[fanart_bg]</texture>
+					<imagepath background="true">$VAR[fanart_bg]</imagepath>
+					<timeperimage>5000</timeperimage>
 					<aspectratio>scale</aspectratio>
-					<fadetime>300</fadetime>
+					<randomize>true</randomize>
+					<fadetime>650</fadetime>
 					<visible>!Player.HasVideo + Skin.HasSetting(fanart_trans)</visible>
 				</control>
-				<control type="image">
+				<control type="multiimage">
 					<posx>0</posx>
 					<posy>80</posy>
 					<width>1388</width>
 					<height>780</height>
-					<texture background="true">$VAR[fanart_bg]</texture>
+					<imagepath background="true">$VAR[fanart_bg]</imagepath>
 					<aspectratio>scale</aspectratio>
-					<fadetime>300</fadetime>
+					<timeperimage>5000</timeperimage>
+					<randomize>true</randomize>
+					<fadetime>650</fadetime>
 					<animation effect="zoom" start="0,0,0,0" end="0,0,1388,860" tween="linear" easing="out" time="400" condition="Skin.HasSetting(hide_fanart_topbar)">Conditional</animation>
 					<animation effect="slide" end="0,-80" tween="linear" easing="out" time="100" condition="Skin.HasSetting(hide_fanart_topbar)">Conditional</animation>
 					<visible>!Player.HasVideo + !Skin.HasSetting(fanart_trans)</visible>
@@ -210,7 +214,7 @@
 						<posy>0</posy>
 						<width>532</width>
 						<height>78</height>
-						<texture>main/main_focus.png</texture>
+						<texture background="true">main/main_focus.png</texture>
 						<visible>Skin.HasSetting(bold_list)</visible>
 					</control>
 					<control type="image">
@@ -279,7 +283,7 @@
 						<posy>34</posy>
 						<width>48</width>
 						<height>48</height>
-						<texture>movieset.png</texture>
+						<texture background="true">movieset.png</texture>
 						<visible>!stringcompare(ListItem.Label,..) + ListItem.IsFolder + !Window.IsVisible(VideoPlaylist) + SubString(ListItem.Path,videodb://movies/sets,left)</visible>
 					</control>
 					<!-- the number of the episode in tvshows -->
@@ -402,7 +406,7 @@
 						<posy>0</posy>
 						<width>532</width>
 						<height>97</height>
-						<texture>main/main_focus.png</texture>
+						<texture background="true">main/main_focus.png</texture>
 						<visible>Skin.HasSetting(bold_list)</visible>
 					</control>
 					<control type="image">
@@ -593,7 +597,7 @@
 					<posy>0</posy>
 					<width>188</width>
 					<height>38</height>
-					<texture>rating0.png</texture>
+					<texture background="true">rating0.png</texture>
 					<aspectratio align="right">keep</aspectratio>
 				</control>
 
@@ -604,7 +608,7 @@
 					<posy>0</posy>
 					<width>188</width>
 					<height>38</height>
-					<texture colordiffuse="$VAR[main_color]">$INFO[ListItem.StarRating]</texture>
+					<texture background="true" colordiffuse="$VAR[main_color]">$INFO[ListItem.StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!StringCompare(ListItem.StarRating,rating0.png)</visible>
 				</control>
@@ -645,7 +649,7 @@
 				<posy>900</posy>
 				<height>200</height>
 				<width>1920</width>
-				<texture>black.png</texture>
+				<texture background="true">black.png</texture>
 				<visible>!Container(50).OnNext + !Container(50).OnPrevious + Control.HasFocus(555) + !Player.HasVideo</visible>
 				<animation type="Visible">
 					<effect type="fade" end="60" time="0"/>
