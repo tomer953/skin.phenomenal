@@ -94,7 +94,15 @@
 					<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 					<include>button_dialogs</include>
 				</control>
-
+				<!-- None -->
+				<control type="button" id="3011">
+					<width>260</width>
+					<textoffsetx>5</textoffsetx>			
+					<label>None</label>
+					<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
+					<include>button_dialogs</include>
+					<visible>False</visible>
+				</control>
 				<!-- Save button -->
 				<control type="button" id="3012">
 					<width>260</width>
@@ -102,16 +110,7 @@
 					<label>190</label>
 					<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 					<include>button_dialogs</include>			
-				</control>
-
-				<!-- None -->
-				<control type="button" id="3011">
-					<width>260</width>
-					<textoffsetx>5</textoffsetx>			
-					<label>$ADDON[script.skin.helper.service 32013]</label>
-					<include>button_dialogs</include>
-					<visible>false</visible>
-				</control> 
+				</control>			
 			</control>		
 
 			<control type="group" id="3020">
