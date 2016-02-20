@@ -479,13 +479,13 @@
 				<width>1250</width>
 				<include>button_settings_2</include>
 			</control>
-			<control type="radiobutton" id="371">
+			<!-- <control type="radiobutton" id="371">
 				<label>$LOCALIZE[31105]</label>
 				<onclick>Skin.ToggleSetting(Pulsar_ShowTitle)</onclick>
 				<selected>!Skin.HasSetting(Pulsar_ShowTitle)</selected>
 				<visible>System.HasAddon(plugin.video.pulsar) | System.HasAddon(plugin.video.quasar)</visible>
 				<include>radio_button_settings</include>
-			</control>
+			</control> -->
 			<control type="label" id="119">
 				<description>Music Options</description>
 				<label>10005</label>
