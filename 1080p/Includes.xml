@@ -2019,6 +2019,7 @@
 				<align>right</align>
 				<textcolor>$PARAM[color]</textcolor>
 				<label>$PARAM[label]</label>
+				<scroll>true</scroll>
 			</control>
 		</definition>
 	</include>
