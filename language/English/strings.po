@@ -459,7 +459,7 @@ msgid "This will apply new icons and backgrounds to your skin menus.[CR]after th
 msgstr ""
 
 msgctxt "#31112"
-msgid "Apply Packs"
+msgid "Apply"
 msgstr ""
 
 msgctxt "#31113"
@@ -528,6 +528,14 @@ msgstr ""
 
 msgctxt "#31129"
 msgid "Mouse Pointer Color"
+msgstr ""
+
+msgctxt "#31130"
+msgid "Add-on dependencies"
+msgstr ""
+
+msgctxt "#31131"
+msgid "Show scrollbar"
 msgstr ""
 
 msgctxt "#31134"
