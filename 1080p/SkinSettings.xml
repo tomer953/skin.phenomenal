@@ -1020,7 +1020,7 @@
 			<ondown>350</ondown>
 			<orientation>vertical</orientation>
 			<visible>StringCompare(Skin.String(Section),3)</visible>
-			<animation effect="slide" end="-400" time="200" condition="Window.IsActive(script-skin_helper_service-ColorPicker.xml)">Conditional</animation>
+			<animation effect="slide" end="-410" time="200" condition="Window.IsActive(script-skin_helper_service-ColorPicker.xml)">Conditional</animation>
 			<control type="label" id="351">
 				<description>Theme Options</description>
 				<label>31063</label>
