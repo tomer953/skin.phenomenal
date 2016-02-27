@@ -421,7 +421,7 @@
 
 
 				<!-- scroll -->
-				<include name="fanart_scroll">
+				<include name="vertical_scroll">
 					<param name="id" value="60" />
 					<param name="listid" value="55" />
 					<param name="posy">0</param>
