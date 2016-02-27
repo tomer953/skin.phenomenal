@@ -45,7 +45,7 @@
 			<height>205</height>
 			<align>center</align>
 			<label>-</label>
-			<font>font-18</font>
+			<font>font-22</font>
 			<autoscroll time="2000" delay="8000" repeat="5000">!Skin.HasSetting(AutoScroll)</autoscroll>
 		</control>
 		<control type="grouplist" id="12">

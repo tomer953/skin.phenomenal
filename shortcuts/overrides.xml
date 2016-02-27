@@ -98,10 +98,10 @@
 	<!-- Backgrounds -->
 	<background label="400">weather</background>
 	<background label="31104">widgetbackground</background>
-<!-- 	<background label="31511">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</background>
+	<background label="31511">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</background>
 	<background label="31512">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</background>
 	<background label="31513">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</background>
-	<background label="31515">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]</background> -->
+	<background label="31515">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]</background>
 	<background label="$VAR[wall_movieslabel]">wallmovies</background>
 	<background label="$VAR[wall_tvshowslabel]">walltvshows</background>
 	<background label="$VAR[wall_musiclabel]">wallmusic</background>
@@ -121,7 +121,7 @@
 
 	<backgrounddefault labelID="weather">weather</backgrounddefault>
 	<backgrounddefault labelID="videos">special://skin/backgrounds/videos.jpg</backgrounddefault>
-	<backgrounddefault labelID="movies">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
+ 	<backgrounddefault labelID="movies">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
 	<backgrounddefault labelID="tvshows">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
 	<backgrounddefault labelID="music">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</backgrounddefault>
 	<backgrounddefault labelID="musicvideos">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]</backgrounddefault>
