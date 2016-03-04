@@ -1071,12 +1071,11 @@
 				<onclick condition="IsEmpty(Skin.String(home.icons.path))">RunScript(script.skinshortcuts,type=setProperty&amp;property=thumb|thumb|thumb|thumb|thumb|thumb|thumb|thumb|thumb|thumb|thumb|thumb|thumb|thumb|thumb&amp;value=special://skin/extras/icons/videos.png|special://skin/extras/icons/dvd.png|special://skin/extras/icons/movies.png|special://skin/extras/icons/tvshows.png|special://skin/extras/icons/vaddons.png|special://skin/extras/icons/tv.png|special://skin/extras/icons/music.png|special://skin/extras/icons/musicvideos.png|special://skin/extras/icons/pictures.png|special://skin/extras/icons/programs.png|special://skin/extras/icons/favourites.png|special://skin/extras/icons/weather.png|special://skin/extras/icons/search.png|special://skin/extras/icons/settings.png|special://skin/extras/icons/power.png&amp;labelID=videos|dvd|movies|tvshows|24001|tv|music|musicvideos|pictures|programs|1036|weather|script.globalsearch|settings|power)</onclick>
 			</control>
 			<control type="button" id="373">
-				<description>Skin Defaults</description>
+				<description>Refresh Live Preview</description>
 				<label>$LOCALIZE[184] $LOCALIZE[1000]</label>
 				<align>center</align>
 				<width>400</width>
 				<include>button_settings_2</include>
-				<onclick>Skin.ToggleSetting(Home_HideTopBar)</onclick>
 				<onclick>Skin.SetString(AfterReload,373)</onclick>
 				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
 				<onclick>ReloadSkin()</onclick> 
