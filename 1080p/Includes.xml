@@ -1036,6 +1036,7 @@
 	<include name="cdart_image">
 		<control type="group">
 			<visible>!Skin.HasSetting(fanart_plot) + !ListItem.IsCollection + !stringcompare(ListItem.Label,..)</visible>
+			<animation effect="slide" end="-610" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
 			<!-- Default Discart - plot -->
 			<control type="image">
 				<posx>1160</posx>
@@ -1075,6 +1076,7 @@
 		</control>
 		<control type="group">
 			<visible>Skin.HasSetting(fanart_plot) + !ListItem.IsCollection + !stringcompare(ListItem.Label,..)</visible>
+			<animation effect="slide" end="-380,-15" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
 			<!-- Default Discart - no plot -->
 			<control type="image">
 				<posx>1160</posx>
@@ -1241,6 +1243,10 @@
 		</control>
 	</include>
 	<include name="flags_movies">
+		<include name="flags_movies_rtl" condition="StringCompare(System.Language,Hebrew)"><param name="posy">$PARAM[posy]</param></include>
+		<include name="flags_movies_ltr" condition="!StringCompare(System.Language,Hebrew)"><param name="posy">$PARAM[posy]</param></include>
+	</include>
+	<include name="flags_movies_rtl">
 		<!-- FLAGS -->
 		<control type="grouplist">
 			<posx>0</posx>
@@ -1318,192 +1324,87 @@
 			</control>	
 		</control>
 	</include>
-	<include name="episode_num_nf">
-		<control type="label">
-			<posx>415</posx>
-			<posy>25</posy>
-			<width>100</width>
-			<height>20</height>
-			<font>font-30</font>
-			<textcolor>grey_b</textcolor>
-			<selectedcolor>grey_b</selectedcolor>
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>.$INFO[ListItem.Episode]$INFO[ListItem.TrackNumber]</label>
-			<visible>IntegerGreaterThan(ListItem.Episode,9) | IntegerGreaterThan(ListItem.TrackNumber,9) | SubString(ListItem.Episode,S)</visible>
-			<visible>[Container.Content(Episodes) + !IsEmpty(ListItem.Episode) + !IsEmpty(ListItem.TVShowTitle)] | [Container.Content(songs) + !IsEmpty(ListItem.TrackNumber)]</visible>
-		</control>
-		<control type="label">
-			<posx>415</posx>
-			<posy>25</posy>
-			<width>100</width>
-			<height>20</height>
-			<font>font-30</font>
-			<textcolor>grey_b</textcolor>
-			<selectedcolor>grey_b</selectedcolor>
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>.0$INFO[ListItem.Episode]$INFO[ListItem.TrackNumber]</label>
-			<visible>!IntegerGreaterThan(ListItem.Episode,9) + !IntegerGreaterThan(ListItem.TrackNumber,9) + !SubString(ListItem.Episode,S)</visible>
-			<visible>[Container.Content(Episodes) + !IsEmpty(ListItem.Episode) + !IsEmpty(ListItem.TVShowTitle)] | [Container.Content(songs) + !IsEmpty(ListItem.TrackNumber)]</visible>
-		</control>
-	</include>
-	<include name="episode_num_f">
-		<control type="label">
-			<posx>415</posx>
-			<posy>25</posy>
-			<width>100</width>
-			<height>20</height>
-			<font>font-30</font>
-			<textcolor>$VAR[list_color]</textcolor>
-			<selectedcolor>$VAR[list_color]</selectedcolor>
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>.$INFO[ListItem.Episode]$INFO[ListItem.TrackNumber]</label>
-			<visible>IntegerGreaterThan(ListItem.Episode,9) | IntegerGreaterThan(ListItem.TrackNumber,9) | SubString(ListItem.Episode,S)</visible>
-			<visible>[Container.Content(Episodes) + !IsEmpty(ListItem.Episode) + !IsEmpty(ListItem.TVShowTitle)] | [Container.Content(songs) + !IsEmpty(ListItem.TrackNumber)]</visible>
-		</control>
-		<control type="label">
-			<posx>415</posx>
-			<posy>25</posy>
-			<width>100</width>
-			<height>20</height>
-			<font>font-30</font>
-			<textcolor>$VAR[list_color]</textcolor>
-			<selectedcolor>$VAR[list_color]</selectedcolor>
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>.0$INFO[ListItem.Episode]$INFO[ListItem.TrackNumber]</label>
-			<visible>!IntegerGreaterThan(ListItem.Episode,9) + !IntegerGreaterThan(ListItem.TrackNumber,9) + !SubString(ListItem.Episode,S)</visible>
-			<visible>[Container.Content(Episodes) + !IsEmpty(ListItem.Episode) + !IsEmpty(ListItem.TVShowTitle)] | [Container.Content(songs) + !IsEmpty(ListItem.TrackNumber)]</visible>
-		</control>
-	</include>
 
-	<include name="movie_title_short">
-		<control type="label">
-			<height>40</height>
-			<font>font-24</font>
-			<textcolor>$VAR[list_color]</textcolor>
-			<selectedcolor>$VAR[list_color]</selectedcolor>
-			<align>right</align>
-			<aligny>top</aligny>
-			<label>$VAR[movie_label]</label>
-			<autoscroll time="3000" delay="4000" repeat="500">true</autoscroll>
-			<width>385</width>
-			<posx>58</posx>
-			<posy>15</posy>
-			<visible>[Container.Content(Episodes) + !IsEmpty(ListItem.Episode) + !IsEmpty(ListItem.TVShowTitle)] | [Container.Content(songs) + !IsEmpty(ListItem.TrackNumber)]</visible>
+	<include name="flags_movies_ltr">
+		<!-- FLAGS -->
+		<control type="grouplist">
+			<posx>762</posx> <!-- 532 -->
+			<posy>$PARAM[posy]</posy><!--812\1028-->
+			<align>left</align>
+			<width>1160</width>
+			<height>52</height>
+			<itemgap>110</itemgap>
+			<orientation>horizontal</orientation>
+			<visible>![Container.Content(songs) | Container.Content(Albums) | Container.Content(Artists)]</visible>
+			<animation effect="slide" end="0,220" time="200" condition="Skin.HasSetting(fanart_plot)">Conditional</animation>
+			<animation effect="slide" end="-230,0" time="0" condition="Container.Content(Episodes)">Conditional</animation>
+			<control type="group">
+				<visible>!IsEmpty(ListItem.Year)</visible>
+				<animation effect="slide" start="0,0" end="0,0" delay="0" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="0,0" time="200">Hidden</animation>
+				<include>flag_year2</include>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(ListItem.Rating) + IntegerGreaterThan(ListItem.Rating,0)</visible>
+				<animation effect="slide" start="-110,0" end="0,0" delay="50" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
+				<include>flag_rating2</include>
+			</control>	
+			<control type="group">
+				<visible>!IsEmpty(ListItem.Duration) + IntegerGreaterThan(ListItem.Duration,0)</visible>
+				<animation effect="slide" start="-110,0" end="0,0" delay="100" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
+				<include>flag_duration2</include>
+			</control>	
+			<control type="group">
+				<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+				<animation effect="slide" start="-110,0" end="0,0" delay="150" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
+				<include>flag_res2</include>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(ListItem.VideoAspect)</visible>
+				<animation effect="slide" start="-110,0" end="0,0" delay="200" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
+				<include>flag_aspect2</include>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(ListItem.VideoCodec)</visible>
+				<animation effect="slide" start="-110,0" end="0,0" delay="250" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
+				<include>flag_codec2</include>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(ListItem.AudioChannels)</visible>
+				<animation effect="slide" start="-110,0" end="0,0" delay="300" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
+				<include>flag_channels2</include>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(ListItem.AudioCodec)</visible>
+				<animation effect="slide" start="-110,0" end="0,0" delay="400" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
+				<include>flag_audio2</include>
+			</control>
+			<control type="group">
+				<visible>ListItem.IsStereoScopic | SubString(ListItem.FileName,3D.)</visible>
+				<animation effect="slide" start="-110,0" end="0,0" delay="450" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
+				<control type="image">
+					<width>110</width>
+					<height>52</height>
+					<texture background="true">3d-logo.png</texture>	
+				</control>
+			</control>
+			<control type="group">
+				<animation effect="slide" start="-140,0" end="0,0" delay="500" time="150">Visible</animation>
+				<animation effect="slide" start="0,0" end="-140,0" time="200">Hidden</animation>
+				<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemLanguages)) + !ListItem.IsFolder + Container.Content(Movies) + !substring(ListItem.Path,plugin://)</visible>
+				<include>dubbed_flags</include>
+			</control>	
 		</control>
 	</include>
-	<include name="movie_title_long">
-		<control type="label">
-			<height>40</height>
-			<font>font-24</font>
-			<textcolor>$VAR[list_color]</textcolor>
-			<selectedcolor>$VAR[list_color]</selectedcolor>
-			<align>right</align>
-			<aligny>top</aligny>
-			<label>$VAR[movie_label]</label>
-			<autoscroll time="3000" delay="4000" repeat="500">true</autoscroll>
-			<posx>58</posx>
-			<posy>0</posy>
-			<width>440</width>
-			<visible>[[!Container.Content(Episodes) | IsEmpty(ListItem.Episode) | IsEmpty(ListItem.TVShowTitle)] + !Container.Content(songs)] | [Container.Content(songs) + IsEmpty(ListItem.TrackNumber)]</visible>
-		</control>
-	</include>
-	<include name="movie_title_short_nf">
-		<control type="label">
-			<posx>58</posx>
-			<posy>15</posy>
-			<width>385</width>
-			<height>40</height>
-			<font>font-24</font>
-			<textcolor>grey_b</textcolor>
-			<selectedcolor>grey_b</selectedcolor>
-			<align>right</align>
-			<aligny>top</aligny>
-			<label>$VAR[movie_label]</label>
-			<autoscroll time="3000" delay="4000" repeat="500">true</autoscroll>
-			<visible>[Container.Content(Episodes) + !IsEmpty(ListItem.Episode) + !IsEmpty(ListItem.TVShowTitle)] | [Container.Content(songs) + !IsEmpty(ListItem.TrackNumber)]</visible>
-		</control>
-	</include>
-	<include name="movie_title_long_nf">
-		<control type="label">
-			<height>40</height>
-			<font>font-24</font>
-			<textcolor>grey_b</textcolor>
-			<selectedcolor>grey_b</selectedcolor>
-			<align>right</align>
-			<aligny>top</aligny>
-			<label>$VAR[movie_label]</label>
-			<autoscroll time="3000" delay="4000" repeat="500">true</autoscroll>
-			<posx>58</posx>
-			<posy>0</posy>
-			<width>440</width>
-			<visible>[[!Container.Content(Episodes) | IsEmpty(ListItem.Episode) | IsEmpty(ListItem.TVShowTitle)] + !Container.Content(songs)] | [Container.Content(songs) + IsEmpty(ListItem.TrackNumber)]</visible>
-		</control>
-	</include>
-
-	<!-- PVR Channel number -->
-	<include name="channel_num_f">
-		<control type="label">
-			<posx>415</posx>
-			<posy>35</posy>
-			<width>100</width>
-			<height>20</height>
-			<font>font-30</font>
-			<textcolor>$VAR[list_color]</textcolor>
-			<selectedcolor>$VAR[list_color]</selectedcolor>
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>.$INFO[ListItem.ChannelNumberLabel]</label>
-			<visible>IntegerGreaterThan(ListItem.ChannelNumberLabel,9)</visible>
-		</control>
-		<control type="label">
-			<posx>415</posx>
-			<posy>35</posy>
-			<width>100</width>
-			<height>20</height>
-			<font>font-30</font>
-			<textcolor>$VAR[list_color]</textcolor>
-			<selectedcolor>$VAR[list_color]</selectedcolor>
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>.0$INFO[ListItem.ChannelNumberLabel]</label>
-			<visible>!IntegerGreaterThan(ListItem.ChannelNumberLabel,9)</visible>
-		</control>
-	</include>
-	<include name="channel_num_nf">
-		<control type="label">
-			<posx>415</posx>
-			<posy>35</posy>
-			<width>100</width>
-			<height>20</height>
-			<font>font-30</font>
-			<textcolor>grey_b</textcolor>
-			<selectedcolor>grey_b</selectedcolor>
-
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>.$INFO[ListItem.ChannelNumberLabel]</label>
-			<visible>IntegerGreaterThan(ListItem.ChannelNumberLabel,9)</visible>
-		</control>
-		<control type="label">
-			<posx>415</posx>
-			<posy>35</posy>
-			<width>100</width>
-			<height>20</height>
-			<font>font-30</font>
-			<textcolor>grey_b</textcolor>
-			<selectedcolor>grey_b</selectedcolor>
-
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>.0$INFO[ListItem.ChannelNumberLabel]</label>
-			<visible>!IntegerGreaterThan(ListItem.ChannelNumberLabel,9)</visible>
-		</control>
-	</include>
-
+	
 	<include name="RSS">
 		<control type="group">
 			<posy>0</posy>
@@ -1979,6 +1880,20 @@
 	</include>
 
 	<include name="vertical_scroll">
+		<include name="vertical_scroll_rtl" condition="StringCompare(System.Language,Hebrew)">
+			<param name="id" value="$PARAM[id]" />
+			<param name="listid" value="$PARAM[listid]" />
+			<param name="posy">$PARAM[posy]</param>
+			<param name="height">$PARAM[height]</param>
+		</include>
+		<include name="vertical_scroll_ltr" condition="!StringCompare(System.Language,Hebrew)">
+			<param name="id" value="$PARAM[id]" />
+			<param name="listid" value="$PARAM[listid]" />
+			<param name="posy">$PARAM[posy]</param>
+			<param name="height">$PARAM[height]</param>
+		</include>
+	</include>
+	<include name="vertical_scroll_rtl">
 		<control type="scrollbar" id="$PARAM[id]">
 			<posx>1930</posx>
 			<posy>$PARAM[posy]</posy>
@@ -1990,6 +1905,21 @@
 			<include>scroll_bar</include>
 			<animation effect="slide" start="0,0" end="-20,0" time="200" condition="[Container.Scrolling | Control.HasFocus($PARAM[id])] + !Skin.HasSetting(Show_Scrollbar)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="-20,0" time="200" condition="Skin.HasSetting(Show_Scrollbar)">Conditional</animation>
+			<visible>Control.IsVisible($PARAM[listid])</visible>
+		</control>
+	</include>
+	<include name="vertical_scroll_ltr">
+		<control type="scrollbar" id="$PARAM[id]">
+			<posx>-10</posx>
+			<posy>$PARAM[posy]</posy>
+			<width>10</width>
+			<height>$PARAM[height]</height>
+			<onright>$PARAM[listid]</onright>
+			<onleft condition="!Player.HasVideo + !Player.HasAudio">555</onleft>
+			<onleft condition="Player.HasMedia">FullScreen</onleft>
+			<include>scroll_bar</include>
+			<animation effect="slide" start="0,0" end="10,0" time="200" condition="[Container.Scrolling | Control.HasFocus($PARAM[id])] + !Skin.HasSetting(Show_Scrollbar)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="10,0" time="200" condition="Skin.HasSetting(Show_Scrollbar)">Conditional</animation>
 			<visible>Control.IsVisible($PARAM[listid])</visible>
 		</control>
 	</include>
