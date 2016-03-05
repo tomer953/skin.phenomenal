@@ -454,12 +454,12 @@
 		<value condition="!IsEmpty(Skin.String(menu_icon_color_nf)) + !StringCompare(Skin.String(menu_icon_color_nf),None)">$INFO[Skin.String(menu_icon_color_nf)]</value>
 		<value>grey</value>
 	</variable>
-	
+
 	<variable name="menu_vertical_item_bg">
 		<value condition="!IsEmpty(ListItem.Property(TextColor))">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</value>
 		<value>white.png</value>
 	</variable>
-		<variable name="menu_vertical_item_diffuse">
+	<variable name="menu_vertical_item_diffuse">
 		<value condition="!IsEmpty(Container(9000).ListItem.Property(TextColor))">white</value>
 		<value>$VAR[main_color]</value>
 	</variable>
