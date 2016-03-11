@@ -1189,6 +1189,7 @@
 				<height>174</height>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
+				<animation effect="slide" end="0,-40" time="200" condition="Skin.HasSetting(fanart_plot)">Conditional</animation>
 				<bordersize>1,1,1,1</bordersize>
 				<fadetime>300</fadetime>
 				<visible>!StringCompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
@@ -1251,7 +1252,7 @@
 				<textcolor>grey_b</textcolor>
 				<label>$VAR[ViewFanartText]</label>
 				<autoscroll time="2000" delay="8000" repeat="5000">!Skin.HasSetting(AutoScroll)</autoscroll>
-				<animation effect="slide" end="-100,0" time="0" condition="Container.Content(Episodes)">Conditional</animation>
+				<animation effect="slide" end="100" time="0" condition="Container.Content(Episodes)">Conditional</animation>
 				<animation effect="slide" end="0,400" time="200" condition="Skin.HasSetting(fanart_plot)">Conditional</animation>
 				<visible>!IsEmpty(ListItem.Art(clearlogo)) | !IsEmpty(ListItem.Art(tvshow.clearlogo))</visible>
 			</control>

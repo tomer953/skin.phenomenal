@@ -208,7 +208,7 @@
 		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey_a</disabledcolor>
 		<invalidcolor>red</invalidcolor>
-		<textoffsetx>35</textoffsetx>
+		<textoffsetx>15</textoffsetx>
 		<aligny>center</aligny>
 		<font>font-23</font>
 		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
@@ -1336,6 +1336,8 @@
 			<itemgap>110</itemgap>
 			<orientation>horizontal</orientation>
 			<visible>![Container.Content(songs) | Container.Content(Albums) | Container.Content(Artists)]</visible>
+
+			<animation effect="slide" end="-762" time="0" condition="Window.IsVisible(movieinformation)">Conditional</animation>
 			<animation effect="slide" end="0,220" time="200" condition="Skin.HasSetting(fanart_plot)">Conditional</animation>
 			<animation effect="slide" end="-230,0" time="0" condition="Container.Content(Episodes)">Conditional</animation>
 			<control type="group">
@@ -1404,12 +1406,13 @@
 			</control>	
 		</control>
 	</include>
-	
+
 	<include name="RSS">
 		<control type="group">
 			<posy>0</posy>
 			<posx>0</posx>
-			<visible>!Window.IsActive(extendedprogressdialog) + !Skin.HasSetting(Home_Horizontal)</visible>			
+			<visible>!Window.IsActive(extendedprogressdialog) + !Skin.HasSetting(Home_Horizontal)</visible>
+			<animation effect="slide" end="290" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>			
 			<control type="image">
 				<left>0</left>
 				<posy>1000</posy>
@@ -1418,7 +1421,7 @@
 				<texture colordiffuse="black">main/widget_title.png</texture>
 				<animation effect="fade" end="100" condition="true">Conditional</animation>
 				<animation type="WindowOpen">
-					<effect type="slide" start="0,100" end="0,0" delay="100" time="300" tween="circle" easing="out" />
+					<effect type="slide" start="0,200" end="0,0" delay="100" time="800" tween="circle" easing="out" />
 				</animation>
 				<animation effect="slide" start="0,0" end="0,100" delay="0" time="300">WindowClose</animation>
 			</control>
@@ -1435,7 +1438,7 @@
 				<headlinecolor>$VAR[topbar_rss2_color]</headlinecolor>
 				<shadowcolor>black</shadowcolor>
 				<animation type="WindowOpen">
-					<effect type="slide" start="0,100" end="0,0" delay="100" time="300" tween="circle" easing="out" />
+					<effect type="slide" start="0,200" end="0,0" delay="100" time="800" tween="circle" easing="out" />
 				</animation>
 				<animation effect="slide" start="0,0" end="0,100" delay="0" time="300">WindowClose</animation>
 			</control>
@@ -2649,6 +2652,35 @@
 			<textcolor>red</textcolor>
 			<font>font-20</font>
 			<include>button_settings_2</include>
+		</control>
+	</include>
+	<include name="align_tag">
+		<include condition="StringCompare(System.Language,Hebrew)">align_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew)">align_ltr</include>
+	</include>
+	<include name="align_rtl"><align>right</align></include>
+	<include name="align_ltr"><align>left</align></include>
+
+	<include name="dialogvideoinfo_label">
+		<control type="label">
+			<posx>$PARAM[posx1]</posx><!-- 1420 -->
+			<posy>0</posy>
+			<height>40</height>
+			<width>$PARAM[width1]</width>
+			<textcolor>grey_b</textcolor>
+			<include>align_tag</include>
+			<label>$PARAM[label1]</label>
+			<font>font-20</font>
+		</control>
+		<control type="label">
+			<posx>$PARAM[posx2]</posx> <!-- 1300 -->
+			<posy>4</posy>
+			<height>40</height>
+			<width>$PARAM[width2]</width>
+			<textcolor>grey_a</textcolor>
+			<include>align_tag</include>
+			<label>$PARAM[label2]</label>
+			<font>font-18</font>
 		</control>
 	</include>
 </includes>
