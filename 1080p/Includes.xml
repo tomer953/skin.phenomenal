@@ -189,7 +189,7 @@
 	<include name="button_settings">
 		<width>290</width>
 		<pulseonselect>false</pulseonselect>
-		<align>right</align>
+		<include>align_tag</include>
 		<textcolor>grey_b</textcolor>
 		<focusedcolor>$VAR[main_color]</focusedcolor>
 		<disabledcolor>grey_a</disabledcolor>
@@ -216,6 +216,10 @@
 		<label>-</label>
 	</include>
 	<include name="radio_button_settings">
+		<include condition="StringCompare(System.Language,Hebrew)">radio_button_settings_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew)">radio_button_settings_ltr</include>
+	</include>
+	<include name="radio_button_settings_rtl">
 		<height>42</height>
 		<width>1250</width>
 		<font>font-22</font>
@@ -223,6 +227,21 @@
 		<radioposy>3</radioposy>
 		<textoffsetx>55</textoffsetx>
 		<align>right</align>
+		<textwidth>900</textwidth>
+		<textcolor>darkgrey</textcolor>
+		<focusedcolor>grey_b</focusedcolor>
+		<disabledcolor>grey_a</disabledcolor>
+		<texturefocus>dialogs/grey2.png</texturefocus>
+		<texturenofocus>dialogs/grey1.png</texturenofocus>
+	</include>
+	<include name="radio_button_settings_ltr">
+		<height>42</height>
+		<width>1250</width>
+		<font>font-22</font>
+		<radioposx>1180</radioposx>
+		<radioposy>0</radioposy>
+		<textoffsetx>30</textoffsetx>
+		<align>left</align>
 		<textwidth>900</textwidth>
 		<textcolor>darkgrey</textcolor>
 		<focusedcolor>grey_b</focusedcolor>
@@ -322,6 +341,17 @@
 
 
 	<include name="shutdown_buttons">
+		<width>556</width>
+		<height>55</height>
+		<align>center</align>
+		<font>font-30</font>
+		<textcolor>grey_a</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<textoffsetx>10</textoffsetx>
+		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
+		<texturenofocus colordiffuse="grey_50">white.png</texturenofocus>
+	</include>
+	<include name="context_buttons">
 		<width>550</width>
 		<height>55</height>
 		<align>right</align>
@@ -2561,10 +2591,11 @@
 		<!-- View Options... -->
 		<control type="group"> 
 			<posx>0</posx>
-			<posy>0</posy>	
+			<posy>0</posy>
+			<animation effect="slide" end="2260" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
 			<visible>ControlGroup(8000).HasFocus + !Window.IsActive(DialogKeyboard.xml)</visible>
-			<animation effect="slide" start="0" end="350" tween="cubic" easing="InOut" time="200" delay="250">Visible</animation>
-			<animation effect="slide" start="350" end="0" tween="cubic" easing="out" time="200">Hidden</animation>
+			<include name="myvideonav_options_animation" condition="StringCompare(System.Language,Hebrew)"><param name="start" value="0" /><param name="end" value="350" /></include>
+			<include name="myvideonav_options_animation" condition="!StringCompare(System.Language,Hebrew)"><param name="start" value="0" /><param name="end" value="-350" /></include>
 			<control type="image">
 				<posx>-340</posx>
 				<posy>90</posy>
@@ -2625,6 +2656,7 @@
 			<width>800</width>
 			<height>35</height>
 			<posx>430</posx>
+			<animation effect="slide" end="-400" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
 			<posy>0</posy>
 			<label>$INFO[System.AddonVersion($PARAM[addon])]</label>
 			<label2>$INFO[System.AddonTitle($PARAM[addon])]</label2>
@@ -2639,6 +2671,7 @@
 			<width>800</width>
 			<height>35</height>
 			<posx>430</posx>
+			<animation effect="slide" end="-400" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
 			<posy>0</posy>
 			<label>24038</label>
 			<label2>$PARAM[addon]</label2>
@@ -2681,6 +2714,156 @@
 			<include>align_tag</include>
 			<label>$PARAM[label2]</label>
 			<font>font-18</font>
+		</control>
+	</include>
+	<include name="myvideonav_toolbar_animation">
+		<animation effect="slide" end="$PARAM[end]" tween="cubic" easing="out" time="200" condition="ControlGroup(9100).HasFocus | Control.HasFocus(9101)">Conditional</animation>
+	</include>
+	<include name="myvideonav_options_animation">
+		<animation effect="slide" start="$PARAM[start]" end="$PARAM[end]" tween="cubic" easing="InOut" time="200" delay="250">Visible</animation>
+		<animation effect="slide" start="$PARAM[end]" end="$PARAM[start]" tween="cubic" easing="out" time="200">Hidden</animation>
+	</include>
+	<include name="myvideonav_hiddenbutton">
+		<posx>0</posx>
+		<posy>0</posy>
+		<animation effect="slide" end="2260" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+		<control type="button" id="9101">
+			<posx>0</posx>
+			<posy>90</posy>
+			<width>20</width>
+			<height>430</height>
+			<textcolor>grey_b</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<animation effect="slide" end="-360" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+		</control>
+	</include>
+	<include name="shutdown_dialog_long"><height>436</height></include>
+	<include name="shutdown_dialog_short"><height>226</height></include>
+	<include name="radiobutton_rtl">
+		<radioposx>1200</radioposx>
+		<radioposy>3</radioposy>
+		<textoffsetx>55</textoffsetx>
+		<align>right</align>
+	</include>
+	<include name="radiobutton_ltr">
+		<radioposx>1170</radioposx>
+		<radioposy>0</radioposy>
+		<textoffsetx>30</textoffsetx>
+		<align>left</align>
+	</include>
+
+	<include name="addonbrowser_label2">
+		<include condition="StringCompare(System.Language,Hebrew)">addonbrowser_label2_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew)">addonbrowser_label2_ltr</include>
+	</include>
+	<include name="addonbrowser_label2_focus">
+		<include condition="StringCompare(System.Language,Hebrew)">addonbrowser_label2_focus_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew)">addonbrowser_label2_focus_ltr</include>
+	</include>
+	<include name="addonbrowser_label2_rtl">
+		<control type="label">
+			<posx>430</posx>
+			<top>46</top>
+			<width>250</width>
+			<height>30</height>
+			<font>font-20</font>
+			<align>right</align>
+			<label>$INFO[ListItem.Label2]</label>
+			<textcolor>grey</textcolor>
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
+			<visible>!IsEmpty(ListItem.Label2)</visible>
+		</control>
+		<control type="label">
+			<posx>10</posx>
+			<top>46</top>
+			<width>740</width>
+			<height>30</height>
+			<font>font-20</font>
+			<align>left</align>
+			<label>$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</label>
+			<textcolor>grey</textcolor>
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
+			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
+		</control>
+	</include>
+	<include name="addonbrowser_label2_ltr">
+		<control type="label">
+			<posx>110</posx>
+			<top>46</top>
+			<width>250</width>
+			<height>30</height>
+			<font>font-20</font>
+			<align>left</align>
+			<label>$INFO[ListItem.Label2]</label>
+			<textcolor>grey</textcolor>
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
+			<visible>!IsEmpty(ListItem.Label2)</visible>
+		</control>
+		<control type="label">
+			<posx>220</posx>
+			<top>46</top>
+			<width>560</width>
+			<height>30</height>
+			<font>font-20</font>
+			<align>right</align>
+			<label>$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</label>
+			<textcolor>grey</textcolor>
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
+			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
+		</control>
+	</include>
+	<include name="addonbrowser_label2_focus_rtl">
+		<control type="label">
+			<posx>430</posx>
+			<top>46</top>
+			<width>250</width>
+			<height>30</height>
+			<font>font-20</font>
+			<align>right</align>
+			<label>$INFO[ListItem.Label2]</label>
+			<textcolor>grey_b</textcolor>
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
+			<visible>!IsEmpty(ListItem.Label2)</visible>
+		</control>
+		<control type="label">
+			<posx>10</posx>
+			<top>46</top>
+			<width>640</width>
+			<height>30</height>
+			<font>font-20</font>
+			<align>left</align>
+			<label>$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</label>
+			<textcolor>grey_b</textcolor>
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
+			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
+		</control>
+	</include>
+		<include name="addonbrowser_label2_focus_ltr">
+		<control type="label">
+			<posx>110</posx>
+			<top>46</top>
+			<width>250</width>
+			<height>30</height>
+			<font>font-20</font>
+			<align>left</align>
+			<label>$INFO[ListItem.Label2]</label>
+			<textcolor>grey_b</textcolor>
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
+			<visible>!IsEmpty(ListItem.Label2)</visible>
+		</control>
+		<control type="label">
+			<posx>220</posx>
+			<top>46</top>
+			<width>560</width>
+			<height>30</height>
+			<font>font-20</font>
+			<align>right</align>
+			<label>$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</label>
+			<textcolor>grey_b</textcolor>
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
+			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
 		</control>
 	</include>
 </includes>
