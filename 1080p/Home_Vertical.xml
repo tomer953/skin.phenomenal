@@ -111,7 +111,18 @@
 						<!-- <animation effect="slide" start="0" end="290" tween="sine" easing="Out" time="300" condition="!Control.HasFocus(10) + !Control.HasFocus(15) + !Control.HasFocus(20) + !Control.HasFocus(9001)">UnFocus</animation> -->
 						<visible>IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control>
-
+					<control type="image">
+						<left>-15</left>
+						<posy>25</posy>
+						<width>64</width>
+						<height>50</height>
+						<aspectratio aligny="top">stretch</aspectratio>
+						<texture diffuse="main/arrowup.png">white.png</texture>
+						<visible>IntegerGreaterThan(Container(9001).NumItems,0) + Control.HasFocus(9000)</visible>
+						<visible>![Container(9000).OnNext | Container(9000).OnPrevious]</visible>
+						<animation effect="fade" start="0" end="100" time="300" delay="600" reversible="false" condition="!Container(9000).OnNext + !Container(9000).OnPrevious">Visible</animation>
+						<animation effect="rotate" end="90" center="auto" time="0" condition="true">Conditional</animation>
+					</control>
 					<control type="image">
 						<posx>220</posx>
 						<posy>20</posy>
@@ -148,8 +159,6 @@
 					<include>skinshortcuts-mainmenu</include>
 				</content>
 			</control>
-
-
 
 		</control>
 		<!-- Main menu bottom -->
@@ -431,7 +440,7 @@
 		</control>
 	</include>
 
-	
+
 	<include name="Home_Vertical_LTR">
 		<control type="group">
 			<!-- Vertical Menu Background - short -->
@@ -538,7 +547,18 @@
 						<!-- <animation effect="slide" start="0" end="290" tween="sine" easing="Out" time="300" condition="!Control.HasFocus(10) + !Control.HasFocus(15) + !Control.HasFocus(20) + !Control.HasFocus(9001)">UnFocus</animation> -->
 						<visible>IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control>
-
+					<control type="image">
+						<left>240</left>
+						<posy>25</posy>
+						<width>64</width>
+						<height>50</height>
+						<aspectratio aligny="top">stretch</aspectratio>
+						<texture diffuse="main/arrowup.png">white.png</texture>
+						<visible>IntegerGreaterThan(Container(9001).NumItems,0) + Control.HasFocus(9000)</visible>
+						<visible>![Container(9000).OnNext | Container(9000).OnPrevious]</visible>
+						<animation effect="fade" start="0" end="100" time="300" delay="600" reversible="false" condition="!Container(9000).OnNext + !Container(9000).OnPrevious">Visible</animation>
+						<animation effect="rotate" end="270" center="auto" time="0" condition="true">Conditional</animation>
+					</control>
 					<control type="image">
 						<posx>20</posx>
 						<posy>20</posy>
@@ -859,7 +879,7 @@
 		</control>
 	</include>
 
-	
+
 	<!-- Widget Content for Vertical layout -->
 	<include name="widget_content_vertical">
 		<include condition="StringCompare(System.Language,Hebrew)">widget_content_vertical_rtl</include>
@@ -1003,7 +1023,7 @@
 			</control>
 		</focusedlayout>
 	</include>
-<include name="widget_content_vertical_ltr">
+	<include name="widget_content_vertical_ltr">
 		<orientation>vertical</orientation>
 		<posx>50</posx>
 		<posy>100</posy>
@@ -1165,7 +1185,7 @@
 		<animation effect="zoom" start="290,80,1,920" end="290,80,290,920" time="300">Visible</animation>
 		<animation effect="zoom" start="290,80,290,920" end="290,80,1,920" time="300">Hidden</animation>
 	</include>
-	
+
 	<include name="hide_home_topbar_sub">
 		<posy>18</posy>
 		<height>980</height>
@@ -1176,7 +1196,7 @@
 		<animation effect="zoom" start="1631,80,1,980" end="1631,80,290,980" time="300">Visible</animation>
 		<animation effect="zoom" start="1631,80,290,980" end="1631,80,1,980" time="300">Hidden</animation>
 	</include>
-		<include name="hide_home_topbar_sub_ltr">
+	<include name="hide_home_topbar_sub_ltr">
 		<animation effect="zoom" start="290,80,1,980" end="290,80,290,980" time="300">Visible</animation>
 		<animation effect="zoom" start="290,80,290,980" end="290,80,1,980" time="300">Hidden</animation>
 	</include>

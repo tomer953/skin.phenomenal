@@ -48,6 +48,8 @@
 				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,7)">Conditional</animation>
 				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,8)">Conditional</animation>
 				<animation effect="slide" end="94" condition="!IntegerGreaterThan(Container(9000).NumItems,9)">Conditional</animation>
+				<animation effect="slide" start="0,290" end="0,0" delay="100" time="500">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,290" delay="0" time="300">WindowClose</animation>
 			</control>
 			<control type="Panel" id="9000">
 				<orientation>horizontal</orientation>
@@ -113,7 +115,6 @@
 						<height>20</height>
 						<width>213</width>
 						<label>[COLOR=$INFO[ListItem.Property(TextColor)]]$INFO[ListItem.Label][/COLOR]</label>
-						<!-- <label>[COLOR=$VAR[menu_focus_color]]$INFO[ListItem.Label][/COLOR]</label> -->
 						<align>center</align>
 						<aligny>center</aligny>
 						<font>menu</font>
@@ -129,7 +130,20 @@
 						<texture diffuse="main/arrowdown.png" fallback="white.png" colordiffuse="$VAR[tile_main_color]">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>
 						<visible>IntegerGreaterThan(Container(9001).NumItems,0)</visible>
 						<animation effect="fade" start="0" end="100" time="300" delay="400" reversible="false">Focus</animation>
+						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>
 					</control>
+					<control type="image">
+						<centerleft>105</centerleft>
+						<top>145</top>
+						<width>64</width>
+						<height>50</height>
+						<aspectratio>stretch</aspectratio>
+						<texture diffuse="main/arrowdown.png" colordiffuse="$VAR[tile_main_color]">white.png</texture>
+						<visible>IntegerGreaterThan(Container(9001).NumItems,0)</visible>
+						<animation effect="fade" start="0" end="100" time="300" delay="400" reversible="false">Focus</animation>
+						<visible>IsEmpty(ListItem.Property(TextColor))</visible>
+					</control>
+					
 					<control type="image">
 						<posx>21</posx>
 						<top>155</top>
@@ -137,6 +151,16 @@
 						<height>6</height>
 						<texture colordiffuse="$VAR[tile_main_color]" fallback="white.png">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>
 						<aspectratio>scale</aspectratio>
+						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<top>155</top>
+						<width>170</width>
+						<height>6</height>
+						<texture colordiffuse="$VAR[tile_main_color]">white.png</texture>
+						<aspectratio>scale</aspectratio>
+						<visible>IsEmpty(ListItem.Property(TextColor))</visible>
 					</control>
 				</focusedlayout>
 				<!-- Eminence Style - credits to JurialMunkey -->
@@ -148,7 +172,18 @@
 						<height>170</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture background="true" diffuse="tile.png" fallback="black.png" aligny="center" align="center">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>	
-						<animation effect="fade" start="100" end="65" condition="true">Conditional</animation>						
+						<animation effect="fade" start="100" end="65" condition="true">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>
+					</control>
+					<control type="image">
+						<top>0</top>
+						<posy>4</posy>
+						<width>196</width>
+						<height>170</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="tile.png" aligny="center" align="center">black.png</texture>	
+						<animation effect="fade" start="100" end="65" condition="true">Conditional</animation>
+						<visible>IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control>
 					<control type="image">
 						<top>0</top>
@@ -180,7 +215,6 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="188" height="266" condition="Skin.HasSetting(Home_Eminence_Layout)">
-
 					<control type="image">
 						<top>0</top>
 						<posy>4</posy>
@@ -188,8 +222,17 @@
 						<height>170</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture background="true" diffuse="tile.png" colordiffuse="$VAR[tile_main_color]" fallback="white.png" aligny="center" align="center">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>						
+						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>
 					</control>
-
+					<control type="image">
+						<top>0</top>
+						<posy>4</posy>
+						<width>196</width>
+						<height>170</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="tile.png" colordiffuse="$VAR[tile_main_color]" aligny="center" align="center">white.png</texture>						
+						<visible>IsEmpty(ListItem.Property(TextColor))</visible>
+					</control>
 					<control type="image">
 						<top>0</top>
 						<posy>4</posy>
@@ -229,13 +272,35 @@
 						<texture diffuse="main/arrowdown.png" fallback="white.png" colordiffuse="$VAR[tile_main_color]">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>
 						<visible>IntegerGreaterThan(Container(9001).NumItems,0)</visible>
 						<animation effect="fade" start="0" end="100" time="300" delay="400" reversible="false">Focus</animation>
+						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>
 					</control>
+					<control type="image">
+						<centerleft>85</centerleft>
+						<bottom>0</bottom>
+						<width>64</width>
+						<height>50</height>
+						<aspectratio>stretch</aspectratio>
+						<texture diffuse="main/arrowdown.png" colordiffuse="$VAR[tile_main_color]">white.png</texture>
+						<visible>IntegerGreaterThan(Container(9001).NumItems,0)</visible>
+						<animation effect="fade" start="0" end="100" time="300" delay="400" reversible="false">Focus</animation>
+						<visible>IsEmpty(ListItem.Property(TextColor))</visible>
+					</control>
+
 					<control type="image">
 						<bottom>40</bottom>
 						<width>170</width>
 						<height>6</height>
 						<texture colordiffuse="$VAR[tile_main_color]" fallback="white.png">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>
 						<aspectratio>scale</aspectratio>
+						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>
+					</control>
+					<control type="image">
+						<bottom>40</bottom>
+						<width>170</width>
+						<height>6</height>
+						<texture colordiffuse="$VAR[tile_main_color]">white.png</texture>
+						<aspectratio>scale</aspectratio>
+						<visible>IsEmpty(ListItem.Property(TextColor))</visible>
 					</control>
 				</focusedlayout>
 				<content>
@@ -258,20 +323,7 @@
 				<animation effect="slide" start="0,0" end="0,90" delay="0" time="100">WindowClose</animation>
 				<include>menu_bg_fade</include>
 				<visible>Control.HasFocus(9001) + !IsEmpty(Control.GetLabel(9001))</visible>
-			</control>	
-			<!-- 			<control type="image">
-				<posx>940</posx>
-				<width>49</width>
-				<posy>988</posy>
-				<height>23</height>
-				<texture background="true" colordiffuse="$VAR[menu_bg_color]">main/marker.png</texture>
-				<animation effect="slide" start="0,90" end="0,0" delay="0" time="300">Visible</animation>
-				<animation effect="slide" start="0,0" end="0,90" delay="0" time="300">Hidden</animation>
-				<animation effect="slide" start="0,0" end="0,90" delay="0" time="300">WindowClose</animation>
-				<animation effect="fade" end="96" time="0" condition="true">Conditional</animation>
-				<include>menu_bg_fade</include>
-				<visible>Control.HasFocus(9001) + !IsEmpty(Control.GetLabel(9001))</visible>
-			</control>	 -->
+			</control>
 			<control type="button">
 				<posx>0</posx>
 				<posy>1078</posy>
@@ -350,7 +402,6 @@
 				</focusedlayout>
 				<!-- Sub Menu - Eminence Style -->
 				<itemlayout width="428" height="90" condition="Skin.HasSetting(Home_Eminence_Layout)">
-
 					<control type="image">
 						<posx>0</posx>
 						<posy>4</posy>
@@ -358,7 +409,18 @@
 						<height>90</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture background="true" diffuse="subtile.png" fallback="black.png" aligny="center" align="center">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>	
-						<animation effect="fade" start="100" end="65" condition="true">Conditional</animation>						
+						<animation effect="fade" start="100" end="65" condition="true">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>						
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>4</posy>
+						<width>478</width>
+						<height>90</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="subtile.png" aligny="center" align="center">black.png</texture>	
+						<animation effect="fade" start="100" end="65" condition="true">Conditional</animation>
+						<visible>IsEmpty(ListItem.Property(TextColor))</visible>
 					</control>
 					<control type="image">
 						<posx>0</posx>
@@ -381,7 +443,7 @@
 						<posy>35</posy>
 						<height>20</height>
 						<width>310</width>
-						<label>[COLOR=$INFO[ListItem.Property(TextColor)]]$INFO[ListItem.Label][/COLOR]</label>
+						<label>$INFO[ListItem.Label]</label>
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>menu</font>
@@ -395,8 +457,17 @@
 						<width>478</width>
 						<height>90</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture background="true" diffuse="subtile.png" colordiffuse="$VAR[tile_sub_color]" fallback="white.png" aligny="center" align="center">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>	
-
+						<texture background="true" diffuse="subtile.png" colordiffuse="$VAR[tile_sub_color]" fallback="white.png" aligny="center" align="center">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>
+						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>4</posy>
+						<width>478</width>
+						<height>90</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="subtile.png" colordiffuse="$VAR[tile_sub_color]" aligny="center" align="center">white.png</texture>
+						<visible>IsEmpty(ListItem.Property(TextColor))</visible>
 					</control>
 					<control type="image">
 						<posx>0</posx>
@@ -419,7 +490,7 @@
 						<posy>35</posy>
 						<height>20</height>
 						<width>310</width>
-						<label>[COLOR=$INFO[ListItem.Property(TextColor)]]$INFO[ListItem.Label][/COLOR]</label>
+						<label>$INFO[ListItem.Label]</label>
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>menu</font>
@@ -532,7 +603,7 @@
 			<include>widget_details_horizontal</include>
 		</control>
 	</include>
-	
+
 	<!-- Widget Content for Horizontal layout -->
 	<include name="widget_content_horizontal">
 		<orientation>Horizontal</orientation>
