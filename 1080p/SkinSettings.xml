@@ -930,6 +930,7 @@
 				<label>31049</label>
 				<include>button_settings_2</include>
 				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=menu_bg_color)</onclick>
+				<visible>Skin.HasSetting(Home_Horizontal)</visible>
 			</control>
 			<control type="button" id="313">
 				<description>SubMenu BG color</description>
@@ -940,6 +941,7 @@
 				<include>align_tag</include>
 				<include>button_settings_2</include>
 				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=submenu_color)</onclick>
+				<visible>Skin.HasSetting(Home_Horizontal)</visible>
 			</control>
 			<control type="button" id="314">
 				<description>Widgets BG color</description>

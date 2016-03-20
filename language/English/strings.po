@@ -538,6 +538,10 @@ msgctxt "#31131"
 msgid "Show scrollbar"
 msgstr ""
 
+msgctxt "#31132"
+msgid "Page"
+msgstr ""
+
 msgctxt "#31134"
 msgid "Animated backgrounds"
 msgstr ""

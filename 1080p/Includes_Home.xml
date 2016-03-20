@@ -117,11 +117,16 @@
 					<posy>0</posy>
 					<width>290</width>
 					<height>80</height>
-					<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
-					<bordertexture colordiffuse="white">white.png</bordertexture>
-					<bordersize>0,0,0,3</bordersize>
+					<texture background="true" flipy="true">dialogs/long_grey.png</texture>
 					<include>home_fade_level</include>
 					<visible>!Skin.HasSetting(Home_Horizontal)</visible>
+				</control>
+				<control type="image">
+					<left>1630</left>
+					<top>80</top>
+					<width>290</width>
+					<height>10</height>
+					<texture>shadow_horizontal.png</texture>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -189,11 +194,16 @@
 					<posy>0</posy>
 					<width>290</width>
 					<height>80</height>
-					<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
-					<bordertexture colordiffuse="white">white.png</bordertexture>
-					<bordersize>0,0,0,3</bordersize>
+					<texture background="true" flipy="true">dialogs/long_grey.png</texture>
 					<include>home_fade_level</include>
 					<visible>!Skin.HasSetting(Home_Horizontal)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>80</top>
+					<width>290</width>
+					<height>10</height>
+					<texture>shadow_horizontal.png</texture>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -1111,7 +1121,7 @@
 
 		</control>
 	</include>
-<include name="MusicInfo_ltr">
+	<include name="MusicInfo_ltr">
 		<control type="group">
 			<posx>1175</posx>
 			<posy>0</posy>

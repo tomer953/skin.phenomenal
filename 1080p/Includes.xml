@@ -211,8 +211,8 @@
 		<textoffsetx>15</textoffsetx>
 		<aligny>center</aligny>
 		<font>font-23</font>
-		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
-		<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
+		<texturefocus colordiffuse="$VAR[main_color]" border="15,15,15,15">button_white.png</texturefocus>
+		<texturenofocus colordiffuse="darkgrey" border="15,15,15,15">button_white.png</texturenofocus>
 		<label>-</label>
 	</include>
 	<include name="radio_button_settings">
@@ -350,17 +350,6 @@
 		<textoffsetx>10</textoffsetx>
 		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
 		<texturenofocus colordiffuse="grey_50">white.png</texturenofocus>
-	</include>
-	<include name="context_buttons">
-		<width>550</width>
-		<height>55</height>
-		<align>right</align>
-		<font>font-30</font>
-		<textcolor>grey_a</textcolor>
-		<focusedcolor>$VAR[main_color]</focusedcolor>
-		<textoffsetx>10</textoffsetx>
-		<texturefocus>-</texturefocus>
-		<texturenofocus>-</texturenofocus>
 	</include>
 	<include name="OSD_artsize">
 		<control type="image">
@@ -1876,16 +1865,16 @@
 	</include>
 	<!-- Fade for main menu background -->
 	<include name="menu_bg_fade">
-		<animation effect="fade" reversible="false" end="95" time="0" condition="IsEmpty(Skin.String(menu_bg_opacity))">Conditional</animation>
-		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),90)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),80)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="70" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),70)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),60)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="50" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),50)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="40" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),40)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="30" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),30)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),20)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),10)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="100" time="0" condition="IsEmpty(Skin.String(menu_bg_opacity))">Conditional</animation>
+		<animation effect="fade" reversible="false" end="95" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),90)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),80)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="85" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),70)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),60)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="75" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),50)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),40)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="50" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),30)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="35" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),20)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="15" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),10)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),0)">Conditional</animation>
 	</include>
 	<!-- Fade for widget background -->
@@ -2700,20 +2689,20 @@
 			<posy>0</posy>
 			<height>40</height>
 			<width>$PARAM[width1]</width>
-			<textcolor>grey_b</textcolor>
+			<textcolor>$VAR[main_color]</textcolor>
 			<include>align_tag</include>
 			<label>$PARAM[label1]</label>
 			<font>font-20</font>
 		</control>
 		<control type="label">
 			<posx>$PARAM[posx2]</posx> <!-- 1300 -->
-			<posy>4</posy>
+			<posy>0</posy>
 			<height>40</height>
 			<width>$PARAM[width2]</width>
-			<textcolor>grey_a</textcolor>
+			<textcolor>grey_b</textcolor>
 			<include>align_tag</include>
 			<label>$PARAM[label2]</label>
-			<font>font-18</font>
+			<font>font-20</font>
 		</control>
 	</include>
 	<include name="myvideonav_toolbar_animation">
@@ -2840,7 +2829,7 @@
 			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
 		</control>
 	</include>
-		<include name="addonbrowser_label2_focus_ltr">
+	<include name="addonbrowser_label2_focus_ltr">
 		<control type="label">
 			<posx>110</posx>
 			<top>46</top>
@@ -2865,5 +2854,39 @@
 			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
 			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
 		</control>
+	</include>
+	<include name="close_button">
+				<control type="button">
+				<description>Close Window button</description>
+				<left>$PARAM[posx]</left>
+				<top>$PARAM[posy]</top>
+				<width>32</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus colordiffuse="white">close_button.png</texturefocus>
+				<texturenofocus colordiffuse="grey_50">close_button.png</texturenofocus>
+				<onleft>3</onleft>
+				<onright>3</onright>
+				<onup>3</onup>
+				<ondown>3</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
+	</include>
+	
+	<include name="dialog_favorite_position">
+	<include condition="StringCompare(System.Language,Hebrew)">dialog_favorite_position_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew)">dialog_favorite_position_ltr</include>
+	</include>
+		<include name="dialog_favorite_position_rtl">
+			<posx>0</posx>
+			<animation effect="slide" start="-400" end="0" time="200">WindowOpen</animation>
+			<animation effect="slide" start="0" end="-400" time="200">WindowClose</animation>
+	</include>
+	<include name="dialog_favorite_position_ltr">
+			<posx>1520</posx>
+			<animation effect="slide" start="400" end="0" time="200">WindowOpen</animation>
+			<animation effect="slide" start="0" end="400" time="200">WindowClose</animation>
 	</include>
 </includes>

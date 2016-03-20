@@ -538,6 +538,10 @@ msgctxt "#31131"
 msgid "Show scrollbar"
 msgstr "הצג פס-גלילה"
 
+msgctxt "#31132"
+msgid "Page"
+msgstr "עמוד"
+
 msgctxt "#31134"
 msgid "Animated backgrounds"
 msgstr "רקעים מונפשים"

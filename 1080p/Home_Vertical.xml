@@ -7,30 +7,40 @@
 	</include>
 	<include name="Home_Vertical_RTL">
 		<control type="group">
-			<!-- Vertical Menu Background - short -->
-			<control type="image">
-				<posx>1630</posx>
-				<width>290</width>
-				<posy>80</posy>
-				<height>920</height>
-				<texture background="true" colordiffuse="$VAR[menu_bg_color]">white.png</texture>
-				<include>menu_bg_fade</include>
-				<animation effect="slide" start="290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
-				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
-				<visible>!Skin.HasSetting(Home_HideTopBar)</visible>
-			</control>
 			<!-- Vertical Menu Background - long -->
 			<control type="image">
 				<posx>1630</posx>
 				<width>290</width>
 				<posy>0</posy>
-				<height>1000</height>
-				<texture background="true" colordiffuse="$VAR[menu_bg_color]">white.png</texture>
+				<height>1080</height>
+				<texture background="true">main/main_menu.png</texture>
 				<include>menu_bg_fade</include>
 				<animation effect="slide" start="290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
-				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
-				<visible>Skin.HasSetting(Home_HideTopBar)</visible>
+				<animation effect="slide" start="0,0" end="290,0" time="300">WindowClose</animation>
+				<animation effect="slide" start="0,0" end="0,80" time="0" condition="!Skin.HasSetting(Home_HideTopBar)">Conditional</animation>
 			</control>
+			<!-- left shadow-->
+			<control type="image">
+				<left>1600</left>
+				<top>0</top>
+				<width>30</width>
+				<height>1080</height>
+				<texture flipx="true">shadow_vertical.png</texture>
+				<animation effect="slide" start="290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
+			</control>
+			<!-- Bottom line -->
+			<control type="image">
+				<left>1630</left>
+				<top>1000</top>
+				<width>290</width>
+				<height>20</height>
+				<texture>shadow_horizontal.png</texture>
+				<animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+				<animation effect="slide" start="290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
+			</control>
+
 			<control type="list" id="9000">
 				<orientation>vertical</orientation>
 				<posx>1630</posx>
@@ -97,7 +107,6 @@
 						<texture diffuse="glass.jpg" background="true">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>
 						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
 						<animation effect="slide" start="290" end="0" tween="sine" easing="Out" time="300">Focus</animation>
-						<!-- <animation effect="slide" start="0" end="290" tween="sine" easing="Out" time="300" condition="!Control.HasFocus(10) + !Control.HasFocus(15) + !Control.HasFocus(20) + !Control.HasFocus(9001)">UnFocus</animation> -->
 						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control>
 					<control type="image">
@@ -108,9 +117,8 @@
 						<texture diffuse="glass.jpg" background="true" colordiffuse="$VAR[main_color]">white.png</texture>
 						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
 						<animation effect="slide" start="290" end="0" tween="sine" easing="Out" time="300">Focus</animation>
-						<!-- <animation effect="slide" start="0" end="290" tween="sine" easing="Out" time="300" condition="!Control.HasFocus(10) + !Control.HasFocus(15) + !Control.HasFocus(20) + !Control.HasFocus(9001)">UnFocus</animation> -->
 						<visible>IsEmpty(ListItem.Property(TextColor))</visible>						
-					</control>
+					</control> 
 					<control type="image">
 						<left>-15</left>
 						<posy>25</posy>
@@ -161,17 +169,7 @@
 			</control>
 
 		</control>
-		<!-- Main menu bottom -->
-		<control type="image">
-			<posx>1630</posx>
-			<posy>1000</posy>
-			<width>290</width>
-			<height>80</height>
-			<texture background="true" colordiffuse="$VAR[submenu_color]">white.png</texture>
-			<include>menu_bg_fade</include>
-			<animation effect="slide" start="290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
-		</control>
+
 		<control type="group">
 			<animation effect="slide" start="0,100" end="0,0" delay="500" time="300">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="290,0" time="300">WindowClose</animation>
@@ -240,19 +238,44 @@
 		<control type="group">
 			<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
 			<visible>!SubString(Container(9000).ListItem.Property(ParentalControl),yes) | [SubString(Container(9000).ListItem.Property(ParentalControl),yes) + StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
+
 			<control type="image">
 				<posx>1342</posx>
-				<width>290</width>
 				<posy>0</posy>
-				<height>1080</height>
-				<texture background="true" colordiffuse="$VAR[submenu_color]">white.png</texture>
-				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
-				<animation effect="fade" end="96" time="0" condition="!Skin.HasSetting(menu_bg_opacity)">Conditional</animation>
-				<include>menu_bg_fade</include>
 				<animation effect="zoom" start="1632,0,1,1080" end="1632,0,290,1080" time="300">Visible</animation>
 				<animation effect="zoom" start="1632,0,290,1080" end="1632,0,1,1080" time="300">Hidden</animation>
+				<width>290</width>
+				<height>1080</height>
+				<texture background="true">main/main_menu.png</texture> 
+				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
+				<include>menu_bg_fade</include>
 				<visible>Control.HasFocus(9001)</visible>
 			</control>
+			<!-- right shadow-->
+			<control type="image">
+				<left>1630</left>
+				<top>0</top>
+				<width>30</width>
+				<height>1080</height>
+				<animation effect="zoom" start="1632,0,1,1080" end="1632,0,30,1080" time="300">Visible</animation>
+				<animation effect="zoom" start="1632,0,30,1080" end="1632,0,1,1080" time="300">Hidden</animation>
+				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
+				<texture flipx="false">shadow_vertical.png</texture>
+				<visible>Control.HasFocus(9001)</visible>
+			</control>
+			<!-- left shadow-->
+			<control type="image">
+				<left>1312</left>
+				<top>0</top>
+				<width>30</width>
+				<height>1080</height>
+				<animation effect="zoom" start="1632,0,1,1080" end="1632,0,30,1080" time="300">Visible</animation>
+				<animation effect="zoom" start="1632,0,30,1080" end="1632,0,1,1080" time="300">Hidden</animation>
+				<animation effect="slide" start="0,0" end="290,0" delay="0" time="300">WindowClose</animation>
+				<texture flipx="true">shadow_vertical.png</texture>
+				<visible>Control.HasFocus(9001)</visible>
+			</control>
+
 			<control type="button">
 				<posx>1630</posx>
 				<posy>118</posy>
@@ -443,29 +466,38 @@
 
 	<include name="Home_Vertical_LTR">
 		<control type="group">
-			<!-- Vertical Menu Background - short -->
-			<control type="image">
-				<posx>0</posx>
-				<width>290</width>
-				<posy>80</posy>
-				<height>920</height>
-				<texture background="true" colordiffuse="$VAR[menu_bg_color]">white.png</texture>
-				<include>menu_bg_fade</include>
-				<animation effect="slide" start="-290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
-				<animation effect="slide" start="0,0" end="-290,0" delay="0" time="300">WindowClose</animation>
-				<visible>!Skin.HasSetting(Home_HideTopBar)</visible>
-			</control>
 			<!-- Vertical Menu Background - long -->
 			<control type="image">
 				<posx>0</posx>
 				<width>290</width>
-				<posy>0</posy>
-				<height>1000</height>
-				<texture background="true" colordiffuse="$VAR[menu_bg_color]">white.png</texture>
+				<posy>0</posy>				
+				<height>1080</height>
+				<texture background="true">main/main_menu.png</texture>
 				<include>menu_bg_fade</include>
 				<animation effect="slide" start="-290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="-290,0" delay="0" time="300">WindowClose</animation>
-				<visible>Skin.HasSetting(Home_HideTopBar)</visible>
+				<animation effect="slide" start="0,0" end="0,80" time="0" condition="!Skin.HasSetting(Home_HideTopBar)">Conditional</animation>
+			</control>
+			<!-- right shadow-->
+			<control type="image">
+				<left>290</left>
+				<top>0</top>
+				<width>30</width>
+				<height>1080</height>
+				<texture>shadow_vertical.png</texture>
+				<animation effect="slide" start="-290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="-290,0" delay="0" time="300">WindowClose</animation>
+			</control>
+			<!-- Bottom line -->
+			<control type="image">
+				<left>0</left>
+				<top>1000</top>
+				<width>290</width>
+				<height>20</height>
+				<texture>shadow_horizontal.png</texture>
+				<animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+				<animation effect="slide" start="-290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="-290,0" delay="0" time="300">WindowClose</animation>
 			</control>
 			<control type="list" id="9000">
 				<orientation>vertical</orientation>
@@ -533,7 +565,6 @@
 						<texture diffuse="glass.jpg" background="true">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>
 						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
 						<animation effect="slide" start="-290" end="0" tween="sine" easing="Out" time="300">Focus</animation>
-						<!-- <animation effect="slide" start="0" end="290" tween="sine" easing="Out" time="300" condition="!Control.HasFocus(10) + !Control.HasFocus(15) + !Control.HasFocus(20) + !Control.HasFocus(9001)">UnFocus</animation> -->
 						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control>
 					<control type="image">
@@ -544,7 +575,6 @@
 						<texture diffuse="glass.jpg" background="true" colordiffuse="$VAR[main_color]">white.png</texture>
 						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
 						<animation effect="slide" start="-290" end="0" tween="sine" easing="Out" time="300">Focus</animation>
-						<!-- <animation effect="slide" start="0" end="290" tween="sine" easing="Out" time="300" condition="!Control.HasFocus(10) + !Control.HasFocus(15) + !Control.HasFocus(20) + !Control.HasFocus(9001)">UnFocus</animation> -->
 						<visible>IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control>
 					<control type="image">
@@ -599,17 +629,7 @@
 
 
 		</control>
-		<!-- Main menu bottom -->
-		<control type="image">
-			<posx>0</posx>
-			<posy>1000</posy>
-			<width>290</width>
-			<height>80</height>
-			<texture background="true" colordiffuse="$VAR[submenu_color]">white.png</texture>
-			<include>menu_bg_fade</include>
-			<animation effect="slide" start="-290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="-290,0" delay="0" time="300">WindowClose</animation>
-		</control>
+
 		<control type="group">
 			<animation effect="slide" start="0,100" end="0,0" delay="500" time="300">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="-290,0" time="300">WindowClose</animation>
@@ -684,14 +704,39 @@
 				<width>290</width>
 				<posy>0</posy>
 				<height>1080</height>
-				<texture background="true" colordiffuse="$VAR[submenu_color]">white.png</texture>
+				<texture background="true">main/main_menu.png</texture>
 				<animation effect="slide" start="0,0" end="-290,0" delay="0" time="300">WindowClose</animation>
-				<animation effect="fade" end="96" time="0" condition="!Skin.HasSetting(menu_bg_opacity)">Conditional</animation>
 				<include>menu_bg_fade</include>
 				<animation effect="zoom" start="290,0,1,1080" end="290,0,290,1080" time="300">Visible</animation>
 				<animation effect="zoom" start="290,0,290,1080" end="290,0,1,1080" time="300">Hidden</animation>
 				<visible>Control.HasFocus(9001)</visible>
 			</control>
+			
+			<!-- left shadow-->
+			<control type="image">
+				<left>260</left>
+				<top>0</top>
+				<width>30</width>
+				<height>1080</height>
+				<animation effect="zoom" start="290,0,1,1080" end="290,0,30,1080" time="300">Visible</animation>
+				<animation effect="zoom" start="290,0,30,1080" end="290,0,1,1080" time="300">Hidden</animation>
+				<animation effect="slide" start="0,0" end="-290,0" delay="0" time="300">WindowClose</animation>
+				<texture flipx="true">shadow_vertical.png</texture>
+				<visible>Control.HasFocus(9001)</visible>
+			</control>
+			<!-- right shadow-->
+			<control type="image">
+				<left>580</left>
+				<top>0</top>
+				<width>30</width>
+				<height>1080</height>
+				<animation effect="zoom" start="290,0,1,1080" end="290,0,30,1080" time="300">Visible</animation>
+				<animation effect="zoom" start="290,0,30,1080" end="290,0,1,1080" time="300">Hidden</animation>
+				<animation effect="slide" start="0,0" end="-290,0" delay="0" time="300">WindowClose</animation>
+				<texture flipx="false">shadow_vertical.png</texture>
+				<visible>Control.HasFocus(9001)</visible>
+			</control>
+			
 			<control type="button">
 				<posx>290</posx>
 				<posy>118</posy>
@@ -914,7 +959,7 @@
 				<height>100</height>
 				<aspectratio align="center">stretch</aspectratio>
 				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) | IsEmpty(Listitem.art(tvshow.poster))</visible>
 			</control>
 			<control type="image">
 				<posx>10</posx>
@@ -923,7 +968,7 @@
 				<height>100</height>
 				<aspectratio align="center">stretch</aspectratio>
 				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) + !IsEmpty(Listitem.art(tvshow.poster))</visible>
 			</control>
 			<control type="textbox">
 				<posx>90</posx>
@@ -962,7 +1007,7 @@
 				<height>166</height>
 				<aspectratio align="center">stretch</aspectratio>
 				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) | IsEmpty(Listitem.art(tvshow.poster))</visible>
 			</control>
 			<control type="image">
 				<posx>10</posx>
@@ -971,7 +1016,7 @@
 				<height>166</height>
 				<aspectratio align="center">stretch</aspectratio>
 				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) + !IsEmpty(Listitem.art(tvshow.poster))</visible>
 			</control>
 			<include name="stroke">
 				<param name="posx" value="8" />
@@ -1052,7 +1097,7 @@
 				<height>100</height>
 				<aspectratio align="center">stretch</aspectratio>
 				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) | IsEmpty(Listitem.art(tvshow.poster))</visible>
 			</control>
 			<control type="image">
 				<posx>326</posx>
@@ -1061,7 +1106,7 @@
 				<height>100</height>
 				<aspectratio align="center">stretch</aspectratio>
 				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) + !IsEmpty(Listitem.art(tvshow.poster))</visible>
 			</control>
 			<control type="textbox">
 				<posx>15</posx>
@@ -1100,7 +1145,7 @@
 				<height>166</height>
 				<aspectratio align="center">stretch</aspectratio>
 				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) | IsEmpty(Listitem.art(tvshow.poster))</visible>
 			</control>
 			<control type="image">
 				<posx>294</posx>
@@ -1109,7 +1154,7 @@
 				<height>166</height>
 				<aspectratio align="center">stretch</aspectratio>
 				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) + !IsEmpty(Listitem.art(tvshow.poster))</visible>
 			</control>
 			<include name="stroke">
 				<param name="posx" value="8" />

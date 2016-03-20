@@ -1,41 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<coordinates>
-		<posx>360</posx>
-		<posy>100</posy>
-	</coordinates>
 	<controls>
+		<include>fade_screen_grey</include>
 		<control type="group">
-
+			<posx>360</posx>
+			<include>dialog_zoom_animation</include>
+			<!-- Header -->
 			<control type="image">
 				<description>background image</description>
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>1200</width>
-				<height>700</height>
-				<texture background="true" colordiffuse="grey_50">white.png</texture>
-				<bordertexture colordiffuse="grey">white.png</bordertexture>
-				<bordersize>2</bordersize>
-				<visible>Control.IsVisible(5) | Control.isVisible(6)</visible>
+				<height>80</height>
+				<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
 			</control>
-
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>900</width>
-				<height>700</height>
-				<texture background="true" colordiffuse="grey_50">white.png</texture>
-				<bordertexture colordiffuse="grey">white.png</bordertexture>
-				<bordersize>2</bordersize>
-				<visible>Control.IsVisible(3) + !Control.IsVisible(5)</visible>
-			</control>
-
 			<control type="label" id="1">
 				<description>heading label</description>
-				<posx>60</posx>
-				<posy>10</posy>
+				<posx>0</posx>
+				<posy>20</posy>
 				<width>1200</width>
 				<height>45</height>
 				<align>center</align>
@@ -43,62 +26,120 @@
 				<font>font-30</font>
 				<label>-</label>
 				<textcolor>white</textcolor>
-				<animation effect="slide" end="-200" time="0" condition="Control.IsVisible(3)">Conditional</animation>
 			</control>
 			<control type="image">
-				<posx>800</posx>
-				<posy>72</posy>
-				<width>380</width>
-				<height>380</height>
-				<aspectratio>keep</aspectratio>
-				<texture background="true" fallback="DefaultFolder.png">$INFO[Container(6).ListItem.Icon]</texture>
+				<left>0</left>
+				<top>0</top>
+				<width>1200</width>
+				<height>10</height>
+				<texture>shadow_horizontal.png</texture>
+			</control>
+			<!-- Close Button -->
+			<include name="close_button"><param name="posx" value="22" /><param name="posy" value="24" /></include>
+			<!-- Info line -->
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>80</posy>
+				<width>1200</width>
+				<height>60</height>
+				<texture background="true">dialogs/long_grey.png</texture>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>90</top>
+				<width>1130</width>
+				<height>52</height>
+				<font>font-20</font>
+				<include>align_tag</include>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<textcolor>grey_b</textcolor>
+				<label>$INFO[Container(3).NumItems] $LOCALIZE[31099] ($LOCALIZE[31132] $INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages])</label>
+				<visible>Control.IsVisible(3)</visible>
+			</control>
+			<control type="label">
+				<left>22</left>
+				<top>90</top>
+				<width>1130</width>
+				<height>52</height>
+				<font>font-20</font>
+				<include>align_tag</include>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<textcolor>grey_b</textcolor>
+				<label>$INFO[Container(6).NumItems] $LOCALIZE[31099] ($LOCALIZE[31132] $INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages])</label>
 				<visible>Control.IsVisible(6)</visible>
 			</control>
+			<control type="image">
+				<left>0</left>
+				<top>80</top>
+				<width>1200</width>
+				<height>10</height>
+				<texture>shadow_horizontal.png</texture>
+			</control>
+			
+			
+			<!-- Content area -->
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>140</posy>
+				<width>1200</width>
+				<height>940</height>
+				<texture background="true" flipy="false">dialogs/long_grey.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>140</top>
+				<width>1200</width>
+				<height>10</height>
+				<texture>shadow_horizontal.png</texture>
+			</control>
+			<!-- left shadow-->
+			<control type="image">
+				<left>-30</left>
+				<top>0</top>
+				<width>30</width>
+				<height>1080</height>
+				<texture flipx="true">shadow_vertical.png</texture>
+			</control>
+			<!-- right shadow-->
+			<control type="image">
+				<left>1200</left>
+				<top>0</top>
+				<width>30</width>
+				<height>1080</height>
+				<texture>shadow_vertical.png</texture>
+			</control>
+
+			<!-- Bottom line -->
+			<control type="image">
+				<left>0</left>
+				<top>1000</top>
+				<width>1200</width>
+				<height>20</height>
+				<texture>shadow_horizontal.png</texture>
+				<animation effect="fade" start="100" end="35" time="0" condition="true">Conditional</animation>
+			</control>
+
 			<control type="group" id="9000">
 				<control type="list" id="3">
-					<posx>68</posx>
-					<posy>70</posy>
-					<width>750</width>
-					<height>620</height>
+					<posx>22</posx>
+					<posy>150</posy>
+					<width>1155</width>
+					<height>810</height>
 					<onup>3</onup>
 					<ondown>3</ondown>
 					<onleft>5</onleft>
 					<onright>60</onright>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime>200</scrolltime>
-					<itemlayout width="750" height="44">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>750</width>
-							<height>1</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>44</posy>
-							<width>750</width>
-							<height>1</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>2</width>
-							<height>44</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>748</posx>
-							<posy>0</posy>
-							<width>2</width>
-							<height>44</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
+					<itemlayout height="67">
 						<control type="label">
 							<posx>15</posx>
 							<posy>0</posy>
-							<width>720</width>
+							<width>1130</width>
 							<height>45</height>
 							<font>font-20</font>
 							<include>align_tag</include>
@@ -108,19 +149,19 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout width="750" height="44">
+					<focusedlayout height="67">
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>750</width>
-							<height>45</height>
+							<width>1155</width>
+							<height>60</height>
 							<texture colordiffuse="$VAR[main_color]" background="true">white.png</texture>
-							<animation effect="fade" start="100" end="50" time="100" condition="!Control.HasFocus(3)">Conditional</animation>
+							<animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(3)">Conditional</animation>
 						</control>
 						<control type="label">
 							<posx>15</posx>
 							<posy>0</posy>
-							<width>720</width>
+							<width>1130</width>
 							<height>45</height>
 							<font>font-20</font>
 							<include>align_tag</include>
@@ -132,57 +173,28 @@
 					</focusedlayout>
 				</control>
 				<control type="list" id="6">
-					<posx>2</posx>
-					<posy>70</posy>
-					<width>750</width>
-					<height>620</height>
+					<posx>22</posx>
+					<posy>150</posy>
+					<width>1155</width>
+					<height>810</height>
 					<onup>6</onup>
 					<ondown>6</ondown>
 					<onleft>9001</onleft>
 					<onright>60</onright>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime>200</scrolltime>
-					<itemlayout width="750" height="88">
+					<itemlayout width="1155" height="135">
 						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>750</width>
-							<height>1</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>88</posy>
-							<width>750</width>
-							<height>1</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>2</width>
-							<height>88</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>748</posx>
-							<posy>0</posy>
-							<width>2</width>
-							<height>88</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>15</posx>
-							<posy>8</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<aspectratio>keep</aspectratio>
+							<posx>5</posx>
+							<posy>5</posy>
+							<width>115</width>
+							<height>115</height>
+							<texture background="true" fallback="defaultaddon.png">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
-							<posx>105</posx>
-							<posy>6</posy>
-							<width>630</width>
+							<posx>133</posx>
+							<posy>7</posy>
+							<width>1000</width>
 							<height>45</height>
 							<font>font-20</font>
 							<include>align_tag</include>
@@ -190,11 +202,11 @@
 							<selectedcolor>$VAR[main_color]</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
-						<control type="label">
-							<posx>120</posx>
-							<posy>39</posy>
-							<width>615</width>
-							<height>45</height>
+						<control type="textbox">
+							<posx>133</posx>
+							<posy>40</posy>
+							<width>1000</width>
+							<height>75</height>
 							<font>font-20</font>
 							<include>align_tag</include>
 							<aligny>center</aligny>
@@ -202,56 +214,26 @@
 							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout width="750" height="88">
+					<focusedlayout width="1155" height="135">
 						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>750</width>
-							<height>1</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
+							<left>0</left>
+							<top>0</top>
+							<width>1155</width>
+							<height>125</height>
+							<texture colordiffuse="$VAR[main_color]">white.png</texture>
+							<animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(6)">Conditional</animation>
 						</control>
 						<control type="image">
-							<posx>0</posx>
-							<posy>88</posy>
-							<width>750</width>
-							<height>1</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>2</width>
-							<height>88</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>748</posx>
-							<posy>0</posy>
-							<width>2</width>
-							<height>88</height>
-							<texture colordiffuse="darkgrey">white.png</texture>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>750</width>
-							<height>90</height>
-							<visible>Control.HasFocus(6) | Control.HasFocus(61)</visible>
-							<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
-							<animation effect="fade" end="40" condition="true">Conditional</animation>
-						</control>
-						<control type="image">
-							<posx>15</posx>
-							<posy>8</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<aspectratio>keep</aspectratio>
+							<posx>5</posx>
+							<posy>5</posy>
+							<width>115</width>
+							<height>115</height>
+							<texture background="true" fallback="defaultaddon.png">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
-							<posx>105</posx>
-							<posy>6</posy>
-							<width>630</width>
+							<posx>133</posx>
+							<posy>7</posy>
+							<width>1000</width>
 							<height>45</height>
 							<font>font-20</font>
 							<include>align_tag</include>
@@ -260,11 +242,11 @@
 							<selectedcolor>white</selectedcolor>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
-						<control type="label">
-							<posx>120</posx>
-							<posy>39</posy>
-							<width>615</width>
-							<height>45</height>
+						<control type="textbox">
+							<posx>133</posx>
+							<posy>40</posy>
+							<width>1000</width>
+							<height>75</height>
 							<font>font-20</font>
 							<include>align_tag</include>
 							<aligny>center</aligny>
@@ -276,8 +258,8 @@
 				</control>
 			</control>
 			<control type="grouplist" id="9001">
-				<posx>880</posx>
-				<posy>635</posy>
+				<posx>15</posx>
+				<posy>1015</posy>
 				<width>420</width>
 				<height>55</height>
 				<align>center</align>
@@ -292,14 +274,17 @@
 					<width>200</width>
 					<label>186</label>
 					<textoffsetx>5</textoffsetx>
+					<focusedcolor>$VAR[main_color]</focusedcolor>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
 					<include>button_dialogs</include>
 				</control>
 			</control>
 			<control type="scrollbar" id="60">
-				<posx>770</posx>
-				<posy>70</posy>
-				<width>10</width>
-				<height>618</height>
+				<posx>1182</posx>
+				<posy>150</posy>
+				<width>8</width>
+				<height>798</height>
 				<include>scroll_bar</include>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
@@ -307,7 +292,6 @@
 				<onright>9001</onright>
 				<ondown>60</ondown>
 				<onup>60</onup>
-				<animation effect="slide" end="80" condition="Control.IsVisible(3)">Conditional</animation>
 			</control>
 
 		</control>
