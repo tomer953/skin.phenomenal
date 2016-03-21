@@ -36,8 +36,8 @@
 			<height>10</height>
 			<texture>shadow_horizontal.png</texture>
 		</control>
-
-
+		<!-- Close Button -->
+		<include name="close_button"><param name="posx" value="22" /><param name="posy" value="24" /></include>
 
 		<!-- Content area -->
 		<control type="image">

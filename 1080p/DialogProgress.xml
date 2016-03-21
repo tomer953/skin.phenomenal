@@ -75,10 +75,10 @@
 			</control>
 			<control type="progress">
 				<description>Progressbar</description>
-				<posx>510</posx>
+				<posx>0</posx>
 				<posy>210</posy>
-				<width>900</width>
-				<height>25</height>
+				<width>1920</width>
+				<height>35</height>
 				<info>System.Progressbar</info>
 			</control>
 			<control type="button" id="10">
