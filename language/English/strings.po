@@ -598,6 +598,10 @@ msgctxt "#31151"
 msgid "Use Tiles Layout (Eminence Style)"
 msgstr ""
 
+msgctxt "#31152"
+msgid "Shutdown menu"
+msgstr ""
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "

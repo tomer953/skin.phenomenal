@@ -211,8 +211,8 @@
 		<textoffsetx>15</textoffsetx>
 		<aligny>center</aligny>
 		<font>font-23</font>
-		<texturefocus colordiffuse="$VAR[main_color]" border="15,15,15,15">button_white.png</texturefocus>
-		<texturenofocus colordiffuse="darkgrey" border="15,15,15,15">button_white.png</texturenofocus>
+		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
+		<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
 		<label>-</label>
 	</include>
 	<include name="radio_button_settings">
@@ -345,11 +345,11 @@
 		<height>55</height>
 		<align>center</align>
 		<font>font-30</font>
-		<textcolor>grey_a</textcolor>
+		<textcolor>lightgrey</textcolor>
 		<focusedcolor>white</focusedcolor>
 		<textoffsetx>10</textoffsetx>
 		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
-		<texturenofocus colordiffuse="grey_50">white.png</texturenofocus>
+		<texturenofocus>-</texturenofocus>
 	</include>
 	<include name="OSD_artsize">
 		<control type="image">
@@ -2728,19 +2728,13 @@
 			<animation effect="slide" end="-360" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
 		</control>
 	</include>
-	<include name="shutdown_dialog_long"><height>436</height></include>
-	<include name="shutdown_dialog_short"><height>226</height></include>
-	<include name="radiobutton_rtl">
-		<radioposx>1200</radioposx>
-		<radioposy>3</radioposy>
-		<textoffsetx>55</textoffsetx>
-		<align>right</align>
-	</include>
-	<include name="radiobutton_ltr">
-		<radioposx>1170</radioposx>
-		<radioposy>0</radioposy>
-		<textoffsetx>30</textoffsetx>
-		<align>left</align>
+	<include name="shutdown_dialog_long"><height>500</height></include>
+	<include name="shutdown_dialog_short"><height>220</height></include>
+	
+	<include name="radiobutton_alignment">
+		<radioposx>$PARAM[radioposx]</radioposx>
+		<radioposy>$PARAM[radioposy]</radioposy>
+		<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
 	</include>
 
 	<include name="addonbrowser_label2">
@@ -2876,17 +2870,36 @@
 	</include>
 	
 	<include name="dialog_favorite_position">
-	<include condition="StringCompare(System.Language,Hebrew)">dialog_favorite_position_rtl</include>
+		<include condition="StringCompare(System.Language,Hebrew)">dialog_favorite_position_rtl</include>
 		<include condition="!StringCompare(System.Language,Hebrew)">dialog_favorite_position_ltr</include>
 	</include>
 		<include name="dialog_favorite_position_rtl">
+			<posx>1520</posx>
+			<animation effect="slide" start="400" end="0" time="200">WindowOpen</animation>
+			<animation effect="slide" start="0" end="400" time="200">WindowClose</animation>
+	</include>
+	<include name="dialog_favorite_position_ltr">
 			<posx>0</posx>
 			<animation effect="slide" start="-400" end="0" time="200">WindowOpen</animation>
 			<animation effect="slide" start="0" end="-400" time="200">WindowClose</animation>
 	</include>
-	<include name="dialog_favorite_position_ltr">
-			<posx>1520</posx>
-			<animation effect="slide" start="400" end="0" time="200">WindowOpen</animation>
-			<animation effect="slide" start="0" end="400" time="200">WindowClose</animation>
+	
+	<include name="left_shadow">
+		<control type="image">
+			<posx>$PARAM[posx]</posx>
+			<posy>$PARAM[posy]</posy>
+			<width>$PARAM[width]</width>
+			<height>$PARAM[height]</height>
+			<texture flipx="true">shadow_vertical.png</texture>
+		</control>
+	</include>	
+	<include name="right_shadow">
+		<control type="image">
+			<posx>$PARAM[posx]</posx>
+			<posy>$PARAM[posy]</posy>
+			<width>$PARAM[width]</width>
+			<height>$PARAM[height]</height>
+			<texture>shadow_vertical.png</texture>
+		</control>
 	</include>
 </includes>

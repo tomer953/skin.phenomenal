@@ -498,8 +498,17 @@
 			<width>970</width>
 			<height>42</height>
 			<font>font-22</font>
-			<include condition="StringCompare(System.Language,Hebrew)">radiobutton_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">radiobutton_ltr</include>
+			<include name="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew)">
+				<param name="radioposx" value="1200" />
+				<param name="radioposy" value="3" />
+				<param name="textoffsetx" value="55" />
+			</include>
+			<include name="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew)">
+				<param name="radioposx" value="1170" />
+				<param name="radioposy" value="0" />
+				<param name="textoffsetx" value="30" />
+			</include>
+			<include>align_tag</include>
 			<textwidth>900</textwidth>
 			<textcolor>darkgrey</textcolor>
 			<focusedcolor>grey_b</focusedcolor>
