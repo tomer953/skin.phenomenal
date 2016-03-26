@@ -423,7 +423,6 @@
 					<description>Play/browse to Show</description>
 					<width>190</width>
 					<height>55</height>
-					<font>font-20</font>
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>208</label>
@@ -503,6 +502,15 @@
 					<onclick>RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$VAR[season_number])</onclick>
 					<visible>Container.Content(Seasons) | [[!IsEmpty(ListItem.Season) | !IsEmpty(Window(home).Property(SeasonNumber))]+ !IsEmpty(ListItem.TVShowTitle)]</visible>
 					<visible>System.HasAddon(script.extendedinfo)</visible>
+				</control>
+				<control type="button" id="197">
+					<description>CinemaVision</description>
+					<width>280</width>
+					<height>55</height>
+					<label>CinemaVision</label>
+					<onclick>Dialog.Close(MovieInformation)</onclick>
+					<onclick>RunScript(script.cinemavision,experience)</onclick>
+					<visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 				</control>
 			</control>
 
