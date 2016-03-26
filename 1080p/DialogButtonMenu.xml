@@ -2,7 +2,7 @@
 <window type="buttonmenu">
 	<defaultcontrol always="true">6000</defaultcontrol>
 	<controls>
-		<include>fade_screen_grey</include>
+		<include>fade_screen_grey</include> 
 		<control type="group">
 			<posx>675</posx>
 			<animation effect="slide" end="0,120" time="0" condition="!System.CanSuspend">Conditional</animation>

@@ -2,26 +2,13 @@
 <window>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<controls>
-		<include condition="!Window.IsVisible(addonsettings) + !Window.IsVisible(contentsettings)">fade_screen_grey</include>
+		<include condition="!Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(contentsettings)">fade_screen_grey</include>
 		<control type="group">
 			<posx>360</posx>
+			<posy>80</posy>
 			<include>dialog_zoom_animation</include>
-			<!-- Header -->
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1200</width>
-				<height>80</height>
-				<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>1200</width>
-				<height>10</height>
-				<texture>shadow_horizontal.png</texture>
-			</control>
+			<include>big_dialog</include>
+
 			<control type="label" id="20">
 				<description>heading label</description>
 				<posx>0</posx>
@@ -33,19 +20,6 @@
 				<font>font-30</font>
 				<label>-</label>
 				<textcolor>white</textcolor>
-			</control>
-
-						<!-- Close Button -->
-			<include name="close_button"><param name="posx" value="22" /><param name="posy" value="24" /></include>
-			
-			<!-- Info line -->
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>80</posy>
-				<width>1200</width>
-				<height>60</height>
-				<texture background="true">dialogs/long_grey.png</texture>
 			</control>
 			<control type="label">
 				<left>22</left>
@@ -59,31 +33,6 @@
 				<textcolor>grey_b</textcolor>
 				<label>[B]$INFO[Listitem.Label][/B]</label>
 			</control>
-			<control type="image">
-				<left>0</left>
-				<top>80</top>
-				<width>1200</width>
-				<height>10</height>
-				<texture>shadow_horizontal.png</texture>
-			</control>
-
-
-			<!-- Content area -->
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>140</posy>
-				<width>1200</width>
-				<height>940</height>
-				<texture background="true" flipy="false">dialogs/long_grey.png</texture>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>140</top>
-				<width>1200</width>
-				<height>10</height>
-				<texture>shadow_horizontal.png</texture>
-			</control>
 
 			<!-- side bar -->
 			<control type="image">
@@ -91,7 +40,7 @@
 				<posx>0</posx>
 				<posy>140</posy>
 				<width>300</width>
-				<height>940</height>
+				<height>820</height>
 				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
 				<texture background="true" flipy="true">dialogs/long_grey.png</texture>
 			</control>
@@ -99,7 +48,7 @@
 				<left>300</left>
 				<top>140</top>
 				<width>30</width>
-				<height>940</height>
+				<height>820</height>
 				<texture>shadow_vertical.png</texture>
 				<visible>!StringCompare(System.Language,Hebrew)</visible>
 			</control>
@@ -107,42 +56,18 @@
 				<left>870</left>
 				<top>140</top>
 				<width>30</width>
-				<height>940</height>
+				<height>820</height>
 				<texture flipx="true">shadow_vertical.png</texture>
 				<visible>StringCompare(System.Language,Hebrew)</visible>
 			</control>
-			<!-- left shadow-->
-			<control type="image">
-				<left>-30</left>
-				<top>0</top>
-				<width>30</width>
-				<height>1080</height>
-				<texture flipx="true">shadow_vertical.png</texture>
-			</control>
-			<!-- right shadow-->
-			<control type="image">
-				<left>1200</left>
-				<top>0</top>
-				<width>30</width>
-				<height>1080</height>
-				<texture>shadow_vertical.png</texture>
-			</control>
-			<!-- bottom shadow -->
-			<control type="image">
-				<left>0</left>
-				<top>1000</top>
-				<width>900</width>
-				<height>20</height>
-				<texture>shadow_horizontal.png</texture>
-				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
-			</control>
+
 			
 			<control type="grouplist" id="2">
 				<description>control settings area</description>
 				<posx>10</posx>
 				<posy>160</posy>
 				<width>880</width>
-				<height>840</height>
+				<height>710</height>
 				<itemgap>-2</itemgap>
 				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
 				<onup>10</onup>
@@ -158,7 +83,7 @@
 				<posy>160</posy>
 				<align>left</align>
 				<width>260</width>
-				<height>840</height>
+				<height>710</height>
 				<itemgap>0</itemgap>	
 				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
 				<onup>9</onup>
@@ -182,7 +107,6 @@
 			<control type="button" id="13">
 				<description>default Section Button</description>
 				<width>300</width>
-				<textwidth>300</textwidth>
 				<height>45</height>
 				<align>center</align>
 				<textcolor>grey_b</textcolor>
@@ -218,7 +142,7 @@
 				<height>45</height>
 				<font>font-22</font>
 				<textoffsetx>30</textoffsetx>
-				<textwidth>880</textwidth>
+				<textwidth>620</textwidth>
 				<textcolor>grey_b</textcolor>
 				<focusedcolor>white</focusedcolor>
 				<disabledcolor>grey_a</disabledcolor>
@@ -246,6 +170,7 @@
 				<description>default Slider</description>
 				<height>45</height>
 				<font>font-20</font>
+				<textwidth>800</textwidth>
 				<textcolor>grey_b</textcolor>
 				<focusedcolor>$VAR[main_color]</focusedcolor>
 				<disabledcolor>darkgrey</disabledcolor>
@@ -253,7 +178,7 @@
 
 			<control type="grouplist" id="9001">		
 				<posx>0</posx>
-				<posy>1020</posy>
+				<posy>890</posy>
 				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
 				<align>left</align>
 				<width>700</width>

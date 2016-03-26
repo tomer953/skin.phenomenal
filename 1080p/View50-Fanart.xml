@@ -46,6 +46,12 @@
 					<animation effect="slide" start="0,0" end="0,-80" time="100" condition="Skin.HasSetting(hide_fanart_topbar)">Conditional</animation>
 					<include>fanart_fade_level</include>
 				</control>
+				<include name="left_shadow">
+					<param name="posx" value="1368" />
+					<param name="posy" value="80" />
+					<param name="width" value="20" />
+					<param name="height" value="1080" />
+				</include>
 				<control type="image">
 					<posx>0</posx>
 					<posy>860</posy>
@@ -717,6 +723,12 @@
 					<animation effect="slide" start="0,0" end="0,-80" time="100" condition="Skin.HasSetting(hide_fanart_topbar)">Conditional</animation>
 					<include>fanart_fade_level</include>
 				</control>
+				<include name="right_shadow">
+					<param name="posx" value="532" />
+					<param name="posy" value="80" />
+					<param name="width" value="20" />
+					<param name="height" value="1080" />
+				</include>
 				<control type="image">
 					<posx>532</posx>
 					<posy>860</posy>
@@ -1637,8 +1649,8 @@
 			<visible>!IntegerGreaterThan(ListItem.ChannelNumberLabel,9)</visible>
 		</control>
 	</include>
-	
-		<!-- LTR - Episode Numbers -->
+
+	<!-- LTR - Episode Numbers -->
 	<include name="episode_num_nf_ltr">
 		<control type="label">
 			<posx>20</posx>

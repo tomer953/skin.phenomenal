@@ -5,16 +5,9 @@
 		<include>fade_screen_grey</include>
 		<control type="group">
 			<posx>360</posx>
+			<posy>80</posy>
 			<include>dialog_zoom_animation</include>
-			<!-- Header -->
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1200</width>
-				<height>80</height>
-				<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
-			</control>
+			<include>big_dialog</include>
 			<control type="label" id="1">
 				<description>heading label</description>
 				<posx>0</posx>
@@ -26,24 +19,6 @@
 				<font>font-30</font>
 				<label>-</label>
 				<textcolor>white</textcolor>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>1200</width>
-				<height>10</height>
-				<texture>shadow_horizontal.png</texture>
-			</control>
-			<!-- Close Button -->
-			<include name="close_button"><param name="posx" value="22" /><param name="posy" value="24" /></include>
-			<!-- Info line -->
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>80</posy>
-				<width>1200</width>
-				<height>60</height>
-				<texture background="true">dialogs/long_grey.png</texture>
 			</control>
 			<control type="label">
 				<left>22</left>
@@ -57,7 +32,7 @@
 				<textcolor>grey_b</textcolor>
 				<label>$INFO[Container(3).NumItems] $LOCALIZE[31099] ($LOCALIZE[31132] $INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages])</label>
 				<visible>Control.IsVisible(3)</visible>
-			</control>
+			</control> 
 			<control type="label">
 				<left>22</left>
 				<top>90</top>
@@ -71,64 +46,13 @@
 				<label>$INFO[Container(6).NumItems] $LOCALIZE[31099] ($LOCALIZE[31132] $INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages])</label>
 				<visible>Control.IsVisible(6)</visible>
 			</control>
-			<control type="image">
-				<left>0</left>
-				<top>80</top>
-				<width>1200</width>
-				<height>10</height>
-				<texture>shadow_horizontal.png</texture>
-			</control>
 			
-			
-			<!-- Content area -->
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>140</posy>
-				<width>1200</width>
-				<height>940</height>
-				<texture background="true" flipy="false">dialogs/long_grey.png</texture>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>140</top>
-				<width>1200</width>
-				<height>10</height>
-				<texture>shadow_horizontal.png</texture>
-			</control>
-			<!-- left shadow-->
-			<control type="image">
-				<left>-30</left>
-				<top>0</top>
-				<width>30</width>
-				<height>1080</height>
-				<texture flipx="true">shadow_vertical.png</texture>
-			</control>
-			<!-- right shadow-->
-			<control type="image">
-				<left>1200</left>
-				<top>0</top>
-				<width>30</width>
-				<height>1080</height>
-				<texture>shadow_vertical.png</texture>
-			</control>
-
-			<!-- Bottom line -->
-			<control type="image">
-				<left>0</left>
-				<top>1000</top>
-				<width>1200</width>
-				<height>20</height>
-				<texture>shadow_horizontal.png</texture>
-				<animation effect="fade" start="100" end="35" time="0" condition="true">Conditional</animation>
-			</control>
-
 			<control type="group" id="9000">
 				<control type="list" id="3">
 					<posx>22</posx>
 					<posy>150</posy>
 					<width>1155</width>
-					<height>810</height>
+					<height>735</height>
 					<onup>3</onup>
 					<ondown>3</ondown>
 					<onleft>5</onleft>
@@ -176,7 +100,7 @@
 					<posx>22</posx>
 					<posy>150</posy>
 					<width>1155</width>
-					<height>810</height>
+					<height>730</height>
 					<onup>6</onup>
 					<ondown>6</ondown>
 					<onleft>9001</onleft>
@@ -259,7 +183,7 @@
 			</control>
 			<control type="grouplist" id="9001">
 				<posx>15</posx>
-				<posy>1015</posy>
+				<posy>885</posy>
 				<width>420</width>
 				<height>55</height>
 				<align>center</align>
@@ -268,7 +192,6 @@
 				<onright>3</onright>
 				<ondown>9001</ondown>
 				<onup>9001</onup>
-				<itemgap>14</itemgap>
 				<control type="button" id="5">
 					<description>Get More..</description>
 					<width>200</width>
@@ -284,7 +207,7 @@
 				<posx>1182</posx>
 				<posy>150</posy>
 				<width>8</width>
-				<height>798</height>
+				<height>720</height>
 				<include>scroll_bar</include>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>

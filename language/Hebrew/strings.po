@@ -542,6 +542,10 @@ msgctxt "#31132"
 msgid "Page"
 msgstr "עמוד"
 
+msgctxt "#31133"
+msgid "Scanning Options"
+msgstr "הגדרות סריקה"
+
 msgctxt "#31134"
 msgid "Animated backgrounds"
 msgstr "רקעים מונפשים"

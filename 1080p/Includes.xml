@@ -204,15 +204,16 @@
 		<width>290</width>
 		<pulseonselect>false</pulseonselect>
 		<align>center</align>
-		<textcolor>grey_b</textcolor>
-		<focusedcolor>white</focusedcolor>
 		<disabledcolor>grey_a</disabledcolor>
 		<invalidcolor>red</invalidcolor>
 		<textoffsetx>15</textoffsetx>
 		<aligny>center</aligny>
 		<font>font-23</font>
-		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
-		<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
+		<textoffsetx>5</textoffsetx>
+		<textcolor>white</textcolor>
+		<focusedcolor>$VAR[main_color]</focusedcolor>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
 		<label>-</label>
 	</include>
 	<include name="radio_button_settings">
@@ -272,8 +273,12 @@
 		<textwidth>900</textwidth>
 		<focusedcolor>white</focusedcolor>
 		<textcolor>white</textcolor>
-		<texturefocus colordiffuse="grey_a">white.png</texturefocus>
-		<texturenofocus colordiffuse="darkgrey">white.png</texturenofocus>
+		<texturenofocus>-</texturenofocus>
+		<texturefocus colordiffuse="$VAR[main_color]">white.png</texturefocus>
+		<textureup colordiffuse="grey">main/arrowup.png</textureup>
+		<texturedown colordiffuse="grey">main/arrowdown.png</texturedown>
+		<textureupfocus>main/arrowup.png</textureupfocus>
+		<texturedownfocus>main/arrowdown.png</texturedownfocus>
 		<disabledcolor>grey_a</disabledcolor>
 	</include>
 	<include name="addon_status">			
@@ -2730,7 +2735,7 @@
 	</include>
 	<include name="shutdown_dialog_long"><height>500</height></include>
 	<include name="shutdown_dialog_short"><height>220</height></include>
-	
+
 	<include name="radiobutton_alignment">
 		<radioposx>$PARAM[radioposx]</radioposx>
 		<radioposy>$PARAM[radioposy]</radioposy>
@@ -2850,40 +2855,40 @@
 		</control>
 	</include>
 	<include name="close_button">
-				<control type="button">
-				<description>Close Window button</description>
-				<left>$PARAM[posx]</left>
-				<top>$PARAM[posy]</top>
-				<width>32</width>
-				<height>32</height>
-				<label>-</label>
-				<font>-</font>
-				<onclick>PreviousMenu</onclick>
-				<texturefocus colordiffuse="white">close_button.png</texturefocus>
-				<texturenofocus colordiffuse="grey_50">close_button.png</texturenofocus>
-				<onleft>3</onleft>
-				<onright>3</onright>
-				<onup>3</onup>
-				<ondown>3</ondown>
-				<visible>system.getbool(input.enablemouse)</visible>
-			</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<left>$PARAM[posx]</left>
+			<top>$PARAM[posy]</top>
+			<width>32</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus colordiffuse="white">close_button.png</texturefocus>
+			<texturenofocus colordiffuse="grey_50">close_button.png</texturenofocus>
+			<onleft>3</onleft>
+			<onright>3</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
+		</control>
 	</include>
-	
+
 	<include name="dialog_favorite_position">
 		<include condition="StringCompare(System.Language,Hebrew)">dialog_favorite_position_rtl</include>
 		<include condition="!StringCompare(System.Language,Hebrew)">dialog_favorite_position_ltr</include>
 	</include>
-		<include name="dialog_favorite_position_rtl">
-			<posx>1520</posx>
-			<animation effect="slide" start="400" end="0" time="200">WindowOpen</animation>
-			<animation effect="slide" start="0" end="400" time="200">WindowClose</animation>
+	<include name="dialog_favorite_position_rtl">
+		<posx>1520</posx>
+		<animation effect="slide" start="400" end="0" time="200">WindowOpen</animation>
+		<animation effect="slide" start="0" end="400" time="200">WindowClose</animation>
 	</include>
 	<include name="dialog_favorite_position_ltr">
-			<posx>0</posx>
-			<animation effect="slide" start="-400" end="0" time="200">WindowOpen</animation>
-			<animation effect="slide" start="0" end="-400" time="200">WindowClose</animation>
+		<posx>0</posx>
+		<animation effect="slide" start="-400" end="0" time="200">WindowOpen</animation>
+		<animation effect="slide" start="0" end="-400" time="200">WindowClose</animation>
 	</include>
-	
+
 	<include name="left_shadow">
 		<control type="image">
 			<posx>$PARAM[posx]</posx>
@@ -2899,6 +2904,215 @@
 			<posy>$PARAM[posy]</posy>
 			<width>$PARAM[width]</width>
 			<height>$PARAM[height]</height>
+			<texture>shadow_vertical.png</texture>
+		</control>
+	</include>
+
+	<include name="ok_dialog">
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1120</width>
+			<height>80</height>
+			<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<top>-10</top>
+			<width>1120</width>
+			<height>10</height>
+			<texture flipy="true">shadow_horizontal.png</texture>
+		</control>
+		<!-- Close Button -->
+		<include name="close_button"><param name="posx" value="22" /><param name="posy" value="24" /></include>
+
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>80</posy>
+			<width>1120</width>
+			<height>235</height>
+			<texture background="true" flipy="false">dialogs/long_grey.png</texture>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<top>235</top>
+			<width>1120</width>
+			<height>20</height>
+			<texture>shadow_horizontal.png</texture>
+			<animation effect="fade" start="100" end="35" time="0" condition="true">Conditional</animation>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<top>315</top>
+			<width>1120</width>
+			<height>20</height>
+			<texture>shadow_horizontal.png</texture>
+			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+		</control>
+
+		<!-- left shadow-->
+		<control type="image">
+			<left>-10</left>
+			<top>0</top>
+			<width>10</width>
+			<height>315</height>
+			<texture flipx="true">shadow_vertical.png</texture>
+		</control>
+		<!-- right shadow-->
+		<control type="image">
+			<posx>1120</posx>
+			<top>0</top>
+			<width>10</width>
+			<height>315</height>
+			<texture>shadow_vertical.png</texture>
+		</control>
+	</include>
+
+	<include name="big_dialog">
+		<param name="info_posy" default="80"/>
+		<param name="content_posy" default="140"/>
+		<param name="content_height" default="820" />
+		<param name="bottom_posy" default="880"/>
+		<param name="width" default="1200" />
+		<definition>
+			<!-- Header -->
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>$PARAM[width]</width>
+				<height>80</height>
+				<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>-10</top>
+				<width>$PARAM[width]</width>
+				<height>10</height>
+				<texture flipy="true">shadow_horizontal.png</texture>
+			</control>
+			<!-- Close Button -->
+			<include name="close_button"><param name="posx" value="22" /><param name="posy" value="24" /></include>
+			<!-- Info line -->
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>$PARAM[info_posy]</posy>
+				<width>$PARAM[width]</width>
+				<height>60</height>
+				<texture background="true">dialogs/long_grey.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>80</top>
+				<width>$PARAM[width]</width>
+				<height>10</height>
+				<texture>shadow_horizontal.png</texture>
+			</control>
+			<!-- Content area if info bar -->
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>$PARAM[content_posy]</posy>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[content_height]</height>
+				<texture background="true" flipy="false">dialogs/long_grey.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<posy>$PARAM[content_posy]</posy>
+				<width>$PARAM[width]</width>
+				<height>10</height>
+				<texture>shadow_horizontal.png</texture>
+			</control>
+
+			<!-- left shadow-->
+			<control type="image">
+				<left>-10</left>
+				<top>0</top>
+				<width>10</width>
+				<height>960</height>
+				<texture flipx="true">shadow_vertical.png</texture>
+			</control>
+			<!-- right shadow-->
+			<control type="image">
+				<left>$PARAM[width]</left>
+				<top>0</top>
+				<width>10</width>
+				<height>960</height>
+				<texture>shadow_vertical.png</texture>
+			</control>
+
+			<!-- Bottom line -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>$PARAM[bottom_posy]</posy>
+				<width>$PARAM[width]</width>
+				<height>20</height>
+				<texture>shadow_horizontal.png</texture>
+			</control>
+			<!-- Bottom Shadow -->
+			<control type="image">
+				<left>0</left>
+				<top>960</top>
+				<width>$PARAM[width]</width>
+				<height>10</height>
+				<texture>shadow_horizontal.png</texture>
+			</control>
+		</definition>
+	</include>
+
+	<include name="side_dialog">
+		<!-- Header -->
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>400</width>
+			<height>80</height>
+			<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>400</width>
+			<height>10</height>
+			<texture>shadow_horizontal.png</texture>
+		</control>
+		<!-- Close Button -->
+			<include name="close_button"><param name="posx" value="22" /><param name="posy" value="24" /></include>
+		<!-- Content area -->
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>80</posy>
+			<width>400</width>
+			<height>1000</height>
+			<texture background="true" flipy="false">dialogs/long_grey.png</texture>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>80</top>
+			<width>400</width>
+			<height>10</height>
+			<texture>shadow_horizontal.png</texture>
+		</control>
+		<!-- left shadow-->
+		<control type="image">
+			<left>-30</left>
+			<top>0</top>
+			<width>30</width>
+			<height>1080</height>
+			<texture flipx="true">shadow_vertical.png</texture>
+		</control>
+		<!-- right shadow-->
+		<control type="image">
+			<left>400</left>
+			<top>0</top>
+			<width>30</width>
+			<height>1080</height>
 			<texture>shadow_vertical.png</texture>
 		</control>
 	</include>

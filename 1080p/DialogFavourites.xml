@@ -5,15 +5,7 @@
 		<include>fade_screen_grey</include>
 		<control type="group">
 			<include>dialog_favorite_position</include>
-			<!-- Header -->
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>400</width>
-				<height>80</height>
-				<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
-			</control>
+			<include>side_dialog</include>
 			<control type="label">
 				<description>heading label</description>
 				<posx>0</posx>
@@ -26,51 +18,11 @@
 				<label>1036</label>
 				<textcolor>white</textcolor>
 			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>400</width>
-				<height>10</height>
-				<texture>shadow_horizontal.png</texture>
-			</control>
-
-			<!-- Content area -->
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>80</posy>
-				<width>400</width>
-				<height>1000</height>
-				<texture background="true" flipy="false">dialogs/long_grey.png</texture>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>80</top>
-				<width>400</width>
-				<height>10</height>
-				<texture>shadow_horizontal.png</texture>
-			</control>
-			<!-- left shadow-->
-			<control type="image">
-				<left>-30</left>
-				<top>0</top>
-				<width>30</width>
-				<height>1080</height>
-				<texture flipx="true">shadow_vertical.png</texture>
-			</control>
-				<!-- right shadow-->
-			<control type="image">
-				<left>400</left>
-				<top>0</top>
-				<width>30</width>
-				<height>1080</height>
-				<texture>shadow_vertical.png</texture>
-			</control>
 			<control type="list" id="450">
 				<posx>0</posx>
 				<posy>400</posy>
 				<width>400</width>
-				<height>660</height>
+				<height>670</height>
 				<onup>450</onup>
 				<onleft>450</onleft>
 				<onright>61</onright>
@@ -78,11 +30,11 @@
 				<pagecontrol>61</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<preloaditems>2</preloaditems>
-				<itemlayout width="400" height="44">
+				<itemlayout width="400" height="50">
 					<control type="label">
 						<posx>15</posx>
 						<posy>0</posy>
-						<width>370</width>
+						<width>320</width>
 						<height>45</height>
 						<font>font-20</font>
 						<include>align_tag</include>
@@ -91,19 +43,33 @@
 						<selectedcolor>$VAR[main_color]</selectedcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
+					<control type="image">
+						<posx>350</posx>
+						<posy>5</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture fallback="defaultFolder.png">$INFO[ListItem.Icon]</texture>
+					</control>
 				</itemlayout>
-				<focusedlayout width="400" height="44">
+				<focusedlayout width="400" height="50">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>400</width>
-						<height>45</height>
+						<height>50</height>
 						<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
+					</control>
+					<control type="image">
+						<posx>350</posx>
+						<posy>5</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture fallback="defaultFolder.png">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
 						<posx>15</posx>
 						<posy>0</posy>
-						<width>370</width>
+						<width>320</width>
 						<height>45</height>
 						<font>font-20</font>
 						<include>align_tag</include>

@@ -5,20 +5,14 @@
 		<include>fade_screen_grey</include>
 		<control type="group">
 			<posy>400</posy>
-			<include>dialog_zoom_animation</include>
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1920</width>
-				<height>80</height>
-				<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
-			</control>
+			<posx>400</posx>
+			<include>dialog_zoom_animation</include> 
+			<include>ok_dialog</include>
 			<control type="label" id="1">
 				<description>heading label</description>
 				<posx>0</posx>
 				<posy>20</posy>
-				<width>1920</width>
+				<width>1120</width>
 				<height>45</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -26,41 +20,10 @@
 				<label>-</label>
 				<textcolor>white</textcolor>
 			</control>
-			<control type="image">
-				<left>0</left>
-				<top>-10</top>
-				<width>1920</width>
-				<height>10</height>
-				<texture flipy="true">shadow_horizontal.png</texture>
-			</control>
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>80</posy>
-				<width>1920</width>
-				<height>235</height>
-				<texture background="true" flipy="false">dialogs/long_grey.png</texture>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>235</top>
-				<width>1920</width>
-				<height>20</height>
-				<texture>shadow_horizontal.png</texture>
-				<animation effect="fade" start="100" end="35" time="0" condition="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>315</top>
-				<width>1920</width>
-				<height>20</height>
-				<texture>shadow_horizontal.png</texture>
-				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			</control>
 			<control type="textbox" id="9">
-				<posx>0</posx>
+				<posx>10</posx>
 				<posy>90</posy>
-				<width>1920</width>
+				<width>1100</width>
 				<height>205</height>
 				<align>center</align>
 				<label>-</label>
@@ -70,7 +33,7 @@
 			<control type="grouplist" id="12">
 				<posx>0</posx>
 				<posy>250</posy>
-				<width>1920</width>
+				<width>1120</width>
 				<height>60</height>
 				<align>center</align>
 				<itemgap>20</itemgap>
