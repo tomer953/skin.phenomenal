@@ -430,14 +430,6 @@
 					<param name="height">1080</param>
 				</include>
 
-
-
-
-				<control type="group">
-					<posy>40</posy>
-					<include>scroll_letter_fanart</include>
-				</control>
-
 			</control>
 		</control>
 	</include>

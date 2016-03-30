@@ -425,14 +425,7 @@
 					<animation effect="fade" start="0" end="100" time="320">VisibleChange</animation>
 				</control>
 			</control>
-
-
 			<include>View_53_ShowCase</include>
-			<control type="group">
-				<posx>20</posx>
-				<posy>950</posy>
-				<include>scroll_letter</include>
-			</control>
 		</control>
 	</include>
 	<include name="scmfixed">

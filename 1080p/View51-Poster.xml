@@ -392,12 +392,6 @@
 				</control> 
 
 			</control>
-
-			<control type="group">
-				<posx>140</posx>
-				<posy>570</posy>
-				<include>scroll_letter</include>
-			</control>
 		</control>
 	</include>
 
@@ -795,12 +789,6 @@
 					<autoscroll time="2000" delay="8000" repeat="5000">!Skin.HasSetting(AutoScroll)</autoscroll>
 				</control> 
 
-			</control>
-
-			<control type="group">
-				<posx>140</posx>
-				<posy>570</posy>
-				<include>scroll_letter</include>
 			</control>
 		</control>
 	</include>

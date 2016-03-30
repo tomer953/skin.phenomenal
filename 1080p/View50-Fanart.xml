@@ -666,10 +666,7 @@
 				<wrapmultiline>true</wrapmultiline>
 				<visible>!Container(50).OnNext + !Container(50).OnPrevious + Control.HasFocus(555) + !Player.HasVideo</visible>
 				<animation effect="slide" start="0,200" end="0" time="300">Visible</animation>
-				<!-- 				<visible>!Player.HasVideo + Control.HasFocus(555)</visible>  -->
 			</control>
-			<include>scroll_letter_fanart</include>
-
 		</control>
 	</include>
 	<include name="fanart_view_ltr">
@@ -1334,10 +1331,7 @@
 				<wrapmultiline>true</wrapmultiline>
 				<visible>!Container(50).OnNext + !Container(50).OnPrevious + Control.HasFocus(555) + !Player.HasVideo</visible>
 				<animation effect="slide" start="0,200" end="0" time="300">Visible</animation>
-				<!-- 				<visible>!Player.HasVideo + Control.HasFocus(555)</visible>  -->
 			</control>
-			<include>scroll_letter_fanart</include>
-
 		</control>
 	</include>
 
