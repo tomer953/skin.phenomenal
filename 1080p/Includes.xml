@@ -63,8 +63,8 @@
 		</control>
 	</include>
 	<include name="top_bar_content">
-		<include condition="StringCompare(System.Language,Hebrew)">top_bar_content_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">top_bar_content_ltr</include>	
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">top_bar_content_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">top_bar_content_ltr</include>	
 	</include>
 	<include name="top_bar_content_rtl">
 		<control type="group">
@@ -307,8 +307,8 @@
 		<label>-</label>
 	</include>
 	<include name="radio_button_settings">
-		<include condition="StringCompare(System.Language,Hebrew)">radio_button_settings_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">radio_button_settings_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">radio_button_settings_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">radio_button_settings_ltr</include>
 	</include>
 	<include name="radio_button_settings_rtl">
 		<height>42</height>
@@ -1150,7 +1150,7 @@
 	<include name="cdart_image">
 		<control type="group">
 			<visible>!Skin.HasSetting(fanart_plot) + !ListItem.IsCollection + !stringcompare(ListItem.Label,..)</visible>
-			<animation effect="slide" end="-610" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+			<animation effect="slide" end="-610" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 			<!-- Default Discart - plot -->
 			<control type="image">
 				<posx>1160</posx>
@@ -1190,7 +1190,7 @@
 		</control>
 		<control type="group">
 			<visible>Skin.HasSetting(fanart_plot) + !ListItem.IsCollection + !stringcompare(ListItem.Label,..)</visible>
-			<animation effect="slide" end="-380,-15" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+			<animation effect="slide" end="-380,-15" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 			<!-- Default Discart - no plot -->
 			<control type="image">
 				<posx>1160</posx>
@@ -1357,8 +1357,8 @@
 		</control>
 	</include>
 	<include name="flags_movies">
-		<include name="flags_movies_rtl" condition="StringCompare(System.Language,Hebrew)"><param name="posy">$PARAM[posy]</param></include>
-		<include name="flags_movies_ltr" condition="!StringCompare(System.Language,Hebrew)"><param name="posy">$PARAM[posy]</param></include>
+		<include name="flags_movies_rtl" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)"><param name="posy">$PARAM[posy]</param></include>
+		<include name="flags_movies_ltr" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)"><param name="posy">$PARAM[posy]</param></include>
 	</include>
 	<include name="flags_movies_rtl">
 		<!-- FLAGS -->
@@ -1526,7 +1526,7 @@
 			<posy>0</posy>
 			<posx>0</posx>
 			<visible>!Window.IsActive(extendedprogressdialog) + !Skin.HasSetting(Home_Horizontal)</visible>
-			<animation effect="slide" end="290" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>			
+			<animation effect="slide" end="290" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>			
 			<control type="image">
 				<left>0</left>
 				<posy>1000</posy>
@@ -1835,13 +1835,13 @@
 	</include>
 
 	<include name="vertical_scroll">
-		<include name="vertical_scroll_rtl" condition="StringCompare(System.Language,Hebrew)">
+		<include name="vertical_scroll_rtl" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 			<param name="id" value="$PARAM[id]" />
 			<param name="listid" value="$PARAM[listid]" />
 			<param name="posy">$PARAM[posy]</param>
 			<param name="height">$PARAM[height]</param>
 		</include>
-		<include name="vertical_scroll_ltr" condition="!StringCompare(System.Language,Hebrew)">
+		<include name="vertical_scroll_ltr" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 			<param name="id" value="$PARAM[id]" />
 			<param name="listid" value="$PARAM[listid]" />
 			<param name="posy">$PARAM[posy]</param>
@@ -2491,10 +2491,10 @@
 		<control type="group"> 
 			<posx>0</posx>
 			<posy>0</posy>
-			<animation effect="slide" end="2260" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+			<animation effect="slide" end="2260" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 			<visible>ControlGroup(8000).HasFocus + !Window.IsActive(DialogKeyboard.xml)</visible>
-			<include name="myvideonav_options_animation" condition="StringCompare(System.Language,Hebrew)"><param name="start" value="0" /><param name="end" value="350" /></include>
-			<include name="myvideonav_options_animation" condition="!StringCompare(System.Language,Hebrew)"><param name="start" value="0" /><param name="end" value="-350" /></include>
+			<include name="myvideonav_options_animation" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)"><param name="start" value="0" /><param name="end" value="350" /></include>
+			<include name="myvideonav_options_animation" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)"><param name="start" value="0" /><param name="end" value="-350" /></include>
 			<control type="image">
 				<posx>-340</posx>
 				<posy>90</posy>
@@ -2555,7 +2555,7 @@
 			<width>800</width>
 			<height>35</height>
 			<posx>430</posx>
-			<animation effect="slide" end="-400" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+			<animation effect="slide" end="-400" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 			<posy>0</posy>
 			<label>$INFO[System.AddonVersion($PARAM[addon])]</label>
 			<label2>$INFO[System.AddonTitle($PARAM[addon])]</label2>
@@ -2570,7 +2570,7 @@
 			<width>800</width>
 			<height>35</height>
 			<posx>430</posx>
-			<animation effect="slide" end="-400" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+			<animation effect="slide" end="-400" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 			<posy>0</posy>
 			<label>24038</label>
 			<label2>$PARAM[addon]</label2>
@@ -2587,8 +2587,8 @@
 		</control>
 	</include>
 	<include name="align_tag">
-		<include condition="StringCompare(System.Language,Hebrew)">align_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">align_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">align_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">align_ltr</include>
 	</include>
 	<include name="align_rtl"><align>right</align></include>
 	<include name="align_ltr"><align>left</align></include>
@@ -2625,7 +2625,7 @@
 	<include name="myvideonav_hiddenbutton">
 		<posx>0</posx>
 		<posy>0</posy>
-		<animation effect="slide" end="2260" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+		<animation effect="slide" end="2260" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 		<control type="button" id="9101">
 			<posx>0</posx>
 			<posy>90</posy>
@@ -2635,7 +2635,7 @@
 			<focusedcolor>white</focusedcolor>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
-			<animation effect="slide" end="-360" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+			<animation effect="slide" end="-360" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 		</control>
 	</include>
 	<include name="shutdown_dialog_long"><height>500</height></include>
@@ -2648,12 +2648,12 @@
 	</include>
 
 	<include name="addonbrowser_label2">
-		<include condition="StringCompare(System.Language,Hebrew)">addonbrowser_label2_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">addonbrowser_label2_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">addonbrowser_label2_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">addonbrowser_label2_ltr</include>
 	</include>
 	<include name="addonbrowser_label2_focus">
-		<include condition="StringCompare(System.Language,Hebrew)">addonbrowser_label2_focus_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">addonbrowser_label2_focus_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">addonbrowser_label2_focus_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">addonbrowser_label2_focus_ltr</include>
 	</include>
 	<include name="addonbrowser_label2_rtl">
 		<control type="label">
@@ -2780,8 +2780,8 @@
 	</include>
 
 	<include name="dialog_favorite_position">
-		<include condition="StringCompare(System.Language,Hebrew)">dialog_favorite_position_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">dialog_favorite_position_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">dialog_favorite_position_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">dialog_favorite_position_ltr</include>
 	</include>
 	<include name="dialog_favorite_position_rtl">
 		<posx>1520</posx>

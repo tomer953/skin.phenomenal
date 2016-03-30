@@ -550,6 +550,10 @@ msgctxt "#31134"
 msgid "Animated backgrounds"
 msgstr ""
 
+msgctxt "#31135"
+msgid "Prefer RTL Layout (Right-To-Left)"
+msgstr ""
+
 msgctxt "#31138"
 msgid "Custom Shutdown Menu"
 msgstr ""

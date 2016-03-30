@@ -41,7 +41,7 @@
 				<posy>140</posy>
 				<width>300</width>
 				<height>820</height>
-				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<texture background="true" flipy="true">dialogs/long_grey.png</texture>
 			</control>
 			<control type="image">
@@ -50,7 +50,7 @@
 				<width>30</width>
 				<height>820</height>
 				<texture>shadow_vertical.png</texture>
-				<visible>!StringCompare(System.Language,Hebrew)</visible>
+				<visible>!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)</visible>
 			</control>
 			<control type="image">
 				<left>870</left>
@@ -58,7 +58,7 @@
 				<width>30</width>
 				<height>820</height>
 				<texture flipx="true">shadow_vertical.png</texture>
-				<visible>StringCompare(System.Language,Hebrew)</visible>
+				<visible>StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)</visible>
 			</control>
 
 			
@@ -69,13 +69,13 @@
 				<width>880</width>
 				<height>710</height>
 				<itemgap>-2</itemgap>
-				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<onup>10</onup>
 				<ondown>10</ondown>
-				<onleft condition="StringCompare(System.Language,Hebrew)">9001</onleft>
-				<onright condition="StringCompare(System.Language,Hebrew)">9</onright>
-				<onleft condition="!StringCompare(System.Language,Hebrew)">9</onleft>
-				<onright condition="!StringCompare(System.Language,Hebrew)">9001</onright>
+				<onleft condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">9001</onleft>
+				<onright condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">9</onright>
+				<onleft condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">9</onleft>
+				<onright condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">9001</onright>
 			</control>
 			<control type="grouplist" id="9">
 				<description>control section area</description>
@@ -85,7 +85,7 @@
 				<width>260</width>
 				<height>710</height>
 				<itemgap>0</itemgap>	
-				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<onup>9</onup>
 				<ondown>9</ondown>
 				<onleft>2</onleft>
@@ -119,12 +119,12 @@
 				<description>default RadioButton</description>
 				<height>45</height>
 				<font>font-22</font>
-				<include name="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew)">
+				<include name="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 					<param name="radioposx" value="820" />
 					<param name="radioposy" value="3" />
 					<param name="textoffsetx" value="70" />
 				</include>
-				<include name="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew)">
+				<include name="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 					<param name="radioposx" value="30" />
 					<param name="radioposy" value="0" />
 					<param name="textoffsetx" value="90" />
@@ -179,7 +179,7 @@
 			<control type="grouplist" id="9001">		
 				<posx>0</posx>
 				<posy>890</posy>
-				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<align>left</align>
 				<width>700</width>
 				<height>65</height>

@@ -129,7 +129,7 @@
 				<orientation>vertical</orientation>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Director)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[20339]:" />
@@ -137,7 +137,7 @@
 						<param name="width2" value="1300" />
 						<param name="label2" value="$INFO[ListItem.Director]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[20339]:" />
@@ -148,7 +148,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Writer)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[20417]:" />
@@ -156,7 +156,7 @@
 						<param name="width2" value="1300" />
 						<param name="label2" value="$INFO[ListItem.Writer]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[20417]:" />
@@ -167,7 +167,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Studio)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[572]:" />
@@ -175,7 +175,7 @@
 						<param name="width2" value="1300" />
 						<param name="label2" value="$INFO[ListItem.Studio]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[572]:" />
@@ -186,7 +186,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Country)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[574]:" />
@@ -194,7 +194,7 @@
 						<param name="width2" value="1290" />
 						<param name="label2" value="$INFO[ListItem.Country]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[574]:" />
@@ -206,7 +206,7 @@
 
 				<control type="group">
 					<visible>!IsEmpty(ListItem.RatingAndVotes)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[563]:" />
@@ -214,7 +214,7 @@
 						<param name="width2" value="1290" />
 						<param name="label2" value="$INFO[ListItem.RatingAndVotes]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[563]:" />
@@ -225,7 +225,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.UserRating)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="140" />
 						<param name="label1" value="$LOCALIZE[38018]:" />
@@ -233,7 +233,7 @@
 						<param name="width2" value="1290" />
 						<param name="label2" value="$INFO[ListItem.UserRating]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="140" />
 						<param name="label1" value="$LOCALIZE[38018]:" />
@@ -244,7 +244,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.PlayCount)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[567]:" />
@@ -252,7 +252,7 @@
 						<param name="width2" value="1160" />
 						<param name="label2" value="$INFO[ListItem.PlayCount]$INFO[ListItem.LastPlayed, ($LOCALIZE[568]: ,)]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[567]:" />
@@ -263,7 +263,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.TagLine)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[202]:" />
@@ -271,7 +271,7 @@
 						<param name="width2" value="1290" />
 						<param name="label2" value="$INFO[ListItem.TagLine]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[202]:" />
@@ -283,7 +283,7 @@
 
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Premiered)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[20416]:" />
@@ -291,7 +291,7 @@
 						<param name="width2" value="1160" />
 						<param name="label2" value="$INFO[ListItem.Premiered]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[20416]:" />
@@ -302,7 +302,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Date) + IsEmpty(ListItem.Premiered)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[552]:" />
@@ -310,7 +310,7 @@
 						<param name="width2" value="1160" />
 						<param name="label2" value="$INFO[ListItem.Date]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[552]:" />
@@ -321,7 +321,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.NextDate)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[15311]:" />
@@ -329,7 +329,7 @@
 						<param name="width2" value="1160" />
 						<param name="label2" value="$INFO[ListItem.NextDate]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[15311]:" />
@@ -340,7 +340,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Artist)</visible>
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[557]:" />
@@ -348,7 +348,7 @@
 						<param name="width2" value="1290" />
 						<param name="label2" value="$INFO[ListItem.Artist]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[557]:" />
@@ -360,7 +360,7 @@
 
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Album)</visible>	
-					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[558]:" />
@@ -368,7 +368,7 @@
 						<param name="width2" value="1290" />
 						<param name="label2" value="$INFO[ListItem.Album]" />
 					</include>
-					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[558]:" />

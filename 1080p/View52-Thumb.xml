@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="View-Thumbs-52">
-		<include condition="StringCompare(System.Language,Hebrew)">Thumbs_View_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">Thumbs_View_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Thumbs_View_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Thumbs_View_ltr</include>
 	</include>
 	<include name="Thumbs_View_rtl">
 		<control type="group">

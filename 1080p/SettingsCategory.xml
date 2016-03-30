@@ -498,12 +498,12 @@
 			<width>970</width>
 			<height>42</height>
 			<font>font-22</font>
-			<include name="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew)">
+			<include name="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 				<param name="radioposx" value="1200" />
 				<param name="radioposy" value="3" />
 				<param name="textoffsetx" value="55" />
 			</include>
-			<include name="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew)">
+			<include name="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 				<param name="radioposx" value="1170" />
 				<param name="radioposy" value="0" />
 				<param name="textoffsetx" value="30" />

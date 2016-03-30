@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="Fanart-Videos">
-		<include condition="StringCompare(System.Language,Hebrew)">fanart_view_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">fanart_view_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">fanart_view_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">fanart_view_ltr</include>
 	</include>
 	<include name="fanart_view_rtl">
 		<control type="group">
@@ -1337,20 +1337,20 @@
 
 	<!-- Titles for fanart view -->
 	<include name="movie_title_short">
-		<include condition="StringCompare(System.Language,Hebrew)">movie_title_short_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">movie_title_short_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">movie_title_short_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">movie_title_short_ltr</include>
 	</include>
 	<include name="movie_title_long">
-		<include condition="StringCompare(System.Language,Hebrew)">movie_title_long_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">movie_title_long_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">movie_title_long_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">movie_title_long_ltr</include>
 	</include>
 	<include name="movie_title_short_nf">
-		<include condition="StringCompare(System.Language,Hebrew)">movie_title_short_nf_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">movie_title_short_nf_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">movie_title_short_nf_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">movie_title_short_nf_ltr</include>
 	</include>
 	<include name="movie_title_long_nf">
-		<include condition="StringCompare(System.Language,Hebrew)">movie_title_long_nf_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">movie_title_long_nf_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">movie_title_long_nf_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">movie_title_long_nf_ltr</include>
 	</include>
 	<!-- RTL Titles -->
 	<include name="movie_title_short_rtl">
@@ -1489,20 +1489,20 @@
 
 	<!-- Episodes and PVR Numbers -->
 	<include name="episode_num_nf">
-		<include condition="StringCompare(System.Language,Hebrew)">episode_num_nf_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">episode_num_nf_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">episode_num_nf_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">episode_num_nf_ltr</include>
 	</include>
 	<include name="episode_num_f">
-		<include condition="StringCompare(System.Language,Hebrew)">episode_num_f_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">episode_num_f_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">episode_num_f_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">episode_num_f_ltr</include>
 	</include>
 	<include name="channel_num_f">
-		<include condition="StringCompare(System.Language,Hebrew)">channel_num_f_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">channel_num_f_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">channel_num_f_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">channel_num_f_ltr</include>
 	</include>
 	<include name="channel_num_nf">
-		<include condition="StringCompare(System.Language,Hebrew)">channel_num_nf_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">channel_num_nf_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">channel_num_nf_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">channel_num_nf_ltr</include>
 	</include>
 	<!-- RTL - Episode Numbers -->
 	<include name="episode_num_nf_rtl">

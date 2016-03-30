@@ -17,8 +17,8 @@
 			<include>myvideonav_hiddenbutton</include>>
 			<control type="group">
 				<visible>IntegerGreaterThan(Container.NumItems,-1) | !Container.IsUpdating</visible>
-				<include name="myvideonav_toolbar_animation" condition="StringCompare(System.Language,Hebrew)"><param name="end" value="350" /></include>
-				<include name="myvideonav_toolbar_animation" condition="!StringCompare(System.Language,Hebrew)"><param name="end" value="-350" /></include>
+				<include name="myvideonav_toolbar_animation" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)"><param name="end" value="350" /></include>
+				<include name="myvideonav_toolbar_animation" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)"><param name="end" value="-350" /></include>
 				<control type="image">
 					<posx>-340</posx>
 					<posy>90</posy>

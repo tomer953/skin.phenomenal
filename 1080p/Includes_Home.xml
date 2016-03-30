@@ -103,8 +103,8 @@
 	</variable>
 
 	<include name="top_bar_home">
-		<include condition="StringCompare(System.Language,Hebrew)">top_bar_home_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">top_bar_home_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">top_bar_home_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">top_bar_home_ltr</include>
 	</include>
 	<include name="top_bar_home_rtl">
 		<control type="group">
@@ -314,7 +314,7 @@
 						<align>center</align>
 						<aligny>top</aligny>
 						<textcolor>$VAR[topbar_text_color]</textcolor>
-						<label>[B]$INFO[System.Date(DDD),, - ]$INFO[System.Time][/B]</label>
+						<label>[B]$INFO[System.Date(ddd),, - ]$INFO[System.Time][/B]</label>
 					</control>
 				</control>
 
@@ -927,8 +927,8 @@
 	</include>
 
 	<include name="VideoInfo"> 
-		<include condition="StringCompare(System.Language,Hebrew)">VideoInfo_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">VideoInfo_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">VideoInfo_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">VideoInfo_ltr</include>
 	</include>
 	<include name="VideoInfo_rtl"> 
 		<control type="group">
@@ -1251,8 +1251,8 @@
 	</include>
 
 	<include name="MusicInfo">
-		<include condition="StringCompare(System.Language,Hebrew)">MusicInfo_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">MusicInfo_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">MusicInfo_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">MusicInfo_ltr</include>
 	</include>
 	<include name="MusicInfo_rtl">
 		<control type="group">

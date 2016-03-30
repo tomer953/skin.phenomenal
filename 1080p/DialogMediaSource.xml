@@ -87,7 +87,7 @@
 				<onright>9000</onright>
 				<pagecontrol>61</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<itemlayout width="1320" height="44">
 					<control type="label">
 						<posx>15</posx>
@@ -142,7 +142,7 @@
 					<width>260</width>
 					<height>320</height>
 					<itemgap>0</itemgap>
-					<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+					<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 					<orientation>vertical</orientation>
 					<onup>9000</onup>
 					<ondown>12</ondown>

@@ -429,6 +429,20 @@
 				<font>font-18</font>
 				<textcolor>$VAR[main_color]</textcolor>
 			</control>
+			<control type="radiobutton" id="106">
+				<description>Prefer RTL Skin</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<label>$LOCALIZE[31135]</label>
+				<onclick>Skin.ToggleSetting(Prefer_RTL)</onclick>
+				<onclick>Skin.SetString(AfterReload,106)</onclick>
+				<onclick>Skin.SetString(AfterReload_Category,94)</onclick>
+				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
+				<onclick>ReloadSkin()</onclick> 
+				<selected>Skin.HasSetting(Prefer_RTL)</selected>
+				<include>radio_button_settings</include>
+				<visible>!StringCompare(System.Language,Hebrew)</visible>
+			</control>
 			<control type="button" id="112">
 				<description>loader select</description>
 				<label>$LOCALIZE[31033]</label>
@@ -1204,7 +1218,7 @@
 				<width>48</width>
 				<height>48</height>
 				<texture colordiffuse="gold">special://skin/extras/icons/favourites.png</texture>
-				<animation effect="slide" end="-1180" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="-1180" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 			</control>
 			<control type="textbox">
 				<posx>80</posx>

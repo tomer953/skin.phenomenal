@@ -550,6 +550,10 @@ msgctxt "#31134"
 msgid "Animated backgrounds"
 msgstr "רקעים מונפשים"
 
+msgctxt "#31135"
+msgid "Prefer RTL Layout (Right-To-Left)"
+msgstr "העדף את הסקין מיושר לימין"
+
 msgctxt "#31138"
 msgid "Custom Shutdown Menu"
 msgstr "תפריט כיבוי מותאם אישית"

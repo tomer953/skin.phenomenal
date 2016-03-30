@@ -44,7 +44,7 @@
 				<posy>140</posy>
 				<width>300</width>
 				<height>820</height>
-				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<texture background="true" flipy="true">dialogs/long_grey.png</texture>
 			</control>
 			<control type="image">
@@ -53,7 +53,7 @@
 				<width>30</width>
 				<height>820</height>
 				<texture>shadow_vertical.png</texture>
-				<visible>!StringCompare(System.Language,Hebrew)</visible>
+				<visible>!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)</visible>
 			</control>
 			<control type="image">
 				<left>870</left>
@@ -61,7 +61,7 @@
 				<width>30</width>
 				<height>820</height>
 				<texture flipx="true">shadow_vertical.png</texture>
-				<visible>StringCompare(System.Language,Hebrew)</visible>
+				<visible>StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)</visible>
 			</control>
 
 			<control type="image">
@@ -73,7 +73,7 @@
 				<bordertexture colordiffuse="grey_b">white.png</bordertexture>
 				<bordersize>2</bordersize>
 				<fadetime>300</fadetime>
-				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<visible>!stringcompare(ListItem.Label,..)</visible>
 			</control>
 
@@ -85,7 +85,7 @@
 					<width>260</width>
 					<height>320</height>
 					<itemgap>0</itemgap>
-					<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+					<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 					<orientation>vertical</orientation>
 					<onup>9000</onup>
 					<ondown>9000</ondown>
@@ -143,11 +143,11 @@
 					<width>800</width>
 					<height>350</height>
 					<itemgap>35</itemgap>
-					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 					<orientation>vertical</orientation>
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Property(Addon.Creator))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[21863]:" />
@@ -155,7 +155,7 @@
 							<param name="width2" value="680" />
 							<param name="label2" value="$INFO[ListItem.Property(Addon.Creator)]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[21863]:" />
@@ -166,7 +166,7 @@
 					</control>
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[24051]" />
@@ -174,7 +174,7 @@
 							<param name="width2" value="680" />
 							<param name="label2" value="$INFO[ListItem.Property(Addon.Version)]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[24051]" />
@@ -185,7 +185,7 @@
 					</control>
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Property(Addon.ID))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value=":$LOCALIZE[560]" />
@@ -193,7 +193,7 @@
 							<param name="width2" value="680" />
 							<param name="label2" value="$INFO[ListItem.Property(Addon.ID)]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="140" />
 							<param name="label1" value="$LOCALIZE[560]:" />
@@ -204,7 +204,7 @@
 					</control>
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Property(Addon.Type))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[564]:" />
@@ -212,7 +212,7 @@
 							<param name="width2" value="680" />
 							<param name="label2" value="$INFO[ListItem.Property(Addon.Type)]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[564]:" />
@@ -223,7 +223,7 @@
 					</control>
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Property(Addon.Status))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[126]:" />
@@ -231,7 +231,7 @@
 							<param name="width2" value="680" />
 							<param name="label2" value="$INFO[ListItem.Property(Addon.Status)]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="140" />
 							<param name="label1" value="$LOCALIZE[126]:" />
@@ -242,7 +242,7 @@
 					</control>
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Property(Addon.Summary))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[20037]:" />
@@ -250,7 +250,7 @@
 							<param name="width2" value="680" />
 							<param name="label2" value="$INFO[ListItem.Property(Addon.Summary)]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew)">
+						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="140" />
 							<param name="label1" value="$LOCALIZE[20037]:" />
@@ -283,7 +283,7 @@
 					<width>800</width>
 					<height>1</height>
 					<texture colordiffuse="$VAR[main_color]">white.png</texture>
-					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				</control>
 				<control type="textbox">
 					<posx>340</posx>
@@ -295,7 +295,7 @@
 					<textcolor>grey_b</textcolor>
 					<label>$INFO[ListItem.Property(Addon.Description)]</label>
 					<pagecontrol>61</pagecontrol>
-					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 					<autoscroll time="3000" delay="45000" repeat="15000">!Control.HasFocus(61) + Skin.HasSetting(AutoScroll)</autoscroll>
 				</control> 
 				<control type="scrollbar" id="61">
@@ -309,7 +309,7 @@
 					<onright>9000</onright>
 					<ondown>61</ondown>
 					<onup>61</onup>
-					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 					<showonepage>false</showonepage>
 				</control>
 			</control>

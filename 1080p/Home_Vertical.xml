@@ -2,8 +2,8 @@
 <includes>
 	<!-- NEW MAIN MENU -->
 	<include name="Home_Vertical">
-		<include condition="StringCompare(System.Language,Hebrew)">Home_Vertical_RTL</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">Home_Vertical_LTR</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Home_Vertical_RTL</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Home_Vertical_LTR</include>
 	</include>
 	<include name="Home_Vertical_RTL">
 		<control type="group">
@@ -944,8 +944,8 @@
 
 	<!-- Widget Content for Vertical layout -->
 	<include name="widget_content_vertical">
-		<include condition="StringCompare(System.Language,Hebrew)">widget_content_vertical_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">widget_content_vertical_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">widget_content_vertical_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">widget_content_vertical_ltr</include>
 	</include>
 	<include name="widget_content_vertical_rtl">
 		<orientation>vertical</orientation>
@@ -1227,8 +1227,8 @@
 	<!-- Size For vertical home SUB menu list -->
 
 	<include name="home_sub_animation">
-		<include condition="StringCompare(System.Language,Hebrew)">home_sub_animation_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">home_sub_animation_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">home_sub_animation_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">home_sub_animation_ltr</include>
 	</include>
 	<include name="home_sub_animation_rtl">
 		<animation effect="zoom" start="1631,80,1,980" end="1631,80,290,980" time="300">Visible</animation>

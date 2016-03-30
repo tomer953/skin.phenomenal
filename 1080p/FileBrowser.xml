@@ -45,7 +45,7 @@
 				<posy>140</posy>
 				<width>300</width>
 				<height>820</height>
-				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<texture background="true" flipy="true">dialogs/long_grey.png</texture>
 			</control>
 			<control type="image">
@@ -54,7 +54,7 @@
 				<width>30</width>
 				<height>820</height>
 				<texture>shadow_vertical.png</texture>
-				<visible>!StringCompare(System.Language,Hebrew)</visible>
+				<visible>!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)</visible>
 			</control>
 			<control type="image">
 				<left>870</left>
@@ -62,7 +62,7 @@
 				<width>30</width>
 				<height>820</height>
 				<texture flipx="true">shadow_vertical.png</texture>
-				<visible>StringCompare(System.Language,Hebrew)</visible>
+				<visible>StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)</visible>
 			</control>
 
 			<control type="image">
@@ -72,7 +72,7 @@
 				<height>260</height>
 				<texture background="true">$INFO[Listitem.Icon]</texture>
 				<fadetime>300</fadetime>
-				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<visible>!stringcompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="image">
@@ -82,7 +82,7 @@
 				<height>260</height>
 				<texture flipx="true" colordiffuse="$VAR[main_color]" background="true">DefaultFolderBack2.png</texture>
 				<fadetime>300</fadetime>
-				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<visible>stringcompare(ListItem.Label,..)</visible>
 			</control>
 
@@ -107,7 +107,7 @@
 				<width>260</width>
 				<height>320</height>
 				<itemgap>0</itemgap>
-				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="900" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<orientation>vertical</orientation>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
@@ -137,12 +137,12 @@
 				<control type="radiobutton" id="416"> 
 					<width>324</width>
 					<label>749</label>
-					<include name="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew)">
+					<include name="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="radioposx" value="200" />
 						<param name="radioposy" value="3" />
 						<param name="textoffsetx" value="15" />
 					</include>
-					<include name="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew)">
+					<include name="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="radioposx" value="10" />
 						<param name="radioposy" value="0" />
 						<param name="textoffsetx" value="60" />
@@ -163,7 +163,7 @@
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<preloaditems>2</preloaditems>
-				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<itemlayout width="800" height="52">
 					<control type="image">
 						<posx>15</posx>
@@ -264,7 +264,7 @@
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(450)</visible>
-				<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 			</control>
 			<control type="list" id="451">
 				<posx>40</posx>
@@ -278,7 +278,7 @@
 				<pagecontrol>61</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<preloaditems>2</preloaditems>
-				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="300" time="0" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<itemlayout width="800" height="52">
 					<control type="image">
 						<posx>15</posx>
@@ -360,7 +360,7 @@
 				<onright>451</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
-				<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew)">Conditional</animation>
+				<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<visible>Control.IsVisible(451)</visible>
 			</control>
 		</control>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="View-WideList-54">
-		<include condition="StringCompare(System.Language,Hebrew)">WideList_View_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">WideList_View_ltr</include>
+		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">WideList_View_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">WideList_View_ltr</include>
 	</include>
 	<include name="WideList_View_rtl">
 		<control type="group">
