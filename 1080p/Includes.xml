@@ -36,114 +36,193 @@
 	</include>
 	<include name="top_bar_content_rtl">
 		<control type="group">
-			<posx>1460</posx>
-			<control type="label">
-				<description>Time label</description>
-				<posx>447</posx>
-				<posy>0</posy>
-				<width>140</width>
-				<align>right</align>
-				<font>time</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-				<label>$INFO[System.Time(hh:mm)]</label>
-			</control>
-			<control type="label">
-				<description>date label</description>
-				<posx>312</posx>
-				<posy>42</posy>
-				<width min="10" max="140">auto</width>
-				<align>right</align>
-				<font>date</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-				<label>$INFO[System.Date(dd.mm.yyyy)]</label>
-			</control>
-			<control type="label">
-				<description>day label</description>
-				<posx>312</posx>
-				<posy>7</posy>
-				<width min="10" max="500">auto</width>
-				<align>right</align>
-				<font>date</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-				<label>$INFO[System.Date(DDD)]</label>
-			</control>
-			<control type="label">
-				<description>Total items - count</description>
-				<posx>0</posx>
-				<posy>7</posy>
-				<width min="10" max="400">auto</width>
-				<height>30</height>
-				<align>left</align>
-				<font>date</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-				<label>$INFO[Container.NumItems] $LOCALIZE[31099]</label>
+			<posx>0</posx>
+			<!-- NumItems -->
+			<control type="group">
+				<posx>1037</posx>
 				<visible>!IsEmpty(Container.NumItems)</visible>
+				<animation effect="slide" start="-160,0" end="0,0" tween="sine" easing="Out" delay="400" time="300">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>50</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab2.png</texture> 
+					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab2_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>Conditions Label</description>
+					<posx>0</posx>
+					<posy>5</posy>
+					<width>200</width>
+					<height>30</height>
+					<align>center</align>
+					<font>font-18</font>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[Container.NumItems] $LOCALIZE[31099]</label>
+					<textcolor>$VAR[topbar_text_color]</textcolor>
+				</control>
+			</control>
+
+			<!-- Pages -->
+			<control type="group">
+				<posx>684</posx>
+				<visible>!IsEmpty(Container.NumPages)</visible>
+				<animation effect="slide" start="160,0" end="0,0" tween="sine" easing="Out" delay="400" time="300">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>50</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2" flipx="true">main/tab2.png</texture> 
+					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2" flipx="true">main/tab2_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>Conditions Label</description>
+					<posx>0</posx>
+					<posy>5</posy>
+					<width>200</width>
+					<height>30</height>
+					<align>center</align>
+					<font>font-18</font>
+					<shadowcolor>black</shadowcolor>
+					<label>$LOCALIZE[31132] $INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
+					<textcolor>$VAR[topbar_text_color]</textcolor>
+				</control>
+			</control>
+
+			<!-- System Time -->
+			<control type="group">
+				<posx>865</posx>
+				<animation effect="slide" start="0,-80" end="0,0" tween="circle" easing="out" delay="200" time="200">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>190</width>
+					<height>70</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab.png</texture>
+					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab_stroke.png</bordertexture>
+					<animation effect="fade" end="85" time="0" condition="true">Conditional</animation>
+					<bordersize>1,0,1,1</bordersize>
+				</control> 
+				<control type="label">
+					<posx>0</posx>
+					<posy>5</posy>
+					<width>190</width>
+					<height>30</height>
+					<font>time</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>$VAR[topbar_text_color]</textcolor>
+					<label>[B]$INFO[System.Time][/B]</label>
+				</control>
 			</control>
 		</control>
 	</include>
 	<include name="top_bar_content_ltr">
-		<control type="group">
-			<posx>10</posx>
-			<control type="label">
-				<description>Time label</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>140</width>
-				<align>left</align>
-				<font>time</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-				<label>$INFO[System.Time(hh:mm)]</label>
-			</control>
-			<control type="label">
-				<description>date label</description>
-				<posx>135</posx>
-				<posy>42</posy>
-				<width min="10" max="140">auto</width>
-				<align>left</align>
-				<font>date</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-				<label>$INFO[System.Date(dd.mm.yyyy)]</label>
-			</control>
-			<control type="label">
-				<description>day label</description>
-				<posx>135</posx>
-				<posy>7</posy>
-				<width min="10" max="500">auto</width>
-				<align>left</align>
-				<font>date</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-				<label>$INFO[System.Date(DDD)]</label>
-			</control>
-			<control type="label">
-				<description>Total items - count</description>
-				<posx>300</posx>
-				<posy>7</posy>
-				<width min="10" max="400">auto</width>
-				<height>30</height>
-				<align>left</align>
-				<font>date</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-				<label>$INFO[Container.NumItems] $LOCALIZE[31099]</label>
+<control type="group">
+			<posx>0</posx>
+			<!-- NumItems -->
+			<control type="group">
+				<posx>1037</posx>
 				<visible>!IsEmpty(Container.NumItems)</visible>
+				<animation effect="slide" start="-160,0" end="0,0" tween="sine" easing="Out" delay="400" time="300">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>50</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab2.png</texture> 
+					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab2_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>Conditions Label</description>
+					<posx>0</posx>
+					<posy>5</posy>
+					<width>200</width>
+					<height>30</height>
+					<align>center</align>
+					<font>font-18</font>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[Container.NumItems] $LOCALIZE[31099]</label>
+					<textcolor>$VAR[topbar_text_color]</textcolor>
+				</control>
+			</control>
+
+			<!-- Pages -->
+			<control type="group">
+				<posx>684</posx>
+				<visible>!IsEmpty(Container.NumPages)</visible>
+				<animation effect="slide" start="160,0" end="0,0" tween="sine" easing="Out" delay="400" time="300">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>50</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2" flipx="true">main/tab2.png</texture> 
+					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2" flipx="true">main/tab2_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>Conditions Label</description>
+					<posx>0</posx>
+					<posy>5</posy>
+					<width>200</width>
+					<height>30</height>
+					<align>center</align>
+					<font>font-18</font>
+					<shadowcolor>black</shadowcolor>
+					<label>$LOCALIZE[31132] $INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
+					<textcolor>$VAR[topbar_text_color]</textcolor>
+				</control>
+			</control>
+
+			<!-- System Time -->
+			<control type="group">
+				<posx>865</posx>
+				<animation effect="slide" start="0,-80" end="0,0" tween="circle" easing="out" delay="200" time="200">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>190</width>
+					<height>70</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab.png</texture>
+					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab_stroke.png</bordertexture>
+					<animation effect="fade" end="85" time="0" condition="true">Conditional</animation>
+					<bordersize>1,0,1,1</bordersize>
+				</control> 
+				<control type="label">
+					<posx>0</posx>
+					<posy>5</posy>
+					<width>190</width>
+					<height>30</height>
+					<font>time</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>$VAR[topbar_text_color]</textcolor>
+					<label>[B]$INFO[System.Time][/B]</label>
+				</control>
 			</control>
 		</control>
 	</include>
 	<include name="top_bar">
 		<control type="group">
-			<!-- 			<visible>[!Skin.HasSetting(hide_fanart_topbar)] | [!Container.Content(Addons) + !Container.HasFolders + !Container.Content(files) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(albums) + !Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos) + !Container.Content(genres) + !Container.Content(years) + !Container.Content(actors) + !Container.Content(playlists) + !Container.Content(plugins) + !Container.Content(studios) + !Container.Content(directors) + !Container.Content(sets) + !Container.Content(tags)]</visible>
- -->			<animation effect="slide" start="0,0" end="0,-80" time="300" tween="sine" easing="Out" condition="Control.HasFocus(555)">Conditional</animation>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1920</width>
-				<height>80</height>
-				<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
-				<include>topbar_nothome_fade_level</include>
-			</control>
+			<animation effect="slide" start="0,0" end="0,-80" time="300" tween="sine" easing="Out" condition="Control.HasFocus(555) | Skin.HasSetting(hide_fanart_topbar)">Conditional</animation>
 			<include>top_bar_content</include>
-			<include>Home_Top_Weather_Icon</include>
 		</control>
-
 	</include>
 
 	<include name="top_bar_solid">
@@ -160,32 +239,7 @@
 		<include>VideoInfo</include>
 		<include>MusicInfo</include>
 	</include>
-	<include name="TopLabelBig">
-		<width>500</width>
-		<height>42</height>
-		<font>font-20</font>
-		<align>left</align>
-		<aligny>center</aligny>
-		<textcolor>FF959595</textcolor>
-		<scroll>false</scroll>
-	</include>
-	<include name="TopLabelSmall">
-		<width>500</width>
-		<height>42</height>
-		<font>font-20</font>
-		<align>left</align>
-		<aligny>center</aligny>
-		<textcolor>FF707070</textcolor>
-		<scroll>false</scroll>
-	</include>
-	<include name="VideoInfoPosa">
-		<posx>150</posx>
-		<posy>45</posy>
-	</include>
-	<include name="VideoInfoPosb">
-		<posx>150</posx>
-		<posy>85</posy>
-	</include>
+
 	<include name="button_settings">
 		<width>290</width>
 		<pulseonselect>false</pulseonselect>
@@ -1468,10 +1522,10 @@
 			</control>
 		</control>
 		<control type="group">
-			<posy>7</posy>
-			<posx>60</posx>
+			<posy>0</posy>
+			<posx>0</posx>
 			<visible>!Window.IsActive(extendedprogressdialog) + Skin.HasSetting(Home_Horizontal)</visible>	
-			<control type="image">
+			<!-- 	<control type="image">
 				<posx>1500</posx>
 				<posy>6</posy>
 				<width>32</width>
@@ -1485,8 +1539,8 @@
 					<effect type="slide" start="0,0" end="-590,0" time="200" delay="300"/>
 					<effect type="slide" start="0,0" end="0,-70" time="200" delay="500"/>
 				</animation>
-			</control>
-			<control type="image">
+			</control> -->
+			<!-- <control type="image">
 				<posx>360</posx>
 				<posy>6</posy>
 				<width>32</width>
@@ -1501,8 +1555,8 @@
 					<effect type="slide" start="0,0" end="0,-70" time="200" delay="500" />
 				</animation>
 				<visible>!Player.HasAudio + !Player.HasVideo</visible>
-			</control>
-			<control type="image">
+			</control> -->
+			<!-- <control type="image">
 				<posx>555</posx>
 				<posy>6</posy>
 				<width>32</width>
@@ -1517,12 +1571,22 @@
 					<effect type="slide" start="0,0" end="0,-70" time="200" delay="500"/>
 				</animation>
 				<visible>Player.HasAudio | Player.HasVideo</visible>
-			</control>
+			</control> -->
+			 <control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>900</width>
+				<height>45</height>
+				<texture colordiffuse="black" background="true" border="15,2,15,2">main/tab.png</texture>
+				<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab_stroke.png</bordertexture>
+				<bordersize>1</bordersize>
+				<animation effect="fade" end="80" condition="true">Conditional</animation>
+				</control>
 			<control type="rss">
 				<description>rss feed</description>
-				<posx>395</posx>
-				<posy>0</posy>
-				<width>1102</width>
+				<posx>84</posx>
+				<posy>60</posy>
+				<width>840</width>
 				<height>30</height>
 				<font>font-20</font>
 				<urlset>1</urlset>
@@ -1556,19 +1620,14 @@
 	</include>
 	<!-- Weather Icon - Top bar -->
 	<include name="Home_Top_Weather_Icon">
-		<include condition="StringCompare(System.Language,Hebrew)">Home_Top_Weather_Icon_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">Home_Top_Weather_Icon_ltr</include>
-	</include>
-	<include name="Home_Top_Weather_Icon_rtl">
 		<control type="group">
-			<visible>!Skin.HasSetting(Home_Weather_Icon)</visible>
-			<visible>!IsEmpty(Weather.Temperature) + !isEmpty(Window(Weather).Property(Current.FanartCode)) + !Player.HasAudio + !Player.HasVideo</visible>
-			<posx>10</posx>
+			<posx>30</posx>
+			<visible>!Skin.HasSetting(Home_Weather_Icon) + ![IsEmpty(Weather.Temperature) + IsEmpty(Window(Weather).Property(Current.FanartCode))]</visible>
 			<control type="multiimage">
 				<posx>0</posx>
 				<posy>2</posy>
-				<width>80</width>
-				<height>80</height>
+				<width>40</width>
+				<height>40</height>
 				<aspectratio>keep</aspectratio>
 				<imagepath>$INFO[Skin.String(weather.icons.path)]$INFO[Window(weather).Property(Current.FanartCode)]$INFO[Skin.String(weather.icons.ext)]</imagepath>
 				<visible>!IsEmpty(Skin.String(weather.icons.path)) + !IsEmpty(Skin.String(weather.icons.ext)) + !Skin.HasSetting(weather.icons.multi)</visible>
@@ -1576,8 +1635,8 @@
 			<control type="multiimage">
 				<posx>0</posx>
 				<posy>2</posy>
-				<width>80</width>
-				<height>80</height>
+				<width>40</width>
+				<height>40</height>
 				<aspectratio>keep</aspectratio>
 				<imagepath>$INFO[Skin.String(weather.icons.path)]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
 				<timeperimage>29</timeperimage>
@@ -1588,8 +1647,8 @@
 			<control type="multiimage">
 				<posx>0</posx>
 				<posy>2</posy>
-				<width>80</width>
-				<height>80</height>
+				<width>40</width>
+				<height>40</height>
 				<aspectratio>keep</aspectratio>
 				<imagepath>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Current.FanartCode),,.png]</imagepath>
 				<visible>IsEmpty(Skin.String(weather.icons.path))  + System.HasAddon(resource.images.weathericons.default)</visible>
@@ -1597,92 +1656,19 @@
 
 			<control type="label">
 				<description>Conditions Label</description>
-				<posx>90</posx>
-				<posy>0</posy>
+				<posx>40</posx>
+				<posy>5</posy>
 				<width>300</width>
 				<height>55</height>
-				<label>$INFO[Weather.Location]</label>
+				<label>$INFO[Weather.Temperature]$INFO[Weather.Location, - ]</label>
 				<align>left</align>
-				<aligny>center</aligny>
-				<font>font-22</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-			</control>
-			<control type="label">
-				<description>Conditions Label</description>
-				<posx>90</posx>
-				<posy>30</posy>
-				<width>300</width>
-				<height>60</height>
-				<label>$INFO[Weather.Temperature]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font-22</font>
+				<aligny>top</aligny>
+				<font>font-18</font>
 				<textcolor>$VAR[topbar_text_color]</textcolor>
 			</control>
 		</control>
 	</include>
-	<include name="Home_Top_Weather_Icon_ltr">
-		<control type="group">
-			<visible>!Skin.HasSetting(Home_Weather_Icon)</visible>
-			<visible>!IsEmpty(Weather.Temperature) + !isEmpty(Window(Weather).Property(Current.FanartCode)) + !Player.HasAudio + !Player.HasVideo</visible>
-			<posx>1830</posx>
-			<control type="multiimage">
-				<posx>0</posx>
-				<posy>2</posy>
-				<width>80</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<imagepath>$INFO[Skin.String(weather.icons.path)]$INFO[Window(weather).Property(Current.FanartCode)]$INFO[Skin.String(weather.icons.ext)]</imagepath>
-				<visible>!IsEmpty(Skin.String(weather.icons.path)) + !IsEmpty(Skin.String(weather.icons.ext)) + !Skin.HasSetting(weather.icons.multi)</visible>
-			</control>
-			<control type="multiimage">
-				<posx>0</posx>
-				<posy>2</posy>
-				<width>80</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<imagepath>$INFO[Skin.String(weather.icons.path)]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
-				<timeperimage>29</timeperimage>
-				<randomize>false</randomize>
-				<animation effect="fade" start="0" end="100" time="3000" delay="100">WindowOpen</animation>
-				<visible>!IsEmpty(Skin.String(weather.icons.path)) + Skin.HasSetting(weather.icons.multi)</visible>
-			</control>
-			<control type="multiimage">
-				<posx>0</posx>
-				<posy>2</posy>
-				<width>80</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<imagepath>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Current.FanartCode),,.png]</imagepath>
-				<visible>IsEmpty(Skin.String(weather.icons.path))  + System.HasAddon(resource.images.weathericons.default)</visible>
-			</control>
 
-			<control type="label">
-				<description>Conditions Label</description>
-				<posx>-10</posx>
-				<posy>0</posy>
-				<width>300</width>
-				<height>55</height>
-				<label>$INFO[Weather.Location]</label>
-				<align>right</align>
-				<aligny>center</aligny>
-				<font>font-22</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-			</control>
-			<control type="label">
-				<description>Conditions Label</description>
-				<posx>-10</posx>
-				<posy>30</posy>
-				<width>300</width>
-				<height>60</height>
-				<label>$INFO[Weather.Temperature]</label>
-				<align>right</align>
-				<aligny>center</aligny>
-				<font>font-22</font>
-				<textcolor>$VAR[topbar_text_color]</textcolor>
-			</control>
-		</control>
-	</include>
 	<include name="scroll_letter_fanart">
 		<control type="group">
 			<visible>Container.Scrolling + IntegerGreaterThan(Container.NumItems,0) + !Control.HasFocus(555)</visible>
@@ -1842,32 +1828,7 @@
 		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),10)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),0)">Conditional</animation>
 	</include>
-	<!-- fade for topbar - home -->
-	<include name="home_fade_level">
-		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),90)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),80)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="70" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),70)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),60)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="50" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),50)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="40" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),40)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="30" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),30)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),20)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),10)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),0)">Conditional</animation>
-	</include>
-	<!-- fade for topbar - not home -->
-	<include name="topbar_nothome_fade_level">
-		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(topbar_opacity),90)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(topbar_opacity),80)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="70" time="0" condition="StringCompare(Skin.String(topbar_opacity),70)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(topbar_opacity),60)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="50" time="0" condition="StringCompare(Skin.String(topbar_opacity),50)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="40" time="0" condition="StringCompare(Skin.String(topbar_opacity),40)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="30" time="0" condition="StringCompare(Skin.String(topbar_opacity),30)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(topbar_opacity),20)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(topbar_opacity),10)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(topbar_opacity),0)">Conditional</animation>
-	</include>
+
 	<!-- Fade for main menu background -->
 	<include name="menu_bg_fade">
 		<animation effect="fade" reversible="false" end="100" time="0" condition="IsEmpty(Skin.String(menu_bg_opacity))">Conditional</animation>
@@ -1895,15 +1856,6 @@
 		<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(widget_opacity),20)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(widget_opacity),10)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(widget_opacity),0)">Conditional</animation>
-	</include>
-
-	<include name="hide_fanart_topbar">
-		<posy>80</posy>
-		<height>972</height>
-	</include>
-	<include name="show_fanart_topbar">
-		<posy>0</posy>
-		<height>1052</height>
 	</include>
 
 	<include name="vertical_scroll">
@@ -2208,30 +2160,7 @@
 			<description>Show Topbar</description>
 			<label>31043</label>
 			<onclick>Skin.ToggleSetting(hide_fanart_topbar)</onclick>
-			<onclick>ReloadSkin()</onclick>
 			<selected>!Skin.HasSetting(hide_fanart_topbar)</selected>
-			<include>view_settings_radiobutton</include>
-		</control>
-		<control type="button" id="496">
-			<description>Choose Topbar Not in home TLevel</description>
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>326</width>
-			<height>45</height>
-			<align>center</align>
-			<label>$LOCALIZE[31039] $INFO[Skin.String(topbar_opacity),- ,%]</label>
-			<onclick condition="skin.string(topbar_opacity, 100) | IsEmpty(skin.string(topbar_opacity))">Skin.SetString(topbar_opacity, 90)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 90)">Skin.SetString(topbar_opacity, 80)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 80)">Skin.SetString(topbar_opacity, 70)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 70)">Skin.SetString(topbar_opacity, 60)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 60)">Skin.SetString(topbar_opacity, 50)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 50)">Skin.SetString(topbar_opacity, 40)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 40)">Skin.SetString(topbar_opacity, 30)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 30)">Skin.SetString(topbar_opacity, 20)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 20)">Skin.SetString(topbar_opacity, 10)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 10)">Skin.SetString(topbar_opacity, 0)</onclick>
-			<onclick condition="skin.string(topbar_opacity, 0)">Skin.SetString(topbar_opacity, 100)</onclick>
-			<enable>!Skin.HasSetting(hide_fanart_topbar)</enable>
 			<include>view_settings_radiobutton</include>
 		</control>
 	</include>
@@ -3082,7 +3011,7 @@
 			<texture>shadow_horizontal.png</texture>
 		</control>
 		<!-- Close Button -->
-			<include name="close_button"><param name="posx" value="22" /><param name="posy" value="24" /></include>
+		<include name="close_button"><param name="posx" value="22" /><param name="posy" value="24" /></include>
 		<!-- Content area -->
 		<control type="image">
 			<description>background image</description>

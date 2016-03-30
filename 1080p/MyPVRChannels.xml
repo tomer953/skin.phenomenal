@@ -9,7 +9,7 @@
 		<control type="group">
 			<control type="group">
 				<include>view_conditions</include>
-				<include condition="!Skin.HasSetting(hide_fanart_topbar)">top_bar</include>
+				<include>top_bar</include>
 				<include>VideoInfo</include>
 				<include>MusicInfo</include>
 			</control>

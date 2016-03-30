@@ -17,8 +17,16 @@
 				<include>menu_bg_fade</include>
 				<animation effect="slide" start="290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="290,0" time="300">WindowClose</animation>
-				<animation effect="slide" start="0,0" end="0,80" time="0" condition="!Skin.HasSetting(Home_HideTopBar)">Conditional</animation>
 			</control>
+			<control type="image">
+				<posx>1914</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>6</width>
+				<texture diffuse="glass.jpg" background="true" aligny="center" align="center" colordiffuse="$VAR[main_color]">white.png</texture>
+				<animation effect="fade" end="90" time="0" condition="true">Conditional</animation>
+			</control>
+
 			<!-- left shadow-->
 			<control type="image">
 				<left>1600</left>
@@ -45,8 +53,8 @@
 				<orientation>vertical</orientation>
 				<posx>1630</posx>
 				<width>290</width>
-				<include condition="Skin.HasSetting(Home_HideTopBar)">hide_home_topbar</include>
-				<include condition="!Skin.HasSetting(Home_HideTopBar)">show_home_topbar</include>
+				<posy>18</posy>
+				<height>980</height>
 				<onup condition="Player.HasAudio | Player.HasVideo">9003</onup>
 				<onup condition="!Player.HasAudio + !Player.HasVideo">9000</onup>
 				<ondown>20</ondown>
@@ -288,8 +296,9 @@
 			<control type="list" id="9001">
 				<posx>1340</posx>
 				<width>290</width>
-				<include condition="Skin.HasSetting(Home_HideTopBar)">hide_home_topbar_sub</include>
-				<include condition="!Skin.HasSetting(Home_HideTopBar)">show_home_topbar_sub</include>
+				<posy>18</posy>
+				<height>980</height>
+				<include>home_sub_animation</include>
 				<onup>9001</onup>
 				<ondown>9001</ondown>
 				<onleft>9002</onleft>
@@ -476,7 +485,14 @@
 				<include>menu_bg_fade</include>
 				<animation effect="slide" start="-290,0" end="0,0" delay="100" time="500">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="-290,0" delay="0" time="300">WindowClose</animation>
-				<animation effect="slide" start="0,0" end="0,80" time="0" condition="!Skin.HasSetting(Home_HideTopBar)">Conditional</animation>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>6</width>
+				<texture diffuse="glass.jpg" background="true" aligny="center" align="center" colordiffuse="$VAR[main_color]">white.png</texture>
+				<animation effect="fade" end="90" time="0" condition="true">Conditional</animation>
 			</control>
 			<!-- right shadow-->
 			<control type="image">
@@ -503,8 +519,8 @@
 				<orientation>vertical</orientation>
 				<posx>0</posx>
 				<width>290</width>
-				<include condition="Skin.HasSetting(Home_HideTopBar)">hide_home_topbar</include>
-				<include condition="!Skin.HasSetting(Home_HideTopBar)">show_home_topbar</include>
+				<posy>18</posy>
+				<height>980</height>
 				<onup condition="Player.HasAudio | Player.HasVideo">9003</onup>
 				<onup condition="!Player.HasAudio + !Player.HasVideo">9000</onup>
 				<ondown>20</ondown>
@@ -711,7 +727,7 @@
 				<animation effect="zoom" start="290,0,290,1080" end="290,0,1,1080" time="300">Hidden</animation>
 				<visible>Control.HasFocus(9001)</visible>
 			</control>
-			
+
 			<!-- left shadow-->
 			<control type="image">
 				<left>260</left>
@@ -736,7 +752,7 @@
 				<texture flipx="false">shadow_vertical.png</texture>
 				<visible>Control.HasFocus(9001)</visible>
 			</control>
-			
+
 			<control type="button">
 				<posx>290</posx>
 				<posy>118</posy>
@@ -749,8 +765,9 @@
 			<control type="list" id="9001">
 				<posx>290</posx>
 				<width>290</width>
-				<include condition="Skin.HasSetting(Home_HideTopBar)">hide_home_topbar_sub</include>
-				<include condition="!Skin.HasSetting(Home_HideTopBar)">show_home_topbar_sub</include>
+				<posy>18</posy>
+				<height>980</height>
+				<include>home_sub_animation</include>
 				<onup>9001</onup>
 				<ondown>9001</ondown>
 				<onleft>9000</onleft>
@@ -933,7 +950,7 @@
 	<include name="widget_content_vertical_rtl">
 		<orientation>vertical</orientation>
 		<posx>0</posx>
-		<posy>100</posy>
+		<posy>70</posy>
 		<height>960</height>
 		<width>400</width>
 		<onup>9002</onup>
@@ -1071,7 +1088,7 @@
 	<include name="widget_content_vertical_ltr">
 		<orientation>vertical</orientation>
 		<posx>50</posx>
-		<posy>100</posy>
+		<posy>70</posy>
 		<height>960</height>
 		<width>400</width>
 		<onup>9002</onup>
@@ -1206,42 +1223,18 @@
 			</control>
 		</focusedlayout>
 	</include>
-	<!-- Size For vertical home menu list -->
-	<include name="show_home_topbar">
-		<posy>80</posy>
-		<height>920</height>
-	</include>
-	<include name="hide_home_topbar">
-		<posy>18</posy>
-		<height>980</height>
-	</include>
-	<!-- Size For vertical home SUB menu list -->
-	<include name="show_home_topbar_sub">
-		<posy>80</posy>
-		<height>920</height>
-		<include condition="StringCompare(System.Language,Hebrew)">show_home_topbar_sub_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">show_home_topbar_sub_ltr</include>
-	</include>
-	<include name="show_home_topbar_sub_rtl">
-		<animation effect="zoom" start="1631,80,1,920" end="1631,80,290,920" time="300">Visible</animation>
-		<animation effect="zoom" start="1631,80,290,920" end="1631,80,1,920" time="300">Hidden</animation>
-	</include>
-	<include name="show_home_topbar_sub_ltr">
-		<animation effect="zoom" start="290,80,1,920" end="290,80,290,920" time="300">Visible</animation>
-		<animation effect="zoom" start="290,80,290,920" end="290,80,1,920" time="300">Hidden</animation>
-	</include>
 
-	<include name="hide_home_topbar_sub">
-		<posy>18</posy>
-		<height>980</height>
-		<include condition="StringCompare(System.Language,Hebrew)">hide_home_topbar_sub_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew)">hide_home_topbar_sub_ltr</include>
+	<!-- Size For vertical home SUB menu list -->
+
+	<include name="home_sub_animation">
+		<include condition="StringCompare(System.Language,Hebrew)">home_sub_animation_rtl</include>
+		<include condition="!StringCompare(System.Language,Hebrew)">home_sub_animation_ltr</include>
 	</include>
-	<include name="hide_home_topbar_sub_rtl">
+	<include name="home_sub_animation_rtl">
 		<animation effect="zoom" start="1631,80,1,980" end="1631,80,290,980" time="300">Visible</animation>
 		<animation effect="zoom" start="1631,80,290,980" end="1631,80,1,980" time="300">Hidden</animation>
 	</include>
-	<include name="hide_home_topbar_sub_ltr">
+	<include name="home_sub_animation_ltr">
 		<animation effect="zoom" start="290,80,1,980" end="290,80,290,980" time="300">Visible</animation>
 		<animation effect="zoom" start="290,80,290,980" end="290,80,1,980" time="300">Hidden</animation>
 	</include>

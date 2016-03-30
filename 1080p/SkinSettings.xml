@@ -784,28 +784,6 @@
 				<selected>!Skin.HasSetting(Home_HideTopBar)</selected>
 				<include>radio_button_settings</include>
 			</control>
-			<control type="button" id="304">
-				<description>TopBar TLevel Home</description>
-				<posx>550</posx>
-				<posy>0</posy>
-				<width>860</width>
-				<align>left</align>
-				<include>button_settings_2</include>
-				<label>$LOCALIZE[31043] - $LOCALIZE[31039]</label>
-				<label2>$INFO[Skin.String(topbar_home_opacity),,%]</label2>
-				<onclick condition="skin.string(topbar_home_opacity, 100) | IsEmpty(skin.string(topbar_home_opacity))">Skin.SetString(topbar_home_opacity, 90)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 90)">Skin.SetString(topbar_home_opacity, 80)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 80)">Skin.SetString(topbar_home_opacity, 70)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 70)">Skin.SetString(topbar_home_opacity, 60)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 60)">Skin.SetString(topbar_home_opacity, 50)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 50)">Skin.SetString(topbar_home_opacity, 40)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 40)">Skin.SetString(topbar_home_opacity, 30)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 30)">Skin.SetString(topbar_home_opacity, 20)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 20)">Skin.SetString(topbar_home_opacity, 10)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 10)">Skin.SetString(topbar_home_opacity, 0)</onclick>
-				<onclick condition="skin.string(topbar_home_opacity, 0)">Skin.SetString(topbar_home_opacity, 100)</onclick>
-				<enable>!Skin.HasSetting(Home_HideTopBar)</enable>
-			</control>
 			<control type="radiobutton" id="321">
 				<posx>810</posx>
 				<posy>0</posy>
