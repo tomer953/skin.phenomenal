@@ -30,9 +30,9 @@
 			<visible>Player.HasVideo + !Skin.HasSetting(FS_Video)</visible>
 		</control>
 	</include>
-	
+
 	<include name="scroll_letter">
-	<!-- Sort Letter -->
+		<!-- Sort Letter -->
 		<control type="group">
 			<visible>Container.Scrolling + IntegerGreaterThan(Container.NumItems,0) + !Control.HasFocus(555)</visible>
 			<!-- <animation effect="fade" time="300" condition="IntegerGreaterThan(Container.NumItems,0)">Visible</animation>
@@ -160,7 +160,7 @@
 					<onclick>ActivateWindow(home)</onclick>
 				</control>
 			</control>
-				
+
 		</control>
 	</include>
 	<include name="top_bar_content_ltr">
@@ -255,8 +255,8 @@
 			</control>
 		</control>
 	</include>
-	
-	
+
+
 	<include name="top_bar">
 		<control type="group">
 			<animation effect="slide" start="0,0" end="0,-80" time="300" tween="sine" easing="Out" condition="Control.HasFocus(555) | Skin.HasSetting(hide_fanart_topbar)">Conditional</animation>
@@ -275,23 +275,23 @@
 				<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
 			</control>
 			<control type="image">
-						<posx>20</posx>
-						<posy>0</posy>
-						<width>200</width>
-						<height>80</height>
-						<aspectratio>keep</aspectratio>
-						<texture>kodi.png</texture>
-					</control>
-					<control type="button">
-						<right>20</right>
-						<posy>8</posy>
-						<width>64</width>
-						<height>64</height>
-						<aspectratio>keep</aspectratio>
-						<texturenofocus colordiffuse="grey_50">home.png</texturenofocus>
-						<texturefocus>home.png</texturefocus>
-						<onclick>ActivateWindow(home)</onclick>
-					</control>
+				<posx>20</posx>
+				<posy>0</posy>
+				<width>200</width>
+				<height>80</height>
+				<aspectratio>keep</aspectratio>
+				<texture>kodi.png</texture>
+			</control>
+			<control type="button">
+				<right>20</right>
+				<posy>8</posy>
+				<width>64</width>
+				<height>64</height>
+				<aspectratio>keep</aspectratio>
+				<texturenofocus colordiffuse="grey_50">home.png</texturenofocus>
+				<texturefocus>home.png</texturefocus>
+				<onclick>ActivateWindow(home)</onclick>
+			</control>
 			<include>top_bar_content</include>
 		</control>
 		<!-- <include>VideoInfo</include>
@@ -1631,7 +1631,7 @@
 		</control>
 	</include>
 
-	
+
 	<include name="NextAiredInfo">
 		<control type="group">
 			<posx>0</posx>
@@ -1944,17 +1944,42 @@
 		<animation effect="slide" start="0,325" end="0,0" time="200">UnFocus</animation>
 		<animation effect="slide" start="0,0" end="0,-120" time="0" condition="true">Conditional</animation> 
 	</include>
-	<include name="widget_horizontal_nopin">
-		<animation effect="slide" start="0,0" end="0,1030" tween="circle" easing="out" time="300">Focus</animation>
-		<animation effect="slide" start="0,1030" end="0,0" tween="linear" time="200">UnFocus</animation> 
-		<posy>-340</posy>
-	</include>
-	<include name="widget_horizontal_pin">
-		<posy>450</posy>
-		<animation effect="slide" start="0,0" end="0,-90" tween="linear" time="100" condition="Control.HasFocus(9001)">Conditional</animation>
-		<animation effect="slide" start="0,0" end="0,180" tween="circle" easing="out" time="300" condition="!IsEmpty(Window(home).Property(FO9001)) + Control.HasFocus(9002)">Conditional</animation>
-		<animation effect="slide" start="0,180" end="0,0" tween="circle" easing="out" time="300" condition="IsEmpty(Window(home).Property(FO9001)) + !Control.HasFocus(9002)">Conditional</animation>
 
+	<include name="widget_vertical_pin">
+		<animation effect="zoom" start="85" end="70" center="0,1000" time="200" condition="!Control.HasFocus(9002)">Conditional</animation>
+	</include>
+	<include name="widget_vertical_nopin">
+		<animation effect="zoom" start="85" end="0" center="0,1000" time="0" condition="!Control.HasFocus(9002)">Conditional</animation>
+				<animation type="Focus" reversible="false">
+			<effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="300"/>
+			<effect type="fade" start="40" end="100" time="300"/>
+		</animation>
+		<animation type="UnFocus" reversible="false">
+			<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="100"/>
+			<effect type="fade" start="100" end="40" time="100"/>
+		</animation>
+	</include>
+
+
+	<include name="widget_horizontal_nopin">
+		<posy>-600</posy>
+		<animation type="Focus" reversible="false">
+			<effect type="slide" start="0" end="0,1210" time="0" />
+			<effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="300"/>
+			<effect type="fade" start="40" end="100" time="300"/>
+		</animation>
+		<animation type="UnFocus" reversible="false">
+			<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="100"/>
+			<effect type="fade" start="100" end="40" time="100"/>
+			<effect type="slide" start="0,1210" end="0,0" delay="110" time="0" />
+		</animation>
+	</include>
+
+	<include name="widget_horizontal_pin">
+		<posy>310</posy>
+		<animation effect="slide" end="0,25" time="0" condition="!Skin.HasSetting(Home_Eminence_Layout)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,300" tween="circle" easing="out" time="300">Focus</animation>
+		<animation effect="slide" start="0,300" end="0,0" tween="linear" time="200">UnFocus</animation> 
 	</include>
 
 	<include name="view_icons_watched_flags">
