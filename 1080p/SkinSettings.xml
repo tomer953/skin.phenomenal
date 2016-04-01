@@ -792,23 +792,14 @@
 				<radioposx>810</radioposx>
 				<label>31043</label>			
 				<onclick>Skin.ToggleSetting(Home_HideTopBar)</onclick>
-				<onclick>Skin.SetString(AfterReload,303)</onclick>
+			<!-- 	<onclick>Skin.SetString(AfterReload,303)</onclick>
+				<onclick>Skin.SetString(AfterReload_Category,96)</onclick>
 				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
-				<onclick>ReloadSkin()</onclick> 		
+				<onclick>ReloadSkin()</onclick>  -->		
 				<selected>!Skin.HasSetting(Home_HideTopBar)</selected>
 				<include>radio_button_settings</include>
 			</control>
-			<control type="radiobutton" id="321">
-				<posx>810</posx>
-				<posy>0</posy>
-				<width>860</width>
-				<radioposx>810</radioposx>
-				<label>31150</label>			
-				<onclick>Skin.ToggleSetting(Home_OnlyTime)</onclick>		
-				<selected>Skin.HasSetting(Home_OnlyTime)</selected>
-				<include>radio_button_settings</include>
-				<visible>Skin.HasSetting(Home_HideTopBar)</visible>
-			</control>
+
 			<control type="button" id="305">
 				<description>Top Bar: Choose Color Of text</description>
 				<label>$LOCALIZE[31023]</label>
@@ -816,7 +807,7 @@
 				<width>860</width>
 				<include>button_settings_2</include>
 				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=topbar_text_color)</onclick>
-				<enable>!Skin.HasSetting(Home_HideTopBar)</enable>
+				<visible>!Skin.HasSetting(Home_HideTopBar)</visible>
 			</control>
 			<control type="button" id="306">
 				<description>Top Bar: rss header color</description>
@@ -825,6 +816,7 @@
 				<width>860</width>
 				<include>button_settings_2</include>
 				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=topbar_rss1_color)</onclick>
+				<enable>system.getbool(lookandfeel.enablerssfeeds)</enable>
 			</control>
 			<control type="button" id="307">
 				<description>Top Bar: rss text color</description>
@@ -833,6 +825,7 @@
 				<width>860</width>
 				<include>button_settings_2</include>
 				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=topbar_rss2_color)</onclick>
+				<enable>system.getbool(lookandfeel.enablerssfeeds)</enable>
 			</control>
 			<control type="radiobutton" id="308">
 				<description>Show Weather Icon</description>
@@ -843,7 +836,7 @@
 				<posy>0</posy>
 				<width>860</width>
 				<radioposx>810</radioposx>
-				<include>radio_button_settings</include>
+				<include>radio_button_settings</include> 
 			</control>
 			<control type="button" id="309">
 				<description>Choose Weather Icons</description>

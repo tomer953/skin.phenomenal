@@ -144,7 +144,7 @@
 					<animation effect="fade" end="85" time="0" condition="true">Conditional</animation>
 					<bordersize>1,0,1,1</bordersize>
 				</control> 
-				<control type="label">
+				<control type="button">
 					<posx>0</posx>
 					<posy>5</posy>
 					<width>190</width>
@@ -153,7 +153,11 @@
 					<align>center</align>
 					<aligny>top</aligny>
 					<textcolor>$VAR[topbar_text_color]</textcolor>
+					<focusedcolor>$VAR[main_color]</focusedcolor>
 					<label>[B]$INFO[System.Time][/B]</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(home)</onclick>
 				</control>
 			</control>
 				
@@ -270,10 +274,28 @@
 				<height>80</height>
 				<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
 			</control>
+			<control type="image">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<texture>kodi.png</texture>
+					</control>
+					<control type="button">
+						<right>20</right>
+						<posy>8</posy>
+						<width>64</width>
+						<height>64</height>
+						<aspectratio>keep</aspectratio>
+						<texturenofocus colordiffuse="grey_50">home.png</texturenofocus>
+						<texturefocus>home.png</texturefocus>
+						<onclick>ActivateWindow(home)</onclick>
+					</control>
 			<include>top_bar_content</include>
 		</control>
-		<include>VideoInfo</include>
-		<include>MusicInfo</include>
+		<!-- <include>VideoInfo</include>
+		<include>MusicInfo</include> -->
 	</include>
 
 	<include name="button_settings">
@@ -1557,108 +1579,12 @@
 				<animation effect="slide" start="0,0" end="0,100" delay="0" time="300">WindowClose</animation>
 			</control>
 		</control>
-		<control type="group">
-			<posy>0</posy>
-			<posx>0</posx>
-			<visible>!Window.IsActive(extendedprogressdialog) + Skin.HasSetting(Home_Horizontal)</visible>	
-			<!-- 	<control type="image">
-				<posx>1500</posx>
-				<posy>6</posy>
-				<width>32</width>
-				<height>32</height>
-				<texture background="true">rss.png</texture>
-				<animation type="WindowOpen">
-					<effect type="slide" start="-590,-70" end="-590,0" time="200" delay="0"/>
-					<effect type="slide" start="0,0" end="590,0" time="300" delay="200"/>
-				</animation>
-				<animation type="WindowClose">
-					<effect type="slide" start="0,0" end="-590,0" time="200" delay="300"/>
-					<effect type="slide" start="0,0" end="0,-70" time="200" delay="500"/>
-				</animation>
-			</control> -->
-			<!-- <control type="image">
-				<posx>360</posx>
-				<posy>6</posy>
-				<width>32</width>
-				<height>32</height>
-				<texture background="true">rss.png</texture>
-				<animation type="WindowOpen">
-					<effect type="slide" start="575,-70" end="575,0" time="200" delay="0"/>
-					<effect type="slide" start="0,0" end="-575,0" time="300" delay="200"/>
-				</animation>
-				<animation type="WindowClose">
-					<effect type="slide" start="0,0" end="575,0" time="200" delay="300" />
-					<effect type="slide" start="0,0" end="0,-70" time="200" delay="500" />
-				</animation>
-				<visible>!Player.HasAudio + !Player.HasVideo</visible>
-			</control> -->
-			<!-- <control type="image">
-				<posx>555</posx>
-				<posy>6</posy>
-				<width>32</width>
-				<height>32</height>
-				<texture background="true">rss.png</texture>
-				<animation type="WindowOpen">
-					<effect type="slide" start="320,-70" end="320,0" time="200" delay="0"/>
-					<effect type="slide" start="0,0" end="-320,0" time="300" delay="200"/>
-				</animation>
-				<animation type="WindowClose">
-					<effect type="slide" start="0,0" end="320,0" time="200" delay="300"/>
-					<effect type="slide" start="0,0" end="0,-70" time="200" delay="500"/>
-				</animation>
-				<visible>Player.HasAudio | Player.HasVideo</visible>
-			</control> -->
-			 <control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>900</width>
-				<height>45</height>
-				<texture colordiffuse="black" background="true" border="15,2,15,2">main/tab.png</texture>
-				<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab_stroke.png</bordertexture>
-				<bordersize>1</bordersize>
-				<animation effect="fade" end="80" condition="true">Conditional</animation>
-				</control>
-			<control type="rss">
-				<description>rss feed</description>
-				<posx>84</posx>
-				<posy>60</posy>
-				<width>840</width>
-				<height>30</height>
-				<font>font-20</font>
-				<urlset>1</urlset>
-				<textcolor>$VAR[topbar_rss2_color]</textcolor>
-				<titlecolor>$VAR[topbar_rss1_color]</titlecolor>
-				<headlinecolor>$VAR[topbar_rss2_color]</headlinecolor>
-				<animation type="WindowOpen">
-					<effect type="slide" start="0,-70" end="0,0" delay="500" time="200" tween="circle" easing="out" />
-				</animation>
-				<animation effect="slide" start="0,0" end="0,-90" delay="0" time="300">WindowClose</animation>
-				<visible>!Player.HasAudio + !Player.HasVideo</visible>
-			</control>
-			<control type="rss">
-				<description>rss feed</description>
-				<posx>590</posx>
-				<posy>0</posy>
-				<width>908</width>
-				<height>30</height>
-				<font>font-20</font>
-				<urlset>1</urlset>
-				<textcolor>$VAR[topbar_rss2_color]</textcolor>
-				<titlecolor>$VAR[topbar_rss1_color]</titlecolor>
-				<headlinecolor>$VAR[topbar_rss2_color]</headlinecolor>
-				<animation type="WindowOpen">
-					<effect type="slide" start="0,-70" end="0,0" delay="500" time="200" tween="circle" easing="out" />
-				</animation>
-				<animation effect="slide" start="0,0" end="0,-90" delay="0" time="300">WindowClose</animation>
-				<visible>Player.HasAudio | Player.HasVideo</visible>
-			</control>
-		</control>
 	</include>
 	<!-- Weather Icon - Top bar -->
 	<include name="Home_Top_Weather_Icon">
 		<control type="group">
 			<posx>30</posx>
-			<visible>!Skin.HasSetting(Home_Weather_Icon) + ![IsEmpty(Weather.Temperature) + IsEmpty(Window(Weather).Property(Current.FanartCode))]</visible>
+			<visible>!Skin.HasSetting(Home_Weather_Icon) + [!IsEmpty(Weather.plugin) + !IsEmpty(Weather.Temperature) + !IsEmpty(Window(Weather).Property(Current.FanartCode)) + !IsEmpty(Weather.Location)]</visible>
 			<control type="multiimage">
 				<posx>0</posx>
 				<posy>2</posy>
@@ -1694,7 +1620,7 @@
 				<description>Conditions Label</description>
 				<posx>40</posx>
 				<posy>5</posy>
-				<width>300</width>
+				<width>240</width>
 				<height>55</height>
 				<label>$INFO[Weather.Temperature]$INFO[Weather.Location, - ]</label>
 				<align>left</align>
