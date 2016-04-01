@@ -930,18 +930,6 @@
 				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=submenu_color)</onclick>
 				<visible>Skin.HasSetting(Home_Horizontal)</visible>
 			</control>
-			<control type="button" id="314">
-				<description>Widgets BG color</description>
-				<posx>550</posx>
-				<posy>0</posy>
-				<width>860</width>
-				<label>31062</label>
-				<include>align_tag</include>
-				<include>button_settings_2</include>
-				<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=widget_color)</onclick>
-				<visible>!Skin.HasSetting(Home_Horizontal)</visible>
-			</control>
-
 			<control type="button" id="316">
 				<description>Icons nf color</description>
 				<posx>550</posx>
@@ -973,28 +961,6 @@
 				<onclick condition="Skin.String(menu_bg_opacity, 20)">Skin.SetString(menu_bg_opacity, 10)</onclick>
 				<onclick condition="Skin.String(menu_bg_opacity, 10)">Skin.SetString(menu_bg_opacity, 0)</onclick>
 				<onclick condition="Skin.String(menu_bg_opacity, 0)">Skin.SetString(menu_bg_opacity, 100)</onclick>
-			</control>
-			<control type="button" id="318">
-				<description>Widget Background Home TLevel</description>
-				<posx>550</posx>
-				<posy>0</posy>
-				<width>860</width>
-				<align>left</align>
-				<include>button_settings_2</include>
-				<label>$LOCALIZE[31039] - $LOCALIZE[31082]</label>
-				<label2>$INFO[Skin.String(widget_opacity),,%]</label2>
-				<onclick condition="Skin.String(widget_opacity, 100) | IsEmpty(Skin.String(widget_opacity))">Skin.SetString(widget_opacity, 90)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 90)">Skin.SetString(widget_opacity, 80)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 80)">Skin.SetString(widget_opacity, 70)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 70)">Skin.SetString(widget_opacity, 60)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 60)">Skin.SetString(widget_opacity, 50)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 50)">Skin.SetString(widget_opacity, 40)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 40)">Skin.SetString(widget_opacity, 30)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 30)">Skin.SetString(widget_opacity, 20)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 20)">Skin.SetString(widget_opacity, 10)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 10)">Skin.SetString(widget_opacity, 0)</onclick>
-				<onclick condition="Skin.String(widget_opacity, 0)">Skin.SetString(widget_opacity, 100)</onclick>
-				<visible>!Skin.HasSetting(Home_Horizontal)</visible>
 			</control>
 		</control>
 		<control type="grouplist" id="350">
