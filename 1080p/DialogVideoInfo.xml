@@ -353,8 +353,8 @@
 							<width>1180</width>
 							<textcolor>grey_a</textcolor>
 							<!-- <include>align_tag</include> -->
-							<scroll>false</scroll>
-							<wrapmultiline>true</wrapmultiline>
+							<scroll>true</scroll>
+							<wrapmultiline>false</wrapmultiline>
 							<label>$INFO[ListItem.FileNameAndPath]</label>
 							<font>font-15</font>
 						</control>
@@ -364,7 +364,7 @@
 							<!-- seperator -->
 				<control type="image">
 					<left>420</left>
-					<top>420</top>
+					<top>440</top>
 					<width>1160</width>
 					<height>1</height>
 					<texture colordiffuse="$VAR[main_color]">white.png</texture>
@@ -389,7 +389,7 @@
 			<control type="scrollbar" id="61">
 				<description>scroll for plot button</description>
 				<posx>410</posx>
-				<posy>440</posy>
+				<posy>443</posy>
 				<width>10</width>
 				<height>420</height>
 				<include>scroll_bar</include>
@@ -521,7 +521,8 @@
 
 			<control type="list" id="50">
 				<animation effect="fade" start="100" end="90" time="0" condition="!Control.HasFocus(50)">Conditional</animation>
-				<posx>15</posx>
+				<animation effect="slide" end="-400" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
+				<posx>420</posx>
 				<posy>615</posy>
 				<width>1170</width>
 				<height>250</height>

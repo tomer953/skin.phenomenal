@@ -691,7 +691,7 @@
 					<posx>532</posx>
 					<posy>0</posy>
 					<width>1388</width>
-					<height>780</height>
+					<height>860</height>
 					<imagepath background="true">$VAR[fanart_bg]</imagepath>
 					<aspectratio>scale</aspectratio>
 					<timeperimage>5000</timeperimage>
