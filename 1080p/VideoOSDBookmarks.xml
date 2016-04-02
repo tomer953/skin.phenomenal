@@ -27,10 +27,10 @@
 			</control>
 
 			<control type="panel" id="11">
-				<posx>57</posx>
-				<posy>100</posy>
-				<width>1080</width>
-				<height>730</height>
+				<posx>30</posx>
+				<posy>130</posy>
+				<width>1160</width>
+				<height>700</height>
 				<onleft>11</onleft>
 				<onright>61</onright>
 				<ondown>2</ondown>
@@ -40,12 +40,12 @@
 				<viewtype label="536">icon</viewtype>
 				<pagecontrol>61</pagecontrol>
 				<orientation>vertical</orientation>
-				<itemlayout width="270" height="180">
+				<itemlayout width="380" height="230">
 					<control type="image">
 						<posx>10</posx>
 						<posy>10</posy>
-						<width>240</width>
-						<height>160</height>
+						<width>350</width>
+						<height>200</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 						<bordertexture colordiffuse="grey_a">white.png</bordertexture>
@@ -53,17 +53,17 @@
 					</control>
 					<control type="image">
 						<posx>15</posx>
-						<posy>130</posy>
-						<width>230</width>
+						<posy>170</posy>
+						<width>340</width>
 						<height>36</height>
 						<texture background="true">main/widget_title.png</texture>
 					</control>
 					<control type="label">
 						<posx>15</posx>
-						<posy>130</posy>
-						<width>230</width>
+						<posy>170</posy>
+						<width>340</width>
 						<height>33</height>
-						<font>font-20</font>
+						<font>font-18</font>
 						<textcolor>white</textcolor>
 						<selectedcolor>$VAR[main_color]</selectedcolor>
 						<align>center</align>
@@ -71,12 +71,12 @@
 						<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, (,)]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="270" height="180">
+				<focusedlayout width="380" height="230">
 					<control type="image">
 						<posx>10</posx>
 						<posy>10</posy>
-						<width>240</width>
-						<height>160</height>
+						<width>350</width>
+						<height>200</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 						<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
@@ -85,17 +85,17 @@
 					</control>
 					<control type="image">
 						<posx>15</posx>
-						<posy>130</posy>
-						<width>230</width>
+						<posy>170</posy>
+						<width>340</width>
 						<height>36</height>
 						<texture background="true">main/widget_title.png</texture>
 					</control>	
 					<control type="label">
 						<posx>15</posx>
-						<posy>130</posy>
-						<width>230</width>
+						<posy>170</posy>
+						<width>340</width>
 						<height>33</height>
-						<font>font-20</font>
+						<font>font-18</font>
 						<textcolor>$VAR[main_color]</textcolor>
 						<selectedcolor>$VAR[main_color]</selectedcolor>
 						<align>center</align>
@@ -105,9 +105,9 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="61">
-				<posx>1132</posx>
-				<posy>105</posy>
-				<height>680</height>
+				<posx>1162</posx>
+				<posy>138</posy>
+				<height>670</height>
 				<width>10</width>
 				<onleft>11</onleft>
 				<include>scroll_bar</include>

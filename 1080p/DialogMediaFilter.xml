@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">5</defaultcontrol>
 	<controls>
-		<include>fade_screen_grey</include>
+		<include>fade_screen_grey</include> 
 		<control type="group">
 			<posx>460</posx>
 			<posy>80</posy>
@@ -63,7 +63,6 @@
 				<onright>9000</onright>
 				<onup>5</onup>
 				<ondown>5</ondown>
-				<orientation>horizontal</orientation>
 				<!-- OK Button -->
 				<control type="button" id="28">
 					<width>220</width>

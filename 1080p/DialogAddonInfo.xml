@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<controls>
-		<include>fade_screen_grey</include>
+		<include>fade_screen_grey</include> 
 		<control type="group">
 			<posx>360</posx>
 			<posy>80</posy>
