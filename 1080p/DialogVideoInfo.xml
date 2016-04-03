@@ -508,7 +508,7 @@
 					<visible>Container.Content(Seasons) | [[!IsEmpty(ListItem.Season) | !IsEmpty(Window(home).Property(SeasonNumber))]+ !IsEmpty(ListItem.TVShowTitle)]</visible>
 					<visible>System.HasAddon(script.extendedinfo)</visible>
 				</control>
-				<control type="button" id="197">
+				<control type="button" id="198">
 					<description>CinemaVision</description>
 					<width>280</width>
 					<height>55</height>
