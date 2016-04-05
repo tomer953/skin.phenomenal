@@ -614,6 +614,10 @@ msgctxt "#31152"
 msgid "Shutdown menu"
 msgstr ""
 
+msgctxt "#31153"
+msgid "Prefer Original Titles instead of Titles in Movies and Episodes Library"
+msgstr "העדף כותרת מקורית על-פני כותרת רגילה בסרטים ובסדרות בספרייה"
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "
@@ -778,16 +782,6 @@ msgstr ""
 msgctxt "#31231"
 msgid "Fake TV DiscArt"
 msgstr ""
-
-msgctxt "#31600"
-msgid "Daily"
-msgstr ""
-
-msgctxt "#31605"
-msgid "Weather forecast provided by:"
-msgstr ""
-
-# Phenomenal-Skins
 
 # Widget-names
 msgctxt "#31500"
