@@ -355,7 +355,7 @@
 		<radioposy>0</radioposy>
 		<textoffsetx>30</textoffsetx>
 		<align>left</align>
-		<textwidth>900</textwidth>
+		<textwidth>1000</textwidth>
 		<textcolor>darkgrey</textcolor>
 		<focusedcolor>grey_b</focusedcolor>
 		<disabledcolor>grey_a</disabledcolor>

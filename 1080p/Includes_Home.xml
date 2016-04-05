@@ -75,8 +75,7 @@
 
 	<variable name="varBackground">
 		<value condition="[SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]">$VAR[password_fanart]</value>
-		<value condition="[Control.HasFocus(9002) | StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)] + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
-		<value condition="[Control.HasFocus(9002) | StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)] + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
+		<value condition="[Control.HasFocus(9002) | StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)]">$VAR[widgetBackground]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(Background),wall,left)">black.png</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
 		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value>		
@@ -84,13 +83,11 @@
 	</variable>
 	<variable name="varBackground2">
 		<value condition="StringCompare(Container(9001).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
-		<value condition="StringCompare(Container(9001).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
-		<value condition="StringCompare(Container(9001).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
+		<value condition="StringCompare(Container(9001).ListItem.Property(Background),widgetbackground)">$VAR[widgetBackground]</value>
 		<value condition="!IsEmpty(Container(9001).ListItem.Property(Background))">$INFO[Container(9001).ListItem.Property(Background)]</value>		
 		<value condition="SubString(Container(9001).ListItem.Property(Background),wall,left)">black.png</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Background),widgetbackground) + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)">$VAR[widgetBackground]</value>
 		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value> 
 		<value>$INFO[Container(9000).ListItem.Property(Background)]</value>
 	</variable>
@@ -100,6 +97,12 @@
 		<value condition="StringCompare(Container(211).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
 		<value condition="IsEmpty(Container(211).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value> 
 		<value>$INFO[Container(211).ListItem.Property(Background)]</value>
+	</variable>
+	<variable name="widgetBackground">
+		<value condition="Container(9002).IsUpdating">special://skin/backgrounds/videos.jpg</value>
+		<value condition="!IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
+		<value condition="!IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
+		<value>special://skin/backgrounds/videos.jpg</value>
 	</variable>
 
 	<include name="top_bar_home">
@@ -353,192 +356,192 @@
 				</control>
 			</control>
 
-			
-				<!-- Libarary Stats -->
-				<control type="group">
-					<animation effect="slide" start="300,0" end="0,0" tween="sine" easing="Out" delay="700" time="500">WindowOpen</animation>
-					<animation effect="slide" start="0,0" end="0,-80" time="300">WindowClose</animation>
-					<animation effect="slide" start="0" end="100" time="300" condition="!Skin.HasSetting(Home_Horizontal) + Control.HasFocus(9001)">Conditional</animation>
-					<visible>![!IntegerGreaterThan(Window(Home).Property(Movies.Count),0) + !IntegerGreaterThan(Window(Home).Property(TVShows.Count),0) + !IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0) + Skin.HasSetting(Home_Horizontal)]</visible>
-					<control type="image">
-						<posx>510</posx>
-						<posy>0</posy>
-						<width>324</width>
-						<height>50</height>
-						<texture colordiffuse="black" diffuse="glass.jpg" flipx="true" background="true">main/tab2.png</texture>
-						<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
-						<bordersize>1,0,1,1</bordersize>
-						<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+
+			<!-- Libarary Stats -->
+			<control type="group">
+				<animation effect="slide" start="300,0" end="0,0" tween="sine" easing="Out" delay="700" time="500">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" time="300">WindowClose</animation>
+				<animation effect="slide" start="0" end="100" time="300" condition="!Skin.HasSetting(Home_Horizontal) + Control.HasFocus(9001)">Conditional</animation>
+				<visible>![!IntegerGreaterThan(Window(Home).Property(Movies.Count),0) + !IntegerGreaterThan(Window(Home).Property(TVShows.Count),0) + !IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0) + Skin.HasSetting(Home_Horizontal)]</visible>
+				<control type="image">
+					<posx>510</posx>
+					<posy>0</posy>
+					<width>324</width>
+					<height>50</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" flipx="true" background="true">main/tab2.png</texture>
+					<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+				</control>
+				<control type="grouplist">
+					<posx>510</posx>
+					<posy>5</posy>
+					<width>320</width>
+					<align>center</align>
+					<orientation>Horizontal</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<visible>IntegerGreaterThan(Window(Home).Property(Movies.Count),0)</visible>
+						<width>100</width>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture background="true" colordiffuse="$VAR[topbar_text_color]">special://skin/extras/icons/movies.png</texture>
+						</control>
+						<control type="label">
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>100</width>
+							<height>30</height>
+							<font>font-18</font>
+							<textcolor>$VAR[topbar_text_color]</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<label>$INFO[Window(Home).Property(Movies.Count)]</label>
+						</control>
 					</control>
-					<control type="grouplist">
-						<posx>510</posx>
-						<posy>5</posy>
-						<width>320</width>
-						<align>center</align>
-						<orientation>Horizontal</orientation>
-						<itemgap>0</itemgap>
-						<control type="group">
-							<visible>IntegerGreaterThan(Window(Home).Property(Movies.Count),0)</visible>
-							<width>100</width>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>32</width>
-								<height>32</height>
-								<texture background="true" colordiffuse="$VAR[topbar_text_color]">special://skin/extras/icons/movies.png</texture>
-							</control>
-							<control type="label">
-								<posx>30</posx>
-								<posy>0</posy>
-								<width>100</width>
-								<height>30</height>
-								<font>font-18</font>
-								<textcolor>$VAR[topbar_text_color]</textcolor>
-								<shadowcolor>black</shadowcolor>
-								<label>$INFO[Window(Home).Property(Movies.Count)]</label>
-							</control>
+					<control type="group">
+						<visible>IntegerGreaterThan(Window(Home).Property(TVShows.Count),0)</visible>
+						<width>76</width>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture background="true" colordiffuse="$VAR[topbar_text_color]">special://skin/extras/icons/tvshows.png</texture>
 						</control>
-						<control type="group">
-							<visible>IntegerGreaterThan(Window(Home).Property(TVShows.Count),0)</visible>
-							<width>76</width>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>32</width>
-								<height>32</height>
-								<texture background="true" colordiffuse="$VAR[topbar_text_color]">special://skin/extras/icons/tvshows.png</texture>
-							</control>
-							<control type="label">
-								<posx>33</posx>
-								<posy>0</posy>
-								<width>110</width>
-								<height>30</height>
-								<font>font-18</font>
-								<textcolor>$VAR[topbar_text_color]</textcolor>
-								<shadowcolor>black</shadowcolor>
-								<label>$INFO[Window(Home).Property(TVShows.Count)]</label>
-							</control>
+						<control type="label">
+							<posx>33</posx>
+							<posy>0</posy>
+							<width>110</width>
+							<height>30</height>
+							<font>font-18</font>
+							<textcolor>$VAR[topbar_text_color]</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<label>$INFO[Window(Home).Property(TVShows.Count)]</label>
 						</control>
-						<control type="group">
-							<visible>IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0)</visible>
+					</control>
+					<control type="group">
+						<visible>IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0)</visible>
+						<width>100</width>
+						<control type="image">
+							<posx>0</posx>
+							<posy>4</posy>
+							<width>28</width>
+							<height>28</height>
+							<texture background="true" colordiffuse="$VAR[topbar_text_color]">special://skin/extras/icons/music.png</texture>
+						</control>
+						<control type="label">
+							<posx>30</posx>
+							<posy>0</posy>
 							<width>100</width>
-							<control type="image">
-								<posx>0</posx>
-								<posy>4</posy>
-								<width>28</width>
-								<height>28</height>
-								<texture background="true" colordiffuse="$VAR[topbar_text_color]">special://skin/extras/icons/music.png</texture>
-							</control>
-							<control type="label">
-								<posx>30</posx>
-								<posy>0</posy>
-								<width>100</width>
-								<height>30</height>
-								<font>font-18</font>
-								<textcolor>$VAR[topbar_text_color]</textcolor>
-								<shadowcolor>black</shadowcolor>
-								<label>$INFO[Window(Home).Property(Music.SongsCount)]</label>
-							</control>
+							<height>30</height>
+							<font>font-18</font>
+							<textcolor>$VAR[topbar_text_color]</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<label>$INFO[Window(Home).Property(Music.SongsCount)]</label>
 						</control>
 					</control>
 				</control>
+			</control>
 
-				<!-- Weather Info or Date -->
-				<control type="group">
-					<posx>1090</posx>
-					<animation effect="slide" start="0" end="-886" time="300" condition="Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation>
-					<animation effect="slide" start="-300,0" end="0,0" tween="sine" easing="Out" delay="700" time="500">WindowOpen</animation>
-					<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
+			<!-- Weather Info or Date -->
+			<control type="group">
+				<posx>1090</posx>
+				<animation effect="slide" start="0" end="-886" time="300" condition="Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation>
+				<animation effect="slide" start="-300,0" end="0,0" tween="sine" easing="Out" delay="700" time="500">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
 
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>324</width>
-						<height>50</height>
-						<texture colordiffuse="black" diffuse="glass.jpg" flipx="true" background="true">main/tab2.png</texture>
-						<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
-						<bordersize>1,0,1,1</bordersize>
-						<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
-						<visible>Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)</visible>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>324</width>
-						<height>50</height>
-						<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab.png</texture>
-						<bordertexture colordiffuse="$VAR[main_color]">main/tab_stroke.png</bordertexture>
-						<bordersize>1,0,1,1</bordersize>
-						<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
-						<visible>![Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)]</visible>
-					</control>
-					<include>Home_Top_Weather_Icon</include>
-					<control type="label">
-						<description>System Date</description>
-						<posx>40</posx>
-						<posy>5</posy>
-						<width>270</width>
-						<height>30</height>
-						<font>font-18</font>
-						<shadowcolor>black</shadowcolor>
-						<label>$INFO[System.Date(MMM DD),,$COMMA ]$INFO[System.Date(YYYY)]</label>
-						<textcolor>$VAR[topbar_text_color]</textcolor>
-						<visible>Skin.HasSetting(Home_Weather_Icon) | IsEmpty(Weather.Temperature) | IsEmpty(Window(Weather).Property(Current.FanartCode)) | IsEmpty(Weather.plugin) | IsEmpty(Weather.Location)</visible>
-					</control>
-				</control>
-
-				<!-- Kodi logo -->
-				<control type="group">
-					<posx>-101</posx>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>324</width>
+					<height>50</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" flipx="true" background="true">main/tab2.png</texture>
+					<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
 					<visible>Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)</visible>
-					<animation effect="slide" start="-300,0" end="0,0" tween="sine" easing="Out" delay="700" time="500">WindowOpen</animation>
-					<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>324</width>
-						<height>50</height>
-						<texture colordiffuse="black" diffuse="glass.jpg" background="true" flipx="true">main/tab2.png</texture> 
-						<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
-						<bordersize>1,0,1,1</bordersize>
-						<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
-					</control>
-					<control type="image">
-						<posx>90</posx>
-						<posy>-3</posy>
-						<width>200</width>
-						<height>50</height>
-						<aspectratio>keep</aspectratio>
-						<texture>kodi.png</texture>
-					</control>
 				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>324</width>
+					<height>50</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab.png</texture>
+					<bordertexture colordiffuse="$VAR[main_color]">main/tab_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<visible>![Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)]</visible>
+				</control>
+				<include>Home_Top_Weather_Icon</include>
+				<control type="label">
+					<description>System Date</description>
+					<posx>40</posx>
+					<posy>5</posy>
+					<width>270</width>
+					<height>30</height>
+					<font>font-18</font>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[System.Date(MMM DD),,$COMMA ]$INFO[System.Date(YYYY)]</label>
+					<textcolor>$VAR[topbar_text_color]</textcolor>
+					<visible>Skin.HasSetting(Home_Weather_Icon) | IsEmpty(Weather.Temperature) | IsEmpty(Window(Weather).Property(Current.FanartCode)) | IsEmpty(Weather.plugin) | IsEmpty(Weather.Location)</visible>
+				</control>
+			</control>
 
-				<!-- System Time -->
-				<control type="group">
-					<posx>800</posx>
-					<animation effect="slide" start="0,-80" end="0,0" tween="circle" easing="out" delay="400" time="300" condition="!Skin.HasSetting(Home_Horizontal)">WindowOpen</animation>
-					<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300" condition="!Skin.HasSetting(Home_Horizontal)">WindowClose</animation>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>324</width>
-						<height>70</height>
-						<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab.png</texture>
-						<bordertexture colordiffuse="$VAR[main_color]">main/tab_stroke.png</bordertexture>
-						<bordersize>1,0,1,1</bordersize>
-					</control>
-					<control type="label">
-						<posx>0</posx>
-						<posy>5</posy>
-						<width>324</width>
-						<height>30</height>
-						<font>time</font>
-						<align>center</align>
-						<aligny>top</aligny>
-						<textcolor>$VAR[topbar_text_color]</textcolor>
-						<label>[B]$INFO[System.Date(ddd),, - ]$INFO[System.Time][/B]</label>
-					</control>
+			<!-- Kodi logo -->
+			<control type="group">
+				<posx>-101</posx>
+				<visible>Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)</visible>
+				<animation effect="slide" start="-300,0" end="0,0" tween="sine" easing="Out" delay="700" time="500">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>324</width>
+					<height>50</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" flipx="true">main/tab2.png</texture> 
+					<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
 				</control>
+				<control type="image">
+					<posx>90</posx>
+					<posy>-3</posy>
+					<width>200</width>
+					<height>50</height>
+					<aspectratio>keep</aspectratio>
+					<texture>kodi.png</texture>
+				</control>
+			</control>
+
+			<!-- System Time -->
+			<control type="group">
+				<posx>800</posx>
+				<animation effect="slide" start="0,-80" end="0,0" tween="circle" easing="out" delay="400" time="300" condition="!Skin.HasSetting(Home_Horizontal)">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300" condition="!Skin.HasSetting(Home_Horizontal)">WindowClose</animation>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>324</width>
+					<height>70</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab.png</texture>
+					<bordertexture colordiffuse="$VAR[main_color]">main/tab_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>5</posy>
+					<width>324</width>
+					<height>30</height>
+					<font>time</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>$VAR[topbar_text_color]</textcolor>
+					<label>[B]$INFO[System.Date(ddd),, - ]$INFO[System.Time][/B]</label>
+				</control>
+			</control>
 		</control>
 		<include>VideoInfo</include>
 		<include>MusicInfo</include>

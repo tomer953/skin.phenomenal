@@ -443,6 +443,15 @@
 				<include>radio_button_settings</include>
 				<visible>!StringCompare(System.Language,Hebrew)</visible>
 			</control>
+			<control type="radiobutton" id="105">
+				<description>Prefer OriginalTitles In Movies</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<label>$LOCALIZE[31153]</label>
+				<onclick>Skin.ToggleSetting(PreferOriginalTitles)</onclick>
+				<selected>Skin.HasSetting(PreferOriginalTitles)</selected>
+				<include>radio_button_settings</include>
+			</control>
 			<control type="button" id="112">
 				<description>loader select</description>
 				<label>$LOCALIZE[31033]</label>
@@ -875,6 +884,7 @@
 				<label>31047</label>
 				<onclick>Skin.ToggleSetting(Home_Horizontal)</onclick>
 				<onclick>Skin.SetString(AfterReload,311)</onclick>
+				<onclick>Skin.SetString(AfterReload_Category,96)</onclick>
 				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
 				<onclick>ReloadSkin()</onclick> 
 				<selected>Skin.HasSetting(Home_Horizontal)</selected>
@@ -888,6 +898,7 @@
 				<label>31151</label>
 				<onclick>Skin.ToggleSetting(Home_Eminence_Layout)</onclick>
 				<onclick>Skin.SetString(AfterReload,320)</onclick>
+				<onclick>Skin.SetString(AfterReload_Category,96)</onclick>
 				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
 				<onclick>ReloadSkin()</onclick>
 				<selected>Skin.HasSetting(Home_Eminence_Layout)</selected>
@@ -903,6 +914,7 @@
 				<label>31061</label>
 				<onclick>Skin.ToggleSetting(PinWidgets)</onclick>
 				<onclick>Skin.SetString(AfterReload,315)</onclick>
+				<onclick>Skin.SetString(AfterReload_Category,96)</onclick>
 				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
 				<onclick>ReloadSkin()</onclick> 
 				<selected>Skin.HasSetting(PinWidgets)</selected>
@@ -1032,7 +1044,8 @@
 				<width>400</width>
 				<include>button_settings_2</include>
 				<onclick>Skin.SetString(AfterReload,373)</onclick>
-				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
+				<onclick>Skin.SetString(AfterReload_Category,96)</onclick>
+				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>
 				<onclick>ReloadSkin()</onclick> 
 			</control>
 
