@@ -330,10 +330,10 @@
 				<include name="shortcuts_label2"></include>
 				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(displaypath)]"/></include>
 				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Label]"/></include>
-				<include name="shortcuts_label3"><param name="label" value="$INFO[Container(211).ListItem.Property(TextColor)]"/><param name="color" value="$INFO[Container(211).ListItem.Property(TextColor)]"/></include>
+				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(TextColor)]"/><param name="color" value="$INFO[Container(211).ListItem.Property(TextColor)]"/></include>
 				<include name="shortcuts_label2"><param name="label" value="$VAR[shortcuts_bgpath]"/></include>
 				<include name="shortcuts_label2"><param name="label" value=""/><param name="width" value="490"/></include>
-				<include name="shortcuts_label4"><param name="label" value="$VAR[passcode]"/><param name="hide" value="yes"/></include>		
+				<include name="shortcuts_label3"><param name="label" value="$VAR[passcode]"/></include>		
 				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(widgetName)]"/></include>
 			</control>
 

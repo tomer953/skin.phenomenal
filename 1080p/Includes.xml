@@ -1869,7 +1869,7 @@
 	<include name="shortcuts_label2">
 		<param name="height" default="60"/>
 		<param name="width" default="570"/>
-		<param name="color" default="grey"/>
+		<param name="color" default="grey_b"/>
 		<param name="label" default="-"/>
 		<definition>
 			<control type="label">
@@ -1886,7 +1886,7 @@
 	<include name="shortcuts_label3">
 		<param name="height" default="60"/>
 		<param name="width" default="570"/>
-		<param name="color" default="grey"/>
+		<param name="color" default="grey_b"/>
 		<param name="label" default="-"/>
 		<definition>
 			<control type="label">
@@ -1896,24 +1896,7 @@
 				<align>right</align>
 				<textcolor>$PARAM[color]</textcolor>
 				<label>$PARAM[label]</label>
-				<visible>Skin.HasSetting(shortcuts_advanced)</visible>
-			</control>
-		</definition>
-	</include>
-	<include name="shortcuts_label4">
-		<param name="height" default="60"/>
-		<param name="width" default="570"/>
-		<param name="color" default="grey"/>
-		<param name="label" default="-"/>
-		<definition>
-			<control type="label">
-				<height>$PARAM[height]</height>
-				<width>$PARAM[width]</width>
-				<font>font-22</font>
-				<align>right</align>
-				<textcolor>$PARAM[color]</textcolor>
-				<label>$PARAM[label]</label>
-				<visible>Skin.HasSetting(shortcuts_advanced) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 		</definition>
 	</include>
