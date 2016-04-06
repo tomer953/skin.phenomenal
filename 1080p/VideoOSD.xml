@@ -376,8 +376,9 @@
 						<font>font-23</font>
 						<textcolor>grey_a</textcolor>
 					</control>
-				<!-- 	<control type="label">
-						<description>End Time \ Current Time</description>
+					
+					<control type="label">
+						<description>End Time \ Current Time - RTL</description>
 						<posx>1880</posx>
 						<posy>228</posy>
 						<width>1200</width>
@@ -387,7 +388,21 @@
 						<aligny>center</aligny>
 						<font>font-17</font>
 						<textcolor>grey_a</textcolor>
-					</control> -->
+						<visible>StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)</visible>
+					</control>
+					<control type="label">
+						<description>End Time \ Current Time - LTR</description>
+						<posx>1880</posx>
+						<posy>228</posy>
+						<width>1200</width>
+						<height>38</height>
+						<label>[COLOR=grey_b]$LOCALIZE[19030]:[/COLOR] [COLOR=grey_a]$INFO[System.Time] [/COLOR][COLOR=grey_b]$LOCALIZE[31050]: [/COLOR][COLOR=grey_a]$INFO[Player.FinishTime][/COLOR]</label>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font-17</font>
+						<textcolor>grey_a</textcolor>
+						<visible>!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)</visible>
+					</control>
 
 
 					<!-- FLAGS -->
@@ -479,7 +494,7 @@
 					<!-- Volume Bar -->
 					<control type="group">
 						<posx>1570</posx>
-						<posy>228</posy>
+						<posy>195</posy>
 						<control type="label">
 							<description>Volume Label</description>
 							<posx>310</posx>
