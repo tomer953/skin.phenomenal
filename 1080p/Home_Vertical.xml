@@ -92,6 +92,7 @@
 						<height>60</height>
 						<width>60</width>
 						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[menu_icon_color_nf]" background="true">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 
 					<control type="label">
@@ -104,6 +105,19 @@
 						<aligny>center</aligny>
 						<font>menu</font>
 						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>42</posy>
+						<height>20</height>
+						<width>270</width>
+						<label>$INFO[ListItem.Label]</label>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>menu</font>
+						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout width="290" height="100">
@@ -115,6 +129,7 @@
 						<texture diffuse="glass.jpg" background="true">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>
 						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
 						<animation effect="slide" start="290" end="0" tween="sine" easing="Out" time="300">Focus</animation>
+						<animation effect="fade" start="100" end="50" time="100" condition="Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(20)">Conditional</animation>
 						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control>
 					<control type="image">
@@ -125,6 +140,7 @@
 						<texture diffuse="glass.jpg" background="true" colordiffuse="$VAR[main_color]">white.png</texture>
 						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
 						<animation effect="slide" start="290" end="0" tween="sine" easing="Out" time="300">Focus</animation>
+						<animation effect="fade" start="100" end="50" time="100" condition="Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(20)">Conditional</animation>
 						<visible>IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control> 
 					<control type="image">
@@ -145,6 +161,7 @@
 						<height>60</height>
 						<width>60</width>
 						<texture fallback="special://skin/extras/icons/default.png" background="true">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
 						<posx>0</posx>
@@ -156,19 +173,21 @@
 						<aligny>center</aligny>
 						<font>menu</font>
 						<textcolor>white</textcolor>
-						<visible>!Control.HasFocus(10) + !Control.HasFocus(15) + !Control.HasFocus(20)</visible>
+						<animation effect="fade" start="100" end="50" time="100" condition="Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(20)">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
 						<posx>0</posx>
 						<posy>42</posy>
 						<height>20</height>
-						<width>210</width>
+						<width>270</width>
 						<label>$INFO[ListItem.Label]</label>
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>menu</font>
-						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
-						<visible>Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(20)</visible>
+						<textcolor>white</textcolor>
+						<animation effect="fade" start="100" end="50" time="100" condition="Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(20)">Conditional</animation>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</focusedlayout>
 				<content>
@@ -316,6 +335,7 @@
 						<height>45</height>
 						<width>45</width>
 						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[menu_icon_color_nf]" background="true">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
 						<posx>0</posx>
@@ -327,6 +347,19 @@
 						<font>menu-30</font>
 						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
 						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>38</posy>
+						<width>272</width>
+						<height>120</height>
+						<align>right</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>menu-30</font>
+						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</itemlayout>
 
@@ -357,6 +390,7 @@
 						<height>45</height>
 						<width>45</width>
 						<texture background="true" fallback="special://skin/extras/icons/default.png" colordiffuse="white">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
 						<posx>0</posx>
@@ -368,6 +402,19 @@
 						<font>menu-30</font>
 						<textcolor>white</textcolor>
 						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>38</posy>
+						<width>272</width>
+						<height>120</height>
+						<align>right</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>menu-30</font>
+						<textcolor>white</textcolor>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</focusedlayout>
 
@@ -384,8 +431,8 @@
 			<shadowcolor>FF000000</shadowcolor>
 			<font>font13</font>
 			<align>left</align>
-			<label>Property(Background):[CR] $INFO[Container(9000).ListItem.Property(Background)] [CR] special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg [CR] widgetType: $INFO[Container(9000).ListItem.Property(widgetType)] [CR]widgetTarget: $INFO[Container(9000).ListItem.Property(widgetTarget)] [CR]Path: $INFO[Container(9000).ListItem.Property(widgetPath)] [CR]Widget: $INFO[Container(9000).ListItem.Property(Widget)] [CR]Type: $INFO[Container(9000).ListItem.Property(widgetType)]</label>
-			<visible>False</visible>
+			<label>$INFO[Container(9000).ListItem.Thumb] [CR]Property(Background):[CR] $INFO[Container(9000).ListItem.Property(Background)] [CR] special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg [CR] widgetType: $INFO[Container(9000).ListItem.Property(widgetType)] [CR]widgetTarget: $INFO[Container(9000).ListItem.Property(widgetTarget)] [CR]Path: $INFO[Container(9000).ListItem.Property(widgetPath)] [CR]Widget: $INFO[Container(9000).ListItem.Property(Widget)] [CR]Type: $INFO[Container(9000).ListItem.Property(widgetType)]</label>
+			<visible>True</visible>
 		</control>
 
 		<!-- Widget List - Vertical Layout -->
@@ -596,8 +643,8 @@
 						<height>60</height>
 						<width>60</width>
 						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[menu_icon_color_nf]" background="true">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
-
 					<control type="label">
 						<posx>90</posx>
 						<posy>42</posy>
@@ -608,6 +655,19 @@
 						<aligny>center</aligny>
 						<font>menu</font>
 						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="label">
+						<posx>30</posx>
+						<posy>42</posy>
+						<height>20</height>
+						<width>270</width>
+						<label>$INFO[ListItem.Label]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>menu</font>
+						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout width="290" height="100">
@@ -619,6 +679,7 @@
 						<texture diffuse="glass.jpg" background="true">special://skin/extras/colors/$INFO[ListItem.Property(TextColor)].png</texture>
 						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
 						<animation effect="slide" start="-290" end="0" tween="sine" easing="Out" time="300">Focus</animation>
+						<animation effect="fade" start="100" end="50" time="100" condition="Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(20)">Conditional</animation>
 						<visible>!IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control>
 					<control type="image">
@@ -629,6 +690,7 @@
 						<texture diffuse="glass.jpg" background="true" colordiffuse="$VAR[main_color]">white.png</texture>
 						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
 						<animation effect="slide" start="-290" end="0" tween="sine" easing="Out" time="300">Focus</animation>
+						<animation effect="fade" start="100" end="50" time="100" condition="Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(20)">Conditional</animation>
 						<visible>IsEmpty(ListItem.Property(TextColor))</visible>						
 					</control>
 					<control type="image">
@@ -649,6 +711,7 @@
 						<height>60</height>
 						<width>60</width>
 						<texture fallback="special://skin/extras/icons/default.png" background="true">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
 						<posx>90</posx>
@@ -660,19 +723,19 @@
 						<aligny>center</aligny>
 						<font>menu</font>
 						<textcolor>white</textcolor>
-						<visible>!Control.HasFocus(10) + !Control.HasFocus(15) + !Control.HasFocus(20)</visible>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
-						<posx>90</posx>
+						<posx>30</posx>
 						<posy>42</posy>
 						<height>20</height>
-						<width>210</width>
+						<width>270</width>
 						<label>$INFO[ListItem.Label]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>menu</font>
-						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
-						<visible>Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(20)</visible>
+						<textcolor>white</textcolor>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</focusedlayout>
 				<content>
@@ -823,6 +886,7 @@
 						<height>45</height>
 						<width>45</width>
 						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="$VAR[menu_icon_color_nf]" background="true">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
 						<posx>70</posx>
@@ -834,6 +898,19 @@
 						<font>menu-30</font>
 						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
 						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="label">
+						<posx>15</posx>
+						<posy>38</posy>
+						<width>287</width>
+						<height>120</height>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>menu-30</font>
+						<textcolor>$VAR[menu_icon_color_nf]</textcolor>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</itemlayout>
 
@@ -864,6 +941,7 @@
 						<height>45</height>
 						<width>45</width>
 						<texture background="true" fallback="special://skin/extras/icons/default.png" colordiffuse="white">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
 						<posx>70</posx>
@@ -875,6 +953,19 @@
 						<font>menu-30</font>
 						<textcolor>white</textcolor>
 						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="label">
+						<posx>15</posx>
+						<posy>38</posy>
+						<width>287</width>
+						<height>120</height>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>menu-30</font>
+						<textcolor>white</textcolor>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</focusedlayout>
 

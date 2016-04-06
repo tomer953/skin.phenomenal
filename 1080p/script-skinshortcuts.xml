@@ -131,6 +131,7 @@
 						<height>32</height>
 						<width>32</width>
 						<texture fallback="special://skin/extras/icons/default.png" colordiffuse="grey" background="true">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout width="560" height="60">
@@ -158,6 +159,7 @@
 						<height>32</height>
 						<width>32</width>
 						<texture fallback="special://skin/extras/icons/default.png" background="true">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
 						<posx>0</posx>
@@ -343,6 +345,7 @@
 				<height>45</height>
 				<width>45</width>
 				<texture fallback="special://skin/extras/icons/default.png" background="true">$INFO[Container(211).ListItem.Thumb]</texture>
+				<visible>!IsEmpty(Container(211).ListItem.Thumb)</visible>
 			</control>
 
 			<!-- Button grouplist -->

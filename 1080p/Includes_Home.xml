@@ -1101,7 +1101,7 @@
 
 			<control type="image">
 				<description>Thumb image for Episodes</description>
-				<posx>50</posx>
+				<posx>-40</posx>
 				<posy>58</posy>
 				<height>128</height>
 				<aspectratio align="left">keep</aspectratio>
