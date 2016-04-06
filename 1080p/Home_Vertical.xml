@@ -1125,6 +1125,7 @@
 		<posy>35</posy>
 		<height>330</height>
 		<width>867</width>
+		<onback>9000</onback>
 		<onup>9000</onup>
 		<ondown>9000</ondown>
 		<onleft>9002</onleft>
