@@ -432,7 +432,7 @@
 			<font>font13</font>
 			<align>left</align>
 			<label>$INFO[Container(9000).ListItem.Thumb] [CR]Property(Background):[CR] $INFO[Container(9000).ListItem.Property(Background)] [CR] special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg [CR] widgetType: $INFO[Container(9000).ListItem.Property(widgetType)] [CR]widgetTarget: $INFO[Container(9000).ListItem.Property(widgetTarget)] [CR]Path: $INFO[Container(9000).ListItem.Property(widgetPath)] [CR]Widget: $INFO[Container(9000).ListItem.Property(Widget)] [CR]Type: $INFO[Container(9000).ListItem.Property(widgetType)]</label>
-			<visible>True</visible>
+			<visible>False</visible>
 		</control>
 
 		<!-- Widget List - Vertical Layout -->
