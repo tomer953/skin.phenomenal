@@ -458,7 +458,7 @@
 				<width>320</width>
 				<height>470</height>
 				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$VAR[PosterThumb]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<bordersize>1,1,1,1</bordersize>
 				<fadetime>300</fadetime>
@@ -482,7 +482,7 @@
 				<width>450</width>
 				<height>214</height>
 				<aspectratio aligny="top">keep</aspectratio>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$VAR[PosterThumb]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<bordersize>1,1,1,1</bordersize>
 				<fadetime>300</fadetime>
@@ -1187,7 +1187,7 @@
 				<width>320</width>
 				<height>470</height>
 				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$VAR[PosterThumb]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<bordersize>1,1,1,1</bordersize>
 				<fadetime>300</fadetime>
@@ -1211,7 +1211,7 @@
 				<width>450</width>
 				<height>214</height>
 				<aspectratio aligny="top">keep</aspectratio>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$VAR[PosterThumb]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<bordersize>1,1,1,1</bordersize>
 				<fadetime>300</fadetime>

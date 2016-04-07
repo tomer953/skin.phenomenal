@@ -623,17 +623,7 @@
 				<top>0</top>
 				<width>200</width>
 				<aspectratio>keep</aspectratio>
-				<texture fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
-			</control>
-			<control type="image">
-				<centerleft>50%</centerleft>
-				<bottom>0</bottom>
-				<top>0</top>
-				<width>200</width>
-				<aspectratio>keep</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<texture background="true">$VAR[PosterThumb]</texture>
 			</control>
 		</itemlayout>
 		<focusedlayout width="215" height="330">
@@ -645,19 +635,7 @@
 				<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 				<bordersize>5</bordersize>
 				<aspectratio>keep</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
-			</control>
-			<control type="image">
-				<centerleft>50%</centerleft>
-				<width>220</width>
-				<bottom>0</bottom>
-				<top>0</top>
-				<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
-				<bordersize>5</bordersize>
-				<aspectratio>keep</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<texture background="true">$VAR[PosterThumb]</texture>
 			</control>
 		</focusedlayout>
 	</include>

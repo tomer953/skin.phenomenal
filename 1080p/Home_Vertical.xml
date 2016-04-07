@@ -444,7 +444,7 @@
 			<animation effect="slide" end="0,50" tween="sine" easing="out" time="0" condition="!system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation> 
 			<include condition="Skin.HasSetting(PinWidgets)">widget_vertical_pin</include>
 			<include condition="!Skin.HasSetting(PinWidgets)">widget_vertical_nopin</include>
-			
+
 			<!-- Widget Tag Name -->
 			<control type="group">
 				<posx>20</posx>
@@ -1115,10 +1115,6 @@
 
 
 	<!-- Widget Content for Vertical layout -->
-	<!-- <include name="widget_content_vertical">
-		<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">widget_content_vertical_rtl</include>
-		<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">widget_content_vertical_ltr</include>
-	</include> -->
 	<include name="widget_content_vertical">
 		<orientation>Horizontal</orientation>
 		<posx>60</posx>
@@ -1138,28 +1134,12 @@
 		<itemlayout  width="215" height="330">
 
 			<control type="image">
-				<!-- <posx>0</posx>
-				<posy>0</posy>
-				  <width>168</width>
-				<height>250</height>
-				<aspectratio aligny="top" align="left">keep</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture> -->
 				<centerleft>50%</centerleft>
 				<bottom>0</bottom>
 				<top>0</top>
 				<width>200</width>
 				<aspectratio>keep</aspectratio>
-				<texture fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
-			</control>
-			<control type="image">
-				<centerleft>50%</centerleft>
-				<bottom>0</bottom>
-				<top>0</top>
-				<width>200</width>
-				<aspectratio>keep</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<texture background="true">$VAR[PosterThumb]</texture>
 			</control>
 		</itemlayout>
 		<focusedlayout width="215" height="330">
@@ -1171,161 +1151,10 @@
 				<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
 				<bordersize>5</bordersize>
 				<aspectratio>keep</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
-			</control>
-			<control type="image">
-				<centerleft>50%</centerleft>
-				<width>220</width>
-				<bottom>0</bottom>
-				<top>0</top>
-				<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
-				<bordersize>5</bordersize>
-				<aspectratio>keep</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)</visible>
+				<texture background="true">$VAR[PosterThumb]</texture>
 			</control>
 		</focusedlayout>
 	</include>
-	<include name="widget_content_vertical_ltr">
-		<orientation>vertical</orientation>
-		<posx>50</posx>
-		<posy>70</posy>
-		<height>960</height>
-		<width>400</width>
-		<onup>9002</onup>
-		<ondown>9002</ondown>
-		<onleft>9000</onleft>
-		<onright>9000</onright>
-		<focusposition>3</focusposition>
-		<autoscroll time="6000">!Control.HasFocus(9002) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</autoscroll>
-		<animation effect="fade" start="100" end="0" time="0" condition="Container(9002).IsUpdating">Conditional</animation>
-		<animation effect="slide" start="0,0" end="0,-50" time="0" condition="Skin.HasSetting(Home_HideTopBar)">Conditional</animation>
-		<itemlayout  width="398" height="110">
-			<include name="stroke">
-				<param name="posx" value="8" />
-				<param name="posy" value="0" />
-				<param name="width" value="388" />
-				<param name="height" value="104" />
-				<param name="color" value="grey" />
-			</include>
-			<control type="image">
-				<posx>326</posx>
-				<posy>2</posy>
-				<width>68</width>
-				<height>100</height>
-				<aspectratio align="center">stretch</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) | IsEmpty(Listitem.art(tvshow.poster))</visible>
-			</control>
-			<control type="image">
-				<posx>326</posx>
-				<posy>2</posy>
-				<width>68</width>
-				<height>100</height>
-				<aspectratio align="center">stretch</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) + !IsEmpty(Listitem.art(tvshow.poster))</visible>
-			</control>
-			<control type="textbox">
-				<posx>15</posx>
-				<posy>5</posy>
-				<height>60</height>
-				<width>290</width>
-				<label>$VAR[widget_line1]</label>
-				<align>left</align>
-				<font>font-18</font>
-				<textcolor>white</textcolor>
-			</control>
-			<control type="label">
-				<posx>15</posx>
-				<posy>60</posy>
-				<height>30</height>
-				<width>290</width>
-				<align>left</align>
-				<font>font-18</font>
-				<textcolor>grey_b</textcolor>
-				<label>$VAR[widget_line2]</label>
-			</control>
-		</itemlayout>
-		<focusedlayout width="398" height="196">
-			<control type="image">
-				<posx>8</posx>
-				<posy>10</posy>
-				<width>388</width>
-				<height>170</height>
-				<texture background="true">white.png</texture>
-				<animation effect="fade" end="30" time="100" condition="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<posx>294</posx>
-				<posy>12</posy>
-				<width>100</width>
-				<height>166</height>
-				<aspectratio align="center">stretch</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.thumb]</texture>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) | IsEmpty(Listitem.art(tvshow.poster))</visible>
-			</control>
-			<control type="image">
-				<posx>294</posx>
-				<posy>12</posy>
-				<width>100</width>
-				<height>166</height>
-				<aspectratio align="center">stretch</aspectratio>
-				<texture background="true" fallback="defaultmovies.png">$INFO[Listitem.art(tvshow.poster)]</texture>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) + !IsEmpty(Listitem.art(tvshow.poster))</visible>
-			</control>
-			<include name="stroke">
-				<param name="posx" value="8" />
-				<param name="posy" value="10" />
-				<param name="width" value="388" />
-				<param name="height" value="170" />
-				<param name="color" value="white" />
-			</include>
-
-			<control type="textbox">
-				<posx>15</posx>
-				<posy>15</posy>
-				<height>70</height>
-				<width>278</width>
-				<label>[B]$VAR[widget_line1][/B]</label>
-				<align>left</align>
-				<font>font-18</font>
-				<textcolor>white</textcolor>
-			</control>
-			<control type="label">
-				<posx>15</posx>
-				<posy>75</posy>
-				<height>30</height>
-				<width>278</width>
-				<align>left</align>
-				<font>font-18</font>
-				<textcolor>grey_b</textcolor>
-				<label>[B]$VAR[widget_line2][/B]</label>
-			</control>
-			<control type="label">
-				<posx>15</posx>
-				<posy>105</posy>
-				<height>30</height>
-				<width>278</width>
-				<align>left</align>
-				<font>font-18</font>
-				<textcolor>grey_b</textcolor>
-				<label>$VAR[widget_line3]</label>
-			</control>
-			<control type="label">
-				<posx>15</posx>
-				<posy>135</posy>
-				<height>30</height>
-				<width>278</width>
-				<align>left</align>
-				<font>font-18</font>
-				<textcolor>grey_b</textcolor>
-				<label>$VAR[widget_line4]</label>
-			</control>
-		</focusedlayout>
-	</include>
-
 	<!-- Size For vertical home SUB menu list -->
 
 	<include name="home_sub_animation">

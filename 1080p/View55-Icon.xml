@@ -66,7 +66,7 @@
 							<width>220</width>
 							<height>335</height>
 							<aspectratio>stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">$VAR[PosterThumb]</texture>
 							<visible>!StringCompare(Listitem.Label,..)</visible>
 						</control>
 						<control type="image">
@@ -75,7 +75,7 @@
 							<width>220</width>
 							<height>335</height>
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="$VAR[main_color]" background="true">$VAR[PosterThumb]</texture>
 							<visible>StringCompare(Listitem.Label,..)</visible>
 						</control>
 
@@ -122,7 +122,7 @@
 							<width>220</width>
 							<height>335</height>
 							<aspectratio>stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">$VAR[PosterThumb]</texture>
 							<visible>!StringCompare(Listitem.Label,..)</visible>
 						</control>
 						<control type="image">
@@ -131,7 +131,7 @@
 							<width>220</width>
 							<height>335</height>
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="$VAR[main_color]" background="true">$VAR[PosterThumb]</texture>
 							<visible>StringCompare(Listitem.Label,..)</visible>
 						</control>
 						<!-- Title Tag on image -->
@@ -194,7 +194,7 @@
 							<width>220</width>
 							<height>220</height>
 							<aspectratio>stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">$VAR[PosterThumb]</texture>
 							<visible>!StringCompare(Listitem.Label,..)</visible>
 						</control>
 						<control type="image">
@@ -203,7 +203,7 @@
 							<width>220</width>
 							<height>220</height>
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="$VAR[main_color]" background="true">$VAR[PosterThumb]</texture>
 							<visible>StringCompare(Listitem.Label,..)</visible>
 						</control>
 
@@ -259,7 +259,7 @@
 							<width>220</width>
 							<height>220</height>
 							<aspectratio>stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">$VAR[PosterThumb]</texture>
 							<animation effect="zoom" start="100" end="105" center="auto" time="100">focus</animation>
 							<animation effect="zoom" start="105" end="100" center="auto" time="100">unfocus</animation>
 							<visible>!StringCompare(Listitem.Label,..)</visible>
@@ -270,7 +270,7 @@
 							<width>220</width>
 							<height>220</height>
 							<aspectratio>stretch</aspectratio>
-							<texture colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="$VAR[main_color]" background="true">$VAR[PosterThumb]</texture>
 							<animation effect="zoom" start="100" end="105" center="auto" time="100">focus</animation>
 							<animation effect="zoom" start="105" end="100" center="auto" time="100">unfocus</animation>
 							<visible>StringCompare(Listitem.Label,..)</visible>

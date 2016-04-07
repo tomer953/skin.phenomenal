@@ -64,7 +64,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+						<texture diffuse="posterdiffuse.png" background="true">$VAR[PosterThumb]</texture>
 						<visible>!StringCompare(Listitem.Label,..)</visible>
 					</control>
 					<control type="image">
@@ -73,7 +73,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
+						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$VAR[PosterThumb]</texture>
 						<visible>StringCompare(Listitem.Label,..)</visible>
 					</control>
 					<control type="image">
@@ -82,7 +82,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$INFO[ListItem.Thumb]</texture>
+						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$VAR[PosterThumb]</texture>
 						<animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
 					</control> 
 					<!-- Title Tag on image -->
@@ -126,7 +126,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+						<texture diffuse="posterdiffuse.png" background="true">$VAR[PosterThumb]</texture>
 						<visible>!StringCompare(Listitem.Label,..)</visible>
 					</control>
 					<control type="image">
@@ -135,7 +135,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
+						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$VAR[PosterThumb]</texture>
 						<visible>StringCompare(Listitem.Label,..)</visible>
 					</control>
 					<control type="image">
@@ -144,7 +144,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$INFO[ListItem.Thumb]</texture>
+						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$VAR[PosterThumb]</texture>
 						<animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
 					</control> 
 					<!-- Title Tag on image -->
@@ -396,7 +396,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+						<texture diffuse="posterdiffuse.png" background="true">$VAR[PosterThumb]</texture>
 						<visible>!StringCompare(Listitem.Label,..)</visible>
 					</control>
 					<control type="image">
@@ -405,7 +405,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
+						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$VAR[PosterThumb]</texture>
 						<visible>StringCompare(Listitem.Label,..)</visible>
 					</control>
 					<control type="image">
@@ -414,7 +414,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$INFO[ListItem.Thumb]</texture>
+						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$VAR[PosterThumb]</texture>
 						<animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
 					</control> 
 					<!-- Title Tag on image -->
@@ -458,7 +458,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Thumb]</texture>
+						<texture diffuse="posterdiffuse.png" background="true">$VAR[PosterThumb]</texture>
 						<visible>!StringCompare(Listitem.Label,..)</visible>
 					</control>
 					<control type="image">
@@ -467,7 +467,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$INFO[ListItem.Icon]</texture>
+						<texture diffuse="posterdiffuse.png" colordiffuse="$VAR[main_color]" background="true">$VAR[PosterThumb]</texture>
 						<visible>StringCompare(Listitem.Label,..)</visible>
 					</control>
 					<control type="image">
@@ -476,7 +476,7 @@
 						<width>380</width>
 						<height>260</height>
 						<aspectratio>stretch</aspectratio>
-						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$INFO[ListItem.Thumb]</texture>
+						<texture diffuse="posterdiffuse.png" flipy="true" background="true">$VAR[PosterThumb]</texture>
 						<animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
 					</control> 
 					<!-- Title Tag on image -->

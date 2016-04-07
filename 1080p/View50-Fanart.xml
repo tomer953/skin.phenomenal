@@ -503,7 +503,7 @@
 				<width>213</width>
 				<height>315</height>
 				<aspectratio>keep</aspectratio>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$VAR[PosterThumb]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<bordersize>1,1,1,1</bordersize>
 				<fadetime>300</fadetime>
@@ -514,7 +514,7 @@
 				<posy>884</posy>
 				<width>309</width>
 				<height>174</height>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$VAR[PosterThumb]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<bordersize>1,1,1,1</bordersize>
 				<fadetime>300</fadetime>
@@ -1167,7 +1167,7 @@
 				<width>213</width>
 				<height>315</height>
 				<aspectratio>keep</aspectratio>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$VAR[PosterThumb]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<bordersize>1,1,1,1</bordersize>
 				<fadetime>300</fadetime>
@@ -1178,7 +1178,7 @@
 				<posy>884</posy>
 				<width>309</width>
 				<height>174</height>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$VAR[PosterThumb]</texture>
 				<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 				<animation effect="slide" end="0,-40" time="200" condition="Skin.HasSetting(fanart_plot)">Conditional</animation>
 				<bordersize>1,1,1,1</bordersize>

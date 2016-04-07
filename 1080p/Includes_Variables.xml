@@ -418,4 +418,22 @@
 		<value>default.png</value>
 	</variable>
 
+	<variable name="PosterThumb">
+		<value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.Icon]</value>
+        <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster))">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</value>
+		<value condition="Container.Content(seasons) + SubString(ListItem.Label,*,left) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+		<value condition="Container.Content(seasons) + !IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+		<value condition="Container.Content(episodes) + !IsEmpty(Container.Art(season.poster))">$INFO[Container.Art(season.poster)]</value>
+        <value condition="Container.Content(seasons) + !IsEmpty(Container.Art(poster))">$INFO[Container.Art(poster)]</value>
+        <value condition="Container.Content(seasons) + !IsEmpty(Container.Art(tvshow.poster))">$INFO[Container.Art(tvshow.poster)]</value>
+        <value condition="!IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value condition="!IsEmpty(ListItem.Property(poster))">$INFO[ListItem.Property(poster)]</value>
+		<value condition="!IsEmpty(ListItem.Property(tvshow.poster))">$INFO[ListItem.Property(tvshow.poster)]</value>
+		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
+		<value condition="!IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+		<value>defaultmovies.png</value>
+	</variable>
 </includes>
