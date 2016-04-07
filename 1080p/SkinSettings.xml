@@ -452,6 +452,15 @@
 				<selected>Skin.HasSetting(PreferOriginalTitles)</selected>
 				<include>radio_button_settings</include>
 			</control>
+			<control type="radiobutton" id="104">
+				<description>Prefer Animated Posters</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<label>$LOCALIZE[31154]</label>
+				<onclick>Skin.ToggleSetting(SkinHelper.EnableAnimatedPosters)</onclick>
+				<selected>Skin.HasSetting(SkinHelper.EnableAnimatedPosters)</selected>
+				<include>radio_button_settings</include>
+			</control>
 			<control type="button" id="112">
 				<description>loader select</description>
 				<label>$LOCALIZE[31033]</label>

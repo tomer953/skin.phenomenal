@@ -618,6 +618,10 @@ msgctxt "#31153"
 msgid "Prefer Original Titles instead of Titles in Movies and Episodes Library"
 msgstr "העדף כותרת מקורית על-פני כותרת רגילה בסרטים ובסדרות בספרייה"
 
+msgctxt "#31154"
+msgid "Prefer Animated Posters (if available)"
+msgstr ""
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "

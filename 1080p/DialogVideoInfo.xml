@@ -650,7 +650,7 @@
 					<width>380</width>
 					<height>570</height>
 					<aspectratio>stretch</aspectratio>
-					<texture diffuse="posterdiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+					<texture diffuse="posterdiffuse.png" background="true">$VAR[PosterThumb]</texture>
 					<fadetime>300</fadetime>
 					<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)</visible> 
 				</control>
@@ -660,7 +660,7 @@
 					<posy>262</posy>
 					<width>380</width>
 					<height>250</height>
-					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<texture background="true">$VAR[PosterThumb]</texture>
 					<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 					<bordersize>1,1,1,1</bordersize>
 					<fadetime>300</fadetime>
