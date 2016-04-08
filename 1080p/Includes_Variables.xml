@@ -2,8 +2,10 @@
 <includes>
 
 	<variable name="fanart_bg">
-		<value condition="Player.HasAudio + Window.IsActive(musiclibrary)">$VAR[ArtistSlide]</value>
+		<value condition="Player.HasAudio + Window.IsActive(musiclibrary)">$VAR[ArtistSlide]</value> 
 		<value condition="Window.IsActive(mypics.xml) + !IsEmpty(ListItem.FilenameAndPath) + !StringCompare(ListItem.Label,..) + !ListItem.IsFolder + !Control.IsVisible(56)">$INFO[ListItem.FilenameAndPath]</value>
+		<value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart) + !IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath))">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</value>
+		<value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart) + !IsEmpty(Window(home).Property(SkinHelper.Music.ExtraFanArt))">$INFO[Window(home).Property(SkinHelper.Music.ExtraFanArt)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="IsEmpty(ListItem.Art(fanart)) + Window.IsActive(mypics.xml)">special://skin/backgrounds/camera.jpg</value>
 		<value condition="IsEmpty(ListItem.Art(fanart)) + Window.IsActive(MyPVRChannels.xml)">special://skin/backgrounds/livetv.jpg</value>
@@ -13,8 +15,10 @@
 	</variable>
 	
 	<variable name="ArtistSlide">
-		<value condition="!IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + Skin.HasSetting(Vis-ArtistSlide) + !SubString(Window(Visualisation).Property(ArtistSlideshow),transparent)">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</value> 
+		<value condition="!IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + Skin.HasSetting(Vis-ArtistSlide) + !SubString(Window(Visualisation).Property(ArtistSlideshow),transparent)">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</value>
+		<value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart) + !IsEmpty(Window(home).Property(SkinHelper.Music.ExtraFanArt))">$INFO[Window(home).Property(SkinHelper.Music.ExtraFanArt)]</value>
 		<value condition="!IsEmpty(MusicPlayer.Art(fanart))">$INFO[MusicPlayer.Art(fanart)]</value>
+		<value condition="!IsEmpty(Window(home).Property(SkinHelper.Music.FanArt))">$INFO[Window(home).Property(SkinHelper.Music.FanArt)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value>special://skin/backgrounds/music.jpg</value>
 	</variable>

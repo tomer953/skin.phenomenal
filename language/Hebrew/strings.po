@@ -622,6 +622,10 @@ msgctxt "#31154"
 msgid "Prefer Animated Posters (if available)"
 msgstr "העדף פוסטרים מונפשים (אם קיימים)"
 
+msgctxt "#31155"
+msgid "Use Extra Fanart"
+msgstr "השתמש בפאנארט נוסף"
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "
