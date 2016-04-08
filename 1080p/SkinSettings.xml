@@ -443,7 +443,7 @@
 				<include>radio_button_settings</include>
 				<visible>!StringCompare(System.Language,Hebrew)</visible>
 			</control>
-			<control type="radiobutton" id="105">
+			<control type="radiobutton" id="103">
 				<description>Prefer OriginalTitles In Movies</description>
 				<posx>0</posx>
 				<posy>0</posy>
