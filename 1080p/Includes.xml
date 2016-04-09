@@ -1210,7 +1210,7 @@
 			<control type="group">
 				<visible>!IsEmpty(ListItem.VideoCodec)</visible>
 				<width>54</width>
-				<include name="flag"><param name="label" value="$INFO[Listitem.VideoCodec]"/><param name="label2" value="21374"/><param name="width" value="160"/></include> 
+				<include name="flag"><param name="label" value="$INFO[Listitem.VideoCodec]"/><param name="label2" value="21445"/><param name="width" value="160"/></include> 
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.AudioChannels)</visible>
@@ -1298,7 +1298,7 @@
 			<control type="group">
 				<visible>!IsEmpty(ListItem.VideoCodec)</visible>
 				<width>54</width>
-				<include name="flag"><param name="label" value="$INFO[Listitem.VideoCodec]"/><param name="label2" value="21374"/><param name="width" value="160"/></include> 
+				<include name="flag"><param name="label" value="$INFO[Listitem.VideoCodec]"/><param name="label2" value="21445"/><param name="width" value="160"/></include> 
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.AudioChannels)</visible>
@@ -1437,8 +1437,7 @@
 		<control type="group">
 			<posx>0</posx>
 			<posy>0</posy>
-			<animation effect="slide" end="245" tween="circle" easing="out" delay="0" time="700" condition="ControlGroup(9100).HasFocus">Conditional</animation>
-			<animation effect="slide" end="0,-55" tween="circle" easing="out" delay="0" time="200" condition="Control.IsVisible(55)">Conditional</animation>
+			<animation effect="slide" end="0,-110" tween="sine" easing="out" time="300" condition="ControlGroup(9100).HasFocus">Conditional</animation>
 			<visible>[Player.HasAudio + !IsEmpty(Window(10025).Property(PlayingBackgroundMedia))] | !Player.HasVideo</visible>
 			<visible>!IsEmpty(Window(Home).Property(NextAired.Label)) + !stringcompare(ListItem.Label,..) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !IsEmpty(ListItem.TVShowTitle) + !IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Control.HasFocus(555)</visible>
 			<control type="image">
@@ -1459,7 +1458,7 @@
 				<aligny>center</aligny>
 				<font>font-25</font>
 				<textcolor>white</textcolor>
-				<animation effect="slide" end="240,50" tween="circle" easing="out" delay="0" time="200" condition="Control.IsVisible(55)">Conditional</animation>
+				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
 				<posx>530</posx>
@@ -1506,7 +1505,6 @@
 			<posx>1205</posx>
 			<posy>0</posy>
 			<animation effect="slide" end="0,-110" tween="sine" easing="out" time="300" condition="ControlGroup(9100).HasFocus">Conditional</animation>
-			<animation effect="slide" end="0,-55" tween="circle" easing="out" delay="0" time="200" condition="Control.IsVisible(55)">Conditional</animation>
 			<animation effect="zoom" start="60" end="100" center="1920,22" time="800" tween="back" easing="out">WindowOpen</animation>
 			<animation effect="zoom" start="100" end="60" center="1920,22" time="800" tween="back" easing="in">WindowClose</animation>
 			<visible>[Player.HasAudio + !IsEmpty(Window(10025).Property(PlayingBackgroundMedia))] | !Player.HasVideo</visible>
@@ -1530,7 +1528,6 @@
 				<font>font-25</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<visible>!Control.IsVisible(55)</visible>
 			</control>
 			<control type="label">
 				<posx>220</posx>
