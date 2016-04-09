@@ -122,7 +122,7 @@
 	</variable>
 	<variable name="movie_label">
 		<value condition="!IsEmpty(ListItem.OriginalTitle) + [Container.Content(episodes) | Container.Content(movies)] + Skin.HasSetting(PreferOriginalTitles)">$INFO[ListItem.OriginalTitle]</value>
-		<value condition="!IsEmpty(ListItem.Title) + !SubString(ListItem.Path,plugin://plugin.video.,left) + [Container.Content(songs) | Container.Content(episodes) | Container.Content(movies)]">$INFO[ListItem.Title]</value>
+		<value condition="!IsEmpty(ListItem.Title) + !Control.IsVisible(54) + !SubString(ListItem.Path,plugin://plugin.video.,left) + [Container.Content(songs) | Container.Content(episodes) | Container.Content(movies)]">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="ViewFanartText">
