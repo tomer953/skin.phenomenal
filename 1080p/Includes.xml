@@ -677,15 +677,7 @@
 
 	<!-- FLAGS FOR LISTS -->
 	<include name="flag_res2">
-		<control type="image">						
-			<description>flags image</description>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture background="true">osd/flag.png</texture>
-			<include>fanart_fade_level</include>
-		</control>
+		<include>tab2</include>
 		<control type="label">
 			<label>$VAR[hd_or_sd]</label>
 			<font>font-14</font>
@@ -708,20 +700,12 @@
 		</control>
 	</include>
 	<include name="flag_aspect2">
-		<control type="image">						
-			<description>flags image</description>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture background="true">osd/flag.png</texture>
-			<include>fanart_fade_level</include>
-		</control>
+		<include name="tab2"><param name="width" value="180"/></include>
 		<control type="label">
 			<label>21374</label>
 			<font>font-14</font>
 			<textcolor>grey</textcolor>
-			<width>110</width>
+			<width>180</width>
 			<height>52</height>
 			<posx>0</posx>
 			<posy>25</posy>
@@ -731,7 +715,7 @@
 			<label>$INFO[ListItem.VideoAspect]</label>
 			<font>font-20</font>
 			<textcolor>white</textcolor>
-			<width>110</width>
+			<width>180</width>
 			<height>52</height>
 			<posx>0</posx>
 			<posy>-5</posy>
@@ -739,15 +723,7 @@
 		</control>
 	</include>
 	<include name="flag_codec2">
-		<control type="image">						
-			<description>flags image</description>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture background="true">osd/flag.png</texture>
-			<include>fanart_fade_level</include>
-		</control>
+		<include>tab2</include>
 		<control type="label">
 			<label>21445</label>
 			<font>font-14</font>
@@ -770,173 +746,6 @@
 		</control>
 	</include>
 
-	<include name="flag_rating2">
-		<control type="image">						
-			<description>flags image</description>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture background="true">osd/flag.png</texture>
-			<include>fanart_fade_level</include>
-		</control>
-		<control type="label">
-			<label>563</label>
-			<font>font-14</font>
-			<textcolor>grey</textcolor>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>25</posy>
-			<align>center</align>
-		</control>
-		<control type="label">
-			<label>$INFO[ListItem.Rating]</label>
-			<font>font-20</font>
-			<textcolor>white</textcolor>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>-5</posy>
-			<align>center</align>
-		</control>
-	</include>
-	<include name="flag_genre2">
-		<animation effect="fade" end="90" time="0" condition="!Window.IsActive(DialogVideoInfo.xml)">Conditional</animation>
-		<control type="image">						
-			<description>flags image</description>
-			<width>330</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture background="true">osd/flag.png</texture>
-			<include>fanart_fade_level</include>
-		</control>
-		<control type="label">
-			<label>515</label>
-			<font>font-14</font>
-			<textcolor>grey</textcolor>
-			<width>330</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>25</posy>
-			<align>center</align>
-		</control>
-		<control type="label">
-			<label>$INFO[ListItem.Genre]</label>
-			<font>font-20</font>
-			<textcolor>white</textcolor>
-			<width>330</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>-5</posy>
-			<align>center</align>
-		</control>
-	</include>
-	<include name="flag_year2">
-		<control type="image">						
-			<description>flags image</description>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture background="true">osd/flag.png</texture>
-			<include>fanart_fade_level</include>
-		</control>
-		<control type="label">
-			<label>345</label>
-			<font>font-14</font>
-			<textcolor>grey</textcolor>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>25</posy>
-			<align>center</align>
-		</control>
-		<control type="label">
-			<label>$INFO[ListItem.Year]</label>
-			<font>font-20</font>
-			<textcolor>white</textcolor>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>-5</posy>
-			<align>center</align>
-		</control>
-	</include>
-	<include name="flag_audio2">
-		<control type="image">						
-			<description>flags image</description>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture fallback="audio/mp3.png">audio/$INFO[ListItem.AudioCodec].png</texture>
-			<include>fanart_fade_level</include>
-		</control>
-	</include>
-	<include name="flag_channels2">
-		<control type="image">						
-			<description>flags image</description>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture background="true">osd/flag.png</texture>
-			<include>fanart_fade_level</include>
-		</control>
-		<control type="label">
-			<label>21444</label>
-			<font>font-14</font>
-			<textcolor>grey</textcolor>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>25</posy>
-			<align>center</align>
-		</control>
-		<control type="label">
-			<label>$VAR[AudioChannels2]</label>
-			<font>font-20</font>
-			<textcolor>white</textcolor>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>-5</posy>
-			<align>center</align>
-		</control>
-	</include>
-	<include name="flag_duration2">
-		<control type="image">						
-			<description>flags image</description>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture background="true">osd/flag.png</texture>
-			<include>fanart_fade_level</include>
-		</control>
-		<control type="label">
-			<label>$LOCALIZE[180]</label>
-			<font>font-14</font>
-			<textcolor>grey</textcolor>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>25</posy>
-			<align>center</align>
-		</control>
-		<control type="label">
-			<label>$INFO[ListItem.Duration]</label>
-			<font>font-20</font>
-			<textcolor>white</textcolor>
-			<width>110</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>-5</posy>
-			<align>center</align>
-		</control>
-	</include>
 
 	<include name="flag_samplerate">
 		<control type="image">						
@@ -1076,29 +885,6 @@
 			<posy>-5</posy>
 			<align>center</align>
 		</control>
-	</include>
-	<include name="dubbed_flags">
-		<control type="image">						
-			<description>flags image</description>
-			<width>140</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>0</posy>
-			<texture background="true">osd/flag.png</texture>
-			<include>fanart_fade_level</include>
-		</control>
-		<control type="label">
-			<label>21447</label>
-			<font>font-14</font>
-			<textcolor>grey</textcolor>
-			<width>140</width>
-			<height>52</height>
-			<posx>0</posx>
-			<posy>25</posy>
-			<align>center</align>
-		</control>
-		<include>ListItemLanguage</include>
-
 	</include>
 
 	<include name="ListItemLanguage">
@@ -1389,74 +1175,80 @@
 			<posy>$PARAM[posy]</posy><!--812\1028-->
 			<align>left</align>
 			<width>1160</width>
-			<height>52</height>
-			<itemgap>110</itemgap>
+			<height>60</height>
+			<itemgap>90</itemgap>
 			<orientation>horizontal</orientation>
 			<visible>![Container.Content(songs) | Container.Content(Albums) | Container.Content(Artists)]</visible>
 			<animation effect="slide" end="0,220" time="200" condition="Skin.HasSetting(fanart_plot)">Conditional</animation>
-			<control type="group">
+				<control type="group">
 				<visible>!IsEmpty(ListItem.Year)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="0" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_year2</include>
+				<width>7</width>
+				<animation effect="slide" start="0,0" end="0,0" delay="0" time="150">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<include name="flag"><param name="label" value="$INFO[Listitem.Year]"/><param name="label2" value="345"/><param name="tab" value="tab4"/></include>
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Rating) + IntegerGreaterThan(ListItem.Rating,0)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="50" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_rating2</include>
+				<width>14</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.Rating]"/><param name="label2" value="563"/><param name="width" value="120"/></include>
 			</control>	
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Duration) + IntegerGreaterThan(ListItem.Duration,0)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="100" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_duration2</include>
+				<width>14</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.Duration]"/><param name="label2" value="180"/><param name="width" value="120"/></include>
 			</control>	
 			<control type="group">
 				<visible>!IsEmpty(ListItem.VideoResolution)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="150" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_res2</include>
+				<width>14</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.VideoResolution]"/><param name="label2" value="$VAR[hd_or_sd]"/><param name="width" value="120"/></include>
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.VideoAspect)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="200" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_aspect2</include>
+				<width>54</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.VideoAspect]"/><param name="label2" value="21374"/><param name="width" value="160"/></include> 
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.VideoCodec)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="250" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_codec2</include>
+				<width>54</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.VideoCodec]"/><param name="label2" value="21374"/><param name="width" value="160"/></include> 
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.AudioChannels)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="300" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_channels2</include>
+				<width>69</width>
+				<include name="flag"><param name="label" value="$VAR[AudioChannels2]"/><param name="label2" value="21444"/><param name="width" value="175"/></include> 
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.AudioCodec)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="400" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_audio2</include>
-			</control>
-			<control type="group">
-				<visible>ListItem.IsStereoScopic | SubString(ListItem.FileName,3D.)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="450" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<control type="image">
+				<width>24</width>				
+				<include name="flag"><param name="label" value="-"/><param name="label2" value="-"/><param name="width" value="130"/></include> 
+				<control type="image">						
+					<description>flags image</description>
 					<width>110</width>
 					<height>52</height>
-					<texture background="true">3d-logo.png</texture>	
+					<posx>5</posx>
+					<posy>5</posy>
+					<texture fallback="flags/audio/mp3.png">flags/audio/$INFO[ListItem.AudioCodec].png</texture>
 				</control>
 			</control>
 			<control type="group">
-				<animation effect="slide" start="-140,0" end="0,0" delay="500" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-140,0" time="200">Hidden</animation>
+				<visible>ListItem.IsStereoScopic | SubString(ListItem.FileName,3D.)</visible>
+				<include name="flag"><param name="label" value="-"/><param name="label2" value="-"/><param name="width" value="110"/></include> 
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>auto</width>
+					<height>42</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">3d-logo.png</texture>
+				</control>
+			</control>
+			<control type="group">
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemLanguages)) + !ListItem.IsFolder + Container.Content(Movies) + !substring(ListItem.Path,plugin://)</visible>
-				<include>dubbed_flags</include>
+				<include name="flag"><param name="label" value="-"/><param name="label2" value="21447"/><param name="width" value="170"/></include>
+				<control type="group">
+					<posy>23</posy>
+				<include>ListItemLanguage</include>
+				</control>
 			</control>	
 		</control>
 	</include>
@@ -1464,12 +1256,12 @@
 	<include name="flags_movies_ltr">
 		<!-- FLAGS -->
 		<control type="grouplist">
-			<posx>762</posx> <!-- 532 -->
-			<posy>$PARAM[posy]</posy><!--812\1028-->
+			<posx>763</posx>
+			<posy>$PARAM[posy]</posy>
 			<align>left</align>
 			<width>1160</width>
-			<height>52</height>
-			<itemgap>110</itemgap>
+			<height>60</height>
+			<itemgap>90</itemgap>
 			<orientation>horizontal</orientation>
 			<visible>![Container.Content(songs) | Container.Content(Albums) | Container.Content(Artists)]</visible>
 
@@ -1478,67 +1270,73 @@
 			<animation effect="slide" end="-230,0" time="0" condition="Container.Content(Episodes)">Conditional</animation>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Year)</visible>
+				<width>7</width>
 				<animation effect="slide" start="0,0" end="0,0" delay="0" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="0,0" time="200">Hidden</animation>
-				<include>flag_year2</include>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<include name="flag"><param name="label" value="$INFO[Listitem.Year]"/><param name="label2" value="345"/><param name="tab" value="tab4"/></include>
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Rating) + IntegerGreaterThan(ListItem.Rating,0)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="50" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_rating2</include>
+				<width>14</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.Rating]"/><param name="label2" value="563"/><param name="width" value="120"/></include>
 			</control>	
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Duration) + IntegerGreaterThan(ListItem.Duration,0)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="100" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_duration2</include>
+				<width>14</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.Duration]"/><param name="label2" value="180"/><param name="width" value="120"/></include>
 			</control>	
 			<control type="group">
 				<visible>!IsEmpty(ListItem.VideoResolution)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="150" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_res2</include>
+				<width>14</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.VideoResolution]"/><param name="label2" value="$VAR[hd_or_sd]"/><param name="width" value="120"/></include>
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.VideoAspect)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="200" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_aspect2</include>
+				<width>54</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.VideoAspect]"/><param name="label2" value="21374"/><param name="width" value="160"/></include> 
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.VideoCodec)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="250" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_codec2</include>
+				<width>54</width>
+				<include name="flag"><param name="label" value="$INFO[Listitem.VideoCodec]"/><param name="label2" value="21374"/><param name="width" value="160"/></include> 
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.AudioChannels)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="300" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_channels2</include>
+				<width>69</width>
+				<include name="flag"><param name="label" value="$VAR[AudioChannels2]"/><param name="label2" value="21444"/><param name="width" value="175"/></include> 
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.AudioCodec)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="400" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<include>flag_audio2</include>
-			</control>
-			<control type="group">
-				<visible>ListItem.IsStereoScopic | SubString(ListItem.FileName,3D.)</visible>
-				<animation effect="slide" start="-110,0" end="0,0" delay="450" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-110,0" time="200">Hidden</animation>
-				<control type="image">
+				<width>24</width>				
+				<include name="flag"><param name="label" value="-"/><param name="label2" value="-"/><param name="width" value="130"/></include> 
+				<control type="image">						
+					<description>flags image</description>
 					<width>110</width>
 					<height>52</height>
-					<texture background="true">3d-logo.png</texture>	
+					<posx>5</posx>
+					<posy>5</posy>
+					<texture fallback="flags/audio/mp3.png">flags/audio/$INFO[ListItem.AudioCodec].png</texture>
 				</control>
 			</control>
 			<control type="group">
-				<animation effect="slide" start="-140,0" end="0,0" delay="500" time="150">Visible</animation>
-				<animation effect="slide" start="0,0" end="-140,0" time="200">Hidden</animation>
+				<visible>ListItem.IsStereoScopic | SubString(ListItem.FileName,3D.)</visible>
+				<include name="flag"><param name="label" value="-"/><param name="label2" value="-"/><param name="width" value="110"/></include> 
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>auto</width>
+					<height>42</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">3d-logo.png</texture>
+				</control>
+			</control>
+			<control type="group">
 				<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemLanguages)) + !ListItem.IsFolder + Container.Content(Movies) + !substring(ListItem.Path,plugin://)</visible>
-				<include>dubbed_flags</include>
+				<include name="flag"><param name="label" value="-"/><param name="label2" value="21447"/><param name="width" value="170"/></include>
+				<control type="group">
+					<posy>23</posy>
+				<include>ListItemLanguage</include>
+				</control>
 			</control>	
 		</control>
 	</include>
@@ -1703,7 +1501,7 @@
 			</control>
 		</control>
 	</include>
-		<include name="NextAiredInfo_ltr">
+	<include name="NextAiredInfo_ltr">
 		<control type="group"> 
 			<posx>1205</posx>
 			<posy>0</posy>
@@ -1788,19 +1586,6 @@
 		<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(fanart_view_opacity),20)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(fanart_view_opacity),10)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(fanart_view_opacity),0)">Conditional</animation>
-	</include>
-	<!-- fade for widelist [54] list -->
-	<include name="widelist_fade_level">
-		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),90)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),80)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="70" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),70)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),60)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="50" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),50)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="40" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),40)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="30" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),30)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),20)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),10)">Conditional</animation>
-		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),0)">Conditional</animation>
 	</include>
 
 	<!-- Fade for main menu background -->
@@ -2359,84 +2144,6 @@
 			<onclick>$VAR[ShowcaseModDelayOnClickVar]</onclick>
 			<include>view_settings_radiobutton</include>
 			<visible>Control.IsVisible(53) + [Container.Content(movies) | Container.Content(sets)] + [!Skin.HasSetting(showcasemod) | !Skin.HasSetting(boxsetmod)]</visible>
-		</control>
-		<control type="radiobutton" id="527">
-			<description>Item Overlay Option</description>
-			<label>$LOCALIZE[31034]</label>
-			<onclick>Skin.ToggleSetting(bold_list)</onclick>
-			<selected>!Skin.HasSetting(bold_list)</selected>
-			<include>view_settings_radiobutton</include>
-			<visible>Control.IsVisible(54)</visible>
-		</control>
-		<control type="button" id="528">
-			<description>Choose bg Color</description>
-			<width>326</width>
-			<label>$LOCALIZE[31035]</label>
-			<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=list_bg_color)</onclick>
-			<include>view_settings_radiobutton</include>
-			<visible>!Skin.HasSetting(bold_list)</visible>
-			<visible>Control.IsVisible(54)</visible>
-		</control>
-		<control type="button" id="529">
-			<description>Choose txt Color</description>
-			<width>326</width>
-			<label>$LOCALIZE[31036]</label>
-			<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=list_color_custom)</onclick>
-			<include>view_settings_radiobutton</include>
-			<visible>Control.IsVisible(54)</visible>
-		</control>
-
-		<control type="button" id="531">
-			<description>Choose TLevel</description>
-			<width>326</width>
-			<label>$LOCALIZE[31039] $INFO[Skin.String(widelist_view_opacity),,%]</label>
-			<onclick condition="skin.string(widelist_view_opacity, 100) | IsEmpty(skin.string(widelist_view_opacity))">Skin.SetString(widelist_view_opacity, 90)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 90)">Skin.SetString(widelist_view_opacity, 80)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 80)">Skin.SetString(widelist_view_opacity, 70)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 70)">Skin.SetString(widelist_view_opacity, 60)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 60)">Skin.SetString(widelist_view_opacity, 50)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 50)">Skin.SetString(widelist_view_opacity, 40)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 40)">Skin.SetString(widelist_view_opacity, 30)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 30)">Skin.SetString(widelist_view_opacity, 20)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 20)">Skin.SetString(widelist_view_opacity, 10)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 10)">Skin.SetString(widelist_view_opacity, 0)</onclick>
-			<onclick condition="skin.string(widelist_view_opacity, 0)">Skin.SetString(widelist_view_opacity, 100)</onclick>
-			<include>view_settings_radiobutton</include>
-			<visible>Control.IsVisible(54)</visible>
-		</control>
-		<control type="radiobutton" id="532">
-			<description>Show Seperators</description>
-			<label>31040</label>
-			<onclick>Skin.ToggleSetting(widelist_seps)</onclick>
-			<selected>!Skin.HasSetting(widelist_seps)</selected>
-			<include>view_settings_radiobutton</include>
-			<visible>Control.IsVisible(54)</visible>
-		</control>
-
-		<control type="radiobutton" id="534">
-			<description>Show DiscArt</description>
-			<label>31229</label>
-			<onclick>Skin.ToggleSetting(widelist_Disable_CDART)</onclick>
-			<selected>!Skin.HasSetting(widelist_Disable_CDART)</selected>
-			<include>view_settings_radiobutton</include>
-			<visible>Control.IsVisible(54)</visible>
-		</control>
-		<control type="radiobutton" id="535">
-			<description>Show Fake DiscArt</description>
-			<align>center</align>
-			<label>31230</label>
-			<onclick>Skin.ToggleSetting(widelist_Disable_FAKECDART)</onclick>
-			<selected>!Skin.HasSetting(widelist_Disable_FAKECDART)</selected>
-			<include>view_settings_radiobutton</include>
-			<visible>Control.IsVisible(54)</visible>
-		</control>
-		<control type="radiobutton" id="536">
-			<description>Show Fake DiscArt for tvshows</description>
-			<label>$LOCALIZE[31231]</label>
-			<onclick>Skin.ToggleSetting(widelist_Disable_TVFAKECDART)</onclick>
-			<selected>!Skin.HasSetting(widelist_Disable_TVFAKECDART)</selected>
-			<include>view_settings_radiobutton</include>
-			<visible>Control.IsVisible(54) + !Skin.HasSetting(widelist_Disable_FAKECDART)</visible>
 		</control>
 		<control type="radiobutton" id="537">
 			<description>Show Label on thumbs</description>
@@ -3013,5 +2720,44 @@
 			<height>1080</height>
 			<texture>shadow_vertical.png</texture>
 		</control>
+	</include>
+
+	<include name="flag">
+		<param name="width" default="110"/>
+		<param name="height" default="60"/>
+		<param name="posx" default="0"/>
+		<param name="posy" default="0"/>
+		<param name="tab" default="tab3"/>
+		<definition>
+			<animation effect="slide" start="-50,0" end="0,0" tween="circle" delay="200" time="150">Visible</animation>
+			<control type="image">
+				<posx>$PARAM[posx]</posx>
+				<posy>$PARAM[posy]</posy>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture colordiffuse="grey_a" diffuse="glass.jpg" background="true" border="15,2,15,2">main/$PARAM[tab].png</texture> 
+				<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="label">
+				<label>$PARAM[label2]</label>
+				<font>font-14</font>
+				<textcolor>grey</textcolor>
+				<width>$PARAM[width]</width>
+				<height>52</height>
+				<posx>0</posx>
+				<posy>0</posy>
+				<align>center</align>
+			</control>
+			<control type="label">
+				<label>$PARAM[label]</label>
+				<font>font-20</font>
+				<textcolor>white</textcolor>
+				<width>$PARAM[width]</width>
+				<height>52</height>
+				<posx>0</posx>
+				<posy>20</posy>
+				<align>center</align>
+			</control>
+		</definition>
 	</include>
 </includes>

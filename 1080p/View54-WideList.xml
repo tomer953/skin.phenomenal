@@ -361,13 +361,15 @@
 	</include>
 
 	<variable name="widelist_sublabel">
-		<value condition="Container.Content(addons)"></value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Creator),, • ]$INFO[ListItem.Property(Addon.Version)]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Year]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.Duration]</value>
-		<value condition="Container.Content(musicvideos)">$INFO[ListItem.Artist]</value>
-		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Duration,, $LOCALIZE[12391] • ]$INFO[ListItem.Year,, • ]$INFO[ListItem.Rating,, • ]$INFO[ListItem.Genre,, ]</value>
-		<value condition="[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Property(TotalSeasons))">$INFO[ListItem.Property(TotalSeasons)] $LOCALIZE[33054], $INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[20360]</value>
+		<value condition="Container.Content(musicvideos)">$INFO[ListItem.Year]$INFO[ListItem.Artist, • ]</value>
+		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Year]$INFO[ListItem.Rating, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.Genre, • ]</value>
+		<value condition="Container.Content(tvshows) + !IsEmpty(ListItem.Property(TotalSeasons))">$INFO[ListItem.Property(TotalSeasons)] $LOCALIZE[33054], $INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[20360]</value>
+		<value condition="Container.Content(seasons) + !IsEmpty(ListItem.Property(TotalEpisodes))">$INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[20360]</value>
 		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Premiered)">$INFO[ListItem.Premiered]</value>
+		<value condition="Window.IsActive(MyPVRChannels.xml)">$INFO[ListItem.Title]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</value>
 	</variable>
 	<include name="watched_flag">
 		<definition>
@@ -477,8 +479,4 @@
 			</control>
 		</definition>
 	</include>
-
-
-
-
 </includes>
