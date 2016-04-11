@@ -55,8 +55,8 @@
 				<width>290</width>
 				<posy>18</posy>
 				<height>980</height>
-				<onup condition="Player.HasAudio | Player.HasVideo">9003</onup>
-				<onup condition="!Player.HasAudio + !Player.HasVideo">9000</onup>
+				<!-- <onup condition="Player.HasAudio | Player.HasVideo">9003</onup> -->
+				<onup>9000</onup>
 				<ondown>20</ondown>
 				<onleft>9001</onleft>
 				<onright>9002</onright>
@@ -606,8 +606,8 @@
 				<width>290</width>
 				<posy>18</posy>
 				<height>980</height>
-				<onup condition="Player.HasAudio | Player.HasVideo">9003</onup>
-				<onup condition="!Player.HasAudio + !Player.HasVideo">9000</onup>
+				<!-- <onup condition="Player.HasAudio | Player.HasVideo">9003</onup> -->
+				<onup>9000</onup>
 				<ondown>20</ondown>
 				<onleft>9002</onleft>
 				<onright>9001</onright>
@@ -1122,10 +1122,10 @@
 		<height>330</height>
 		<width>867</width>
 		<onback>9000</onback>
-		<onup>9000</onup>
+		<onup>9003</onup>
 		<ondown>9000</ondown>
-		<onleft>9002</onleft>
-		<onright>9002</onright>
+		<onleft>9003</onleft>
+		<onright>9003</onright>
 		<focusposition>0</focusposition>
 		<autoscroll time="6000">!Control.HasFocus(9002) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</autoscroll>		
 		<animation effect="fade" start="100" end="0" time="0" condition="Container(9002).IsUpdating">Conditional</animation>

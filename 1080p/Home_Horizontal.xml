@@ -58,8 +58,8 @@
 				<align>center</align>
 				<height>266</height>
 				<width>1920</width>
-				<onup condition="Player.HasAudio | Player.HasVideo">9003</onup>
-				<onup condition="!Player.HasAudio + !Player.HasVideo">9002</onup>
+				<!-- <onup condition="Player.HasAudio | Player.HasVideo">9003</onup> -->
+				<onup>9002</onup>
 				<ondown>9001</ondown>
 				<onleft>9000</onleft>
 				<onright>9000</onright>		
@@ -607,7 +607,7 @@
 		<height>330</height>
 		<width>1080</width>
 		<onback>9000</onback>
-		<onup>9000</onup>
+		<onup>9003</onup>
 		<ondown>9000</ondown>
 		<onleft>9002</onleft>
 		<onright>9002</onright>
