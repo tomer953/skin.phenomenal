@@ -649,7 +649,7 @@
 				<posy>30</posy>
 				<height>40</height>
 				<width>700</width>
-				<label>[B]$VAR[widget_line1_horizontal][/B]</label>
+				<label>$VAR[widget_line1_horizontal]</label>
 				<align>center</align>
 				<font>font-25</font>
 				<textcolor>$VAR[main_color]</textcolor>

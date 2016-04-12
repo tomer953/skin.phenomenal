@@ -32,8 +32,6 @@
 					<aspectratio>scale</aspectratio>
 					<visible>!Player.HasVideo</visible>
 				</control>
-
-
 				<control type="panel" id="55">
 					<posx>65</posx>
 					<posy>200</posy>
