@@ -1125,6 +1125,7 @@
 		<ondown>9000</ondown>
 		<onleft>9003</onleft>
 		<onright>9003</onright>
+		<oninfo>$VAR[widgetoninfoaction]</oninfo>
 		<focusposition>0</focusposition>
 		<autoscroll time="6000">!Control.HasFocus(9002) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</autoscroll>		
 		<animation effect="fade" start="100" end="0" time="0" condition="Container(9002).IsUpdating">Conditional</animation>

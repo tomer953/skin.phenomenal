@@ -441,4 +441,33 @@
 		<value condition="!IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
 		<value>defaultmovies.png</value>
 	</variable>
+	
+	<variable name="HelperPosterThumb">
+		<value condition="StringCompare(Container(999).ListItem.Label,..)">$INFO[Container(999).ListItem.Icon]</value>
+		<value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !StringCompare(Container(999).ListItem.Art(animatedposter), )">$INFO[Container(999).ListItem.Art(animatedposter)]</value>
+       <!--  <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster))">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</value>	 -->
+		<value condition="StringCompare(Container(999).ListItem.Property(type),season) + SubString(Container(999).ListItem.Label,*,left) + !IsEmpty(Container(999).ListItem.Art(tvshow.poster))">$INFO[Container(999).ListItem.Art(tvshow.poster)]</value>
+		<value condition="StringCompare(Container(999).ListItem.Property(type),season) + !IsEmpty(Container(999).ListItem.Art(poster))">$INFO[Container(999).ListItem.Art(poster)]</value>
+		<value condition="StringCompare(Container(999).ListItem.Property(type),episode) + !IsEmpty(Container(999).ListItem.Icon)">$INFO[Container(999).ListItem.Icon]</value>
+		<value condition="StringCompare(Container(999).ListItem.Property(type),episode) + !IsEmpty(Container.Art(season.poster))">$INFO[Container.Art(season.poster)]</value>
+        <value condition="StringCompare(Container(999).ListItem.Property(type),season) + !IsEmpty(Container.Art(poster))">$INFO[Container.Art(poster)]</value>
+        <value condition="StringCompare(Container(999).ListItem.Property(type),season) + !IsEmpty(Container.Art(tvshow.poster))">$INFO[Container.Art(tvshow.poster)]</value>
+        <value condition="!IsEmpty(Container(999).ListItem.Art(tvshow.poster))">$INFO[Container(999).ListItem.Art(tvshow.poster)]</value>
+		<value condition="StringCompare(Container(999).ListItem.Property(type),episode) + !IsEmpty(Container(999).ListItem.Art(poster))">$INFO[Container(999).ListItem.Art(poster)]</value>
+		<value condition="!IsEmpty(Container(999).ListItem.Art(poster))">$INFO[Container(999).ListItem.Art(poster)]</value>
+		<value condition="!IsEmpty(Container(999).ListItem.Property(poster))">$INFO[Container(999).ListItem.Property(poster)]</value>
+		<value condition="!IsEmpty(Container(999).ListItem.Property(tvshow.poster))">$INFO[Container(999).ListItem.Property(tvshow.poster)]</value>
+		<value condition="!IsEmpty(Container(999).ListItem.Thumb)">$INFO[Container(999).ListItem.Thumb]</value>
+		<value condition="!IsEmpty(Container(999).ListItem.Icon)">$INFO[Container(999).ListItem.Icon]</value>
+		<value>defaultmovies.png</value>
+	</variable>
+	
+	     <variable name="widgetoninfoaction">
+        <value condition="Control.HasFocus(9002) + SubString(Container(9002).ListItem.Property(type),movie) + !IsEmpty(Container(9002).ListItem.Property(DBID))">RunScript(script.skin.helper.service,action=showinfo,movieid=$INFO[Container(9002).ListItem.Property(dbid)])</value>
+        <value condition="Control.HasFocus(9002) + SubString(Container(9002).ListItem.Property(type),show) + !IsEmpty(Container(9002).ListItem.Property(DBID))">RunScript(script.skin.helper.service,action=showinfo,tvshowid=$INFO[Container(9002).ListItem.Property(dbid)])</value>
+        <value condition="Control.HasFocus(9002) + SubString(Container(9002).ListItem.Property(type),episode) + !IsEmpty(Container(9002).ListItem.Property(DBID))">RunScript(script.skin.helper.service,action=showinfo,episodeid=$INFO[Container(9002).ListItem.Property(dbid)])</value>
+        <value condition="Control.HasFocus(9002) + SubString(Container(9002).ListItem.dbtype,movie) + !IsEmpty(Container(9002).ListItem.DBID)">RunScript(script.skin.helper.service,action=showinfo,movieid=$INFO[Container(9002).ListItem.dbid])</value>
+        <value condition="Control.HasFocus(9002) + SubString(Container(9002).ListItem.dbtype,show) + !IsEmpty(Container(9002).ListItem.DBID)">RunScript(script.skin.helper.service,action=showinfo,tvshowid=$INFO[Container(9002).ListItem.dbid])</value>
+        <value condition="Control.HasFocus(9002) + SubString(Container(9002).ListItem.dbtype,episode) + !IsEmpty(Container(9002).ListItem.DBID)">RunScript(script.skin.helper.service,action=showinfo,episodeid=$INFO[Container(9002).ListItem.dbid])</value>
+     </variable>
 </includes>

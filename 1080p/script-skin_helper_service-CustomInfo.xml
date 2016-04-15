@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<defaultcontrol always="true">8</defaultcontrol>
+	<defaultcontrol always="true">5</defaultcontrol>
 	<backgroundcolor>ffffffff</backgroundcolor>
 	<controls>
+		<!--fake list used as container -->
+		<!-- use Container(999).ListItem to get all info -->
+		<!-- all normal listitem properties will be available -->
+		<!-- include list/container with ID 998 for cast list -->
+		<!-- include list/container with ID 997 for similar list -->
+		<control type="list" id="999">
+			<posx>630</posx>
+			<posy>0</posy>
+			<itemlayout />
+			<focusedlayout />
+		</control>
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1920</width>
 			<height>1080</height>
-			<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+			<texture background="true">$INFO[Container(999).ListItem.Art(fanart)]</texture>
 		</control>
 		<include>fade_screen_grey</include>
 		<control type="group">
@@ -27,7 +38,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font-30</font>
-				<label>$INFO[ListItem.Title]</label>
+				<label>$INFO[Container(999).ListItem.Title]</label>
 				<textcolor>white</textcolor>
 			</control>
 			<!-- Info line -->
@@ -41,8 +52,8 @@
 				<aligny>center</aligny>
 				<scroll>false</scroll>
 				<textcolor>grey_b</textcolor>
-				<label>[B]$INFO[Listitem.OriginalTitle][/B]</label>
-				<visible>!StringCompare(ListItem.OriginalTitle,ListItem.Title) + !IsEmpty(ListItem.OriginalTitle) + [!Container.Content(Episodes) | IsEmpty(ListItem.TVShowTitle)]</visible>
+				<label>[B]$INFO[Container(999).Listitem.OriginalTitle][/B]</label>
+				<visible>!StringCompare(Container(999).ListItem.OriginalTitle,Container(999).ListItem.Title) + !IsEmpty(Container(999).ListItem.OriginalTitle) + [!StringCompare(Container(999).ListItem.Property(type),episode) | IsEmpty(Container(999).ListItem.TVShowTitle)]</visible>
 			</control>
 			<control type="label">
 				<left>0</left>
@@ -54,8 +65,8 @@
 				<aligny>center</aligny>
 				<scroll>false</scroll>
 				<textcolor>grey_b</textcolor>
-				<label>[B]$INFO[Listitem.TVShowTitle][/B]</label>
-				<visible>!IsEmpty(ListItem.TVShowTitle) + Container.Content(Episodes)</visible>
+				<label>[B]$INFO[Container(999).Listitem.TVShowTitle][/B]</label>
+				<visible>!IsEmpty(Container(999).ListItem.TVShowTitle) + StringCompare(Container(999).ListItem.Property(type),episode)</visible>
 			</control>
 
 			<!-- side bar -->
@@ -68,7 +79,7 @@
 				<animation effect="slide" end="1200" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<texture background="true" flipy="true">dialogs/long_grey.png</texture>
 			</control>
-						<control type="image">
+			<control type="image">
 				<left>400</left>
 				<top>140</top>
 				<width>30</width>
@@ -95,14 +106,14 @@
 				<itemgap>28</itemgap>
 				<orientation>vertical</orientation>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.Director)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.Director)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[20339]:" />
 						<param name="posx2" value="1040" />
 						<param name="width2" value="1040" />
-						<param name="label2" value="$INFO[ListItem.Director]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Director]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -110,18 +121,18 @@
 						<param name="label1" value="$LOCALIZE[20339]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1010" />
-						<param name="label2" value="$INFO[ListItem.Director]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Director]" />
 					</include>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.Writer)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.Writer)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[20417]:" />
 						<param name="posx2" value="1040" />
 						<param name="width2" value="1040" />
-						<param name="label2" value="$INFO[ListItem.Writer]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Writer]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -129,18 +140,18 @@
 						<param name="label1" value="$LOCALIZE[20417]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1300" />
-						<param name="label2" value="$INFO[ListItem.Writer]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Writer]" />
 					</include>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.Studio)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.Studio)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[572]:" />
 						<param name="posx2" value="1040" />
 						<param name="width2" value="1040" />
-						<param name="label2" value="$INFO[ListItem.Studio]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Studio]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -148,18 +159,18 @@
 						<param name="label1" value="$LOCALIZE[572]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1300" />
-						<param name="label2" value="$INFO[ListItem.Studio]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Studio]" />
 					</include>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.Country)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.Country)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[574]:" />
 						<param name="posx2" value="1040" />
 						<param name="width2" value="1040" />
-						<param name="label2" value="$INFO[ListItem.Country]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Country]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -167,19 +178,19 @@
 						<param name="label1" value="$LOCALIZE[574]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1290" />
-						<param name="label2" value="$INFO[ListItem.Country]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Country]" />
 					</include>
 				</control>
 
 				<control type="group">
-					<visible>!IsEmpty(ListItem.RatingAndVotes)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.RatingAndVotes)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[563]:" />
 						<param name="posx2" value="1040" />
 						<param name="width2" value="1040" />
-						<param name="label2" value="$INFO[ListItem.RatingAndVotes]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.RatingAndVotes]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -187,18 +198,18 @@
 						<param name="label1" value="$LOCALIZE[563]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1290" />
-						<param name="label2" value="$INFO[ListItem.RatingAndVotes]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.RatingAndVotes]" />
 					</include>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.UserRating)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.UserRating)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="160" />
 						<param name="label1" value="$LOCALIZE[38018]:" />
 						<param name="posx2" value="1000" />
 						<param name="width2" value="1000" />
-						<param name="label2" value="$INFO[ListItem.UserRating]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.UserRating]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -206,18 +217,18 @@
 						<param name="label1" value="$LOCALIZE[38018]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1290" />
-						<param name="label2" value="$INFO[ListItem.UserRating]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.UserRating]" />
 					</include>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.PlayCount)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.PlayCount)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[567]:" />
 						<param name="posx2" value="900" />
 						<param name="width2" value="900" />
-						<param name="label2" value="$INFO[ListItem.PlayCount]$INFO[ListItem.LastPlayed, ($LOCALIZE[568]: ,)]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.PlayCount]$INFO[Container(999).ListItem.LastPlayed, ($LOCALIZE[568]: ,)]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -225,18 +236,18 @@
 						<param name="label1" value="$LOCALIZE[567]:" />
 						<param name="posx2" value="160" />
 						<param name="width2" value="1160" />
-						<param name="label2" value="$INFO[ListItem.PlayCount]$INFO[ListItem.LastPlayed, ($LOCALIZE[568]: ,)]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.PlayCount]$INFO[Container(999).ListItem.LastPlayed, ($LOCALIZE[568]: ,)]" />
 					</include>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.TagLine)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.TagLine)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[202]:" />
 						<param name="posx2" value="1040" />
 						<param name="width2" value="1040" />
-						<param name="label2" value="$INFO[ListItem.TagLine]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.TagLine]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -244,19 +255,19 @@
 						<param name="label1" value="$LOCALIZE[202]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1290" />
-						<param name="label2" value="$INFO[ListItem.TagLine]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.TagLine]" />
 					</include>
 				</control>
 
 				<control type="group">
-					<visible>!IsEmpty(ListItem.Premiered)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.Premiered)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[20416]:" />
 						<param name="posx2" value="970" />
 						<param name="width2" value="970" />
-						<param name="label2" value="$INFO[ListItem.Premiered]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Premiered]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -264,18 +275,18 @@
 						<param name="label1" value="$LOCALIZE[20416]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1160" />
-						<param name="label2" value="$INFO[ListItem.Premiered]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Premiered]" />
 					</include>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.Date) + IsEmpty(ListItem.Premiered)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.Date) + IsEmpty(Container(999).ListItem.Premiered)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[552]:" />
 						<param name="posx2" value="970" />
 						<param name="width2" value="970" />
-						<param name="label2" value="$INFO[ListItem.Date]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Date]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -283,18 +294,18 @@
 						<param name="label1" value="$LOCALIZE[552]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1160" />
-						<param name="label2" value="$INFO[ListItem.Date]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Date]" />
 					</include>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.NextDate)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.NextDate)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="260" />
 						<param name="label1" value="$LOCALIZE[15311]:" />
 						<param name="posx2" value="970" />
 						<param name="width2" value="970" />
-						<param name="label2" value="$INFO[ListItem.NextDate]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.NextDate]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1420" />
@@ -302,18 +313,18 @@
 						<param name="label1" value="$LOCALIZE[15311]:" />
 						<param name="posx2" value="1220" />
 						<param name="width2" value="1160" />
-						<param name="label2" value="$INFO[ListItem.NextDate]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.NextDate]" />
 					</include>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(ListItem.Artist)</visible>
+					<visible>!IsEmpty(Container(999).ListItem.Artist)</visible>
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[557]:" />
 						<param name="posx2" value="1040" />
 						<param name="width2" value="1040" />
-						<param name="label2" value="$INFO[ListItem.Artist]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Artist]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -321,19 +332,19 @@
 						<param name="label1" value="$LOCALIZE[557]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1290" />
-						<param name="label2" value="$INFO[ListItem.Artist]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Artist]" />
 					</include>
 				</control>
 
 				<control type="group">
-					<visible>!IsEmpty(ListItem.Album)</visible>	
+					<visible>!IsEmpty(Container(999).ListItem.Album)</visible>	
 					<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="1160" />
 						<param name="width1" value="120" />
 						<param name="label1" value="$LOCALIZE[558]:" />
 						<param name="posx2" value="1040" />
 						<param name="width2" value="1040" />
-						<param name="label2" value="$INFO[ListItem.Album]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Album]" />
 					</include>
 					<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="posx1" value="0" />
@@ -341,36 +352,36 @@
 						<param name="label1" value="$LOCALIZE[558]:" />
 						<param name="posx2" value="150" />
 						<param name="width2" value="1290" />
-						<param name="label2" value="$INFO[ListItem.Album]" />
+						<param name="label2" value="$INFO[Container(999).ListItem.Album]" />
 					</include>
 				</control>
 				<control type="group">
-						<visible>!IsEmpty(ListItem.FileNameAndPath)</visible>
-						<control type="label">
-							<posx>0</posx>
-							<posy>20</posy>
-							<height>80</height>
-							<width>1180</width>
-							<textcolor>grey_a</textcolor>
-							<!-- <include>align_tag</include> -->
-							<scroll>true</scroll>
-							<wrapmultiline>false</wrapmultiline>
-							<label>$INFO[ListItem.FileNameAndPath]</label>
-							<font>font-15</font>
-						</control>
+					<visible>!IsEmpty(Container(999).ListItem.FileNameAndPath)</visible>
+					<control type="label">
+						<posx>0</posx>
+						<posy>20</posy>
+						<height>80</height>
+						<width>1180</width>
+						<textcolor>grey_a</textcolor>
+						<!-- <include>align_tag</include> -->
+						<scroll>true</scroll>
+						<wrapmultiline>false</wrapmultiline>
+						<label>$INFO[ListItem.FileNameAndPath]</label>
+						<font>font-15</font>
 					</control>
-			</control>
-			
-							<!-- seperator -->
-				<control type="image">
-					<left>420</left>
-					<top>440</top>
-					<width>1160</width>
-					<height>1</height>
-					<texture colordiffuse="$VAR[main_color]">white.png</texture>
-					<animation effect="slide" end="-400" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				</control>
-				
+			</control>
+
+			<!-- seperator -->
+			<control type="image">
+				<left>420</left>
+				<top>440</top>
+				<width>1160</width>
+				<height>1</height>
+				<texture colordiffuse="$VAR[main_color]">white.png</texture>
+				<animation effect="slide" end="-400" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
+			</control>
+
 			<control type="textbox" id="59">
 				<description>Plot Value for Movies</description>
 				<posx>430</posx>
@@ -380,7 +391,7 @@
 				<font>font-22</font>
 				<include>align_tag</include>
 				<textcolor>grey_b</textcolor>
-				<label>$VAR[ViewFanartText]</label>
+				<label fallback="19055">$INFO[Container(999).ListItem.Plot]</label>
 				<pagecontrol>61</pagecontrol>
 				<autoscroll time="3000" delay="45000" repeat="15000">!Control.HasFocus(61) + Skin.HasSetting(AutoScroll)</autoscroll>
 				<animation effect="slide" end="-405" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
@@ -395,139 +406,22 @@
 				<include>scroll_bar</include>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<ondown>50</ondown>
-				<onup>50</onup>
+				<ondown>998</ondown>
+				<onup>998</onup>
 				<showonepage>false</showonepage>
 				<animation effect="slide" end="-400" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<visible>!ControlGroup(9000).HasFocus(194)</visible>
 			</control> 
-			
-			<!-- Flags -->
-<!-- 			<control type="group">
-				<posx>2</posx>
-				<animation effect="slide" start="0,120" end="0,0" delay="200" tween="sine" time="300">WindowOpen</animation>
-				<animation effect="slide" start="0,0" end="0,120" tween="sine" time="400">WindowClose</animation>
-				<include name="flags_movies"><param name="posy">1025</param></include>
-			</control> -->
 
-
-
-			<control type="grouplist" id="9000">		
-				<posx>5</posx>
-				<posy>890</posy>
-				<align>left</align>
-				<width>1590</width>
-				<height>300</height>
-				<itemgap>0</itemgap>
-				<orientation>Horizontal</orientation>
-				<onup>50</onup>
-				<ondown>50</ondown>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
-				<control type="togglebutton" id="8">
-					<description>Play/browse to Show</description>
-					<width>190</width>
-					<height>55</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>208</label>
-					<altlabel>1024</altlabel>
-					<include>button_dialogs</include>
-					<alttexturefocus>-</alttexturefocus>
-					<alttexturenofocus>-</alttexturenofocus> 
-					<usealttexture>Container.Content(TVShows)</usealttexture>
-				</control>
-				<control type="button" id="11">
-					<width>190</width>
-					<height>55</height>
-					<label>20410</label>
-					<include>button_dialogs</include>
-					<visible>Container.Content(Movies) + !IsEmpty(Listitem.trailer)</visible>
-				</control>
-				<control type="button" id="194">
-					<description>Actors</description>
-					<width>190</width>
-					<height>55</height>
-					<label>344</label>
-					<include>button_dialogs</include>
-				</control>
-				<control type="button" id="6">
-					<description>Refresh</description>
-					<width>190</width>
-					<height>55</height>
-					<label>184</label>
-					<include>button_dialogs</include>
-				</control>
-				<control type="button" id="7">
-					<description>User ratings</description>
-					<width>250</width>
-					<height>55</height>
-					<label>38023</label>
-					<include>button_dialogs</include>
-				</control>
-				<control type="button" id="1113">
-					<description>Extras</description>
-					<width>190</width>
-					<height>55</height>
-					<label>31216</label>
-					<include>button_dialogs</include>
-					<onclick condition="Container.Content(TVShows)">SetProperty(TVShowPath,$INFO[ListItem.FilenameAndPath],Home)</onclick>
-					<!-- <onclick>Dialog.Close(all,true)</onclick> -->
-					<onclick>ActivateWindow(1115)</onclick>					
-				</control>
-
-				<control type="button" id="195"> 
-					<description>ExtendedInfo for Movies </description>
-					<width>270</width>
-					<height>55</height>
-					<label>31064</label>
-					<include>button_dialogs</include>
-					<onclick>Dialog.Close(MovieInformation)</onclick>
-					<onclick>RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
-					<visible>Container.Content(Movies) + IsEmpty(ListItem.Season) + IsEmpty(ListItem.TVShowTitle) + !Container.Content(Episodes)</visible>
-				</control>
-				<control type="button" id="196"> 
-					<description>ExtendedInfo for TVShows </description>
-					<width>290</width>
-					<height>55</height>
-					<label>31093</label>
-					<include>button_dialogs</include>
-					<onclick>Dialog.Close(MovieInformation)</onclick>
-					<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TVShowTitle])</onclick>
-					<visible>Container.Content(TVShows) | !IsEmpty(ListItem.TVShowTitle)</visible>
-					<visible>System.HasAddon(script.extendedinfo)</visible>
-				</control>
-				<control type="button" id="197"> 
-					<description>ExtendedInfo for Seasons </description>
-					<width>280</width>
-					<height>55</height>
-					<label>31094</label>
-					<include>button_dialogs</include>
-					<onclick>Dialog.Close(MovieInformation)</onclick>
-					<onclick>RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$VAR[season_number])</onclick>
-					<visible>Container.Content(Seasons) | [[!IsEmpty(ListItem.Season) | !IsEmpty(Window(home).Property(SeasonNumber))]+ !IsEmpty(ListItem.TVShowTitle)]</visible>
-					<visible>System.HasAddon(script.extendedinfo)</visible>
-				</control>
-				<control type="button" id="198">
-					<description>CinemaVision</description>
-					<width>280</width>
-					<height>55</height>
-					<label>CinemaVision</label>
-					<onclick>Dialog.Close(MovieInformation)</onclick>
-					<onclick>RunScript(script.cinemavision,experience)</onclick>
-					<visible>System.HasAddon(script.cinemavision) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
-				</control>
-			</control>
-
-			<control type="list" id="50">
-				<animation effect="fade" start="100" end="90" time="0" condition="!Control.HasFocus(50)">Conditional</animation>
+			<control type="list" id="998">
+				<animation effect="fade" start="100" end="90" time="0" condition="!Control.HasFocus(998)">Conditional</animation>
 				<animation effect="slide" end="-400" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 				<posx>420</posx>
 				<posy>450</posy>
 				<width>1170</width>
 				<height>400</height>
-				<onleft>50</onleft>
-				<onright>50</onright>
+				<onleft>998</onleft>
+				<onright>998</onright>
 				<onup>61</onup>
 				<ondown>9000</ondown>
 				<viewtype label="">list</viewtype>
@@ -599,6 +493,40 @@
 				</focusedlayout>
 			</control>
 
+			<!--Button Group-->
+			<control type="grouplist" id="9000">		
+				<posx>5</posx>
+				<posy>890</posy>
+				<align>left</align>
+				<width>1590</width>
+				<height>300</height>
+				<itemgap>0</itemgap>
+				<orientation>Horizontal</orientation>
+				<onup>998</onup>
+				<ondown>998</ondown>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<control type="button" id="5">
+					<!--Play-->
+					<width>290</width>
+					<label>208</label>
+					<include>button_dialogs</include>
+				</control>
+				<control type="button" id="6">
+					<!--Trailer-->
+					<width>280</width>
+					<label>20410</label>
+					<onclick>PlayMedia($ESCINFO[Container(999).ListItem.Trailer])</onclick>
+					<include>button_dialogs</include>
+				</control>
+				<control type="button" id="194">
+					<description>Actors</description>
+					<width>190</width>
+					<height>55</height>
+					<label>344</label>
+					<include>button_dialogs</include>
+				</control>
+			</control>
 
 			<!-- Poster and disc -->
 			<control type="group">
@@ -611,8 +539,8 @@
 					<width>360</width>
 					<height>360</height>
 					<aspectratio>keep</aspectratio>
-					<texture background="true">$INFO[ListItem.Art(discart)]</texture>
-					<visible>!ListItem.IsFolder + !IsEmpty(ListItem.Art(discart)) + !stringcompare(ListItem.Label,..) + !Skin.HasSetting(Disable_CDART) + Window.IsActive(movieinformation)</visible>
+					<texture background="true">$INFO[Container(999).ListItem.Art(discart)]</texture>
+					<visible>!Container(999).ListItem.IsFolder + !IsEmpty(Container(999).ListItem.Art(discart)) + !stringcompare(Container(999).ListItem.Label,..) + !Skin.HasSetting(Disable_CDART)</visible>
 					<animation type="WindowOpen" reversible="false" condition="!IsEmpty(ListItem.Art(discart))">
 						<effect type="slide" start="0,200" end="0,0" delay="300" time="400"/>
 						<effect type="rotate" center="auto" start="0" end="-10800" time="500000" pulse="true" delay="400"/>
@@ -624,20 +552,20 @@
 					<width>360</width>
 					<height>360</height>
 					<aspectratio>keep</aspectratio>
-					<visible>!Skin.HasSetting(fanart_Disable_FAKECDART) + !IsEmpty(ListItem.Art(poster)) + Window.IsActive(movieinformation)</visible>
+					<visible>!Skin.HasSetting(fanart_Disable_FAKECDART) + !IsEmpty(Container(999).ListItem.Art(poster))</visible>
 					<animation effect="fade" end="0" time="0" condition="Skin.HasSetting(fanart_Disable_TVFAKECDART)">Conditional</animation>
 					<control type="image">	
-						<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[ListItem.Art(poster)]</texture>
-						<visible>IsEmpty(ListItem.Art(discart)) + !stringcompare(ListItem.Label,..)</visible>
-						<animation type="WindowOpen" reversible="true" condition="IsEmpty(ListItem.Art(discart))">
+						<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Container(999).ListItem.Art(poster)]</texture>
+						<visible>IsEmpty(Container(999).ListItem.Art(discart)) + !stringcompare(Container(999).ListItem.Label,..)</visible>
+						<animation type="WindowOpen" reversible="true" condition="IsEmpty(Container(999).ListItem.Art(discart))">
 							<effect type="slide" start="0,200" end="0,0" delay="300" time="400"/>
 							<effect type="rotate" center="auto" start="0" end="-10800" time="500000" pulse="true" delay="400"/>
 						</animation> 
 					</control>
 					<control type="image">
 						<texture background="true">thumbs/sets/cdarttop.png</texture>
-						<visible>IsEmpty(ListItem.Art(discart)) + !stringcompare(ListItem.Label,..)</visible>
-						<animation type="WindowOpen" reversible="true" condition="IsEmpty(ListItem.Art(discart))">
+						<visible>IsEmpty(Container(999).ListItem.Art(discart)) + !stringcompare(Container(999).ListItem.Label,..)</visible>
+						<animation type="WindowOpen" reversible="true" condition="IsEmpty(Container(999).ListItem.Art(discart))">
 							<effect type="slide" start="0,200" end="0,0" delay="300" time="400"/>
 							<effect type="rotate" center="auto" start="0" end="-10800" time="500000" pulse="true" delay="400"/>
 						</animation> 
@@ -650,9 +578,9 @@
 					<width>380</width>
 					<height>570</height>
 					<aspectratio>stretch</aspectratio>
-					<texture diffuse="posterdiffuse.png" background="true">$VAR[PosterThumb]</texture>
+					<texture diffuse="posterdiffuse.png" background="true">$VAR[HelperPosterThumb]</texture>
 					<fadetime>300</fadetime>
-					<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)</visible> 
+					<visible>!StringCompare(Container(999).ListItem.Label,..) + !StringCompare(Container(999).ListItem.Property(type),episode)</visible> 
 				</control>
 				<control type="image">
 					<description>Thumb For Episodes</description>
@@ -660,13 +588,14 @@
 					<posy>262</posy>
 					<width>380</width>
 					<height>250</height>
-					<texture background="true">$VAR[PosterThumb]</texture>
+					<texture background="true">$VAR[HelperPosterThumb]</texture>
 					<bordertexture colordiffuse="grey_a">white.png</bordertexture>
 					<bordersize>1,1,1,1</bordersize>
 					<fadetime>300</fadetime>
-					<visible>!StringCompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
+					<visible>!StringCompare(Container(999).ListItem.Label,..) + StringCompare(Container(999).ListItem.Property(type),episode)</visible>
 				</control>
 			</control>
+
 		</control>
 	</controls>
 </window>

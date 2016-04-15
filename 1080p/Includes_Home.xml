@@ -20,7 +20,8 @@
 	</variable>
 	<variable name="widget_line3_horizontal">
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),movies)">$INFO[Container(9002).ListItem.Genre]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">[B]$INFO[Container(9002).ListItem.Season,$LOCALIZE[20373] ] $INFO[Container(9002).ListItem.Episode,$LOCALIZE[20359] ][/B]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows) + !IsEmpty(Container(9002).ListItem.Property(TotalSeasons))">[B]$INFO[Container(9002).ListItem.Property(TotalSeasons),, $LOCALIZE[33054]] $INFO[Container(9002).ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]][/B]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">[B]$INFO[Container(9002).ListItem.Label][/B]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">[B]$INFO[Container(9002).ListItem.Season,$LOCALIZE[20373] ] $INFO[Container(9002).ListItem.Episode,$LOCALIZE[20359] ][/B]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[Container(9002).ListItem.Artist]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.Property(Addon.Creator)]</value>
