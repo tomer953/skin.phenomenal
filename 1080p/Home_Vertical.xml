@@ -488,7 +488,6 @@
 				<control type="group">
 					<posx>940</posx>
 					<animation effect="fade" start="100" end="0" time="0" condition="Container(9002).IsUpdating | !Control.HasFocus(9002)">Conditional</animation>
-					<!-- <animation effect="slide" start="300" end="0" time="300" delay="0" condition="!Container(9002).IsUpdating">Conditional</animation> -->
 					<control type="label">
 						<posx>0</posx>
 						<posy>30</posy>

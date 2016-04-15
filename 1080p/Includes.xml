@@ -1803,9 +1803,12 @@
 
 	<include name="widget_horizontal_pin">
 		<posy>310</posy>
+
 		<animation effect="slide" end="0,25" time="0" condition="!Skin.HasSetting(Home_Eminence_Layout)">Conditional</animation>
-		<animation effect="slide" start="0,0" end="0,300" tween="circle" easing="out" time="300">Focus</animation>
-		<animation effect="slide" start="0,300" end="0,0" tween="linear" time="200">UnFocus</animation> 
+		<animation effect="slide" start="0,0" end="0,300" tween="circle" easing="out" time="300" condition="Control.HasFocus(9002) | Control.HasFocus(9101)">Conditional</animation>
+		<!-- <animation effect="slide" start="0,300" end="0,0" tween="linear" time="200">UnFocus</animation> -->
+		<animation effect="slide" start="0,0" end="0,-100" tween="linear" time="200" condition="Control.HasFocus(9001)">Conditional</animation>
+		<animation effect="zoom" start="85" end="70" center="0,1000" time="200" condition="!Control.HasFocus(9002) + !Control.HasFocus(9101)">Conditional</animation>
 	</include>
 
 	<include name="view_icons_watched_flags">
