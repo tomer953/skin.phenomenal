@@ -626,6 +626,10 @@ msgctxt "#31155"
 msgid "Use Extra Fanart"
 msgstr "השתמש בפאנארט נוסף"
 
+msgctxt "#31156"
+msgid "Side-menu icon"
+msgstr "לשונית לתפריט צד"
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "

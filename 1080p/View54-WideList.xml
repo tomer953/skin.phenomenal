@@ -69,7 +69,9 @@
 						<posy>0</posy>
 						<width>840</width>
 						<height>80</height>
-						<texture colordiffuse="$VAR[main_color]">white.png</texture>
+						<texture>white.png</texture>
+						<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
+						<bordersize>5,0,5,0</bordersize>
 					</control>
 
 					<control type="label">
@@ -78,8 +80,8 @@
 						<width>810</width>
 						<height>40</height>
 						<font>font-24</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>white</selectedcolor>
+						<textcolor>grey_50</textcolor>
+						<selectedcolor>$VAR[main_color]</selectedcolor>
 						<include>align_tag</include>
 						<aligny>top</aligny>
 						<label>$VAR[movie_label]</label>
@@ -93,8 +95,8 @@
 						<width>808</width>
 						<height>30</height>
 						<font>font-16</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>white</selectedcolor>
+						<textcolor>grey_50</textcolor>
+						<selectedcolor>grey_50</selectedcolor>
 						<include>align_tag</include>
 						<aligny>center</aligny>
 						<label>$VAR[widelist_sublabel]</label>
