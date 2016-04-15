@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
 	<defaultcontrol always="true">5</defaultcontrol>
-	<backgroundcolor>ffffffff</backgroundcolor>
 	<controls>
 		<!--fake list used as container -->
 		<!-- use Container(999).ListItem to get all info -->
@@ -25,7 +24,14 @@
 		<control type="group">
 			<posx>160</posx>
 			<posy>80</posy>
-			<include>dialog_zoom_animation</include>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="300"/>
+				<effect type="fade" start="0" end="100" time="300"/>
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="300"/>
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
 			<include name="big_dialog">
 				<param name="width" value="1600" />
 			</include>
@@ -526,6 +532,28 @@
 					<label>344</label>
 					<include>button_dialogs</include>
 				</control>
+				<control type="button" id="195"> 
+					<description>ExtendedInfo for Movies </description>
+					<width>270</width>
+					<height>55</height>
+					<label>31064</label>
+					<include>button_dialogs</include>
+					<onclick>RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(999).ListItem.Property(DBID)],name=$INFO[Container(999).ListItem.Title])</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
+					<visible>!IsEmpty(Container(999).ListItem.Property(DBID)) + StringCompare(Container(999).ListItem.Property(type),movie) + IsEmpty(Container(999).ListItem.Season) + IsEmpty(Container(999).ListItem.TVShowTitle) + !StringCompare(Container(999).ListItem.Property(type),episode)</visible>
+					<visible>System.HasAddon(script.extendedinfo)</visible>
+				</control>
+				<control type="button" id="196"> 
+					<description>ExtendedInfo for TVShows </description>
+					<width>290</width>
+					<height>55</height>
+					<label>31093</label>
+					<include>button_dialogs</include>
+					<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(999).ListItem.Property(DBID)],name=$INFO[Container(999).ListItem.TVShowTitle])</onclick>
+					<onclick>Dialog.Close(all,true)</onclick>
+					<visible>!IsEmpty(Container(999).ListItem.Property(DBID)) + [StringCompare(Container(999).ListItem.Property(type),tvshow) | !IsEmpty(Container(999).ListItem.TVShowTitle)]</visible>
+					<visible>System.HasAddon(script.extendedinfo)</visible>
+				</control>
 			</control>
 
 			<!-- Poster and disc -->
@@ -557,18 +585,18 @@
 					<control type="image">	
 						<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Container(999).ListItem.Art(poster)]</texture>
 						<visible>IsEmpty(Container(999).ListItem.Art(discart)) + !stringcompare(Container(999).ListItem.Label,..)</visible>
-						<animation type="WindowOpen" reversible="true" condition="IsEmpty(Container(999).ListItem.Art(discart))">
+						<!-- <animation type="WindowOpen" reversible="true" condition="IsEmpty(Container(999).ListItem.Art(discart))">
 							<effect type="slide" start="0,200" end="0,0" delay="300" time="400"/>
 							<effect type="rotate" center="auto" start="0" end="-10800" time="500000" pulse="true" delay="400"/>
-						</animation> 
+						</animation>  -->
 					</control>
 					<control type="image">
 						<texture background="true">thumbs/sets/cdarttop.png</texture>
 						<visible>IsEmpty(Container(999).ListItem.Art(discart)) + !stringcompare(Container(999).ListItem.Label,..)</visible>
-						<animation type="WindowOpen" reversible="true" condition="IsEmpty(Container(999).ListItem.Art(discart))">
+						<!-- <animation type="WindowOpen" reversible="true" condition="IsEmpty(Container(999).ListItem.Art(discart))">
 							<effect type="slide" start="0,200" end="0,0" delay="300" time="400"/>
 							<effect type="rotate" center="auto" start="0" end="-10800" time="500000" pulse="true" delay="400"/>
-						</animation> 
+						</animation>  -->
 					</control>
 				</control>
 				<control type="image">
