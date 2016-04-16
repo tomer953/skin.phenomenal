@@ -87,18 +87,18 @@
 				<control type="image">
 					<posx>-40</posx>
 					<posy>0</posy>
-					<width>1070</width>
+					<width>848</width>
 					<height>50</height>
-					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab.png</texture> 
-					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab_stroke.png</bordertexture>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2" flipx="true">main/tab2.png</texture> 
+					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2" flipx="true">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="rss">
 					<description>rss feed</description>
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>1005</width>
+					<width>800</width>
 					<height>30</height>
 					<font>font-20</font>
 					<scrollspeed>40</scrollspeed>
@@ -115,14 +115,26 @@
 				<animation effect="slide" start="0,0" end="0,-80" time="300">WindowClose</animation>
 				<visible>![!IntegerGreaterThan(Window(Home).Property(Movies.Count),0) + !IntegerGreaterThan(Window(Home).Property(TVShows.Count),0) + !IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0) + Skin.HasSetting(Home_Horizontal)]</visible>
 				<control type="image">
+					<posx>521</posx>
+					<posy>0</posy>
+					<width>313</width>
+					<height>50</height>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab2.png</texture>
+					<bordertexture colordiffuse="$VAR[main_color]">main/tab2_stroke.png</bordertexture>
+					<bordersize>1,0,1,1</bordersize>
+					<include>topbar_fade_level</include>
+					<visible>Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)</visible>
+				</control>
+				<control type="image">
 					<posx>510</posx>
 					<posy>0</posy>
-					<width>324</width>
+					<width>308</width>
 					<height>50</height>
-					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab.png</texture>
-					<bordertexture colordiffuse="$VAR[main_color]">main/tab_stroke.png</bordertexture>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" flipx="true">main/tab2.png</texture>
+					<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
+					<visible>!Skin.HasSetting(Home_Horizontal) | !system.getbool(lookandfeel.enablerssfeeds)</visible>
 				</control>
 				<control type="grouplist">
 					<posx>510</posx>
@@ -198,8 +210,8 @@
 			</control>
 			<!-- Weather Info or Date -->
 			<control type="group">
-				<posx>1090</posx>
-				<animation effect="slide" start="0,0" end="311" time="300" condition="Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation>
+				<posx>1106</posx>
+				<animation effect="slide" start="0,0" end="295" time="300" condition="Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation>
 				<animation effect="slide" start="-300,0" end="0,0" tween="sine" easing="Out" delay="700" time="500">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
 				<animation effect="slide" start="0" end="-100" time="300" condition="!Skin.HasSetting(Home_Horizontal) + Control.HasFocus(9001)">Conditional</animation>
@@ -211,7 +223,7 @@
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab2.png</texture> 
 					<bordertexture colordiffuse="$VAR[main_color]">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<include>Home_Top_Weather_Icon</include>
 				<control type="label">
@@ -242,7 +254,7 @@
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab2.png</texture> 
 					<bordertexture colordiffuse="$VAR[main_color]">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -266,6 +278,7 @@
 					<height>70</height>
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab.png</texture>
 					<bordertexture colordiffuse="$VAR[main_color]">main/tab_stroke.png</bordertexture>
+					<include>topbar_fade_level</include>
 					<bordersize>1,0,1,1</bordersize>
 				</control>
 				<control type="label">
@@ -297,18 +310,18 @@
 				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
 				<animation effect="slide" start="0" end="-100" time="300" condition="!Skin.HasSetting(Home_Horizontal) + Control.HasFocus(9001)">Conditional</animation>
 				<control type="image">
-					<posx>-40</posx>
+					<posx>6</posx>
 					<posy>0</posy>
 					<width>1070</width>
 					<height>50</height>
-					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab.png</texture> 
-					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab_stroke.png</bordertexture>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab2.png</texture> 
+					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="rss">
 					<description>rss feed</description>
-					<posx>0</posx>
+					<posx>18</posx>
 					<posy>0</posy>
 					<width>1005</width>
 					<height>30</height>
@@ -331,12 +344,12 @@
 				<control type="image">
 					<posx>510</posx>
 					<posy>0</posy>
-					<width>324</width>
+					<width>308</width>
 					<height>50</height>
 					<texture colordiffuse="black" diffuse="glass.jpg" flipx="true" background="true">main/tab2.png</texture>
 					<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="grouplist">
 					<posx>510</posx>
@@ -426,18 +439,18 @@
 					<texture colordiffuse="black" diffuse="glass.jpg" flipx="true" background="true">main/tab2.png</texture>
 					<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 					<visible>Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)</visible>
 				</control>
 				<control type="image">
-					<posx>0</posx>
+					<posx>16</posx>
 					<posy>0</posy>
 					<width>324</width>
 					<height>50</height>
-					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab.png</texture>
-					<bordertexture colordiffuse="$VAR[main_color]">main/tab_stroke.png</bordertexture>
+					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab2.png</texture>
+					<bordertexture colordiffuse="$VAR[main_color]">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 					<visible>![Skin.HasSetting(Home_Horizontal) + system.getbool(lookandfeel.enablerssfeeds)]</visible>
 				</control>
 				<include>Home_Top_Weather_Icon</include>
@@ -469,7 +482,7 @@
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true" flipx="true">main/tab2.png</texture> 
 					<bordertexture colordiffuse="$VAR[main_color]" flipx="true">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="image">
 					<posx>90</posx>
@@ -494,6 +507,7 @@
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true">main/tab.png</texture>
 					<bordertexture colordiffuse="$VAR[main_color]">main/tab_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="label">
 					<posx>0</posx>

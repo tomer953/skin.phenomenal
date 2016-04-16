@@ -82,7 +82,7 @@
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab2.png</texture> 
 					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="label">
 					<description>Conditions Label</description>
@@ -112,7 +112,7 @@
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2" flipx="true">main/tab2.png</texture> 
 					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2" flipx="true">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="label">
 					<description>Conditions Label</description>
@@ -140,7 +140,7 @@
 					<height>70</height>
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab.png</texture>
 					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab_stroke.png</bordertexture>
-					<animation effect="fade" end="85" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 					<bordersize>1,0,1,1</bordersize>
 				</control> 
 				<control type="button">
@@ -179,7 +179,7 @@
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab2.png</texture> 
 					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="label">
 					<description>Conditions Label</description>
@@ -209,7 +209,7 @@
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2" flipx="true">main/tab2.png</texture> 
 					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2" flipx="true">main/tab2_stroke.png</bordertexture>
 					<bordersize>1,0,1,1</bordersize>
-					<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 				</control>
 				<control type="label">
 					<description>Conditions Label</description>
@@ -237,7 +237,7 @@
 					<height>70</height>
 					<texture colordiffuse="black" diffuse="glass.jpg" background="true" border="15,2,15,2">main/tab.png</texture>
 					<bordertexture colordiffuse="$VAR[main_color]" border="15,2,15,2">main/tab_stroke.png</bordertexture>
-					<animation effect="fade" end="85" time="0" condition="true">Conditional</animation>
+					<include>topbar_fade_level</include>
 					<bordersize>1,0,1,1</bordersize>
 				</control> 
 				<control type="label">
@@ -1602,6 +1602,20 @@
 		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(menu_bg_opacity),0)">Conditional</animation>
 	</include>
 
+	<include name="topbar_fade_level">
+		<animation effect="fade" reversible="false" end="100" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),100)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),90)">Conditional</animation>		
+		<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),80)">Conditional</animation>		
+		<animation effect="fade" reversible="false" end="70" time="0" condition="IsEmpty(Skin.String(topbar_home_opacity)) | StringCompare(Skin.String(topbar_home_opacity),70)">Conditional</animation>		
+		<animation effect="fade" reversible="false" end="60" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),60)">Conditional</animation>		
+		<animation effect="fade" reversible="false" end="50" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),50)">Conditional</animation>		
+		<animation effect="fade" reversible="false" end="40" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),40)">Conditional</animation>		
+		<animation effect="fade" reversible="false" end="30" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),30)">Conditional</animation>		
+		<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),20)">Conditional</animation>		
+		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),10)">Conditional</animation>		
+		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(topbar_home_opacity),0)">Conditional</animation>		
+	</include>
+
 	<include name="vertical_scroll">
 		<include name="vertical_scroll_rtl" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 			<param name="id" value="$PARAM[id]" />
@@ -1921,7 +1935,26 @@
 			<selected>!Skin.HasSetting(hide_fanart_topbar)</selected>
 			<include>view_settings_radiobutton</include>
 		</control>
-		<control type="radiobutton" id="496">
+		<control type="button" id="496">		
+			<description>TopBar Opacity</description>			
+			<width>326</width>
+			<label>$LOCALIZE[31039]</label>		
+			<label2>$INFO[Skin.String(topbar_home_opacity),,%]</label2>	
+			<include>view_settings_radiobutton</include>				
+			<onclick condition="skin.string(topbar_home_opacity, 100)">Skin.SetString(topbar_home_opacity, 90)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 90)">Skin.SetString(topbar_home_opacity, 80)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 80)">Skin.SetString(topbar_home_opacity, 70)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 70) | IsEmpty(skin.string(topbar_home_opacity))">Skin.SetString(topbar_home_opacity, 60)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 60)">Skin.SetString(topbar_home_opacity, 50)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 50)">Skin.SetString(topbar_home_opacity, 40)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 40)">Skin.SetString(topbar_home_opacity, 30)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 30)">Skin.SetString(topbar_home_opacity, 20)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 20)">Skin.SetString(topbar_home_opacity, 10)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 10)">Skin.SetString(topbar_home_opacity, 0)</onclick>		
+			<onclick condition="skin.string(topbar_home_opacity, 0)">Skin.SetString(topbar_home_opacity, 100)</onclick>		
+			<enable>!Skin.HasSetting(hide_fanart_topbar)</enable>		
+		</control>
+		<control type="radiobutton" id="497">
 			<description>Show side-tab</description>
 			<label>31156</label>
 			<onclick>Skin.ToggleSetting(Hide_SideTab)</onclick>
