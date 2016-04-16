@@ -503,6 +503,6 @@
 		<value condition="IsEmpty(ListItem.Art(fanart)) + Window.IsActive(MyPVRChannels.xml)">special://skin/backgrounds/livetv.jpg</value>
 		<value condition="Window.IsActive(LoginScreen.xml)">special://skin/backgrounds/camera.jpg</value>
 		<value condition="Window.IsActive(musiclibrary)">special://skin/backgrounds/music.jpg</value>
-		<value>special://skin/backgrounds/videos.jpg</value>
+		<value>$VAR[default_global_bg]</value>
 	</variable>
 </includes>

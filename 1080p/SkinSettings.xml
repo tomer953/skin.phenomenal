@@ -835,7 +835,7 @@
 				<radioposx>810</radioposx>
 				<label>31043</label>			
 				<onclick>Skin.ToggleSetting(Home_HideTopBar)</onclick>
-			<!-- 	<onclick>Skin.SetString(AfterReload,303)</onclick>
+				<!-- 	<onclick>Skin.SetString(AfterReload,303)</onclick>
 				<onclick>Skin.SetString(AfterReload_Category,96)</onclick>
 				<onclick>AlarmClock(name,Skin.Reset(AfterReload),00:01,silent)</onclick>	
 				<onclick>ReloadSkin()</onclick>  -->		
@@ -1007,6 +1007,93 @@
 				<onclick condition="Skin.String(menu_bg_opacity, 20)">Skin.SetString(menu_bg_opacity, 10)</onclick>
 				<onclick condition="Skin.String(menu_bg_opacity, 10)">Skin.SetString(menu_bg_opacity, 0)</onclick>
 				<onclick condition="Skin.String(menu_bg_opacity, 0)">Skin.SetString(menu_bg_opacity, 100)</onclick>
+			</control>
+			<control type="label" id="318">
+				<posx>0</posx>
+				<posy>0</posy>
+				<description>Custom Backgrounds</description>
+				<label>$LOCALIZE[33071]</label>
+				<align>center</align>
+				<width>860</width>
+				<height>40</height>
+				<font>font-18</font>
+				<textcolor>$VAR[main_color]</textcolor>
+			</control>
+			<control type="button" id="319">
+				<posx>550</posx>
+				<posy>0</posy>
+				<width>860</width>
+				<align>left</align>
+				<label>$LOCALIZE[19190] - $LOCALIZE[571]</label>
+				<label2>$INFO[Skin.String(default_global_bg)]</label2>
+				<onclick>Skin.SetFile(default_global_bg)</onclick>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="321">
+				<posx>550</posx>
+				<posy>0</posy>
+				<width>860</width>
+				<align>left</align>
+				<label>$LOCALIZE[19190] - $LOCALIZE[2]</label>
+				<label2>$INFO[Skin.String(default_music_bg)]</label2>
+				<onclick>Skin.SetFile(default_music_bg)</onclick>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="322">
+				<posx>550</posx>
+				<posy>0</posy>
+				<width>860</width>
+				<align>left</align>
+				<label>$LOCALIZE[19190] - $LOCALIZE[19191]</label>
+				<label2>$INFO[Skin.String(default_livetv_bg)]</label2>
+				<onclick>Skin.SetFile(default_livetv_bg)</onclick>
+				<include>button_settings_2</include>
+			</control>
+			<control type="button" id="323">
+				<posx>550</posx>
+				<posy>0</posy>
+				<width>860</width>
+				<align>left</align>
+				<label>$LOCALIZE[19190] - $LOCALIZE[1]</label>
+				<label2>$INFO[Skin.String(default_pictures_bg)]</label2>
+				<onclick>Skin.SetFile(default_pictures_bg)</onclick>
+				<include>button_settings_2</include>
+			</control>
+
+
+		</control>
+
+		<control type="group">
+			<posx>420</posx>
+			<posy>580</posy>
+			<visible>StringCompare(Skin.String(Section),3)</visible>
+			<control type="image">
+				<width>880</width>
+				<height>500</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$VAR[default_global_bg]</texture>
+				<visible>Control.HasFocus(319)</visible>
+			</control>
+			<control type="image">
+				<width>880</width>
+				<height>500</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$VAR[default_music_bg]</texture>
+				<visible>Control.HasFocus(321)</visible>
+			</control>
+			<control type="image">
+				<width>880</width>
+				<height>500</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$VAR[default_livetv_bg]</texture>
+				<visible>Control.HasFocus(322)</visible>
+			</control>
+			<control type="image">
+				<width>880</width>
+				<height>500</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$VAR[default_pictures_bg]</texture>
+				<visible>Control.HasFocus(323)</visible>
 			</control>
 		</control>
 		<control type="grouplist" id="350">
@@ -1282,27 +1369,27 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="270" height="465">
-				<control type="group">
-					<animation reversible="true" effect="zoom" start="100" end="160" center="auto" time="1000" tween="back" condition="true">Conditional</animation>
-					<control type="image">
-						<posx>20</posx>
-						<posy>20</posy>
-						<width>256</width>
-						<height>256</height>
-						<texture background="true" fallback="defaultuser.png">$INFO[ListItem.Icon]</texture>
+					<control type="group">
+						<animation reversible="true" effect="zoom" start="100" end="160" center="auto" time="1000" tween="back" condition="true">Conditional</animation>
+						<control type="image">
+							<posx>20</posx>
+							<posy>20</posy>
+							<width>256</width>
+							<height>256</height>
+							<texture background="true" fallback="defaultuser.png">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="label">
+							<posx>10</posx>
+							<posy>300</posy>
+							<width>270</width>
+							<height>42</height>
+							<font>font-22</font>
+							<textcolor>$VAR[main_color]</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.label][/B]</label>
+						</control>
 					</control>
-					<control type="label">
-						<posx>10</posx>
-						<posy>300</posy>
-						<width>270</width>
-						<height>42</height>
-						<font>font-22</font>
-						<textcolor>$VAR[main_color]</textcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>[B]$INFO[ListItem.label][/B]</label>
-					</control>
-				</control>
 
 				</focusedlayout>
 				<content>

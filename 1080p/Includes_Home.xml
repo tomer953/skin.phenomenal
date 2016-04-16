@@ -43,7 +43,7 @@
 		<value condition="[Control.HasFocus(9002) | StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)]">$VAR[widgetBackground]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(Background),wall,left)">black.png</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
-		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value>		
+		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">$VAR[default_global_bg]</value>		
 		<value>$INFO[Container(9000).ListItem.Property(Background)]</value>
 	</variable>
 	<variable name="varBackground2">
@@ -53,21 +53,21 @@
 		<value condition="SubString(Container(9001).ListItem.Property(Background),wall,left)">black.png</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)">$VAR[widgetBackground]</value>
-		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value> 
+		<value condition="IsEmpty(Container(9000).ListItem.Property(Background))">$VAR[default_global_bg]</value> 
 		<value>$INFO[Container(9000).ListItem.Property(Background)]</value>
 	</variable>
 	<variable name="varBackground_dialog">
 		<value condition="[SubString(Container(211).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]">$VAR[password_fanart]</value>
 		<value condition="SubString(Container(211).ListItem.Property(Background),wall,left)">hex_bg.png</value>
 		<value condition="StringCompare(Container(211).ListItem.Property(Background),weather) + !IsEmpty(Window(Weather).Property(Current.FanartCode))">$VAR[weather_fanart]</value>
-		<value condition="IsEmpty(Container(211).ListItem.Property(Background))">special://skin/backgrounds/videos.jpg</value> 
+		<value condition="IsEmpty(Container(211).ListItem.Property(Background))">$VAR[default_global_bg]</value> 
 		<value>$INFO[Container(211).ListItem.Property(Background)]</value>
 	</variable>
 	<variable name="widgetBackground">
-		<value condition="Container(9002).IsUpdating">special://skin/backgrounds/videos.jpg</value>
+		<value condition="Container(9002).IsUpdating">$VAR[default_global_bg]</value>
 		<value condition="!IsEmpty(Container(9002).ListItem.Art(tvshow.fanart))">$INFO[Container(9002).Listitem.Art(tvshow.fanart)]</value>
 		<value condition="!IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).Listitem.Art(fanart)]</value>
-		<value>special://skin/backgrounds/videos.jpg</value>
+		<value>$VAR[default_global_bg]</value>
 	</variable>
 
 	<include name="top_bar_home">

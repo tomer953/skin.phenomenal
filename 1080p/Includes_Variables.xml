@@ -7,11 +7,28 @@
 		<value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart) + !IsEmpty(Window(Home).Property(SkinHelper.ExtraFanArtPath))">$INFO[Window(Home).Property(SkinHelper.ExtraFanArtPath)]</value>
 		<value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart) + !IsEmpty(Window(home).Property(SkinHelper.Music.ExtraFanArt))">$INFO[Window(home).Property(SkinHelper.Music.ExtraFanArt)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="IsEmpty(ListItem.Art(fanart)) + Window.IsActive(mypics.xml)">special://skin/backgrounds/camera.jpg</value>
-		<value condition="IsEmpty(ListItem.Art(fanart)) + Window.IsActive(MyPVRChannels.xml)">special://skin/backgrounds/livetv.jpg</value>
+		<value condition="IsEmpty(ListItem.Art(fanart)) + Window.IsActive(mypics.xml)">$VAR[default_pictures_bg]</value>
+		<value condition="IsEmpty(ListItem.Art(fanart)) + Window.IsActive(MyPVRChannels.xml)">$VAR[default_livetv_bg]</value>
 		<value condition="Window.IsActive(LoginScreen.xml)">special://skin/backgrounds/camera.jpg</value>
-		<value condition="Window.IsActive(musiclibrary)">special://skin/backgrounds/music.jpg</value>
+		<value condition="Window.IsActive(musiclibrary)">$VAR[default_music_bg]</value>
+		<value>$VAR[default_global_bg]</value>
+	</variable>
+
+	<variable name="default_global_bg">
+		<value condition="!IsEmpty(Skin.String(default_global_bg))">$INFO[Skin.String(default_global_bg)]</value>
 		<value>special://skin/backgrounds/videos.jpg</value>
+	</variable>
+	<variable name="default_music_bg">
+		<value condition="!IsEmpty(Skin.String(default_music_bg))">$INFO[Skin.String(default_music_bg)]</value>
+		<value>special://skin/backgrounds/music.jpg</value>
+	</variable>
+	<variable name="default_livetv_bg">
+		<value condition="!IsEmpty(Skin.String(default_livetv_bg))">$INFO[Skin.String(default_livetv_bg)]</value>
+		<value>special://skin/backgrounds/livetv.jpg</value>
+	</variable>
+	<variable name="default_pictures_bg">
+		<value condition="!IsEmpty(Skin.String(default_pictures_bg))">$INFO[Skin.String(default_pictures_bg)]</value>
+		<value>special://skin/backgrounds/camera.jpg</value>
 	</variable>
 
 	<variable name="ArtistSlide">
@@ -387,7 +404,7 @@
 	</variable>
 	<variable name="password_fanart">
 		<value condition="!IsEmpty(Skin.String(password_fanart))">$INFO[Skin.String(password_fanart)]</value>
-		<value>special://skin/backgrounds/videos.jpg</value>
+		<value>$VAR[default_global_bg]</value>
 	</variable>
 
 	<variable name="password_notification">
