@@ -630,6 +630,10 @@ msgctxt "#31156"
 msgid "Side-menu icon"
 msgstr ""
 
+msgctxt "#31157"
+msgid "Prefer Poster"
+msgstr ""
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "
@@ -737,6 +741,10 @@ msgstr ""
 
 msgctxt "#31204"
 msgid "Wide List"
+msgstr ""
+
+msgctxt "#31205"
+msgid "Banner List"
 msgstr ""
 
 msgctxt "#31216"

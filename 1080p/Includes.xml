@@ -14,12 +14,11 @@
 	<include file="View54-WideList.xml" />
 	<include file="View55-Icon.xml" />
 	<include file="View56-Pictures.xml" />
+	<include file="View57-BannerList.xml" />
 	<include file="View-PVR.xml" />
 	<include file="Includes_MusicOSD.xml" />
 	<include file="Includes_Weather.xml" />
 	<include file="script-skinshortcuts-includes.xml" />
-	<constant name="FanartCrossfadeTime">300</constant>
-	<constant name="IconCrossfadeTime">300</constant>
 
 	<include name="FS_Video">
 		<control type="videowindow">
@@ -1866,7 +1865,7 @@
 	</include>
 
 	<!-- View Options -->
-	<include name="view_numbers">50,51,52,53,54,55,56</include>
+	<include name="view_numbers">50,51,52,53,54,55,56,57</include>
 	<include name="view_conditions">
 		<include>Fanart-Videos</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.51)">View-Posters-51</include>
@@ -1875,6 +1874,7 @@
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.54)">View-WideList-54</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.55)">View-Icons-55</include>
 		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.56)">View-Pictures-56</include>
+		<include condition="!Skin.HasSetting(SkinHelper.View.Disabled.57)">View-BannerList-57</include>
 		<control type="group">
 			<!-- Wating for content to load - showing splash screen -->
 			<visible>[!IntegerGreaterThan(Container.NumItems,-1) | Container.IsUpdating]</visible>
@@ -2179,6 +2179,24 @@
 			<onclick>Skin.ToggleSetting(Show_Scrollbar)</onclick>
 			<selected>Skin.HasSetting(Show_Scrollbar)</selected>
 			<include>view_settings_radiobutton</include>
+		</control>
+		<control type="radiobutton" id="540">
+			<description>Show Panel Info for bannerlist view</description>
+			<label>31092</label>
+			<onclick>Skin.ToggleSetting(BannerList_hide_panel)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<selected>!Skin.HasSetting(BannerList_hide_panel)</selected>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(57)</visible>
+		</control>
+		<control type="radiobutton" id="541">
+			<description>Show Panel Info for bannerlist view</description>
+			<label>31157</label>
+			<onclick>Skin.ToggleSetting(BannerList_PreferPoster)</onclick>
+			<selected>Skin.HasSetting(BannerList_PreferPoster)</selected>
+			<include>view_settings_radiobutton</include>
+			<enable>!Skin.HasSetting(BannerList_hide_panel)</enable>
+			<visible>Control.IsVisible(57)</visible>
 		</control>
 	</include>
 

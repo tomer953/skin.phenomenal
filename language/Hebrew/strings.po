@@ -630,6 +630,10 @@ msgctxt "#31156"
 msgid "Side-menu icon"
 msgstr "לשונית לתפריט צד"
 
+msgctxt "#31157"
+msgid "Prefer Poster"
+msgstr "העדף פוסטר"
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "
@@ -738,6 +742,10 @@ msgstr "Showcase"
 msgctxt "#31204"
 msgid "Wide List"
 msgstr "רשימה רחבה"
+
+msgctxt "#31205"
+msgid "Banner List"
+msgstr "רשימת באנרים"
 
 msgctxt "#31216"
 msgid "Extras"
