@@ -634,6 +634,10 @@ msgctxt "#31157"
 msgid "Prefer Poster"
 msgstr ""
 
+msgctxt "#31158"
+msgid "Custom Genre Icons"
+msgstr ""
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "
@@ -709,6 +713,10 @@ msgstr "[B]Тест системы[/B][CR]Подробная информаци�
 msgctxt "#31179"
 msgid "Next Episode:"
 msgstr "Следующая серия:"
+
+msgctxt "#31180"
+msgid "Custom Weather Design"
+msgstr ""
 
 msgctxt "#31184"
 msgid "Customize visualization background"

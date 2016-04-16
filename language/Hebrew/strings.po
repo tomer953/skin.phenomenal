@@ -634,6 +634,10 @@ msgctxt "#31157"
 msgid "Prefer Poster"
 msgstr "העדף פוסטר"
 
+msgctxt "#31158"
+msgid "Custom Genre Icons"
+msgstr "סמלי ז'אנרים מותאמים אישית"
+
 msgctxt "#31159"
 msgid ""
 "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video "
@@ -709,6 +713,10 @@ msgstr "[B]בדיקת פרטי המערכת[/B][CR]פירוט חומרה - הצ�
 msgctxt "#31179"
 msgid "Next Episode:"
 msgstr "פרק הבא:"
+
+msgctxt "#31180"
+msgid "Custom Weather Design"
+msgstr "בחר עיצוב - מזג האוויר"
 
 msgctxt "#31184"
 msgid "Customize visualization background"
