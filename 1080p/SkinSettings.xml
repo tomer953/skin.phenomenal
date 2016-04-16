@@ -1026,8 +1026,9 @@
 				<posx>550</posx>
 				<posy>0</posy>
 				<width>860</width>
+				<textwidth>600</textwidth>
 				<align>left</align>
-				<label>$LOCALIZE[19190] - $LOCALIZE[571]</label>
+				<label>$LOCALIZE[19190] - $LOCALIZE[571]:</label>
 				<label2>$INFO[Skin.String(default_global_bg)]</label2>
 				<onclick>Skin.SetFile(default_global_bg)</onclick>
 				<include>button_settings_2</include>
@@ -1036,8 +1037,9 @@
 				<posx>550</posx>
 				<posy>0</posy>
 				<width>860</width>
+				<textwidth>600</textwidth>
 				<align>left</align>
-				<label>$LOCALIZE[19190] - $LOCALIZE[2]</label>
+				<label>$LOCALIZE[19190] - $LOCALIZE[2]:</label>
 				<label2>$INFO[Skin.String(default_music_bg)]</label2>
 				<onclick>Skin.SetFile(default_music_bg)</onclick>
 				<include>button_settings_2</include>
@@ -1046,8 +1048,9 @@
 				<posx>550</posx>
 				<posy>0</posy>
 				<width>860</width>
+				<textwidth>600</textwidth>
 				<align>left</align>
-				<label>$LOCALIZE[19190] - $LOCALIZE[19191]</label>
+				<label>$LOCALIZE[19190] - $LOCALIZE[19191]:</label>
 				<label2>$INFO[Skin.String(default_livetv_bg)]</label2>
 				<onclick>Skin.SetFile(default_livetv_bg)</onclick>
 				<include>button_settings_2</include>
@@ -1056,8 +1059,9 @@
 				<posx>550</posx>
 				<posy>0</posy>
 				<width>860</width>
+				<textwidth>600</textwidth>
 				<align>left</align>
-				<label>$LOCALIZE[19190] - $LOCALIZE[1]</label>
+				<label>$LOCALIZE[19190] - $LOCALIZE[1]:</label>
 				<label2>$INFO[Skin.String(default_pictures_bg)]</label2>
 				<onclick>Skin.SetFile(default_pictures_bg)</onclick>
 				<include>button_settings_2</include>
@@ -1183,7 +1187,6 @@
 				<align>center</align>
 				<width>400</width>
 				<label>$LOCALIZE[31110] - $LOCALIZE[20342]</label>
-				<label2>$INFO[Skin.String(MovieGenreIconPack.name)]</label2>
 				<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=MovieGenreIconPack&amp;type=resource.images.moviegenreicons)</onclick>
 				<onclick condition="!System.HasAddon(script.image.resource.select)">RunPlugin(plugin://script.image.resource.select)</onclick>
 				<include>button_settings_2</include>
@@ -1192,7 +1195,6 @@
 				<align>center</align>
 				<width>400</width>
 				<label>$LOCALIZE[31110] - $LOCALIZE[249]</label>
-				<label2>$INFO[Skin.String(MusicGenreIconPack.name)]</label2>
 				<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=MusicGenreIconPack&amp;type=resource.images.musicgenreicons)</onclick>
 				<onclick condition="!System.HasAddon(script.image.resource.select)">RunPlugin(plugin://script.image.resource.select)</onclick>
 				<include>button_settings_2</include>
