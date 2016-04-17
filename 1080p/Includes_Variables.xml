@@ -508,8 +508,8 @@
 	</variable>
 
 	<variable name="Genre_Icons">
-		<value condition="IsEmpty(MovieGenreIconPack.path) + [SubString(Listitem.label,א) | SubString(Listitem.label,ה) | SubString(Listitem.label,ו) | SubString(Listitem.label,י) | SubString(Listitem.label,פ) | SubString(Listitem.label,ר)]">resource://resource.images.moviegenreicons.arctic.zephyr/$VAR[genre_translations].png</value>
-		<value condition="IsEmpty(MovieGenreIconPack.path) | Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.arctic.zephyr/)">resource://resource.images.moviegenreicons.arctic.zephyr/$INFO[ListItem.Label].png</value>
+		<value condition="IsEmpty(Skin.String(MovieGenreIconPack.path)) + [SubString(Listitem.label,א) | SubString(Listitem.label,ה) | SubString(Listitem.label,ו) | SubString(Listitem.label,י) | SubString(Listitem.label,פ) | SubString(Listitem.label,ר)]">resource://resource.images.moviegenreicons.arctic.zephyr/$VAR[genre_translations].png</value>
+		<value condition="IsEmpty(Skin.String(MovieGenreIconPack.path)) | Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.arctic.zephyr/)">resource://resource.images.moviegenreicons.arctic.zephyr/$INFO[ListItem.Label].png</value>
 
 		<value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.poster/)">resource://resource.images.moviegenreicons.poster/$INFO[ListItem.Label].jpg</value>
 		<value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.coloured/)">resource://resource.images.moviegenreicons.coloured/$INFO[ListItem.Label].jpg</value>
@@ -517,6 +517,7 @@
 		<value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.transparent/)">resource://resource.images.moviegenreicons.transparent/$INFO[ListItem.Label].png</value>
 		<value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.grey/)">resource://resource.images.moviegenreicons.grey/$INFO[ListItem.Label].jpg</value>
 		<value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.filmstrip/)">resource://resource.images.moviegenreicons.filmstrip/$INFO[ListItem.Label].jpg</value>
+		<value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.xzener-reflection/)">resource://resource.images.moviegenreicons.xzener-reflection/$INFO[ListItem.Label].png</value>
 		<value>DefaultGenre.png</value>
 	</variable>
 	<variable name="Genre_fanart">
@@ -528,7 +529,7 @@
 		<value condition="Skin.String(MusicGenreIconPack.path,resource://resource.images.musicgenreicons.text/)">resource://resource.images.musicgenreicons.text/$INFO[ListItem.Label].jpg</value>
 		<value condition="Skin.String(MusicGenreIconPack.path,resource://resource.images.musicgenreicons.grey/)">resource://resource.images.musicgenreicons.grey/$INFO[ListItem.Label].jpg</value>
 		<value condition="Skin.String(MusicGenreIconPack.path,resource://resource.images.musicgenreicons.poster/)">resource://resource.images.musicgenreicons.poster/$INFO[ListItem.Label].jpg</value>
-		<value condition="IsEmpty(MusicGenreIconPack.path)">defaultmusicsongs.png</value>
+		<value condition="IsEmpty(Skin.String(MusicGenreIconPack.path))">defaultmusicsongs.png</value>
 	</variable>
 
 	<variable name="genre_translations">
