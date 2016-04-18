@@ -442,8 +442,8 @@
 
 	<variable name="PosterThumb">
 		<value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.Icon]</value>
-		<value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !StringCompare(ListItem.Art(animatedposter), )">$INFO[ListItem.Art(animatedposter)]</value>
-		<!--  <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster))">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</value>	 -->
+		<value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !StringCompare(ListItem.Art(animatedposter), ) + !Window.IsActive(Home)">$INFO[ListItem.Art(animatedposter)]</value>
+		 <!-- <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster))">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</value>	 -->
 		<value condition="Container.Content(seasons) + SubString(ListItem.Label,*,left) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="Container.Content(seasons) + !IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
