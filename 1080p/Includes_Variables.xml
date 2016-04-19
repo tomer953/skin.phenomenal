@@ -214,6 +214,14 @@
 		<value condition="!Skin.HasSetting(bold_list)">grey_b</value>
 		<value>$VAR[main_color]</value>
 	</variable>
+	<variable name="widelist_color">
+		<value condition="!IsEmpty(Skin.String(widelist_color)) + !StringCompare(Skin.String(widelist_color),None)">$INFO[Skin.String(widelist_color)]</value>
+		<value>$VAR[main_color]</value>
+	</variable>
+		<variable name="widelist_bg_color">
+		<value condition="!IsEmpty(Skin.String(widelist_bg_color)) + !StringCompare(Skin.String(widelist_bg_color),None)">$INFO[Skin.String(widelist_bg_color)]</value>
+		<value>BFFFFFFF</value>
+	</variable>
 	<variable name="main_color">
 		<value condition="!IsEmpty(Skin.String(main_color)) + !StringCompare(Skin.String(main_color),None)">$INFO[Skin.String(main_color)]</value>
 		<value>FFE66A4F</value>

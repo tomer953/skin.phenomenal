@@ -2231,6 +2231,22 @@
 			<enable>!Skin.HasSetting(BannerList_hide_panel)</enable>
 			<visible>Control.IsVisible(57)</visible>
 		</control>
+			<control type="button" id="542">
+			<description>Choose bg Color</description>
+			<width>326</width>
+			<label>$LOCALIZE[31035]</label>
+			<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=widelist_bg_color)</onclick>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
+		<control type="button" id="543">
+			<description>Choose txt Color</description>
+			<width>326</width>
+			<label>$LOCALIZE[31036]</label>
+			<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=widelist_color)</onclick>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
 	</include>
 
 	<include name="views_animation">
