@@ -1586,6 +1586,19 @@
 		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(fanart_view_opacity),10)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(fanart_view_opacity),0)">Conditional</animation>
 	</include>
+		<!-- fade for widelist [54] list -->
+	<include name="widelist_fade_level">
+		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),90)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),80)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="70" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),70)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="60" time="0" condition="IsEmpty(Skin.String(widelist_view_opacity)) | StringCompare(Skin.String(widelist_view_opacity),60)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="50" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),50)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="40" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),40)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="30" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),30)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="20" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),20)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),10)">Conditional</animation>
+		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),0)">Conditional</animation>
+	</include>
 
 	<!-- Fade for main menu background -->
 	<include name="menu_bg_fade">
@@ -2244,6 +2257,24 @@
 			<width>326</width>
 			<label>$LOCALIZE[31036]</label>
 			<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=widelist_color)</onclick>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(54)</visible>
+		</control>
+		<control type="button" id="544">
+			<description>Choose TLevel</description>
+			<width>326</width>
+			<label>$LOCALIZE[31039] $INFO[Skin.String(widelist_view_opacity),,%]</label>
+			<onclick condition="skin.string(widelist_view_opacity, 100)">Skin.SetString(widelist_view_opacity, 90)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 90)">Skin.SetString(widelist_view_opacity, 80)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 80)">Skin.SetString(widelist_view_opacity, 70)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 70)">Skin.SetString(widelist_view_opacity, 60)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 60) | IsEmpty(skin.string(widelist_view_opacity))">Skin.SetString(widelist_view_opacity, 50)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 50)">Skin.SetString(widelist_view_opacity, 40)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 40)">Skin.SetString(widelist_view_opacity, 30)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 30)">Skin.SetString(widelist_view_opacity, 20)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 20)">Skin.SetString(widelist_view_opacity, 10)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 10)">Skin.SetString(widelist_view_opacity, 0)</onclick>
+			<onclick condition="skin.string(widelist_view_opacity, 0)">Skin.SetString(widelist_view_opacity, 100)</onclick>
 			<include>view_settings_radiobutton</include>
 			<visible>Control.IsVisible(54)</visible>
 		</control>
@@ -2936,7 +2967,7 @@
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
 				<texture colordiffuse="grey_a" diffuse="glass.jpg" background="true" border="15,2,15,2">main/$PARAM[tab].png</texture> 
-				<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+				<include>fanart_fade_level</include>
 			</control>
 			<control type="label">
 				<label>$PARAM[label2]</label>
