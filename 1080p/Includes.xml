@@ -394,48 +394,50 @@
 	</include>
 	<include name="addon_status">			
 		<control type="image"><!-- Enabled -->
-			<posx>660</posx>
-			<posy>15</posy>
-			<width>20</width>
-			<height>20</height>
-			<texture background="true" colordiffuse="$VAR[main_color]">white.png</texture>
+			<posx>0</posx>
+			<posy>-7</posy>
+			<width>30</width>
+			<height>30</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flags\subs\check.png</texture>
 			<visible>StringCompare(ListItem.Property(Addon.Status),$LOCALIZE[305])</visible>
 		</control>
-		<control type="image"><!-- Not Installed -->
-			<posx>660</posx>
-			<posy>15</posy>
+		<!-- Not Installed -->
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
 			<width>20</width>
 			<height>20</height>
 			<texture colordiffuse="darkgrey">white.png</texture>
-			<visible>IsEmpty(ListItem.Property(Addon.Status))</visible>
+			<visible>IsEmpty(ListItem.Property(Addon.Status)) + !IsEmpty(ListItem.Property(Addon.Version))</visible>
 		</control>
 		<control type="image"> <!-- Disabled -->
-			<posx>660</posx>
-			<posy>15</posy>
+			<posx>0</posx>
+			<posy>0</posy>
 			<width>20</width>
 			<height>20</height>
 			<texture colordiffuse="FF830707">white.png</texture>
 			<visible>StringCompare(ListItem.Property(Addon.Status),$LOCALIZE[24023])</visible>
 		</control>
 		<control type="image"><!-- Incompatible \ Broken -->
-			<posx>660</posx>
-			<posy>15</posy>
+			<posx>0</posx>
+			<posy>0</posy>
 			<width>20</width>
 			<height>20</height>
 			<texture colordiffuse="red">white.png</texture>
 			<visible>StringCompare(ListItem.Property(Addon.Status),$LOCALIZE[24098]) | StringCompare(ListItem.Property(Addon.Status),$LOCALIZE[24049])</visible>
 		</control>
 		<control type="image"><!-- Downloading -->
-			<posx>660</posx>
-			<posy>15</posy>
+			<posx>0</posx>
+			<posy>0</posy>
 			<width>20</width>
 			<height>20</height>
 			<texture colordiffuse="green">white.png</texture>
 			<visible>SubString(ListItem.Property(Addon.Status),$LOCALIZE[13413])</visible>
 		</control>
 		<control type="image"><!-- Update available -->
-			<posx>660</posx>
-			<posy>15</posy>
+			<posx>0</posx>
+			<posy>0</posy>
 			<width>20</width>
 			<height>20</height>
 			<texture colordiffuse="green">white.png</texture>
