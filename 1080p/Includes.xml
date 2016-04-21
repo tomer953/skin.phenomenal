@@ -293,6 +293,7 @@
 			</control>
 			<include>top_bar_content</include>
 		</control>
+		<include>scroll_letter</include>
 		<!-- <include>VideoInfo</include>
 		<include>MusicInfo</include> -->
 	</include>
