@@ -718,6 +718,10 @@ msgctxt "#31180"
 msgid "Custom Weather Design"
 msgstr ""
 
+msgctxt "#31181"
+msgid "Fixed list"
+msgstr ""
+
 msgctxt "#31184"
 msgid "Customize visualization background"
 msgstr "Настройка визуализации фона"

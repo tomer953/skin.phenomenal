@@ -1589,7 +1589,7 @@
 		<animation effect="fade" reversible="false" end="10" time="0" condition="StringCompare(Skin.String(fanart_view_opacity),10)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="0" time="0" condition="StringCompare(Skin.String(fanart_view_opacity),0)">Conditional</animation>
 	</include>
-		<!-- fade for widelist [54] list -->
+	<!-- fade for widelist [54] list -->
 	<include name="widelist_fade_level">
 		<animation effect="fade" reversible="false" end="90" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),90)">Conditional</animation>
 		<animation effect="fade" reversible="false" end="80" time="0" condition="StringCompare(Skin.String(widelist_view_opacity),80)">Conditional</animation>
@@ -2093,8 +2093,15 @@
 			<include>view_settings_radiobutton</include>
 			<visible>Control.IsVisible(52)</visible>
 		</control>
-
-
+		<control type="radiobutton" id="527">
+			<description>Fixed List</description>
+			<include>view_settings_radiobutton</include>
+			<label>31181</label>
+			<onclick>Skin.ToggleSetting(HorizontalListNav)</onclick>
+			<selected>Skin.HasSetting(HorizontalListNav)</selected>
+			<include>view_settings_radiobutton</include>
+			<visible>Control.IsVisible(53)</visible>
+		</control>
 		<control type="radiobutton" id="513">
 			<description>Flatten</description>
 			<include>view_settings_radiobutton</include>
@@ -2247,7 +2254,7 @@
 			<enable>!Skin.HasSetting(BannerList_hide_panel)</enable>
 			<visible>Control.IsVisible(57)</visible>
 		</control>
-			<control type="button" id="542">
+		<control type="button" id="542">
 			<description>Choose bg Color</description>
 			<width>326</width>
 			<label>$LOCALIZE[31035]</label>

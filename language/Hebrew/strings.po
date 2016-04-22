@@ -718,6 +718,10 @@ msgctxt "#31180"
 msgid "Custom Weather Design"
 msgstr "בחר עיצוב - מזג האוויר"
 
+msgctxt "#31181"
+msgid "Fixed list"
+msgstr "Fixed list"
+
 msgctxt "#31184"
 msgid "Customize visualization background"
 msgstr "הגדרת חיזוי"
