@@ -430,8 +430,8 @@
 			<visible>!SubString(Container(9000).ListItem.Property(ParentalControl),yes) | [SubString(Container(9000).ListItem.Property(ParentalControl),yes) + StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
 
 			<animation effect="slide" end="0,50" tween="sine" easing="out" time="0" condition="!system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation> 
-			<include condition="Skin.HasSetting(PinWidgets)">widget_vertical_pin</include>
-			<include condition="!Skin.HasSetting(PinWidgets)">widget_vertical_nopin</include>
+			<include condition="!Skin.HasSetting(HideWidgets)">widget_vertical_pin</include>
+			<include condition="Skin.HasSetting(HideWidgets)">widget_vertical_nopin</include>
 
 			<!-- Widget Tag Name -->
 			<control type="group">
@@ -971,8 +971,8 @@
 			<visible>!SubString(Container(9000).ListItem.Property(ParentalControl),yes) | [SubString(Container(9000).ListItem.Property(ParentalControl),yes) + StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
 
 			<animation effect="slide" end="0,50" tween="sine" easing="out" time="0" condition="!system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation> 
-			<include condition="Skin.HasSetting(PinWidgets)">widget_vertical_pin</include>
-			<include condition="!Skin.HasSetting(PinWidgets)">widget_vertical_nopin</include>
+			<include condition="!Skin.HasSetting(HideWidgets)">widget_vertical_pin</include>
+			<include condition="Skin.HasSetting(HideWidgets)">widget_vertical_nopin</include>
 			<animation effect="slide" start="0" end="-1400" time="200" condition="Control.HasFocus(9002)">Conditional</animation>
 			<!-- Widget Tag Name -->
 			<control type="group">

@@ -517,12 +517,12 @@
 			<animation effect="zoom" start="0,0,680,340" end="0,0,1600,600" center="0,500" time="200" condition="Control.HasFocus(9002) | Control.HasFocus(9101)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-100" tween="linear" time="200" condition="Control.HasFocus(9001)">Conditional</animation>
 			<onclick>SetFocus(9002)</onclick>
-			<visible>Skin.HasSetting(PinWidgets)</visible>
+			<visible>!Skin.HasSetting(HideWidgets)</visible>
 		</control>
 		
 		<control type="group">
-			<include condition="Skin.HasSetting(PinWidgets)">widget_horizontal_pin</include>
-			<include condition="!Skin.HasSetting(PinWidgets)">widget_horizontal_nopin</include>
+			<include condition="!Skin.HasSetting(HideWidgets)">widget_horizontal_pin</include>
+			<include condition="Skin.HasSetting(HideWidgets)">widget_horizontal_nopin</include>
 			<visible>!IsEmpty(Container(9000).ListItem.Property(widgetPath)) | StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
 			<visible>!SubString(Container(9000).ListItem.Property(ParentalControl),yes) | [SubString(Container(9000).ListItem.Property(ParentalControl),yes) + StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
 			<control type="image">
