@@ -3001,4 +3001,58 @@
 			</control>
 		</definition>
 	</include>
+
+	<include name="systeminfo_content">
+		<item>
+			<label>Kodi</label>
+			<label2>$INFO[System.BuildVersion]</label2>
+			<thumb>kodiicon.png</thumb>
+			<property name="special">systeminfo</property>
+			<property name="plot">$INFO[System.FriendlyName] • Phenomenal $INFO[System.AddonVersion(skin.phenomenal)]</property>
+			<onclick>ActivateWindow(systeminfo)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31182]</label>
+			<label2>$INFO[System.UsedSpacePercent]</label2>
+			<thumb>defaultharddisk.png</thumb>
+			<property name="special">systeminfo</property>
+			<property name="plot">$INFO[System.TotalSpace] • $INFO[System.UsedSpace][CR]$INFO[System.HddTemperature]</property>
+			<onclick>ActivateWindow(systeminfo)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31187]</label>
+			<label2>$LOCALIZE[13271] $INFO[System.CpuUsage] • $INFO[System.CpuFrequency]</label2>
+			<thumb>cpu.png</thumb>
+			<property name="special">systeminfo</property>
+			<property name="plot">$LOCALIZE[401]: $INFO[System.CPUTemperature] • $LOCALIZE[13300]: $INFO[System.FanSpeed][CR]$LOCALIZE[12390]: $INFO[System.Uptime]</property>
+			<onclick>ActivateWindow(systeminfo)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31183]</label>
+			<label2>$INFO[System.Memory(used.percent)]</label2>
+			<thumb>memory.png</thumb>
+			<property name="special">systeminfo</property>
+			<property name="plot">$LOCALIZE[22012]: $INFO[System.Memory(total)] • $LOCALIZE[158]: $INFO[System.Memory(free)]</property>
+			<onclick>ActivateWindow(systeminfo)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[13279]</label>
+			<label2>IP: $INFO[Network.IPAddress]</label2>
+			<thumb>defaultnetwork.png</thumb>
+			<property name="special">systeminfo</property>
+			<property name="plot">$INFO[Network.LinkState][CR]$LOCALIZE[443]: $INFO[System.InternetState]</property>
+			<onclick>ActivateWindow(systeminfo)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[131]</label>
+			<label2>$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight]</label2>
+			<thumb>display.png</thumb>
+			<property name="special">systeminfo</property>
+			<property name="plot">$INFO[System.ScreenResolution]</property>
+			<onclick>ActivateWindow(systeminfo)</onclick>
+		</item>
+	</include>
+	
+	<include name="submenu_content"><include>skinshortcuts-submenu</include></include>
+
 </includes>

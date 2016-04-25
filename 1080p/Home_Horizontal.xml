@@ -504,18 +504,6 @@
 		</control>
 		<!-- End of Horizontal Sub Menu -->
 
-		<control type="label">
-			<posx>700</posx>
-			<width>1170</width>
-			<height>202</height>
-			<textcolor>FF0000FF</textcolor>
-			<shadowcolor>FF000000</shadowcolor>
-			<font>font13</font>
-			<align>left</align>
-			<label>Parent: $INFO[Container(9000).ListItem.Property(ParentalControl)] [CR] mypassword: $INFO[Skin.String(mypassword)] passcode: $INFO[Skin.String(passcode)] [CR]Property(Background):[CR] $INFO[Container(9000).ListItem.Property(Background)] [CR] special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.FanartCode)]/weather-$INFO[Window(Weather).Property(Current.FanartCode)].jpg [CR] widgetType: $INFO[Container(9000).ListItem.Property(widgetType)] [CR]widgetTarget: $INFO[Container(9000).ListItem.Property(widgetTarget)] [CR]Path: $INFO[Container(9000).ListItem.Property(widgetPath)] [CR]Widget: $INFO[Container(9000).ListItem.Property(Widget)] [CR]Type: $INFO[Container(9000).ListItem.Property(widgetType)]</label>
-			<visible>False</visible>
-		</control>
-
 		<!-- Widget List - Horizontal Layout -->
 		<control type="button" id="9101">
 			<posx>0</posx>
@@ -561,7 +549,8 @@
 					<animation effect="zoom" start="0,0,950,400" end="0,0,1860,400" center="0,0" time="200" condition="Control.HasFocus(9002) | Control.HasFocus(9101)">Conditional</animation>
 				</control>
 			</control>
-			<control type="list" id="9002">
+			<include>skinshortcuts-template-widget</include>
+<!-- 			<control type="list" id="9002">
 				<include>widget_content_horizontal</include>
 				<visible>!StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
 				<content target="video">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
@@ -570,7 +559,7 @@
 				<include>widget_content_horizontal</include>
 				<visible>StringCompare(Container(9000).ListItem.Property(widget),submenuaswidget)</visible>
 				<content><include>skinshortcuts-submenu</include></content>
-			</control>
+			</control> -->
 
 			<!-- Widget Tag Name -->
 			<control type="group">
@@ -601,47 +590,6 @@
 		</control>
 	</include>
 
-	<!-- Widget Content for Horizontal layout -->
-	<include name="widget_content_horizontal">
-		<orientation>Horizontal</orientation>
-		<posx>60</posx>
-		<posy>35</posy>
-		<height>330</height>
-		<width>867</width>
-		<onback>9000</onback>
-		<onup>9003</onup>
-		<ondown>9000</ondown>
-		<onleft>9002</onleft>
-		<onright>9002</onright>
-		<oninfo>$VAR[widgetoninfoaction]</oninfo>
-		<focusposition>0</focusposition>
-		<autoscroll time="6000">!Control.HasFocus(9002) + !Control.HasFocus(9101) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</autoscroll>		
-		<animation effect="fade" start="100" end="0" time="0" condition="Container(9002).IsUpdating">Conditional</animation>
-		<scrolltime tween="back" easing="Out">500</scrolltime>
-		<itemlayout  width="215" height="330">
-
-			<control type="image">
-				<centerleft>50%</centerleft>
-				<bottom>0</bottom>
-				<top>0</top>
-				<width>200</width>
-				<aspectratio>keep</aspectratio>
-				<texture background="true">$VAR[PosterThumb]</texture>
-			</control>
-		</itemlayout>
-		<focusedlayout width="215" height="330">
-			<control type="image">
-				<centerleft>50%</centerleft>
-				<width>220</width>
-				<bottom>0</bottom>
-				<top>0</top>
-				<bordertexture colordiffuse="$VAR[main_color]">white.png</bordertexture>
-				<bordersize>5</bordersize>
-				<aspectratio>keep</aspectratio>
-				<texture background="true">$VAR[PosterThumb]</texture>
-			</control>
-		</focusedlayout>
-	</include>
 	<include name="widget_details_horizontal">
 		<control type="group">
 			<posx>940</posx>

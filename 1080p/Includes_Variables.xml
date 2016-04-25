@@ -218,7 +218,7 @@
 		<value condition="!IsEmpty(Skin.String(widelist_color)) + !StringCompare(Skin.String(widelist_color),None)">$INFO[Skin.String(widelist_color)]</value>
 		<value>$VAR[main_color]</value>
 	</variable>
-		<variable name="widelist_bg_color">
+	<variable name="widelist_bg_color">
 		<value condition="!IsEmpty(Skin.String(widelist_bg_color)) + !StringCompare(Skin.String(widelist_bg_color),None)">$INFO[Skin.String(widelist_bg_color)]</value>
 		<value>BFFFFFFF</value>
 	</variable>
@@ -451,7 +451,7 @@
 	<variable name="PosterThumb">
 		<value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.Icon]</value>
 		<value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !StringCompare(ListItem.Art(animatedposter), ) + !Window.IsActive(Home)">$INFO[ListItem.Art(animatedposter)]</value>
-		 <!-- <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster))">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</value>	 -->
+		<!-- <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster))">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</value>	 -->
 		<value condition="Container.Content(seasons) + SubString(ListItem.Label,*,left) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="Container.Content(seasons) + !IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
@@ -463,11 +463,9 @@
 		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="!IsEmpty(ListItem.Property(poster))">$INFO[ListItem.Property(poster)]</value>
 		<value condition="!IsEmpty(ListItem.Property(tvshow.poster))">$INFO[ListItem.Property(tvshow.poster)]</value>
-
 		<value condition="Container.Content(genres) + Window.IsActive(MyMusicNav.xml)">$VAR[Music_Genre_Icons]</value>
 		<value condition="Container.Content(genres)">$VAR[Genre_Icons]</value>
-
-		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
+		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value> 
 		<value condition="!IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
 		<value>defaultmovies.png</value>
 	</variable>
@@ -569,5 +567,7 @@
 		<value condition="SubString(ListItem.Label,רומנטי)">Romance</value>
 		<value>Short</value>
 	</variable>
+
+	
 
 </includes>
