@@ -615,7 +615,7 @@
 				<include>align_tag</include>
 				<font>font-22</font>
 				<textcolor>grey_b</textcolor>
-				<label>$INFO[Container(9002).ListItem.Plot]$INFO[Container(9002).ListItem.Property(Addon.Description)]$INFO[Container(9002).ListItem.Property(Album_Description)]</label>
+				<label>$VAR[widget_plot]</label>
 				<autoscroll time="2000" delay="7000" repeat="5000">!Skin.HasSetting(AutoScroll)</autoscroll>
 			</control>
 			<control type="label">
