@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<include name="weather_list">
+	<include condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">weather_list_rtl</include>
+	<include condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">weather_list_ltr</include>
+	
+	</include>
+	<include name="weather_list_rtl">
+		<include name="weather_data">
+			<param name="day" value="Day4" />
+			<param name="dayname" value="$INFO[Window(weather).Property(Day4.Title)]" />
+		</include>
+		<include name="weather_data">
+			<param name="day" value="Day3" />
+			<param name="dayname" value="$INFO[Window(weather).Property(Day3.Title)]" />
+		</include>
+		<include name="weather_data">
+			<param name="day" value="Day2" />
+			<param name="dayname" value="$INFO[Window(weather).Property(Day2.Title)]" />
+		</include>
+		<include name="weather_data">
+			<param name="day" value="Day1" />
+			<param name="dayname" value="$INFO[Window(weather).Property(Day1.Title)]" />
+		</include>
+		<include name="weather_data">
+			<param name="day" value="Day0" />
+			<param name="dayname" value="$LOCALIZE[33006]" />
+		</include>
+	</include>
+	<include name="weather_list_ltr">
+		<include name="weather_data">
+			<param name="day" value="Day0" />
+			<param name="dayname" value="$LOCALIZE[33006]" />
+		</include>
+		<include name="weather_data">
+			<param name="day" value="Day1" />
+			<param name="dayname" value="$INFO[Window(weather).Property(Day1.Title)]" />
+		</include>
+		<include name="weather_data">
+			<param name="day" value="Day2" />
+			<param name="dayname" value="$INFO[Window(weather).Property(Day2.Title)]" />
+		</include>
+		<include name="weather_data">
+			<param name="day" value="Day3" />
+			<param name="dayname" value="$INFO[Window(weather).Property(Day3.Title)]" />
+		</include>
+		<include name="weather_data">
+			<param name="day" value="Day4" />
+			<param name="dayname" value="$INFO[Window(weather).Property(Day4.Title)]" />
+		</include>
+	</include>
 	<include name="weather_data">
 		<definition>
 			<control type="group">
@@ -44,7 +93,7 @@
 					<imagepath>resource://resource.images.weathericons.default/$INFO[Window(weather).Property($PARAM[day].FanartCode),,.png]</imagepath>
 					<visible>IsEmpty(Skin.String(weather.icons.path))  + System.HasAddon(resource.images.weathericons.default)</visible>
 				</control>
-				
+
 				<control type="label">
 					<posx>0</posx>
 					<posy>205</posy>
@@ -66,7 +115,7 @@
 			</control>
 		</definition>
 	</include>
-	
+
 	<variable name="weather_fanart">
 		<value condition="!IsEmpty(Skin.String(weather.fanart.path)) + !IsEmpty(Skin.String(weather.fanart.ext)) + !Skin.HasSetting(weather.fanart.multi)">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weather.fanart.ext)]</value>
 		<value condition="!IsEmpty(Skin.String(weather.fanart.path)) + Skin.HasSetting(weather.fanart.multi)">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
