@@ -1977,6 +1977,13 @@
 			<selected>!Skin.HasSetting(Hide_SideTab)</selected>
 			<include>view_settings_radiobutton</include>
 		</control>
+		<control type="radiobutton" id="499">
+			<description>Disable Fanart</description>
+			<label>$LOCALIZE[24021] $LOCALIZE[31200]</label>
+			<onclick>Skin.ToggleSetting(Disable_Fanart)</onclick>
+			<selected>Skin.HasSetting(Disable_Fanart)</selected>
+			<include>view_settings_radiobutton</include>
+		</control>
 	</include>
 
 
@@ -3052,7 +3059,7 @@
 			<onclick>ActivateWindow(systeminfo)</onclick>
 		</item>
 	</include>
-	
+
 	<include name="submenu_content"><include>skinshortcuts-submenu</include></include>
 
 </includes>

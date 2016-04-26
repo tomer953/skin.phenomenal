@@ -125,7 +125,7 @@
 
 	<backgrounddefault labelID="weather">weather</backgrounddefault>
 	<backgrounddefault labelID="videos">special://skin/backgrounds/videos.jpg</backgrounddefault>
- 	<backgrounddefault labelID="movies">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
+	<backgrounddefault labelID="movies">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
 	<backgrounddefault labelID="tvshows">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
 	<backgrounddefault labelID="music">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</backgrounddefault>
 	<backgrounddefault labelID="musicvideos">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]</backgrounddefault>
@@ -158,7 +158,7 @@
 	<backgroundBrowse>True</backgroundBrowse>
 
 	<!-- Parental control -->
-		<override action="globaloverride">
+	<override action="globaloverride">
 		<condition>SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
 		<action>Skin.SetString(dialog_action,::ACTION::)</action>
 		<action>ActivateWindow(1132)</action> 
@@ -169,7 +169,6 @@
 		<action>AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],Silent)</action>
 		<action>::ACTION::</action>
 	</override>
-
 
 	<propertySettings property="ParentalControl" buttonID="993" title="$LOCALIZE[31083]" showNone="False" imageBrowse="False" />
 	<property property="ParentalControl" label="$LOCALIZE[106]">No</property>

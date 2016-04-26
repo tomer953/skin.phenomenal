@@ -3,11 +3,10 @@
     <other include="widget">
         <!-- We're going to use this template for all widgets with a widgetPath element -->
         <condition tag="property" attribute="name|widgetPath" />
-	
         <!-- Retrieve the widgetPath and widgetTarget properties -->
         <property name="content" tag="property" attribute="name|widgetPath" />
         <property name="target" tag="property" attribute="name|widgetTarget" />
-
+		<property name="target">video</property>
         <controls>
             <control type="list" id="9002">
                 <skinshortcuts>visibility</skinshortcuts>
