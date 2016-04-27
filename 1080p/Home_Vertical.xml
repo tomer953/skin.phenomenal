@@ -322,6 +322,7 @@
 				<ondown>9001</ondown>
 				<onleft>9002</onleft>
 				<onright>9000</onright>
+				<onback>9000</onback>
 				<orientation>vertical</orientation>
 				<defaultcontrol always="true">1</defaultcontrol>
 				<scrolltime tween="sine" easing="out">340</scrolltime>
@@ -862,6 +863,7 @@
 				<ondown>9001</ondown>
 				<onleft>9000</onleft>
 				<onright>9002</onright>
+				<onback>9000</onback>
 				<orientation>vertical</orientation>
 				<defaultcontrol always="true">1</defaultcontrol>
 				<scrolltime tween="sine" easing="out">340</scrolltime>

@@ -88,8 +88,10 @@
 		<onback>9000</onback>
 		<onup>9003</onup>
 		<ondown>9000</ondown>
-		<onleft>9003</onleft>
-		<onright>9003</onright>
+		<onleft condition="!Skin.HasSetting(Home_Horizontal)">9003</onleft>
+		<onright condition="!Skin.HasSetting(Home_Horizontal)">9003</onright>
+		<onleft condition="Skin.HasSetting(Home_Horizontal)">9002</onleft>
+		<onright condition="Skin.HasSetting(Home_Horizontal)">9002</onright>
 		<oninfo>$VAR[widgetoninfoaction]</oninfo>
 		<focusposition>0</focusposition>
 		<autoscroll time="6000">!Control.HasFocus(9002) + !Control.HasFocus(9101) + StringCompare(Container(9000).ListItem.Property(Background),widgetbackground)</autoscroll>		

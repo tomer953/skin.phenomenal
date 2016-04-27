@@ -344,6 +344,7 @@
 				<ondown>9000</ondown>
 				<onleft>9001</onleft>
 				<onright>9001</onright>
+				<onback>9000</onback>
 				<align>center</align>
 				<focusposition>2</focusposition>
 				<defaultcontrol always="true">1</defaultcontrol>
