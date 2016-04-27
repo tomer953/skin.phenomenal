@@ -165,7 +165,7 @@
 	</include>
 	<include name="top_bar_home_rtl">
 		<control type="group">
-			<animation effect="slide" start="0" end="0,-100" time="300" condition="Skin.HasSetting(Home_HideTopBar)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-100" time="300" condition="Skin.HasSetting(Home_HideTopBar) | Window.IsVisible(volumebar) | Window.IsVisible(BusyDialog) | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(infodialog)">Conditional</animation>
 			<!-- RSS -->
 			<control type="group">
 				<posx>10</posx>
@@ -390,7 +390,7 @@
 
 	<include name="top_bar_home_ltr">
 		<control type="group">
-			<animation effect="slide" start="0" end="0,-100" time="300" condition="Skin.HasSetting(Home_HideTopBar)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-100" time="300" condition="Skin.HasSetting(Home_HideTopBar) | Window.IsVisible(volumebar) | Window.IsVisible(BusyDialog) | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(infodialog)">Conditional</animation>
 			<!-- RSS -->
 			<control type="group">
 				<posx>1100</posx>
