@@ -34,7 +34,7 @@
 			<posx>250</posx>
 			<posy>80</posy>
 			<include>dialog_zoom_animation</include>
-			<include name="big_dialog">
+			<include content="big_dialog">
 				<param name="info_posy" value="2000" />
 				<param name="content_posy" value="80" />
 				<param name="width" value="1022"/>
@@ -81,14 +81,14 @@
 				<posx>1060</posx>
 				<posy>0</posy>
 				<include>dialog_zoom_animation</include>
-				<include name="big_dialog">
+				<include content="big_dialog">
 					<param name="info_posy" value="2000" />
 					<param name="content_posy" value="80" />
 					<param name="width" value="390"/>
 					<param name="content_height" value="880" />
 					<param name="close_posy" value="2000" />
 				</include>
-				<include name="right_shadow">
+				<include content="right_shadow">
 					<param name="posx" value="321" />
 					<param name="posy" value="80" />
 					<param name="width" value="20" />
@@ -329,14 +329,14 @@
 				<onup>noop</onup>
 				<ondown>noop</ondown>
 				<orientation>vertical</orientation>
-				<include name="shortcuts_label2"></include>
-				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(displaypath)]"/></include>
-				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Label]"/></include>
-				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(TextColor)]"/><param name="color" value="$INFO[Container(211).ListItem.Property(TextColor)]"/></include>
-				<include name="shortcuts_label2"><param name="label" value="$VAR[shortcuts_bgpath]"/></include>
-				<include name="shortcuts_label2"><param name="label" value=""/><param name="width" value="490"/></include>
-				<include name="shortcuts_label3"><param name="label" value="$VAR[passcode]"/></include>		
-				<include name="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(widgetName)]"/></include>
+				<include content="shortcuts_label2"></include>
+				<include content="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(displaypath)]"/></include>
+				<include content="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Label]"/></include>
+				<include content="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(TextColor)]"/><param name="color" value="$INFO[Container(211).ListItem.Property(TextColor)]"/></include>
+				<include content="shortcuts_label2"><param name="label" value="$VAR[shortcuts_bgpath]"/></include>
+				<include content="shortcuts_label2"><param name="label" value=""/><param name="width" value="490"/></include>
+				<include content="shortcuts_label3"><param name="label" value="$VAR[passcode]"/></include>		
+				<include content="shortcuts_label2"><param name="label" value="$INFO[Container(211).ListItem.Property(widgetName)]"/></include>
 			</control>
 
 			<control type="image">

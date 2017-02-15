@@ -119,12 +119,12 @@
 				<description>default RadioButton</description>
 				<height>45</height>
 				<font>font-22</font>
-				<include name="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
+				<include content="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 					<param name="radioposx" value="820" />
 					<param name="radioposy" value="3" />
 					<param name="textoffsetx" value="70" />
 				</include>
-				<include name="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
+				<include content="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 					<param name="radioposx" value="30" />
 					<param name="radioposy" value="0" />
 					<param name="textoffsetx" value="90" />

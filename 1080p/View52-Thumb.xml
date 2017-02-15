@@ -187,7 +187,7 @@
 			</control>
 
 			<!-- scroll -->
-			<include name="horizontal_scroll">
+			<include content="horizontal_scroll">
 				<param name="id" value="60" />
 				<param name="listid" value="52" />
 				<param name="posy">1090</param>
@@ -519,7 +519,7 @@
 			</control>
 
 			<!-- scroll -->
-			<include name="horizontal_scroll">
+			<include content="horizontal_scroll">
 				<param name="id" value="60" />
 				<param name="listid" value="52" />
 				<param name="posy">1090</param>

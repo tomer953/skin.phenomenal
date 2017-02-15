@@ -8,7 +8,7 @@
 			<posy>80</posy>
 			<include>dialog_zoom_animation</include>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(pvrguideinfo)">conditional</animation>
-			<include name="big_dialog">
+			<include content="big_dialog">
 				<param name="info_posy" value="2000" />
 				<param name="width" value="1100"/>
 				<param name="content_posy" value="80" />

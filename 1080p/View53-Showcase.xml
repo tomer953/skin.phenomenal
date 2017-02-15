@@ -970,7 +970,7 @@
 			<include condition="Skin.HasSetting(HorizontalListNav)">scmfixed</include>
 			<include condition="!Skin.HasSetting(HorizontalListNav)">scmwrap</include>
 			<!-- scroll -->
-			<include name="horizontal_scroll">
+			<include content="horizontal_scroll">
 				<param name="id" value="72" />
 				<param name="listid" value="53" />
 				<param name="posy">1140</param>
@@ -2646,7 +2646,7 @@
 	</variable>
 	<variable name="FloorSubLabelVar">
 		<value condition="Container.Content(episodes)">$INFO[ListItem.TvShowTitle]</value>
-		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Summary)]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.AddonSummary]</value>
 		<value condition="Container.Content(musicvideos)">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Year,, • ]$INFO[ListItem.Rating,, • ]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
 		<value condition="[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Title)">$LOCALIZE[20360]: $INFO[ListItem.Property(TotalEpisodes)] $INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)]</value>

@@ -410,7 +410,7 @@
 			<width>20</width>
 			<height>20</height>
 			<texture colordiffuse="darkgrey">white.png</texture>
-			<visible>IsEmpty(ListItem.Property(Addon.Status)) + !IsEmpty(ListItem.Property(Addon.Version))</visible>
+			<visible>IsEmpty(ListItem.Property(Addon.Status)) + !IsEmpty(ListItem.AddonVersion)</visible>
 		</control>
 		<control type="image"> <!-- Disabled -->
 			<posx>0</posx>
@@ -2538,13 +2538,13 @@
 				<texture>shadow_horizontal.png</texture>
 			</control>
 
-			<include name="left_shadow">
+			<include content="left_shadow">
 				<param name="posx" value="-370" />
 				<param name="posy" value="0" />
 				<param name="width" value="10" />
 				<param name="height" value="530" />
 			</include>
-			<include name="right_shadow">
+			<include content="right_shadow">
 				<param name="posx" value="-20" />
 				<param name="posy" value="0" />
 				<param name="width" value="10" />
@@ -2622,10 +2622,10 @@
 			<height>30</height>
 			<font>font-20</font>
 			<align>left</align>
-			<label>$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</label>
+			<label>$INFO[ListItem.AddonVersion] $INFO[ListItem.AddonCreator]</label>
 			<textcolor>grey</textcolor>
 			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
-			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
+			<visible>!IsEmpty(ListItem.AddonVersion)</visible>
 		</control>
 	</include>
 	<include name="addonbrowser_label2_ltr">
@@ -2648,10 +2648,10 @@
 			<height>30</height>
 			<font>font-20</font>
 			<align>right</align>
-			<label>$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</label>
+			<label>$INFO[ListItem.AddonVersion] $INFO[ListItem.AddonCreator]</label>
 			<textcolor>grey</textcolor>
 			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
-			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
+			<visible>!IsEmpty(ListItem.AddonVersion)</visible>
 		</control>
 	</include>
 	<include name="addonbrowser_label2_focus_rtl">
@@ -2674,10 +2674,10 @@
 			<height>30</height>
 			<font>font-20</font>
 			<align>left</align>
-			<label>$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</label>
+			<label>$INFO[ListItem.AddonVersion] $INFO[ListItem.AddonCreator]</label>
 			<textcolor>grey_b</textcolor>
 			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
-			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
+			<visible>!IsEmpty(ListItem.AddonVersion)</visible>
 		</control>
 	</include>
 	<include name="addonbrowser_label2_focus_ltr">
@@ -2700,10 +2700,10 @@
 			<height>30</height>
 			<font>font-20</font>
 			<align>right</align>
-			<label>$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</label>
+			<label>$INFO[ListItem.AddonVersion] $INFO[ListItem.AddonCreator]</label>
 			<textcolor>grey_b</textcolor>
 			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(500)">Conditional</animation>
-			<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
+			<visible>!IsEmpty(ListItem.AddonVersion)</visible>
 		</control>
 	</include>
 	<include name="close_button">

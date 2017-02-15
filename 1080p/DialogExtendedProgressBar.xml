@@ -3,7 +3,7 @@
 	<controls>
 			<control type="group">
 				<posx>645</posx>
-				<visible>![Window.IsVisible(startup) | Window.IsVisible(InfoDialog) | Window.IsVisible(BusyDialog) | Window.IsVisible(SliderDialog) | Window.IsVisible(VolumeBar) | Window.IsVisible(Seekbar) | Window.IsVisible(FullscreenVideo)]</visible>
+				<visible>![Window.IsVisible(startup) | Window.IsVisible(Notification) | Window.IsVisible(BusyDialog) | Window.IsVisible(SliderDialog) | Window.IsVisible(VolumeBar) | Window.IsVisible(Seekbar) | Window.IsVisible(FullscreenVideo)]</visible>
 				<animation effect="slide" start="0,-80" end="0,0" tween="circle" easing="out" delay="400" time="300">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="0,-80" delay="0" time="300">WindowClose</animation>
 				<control type="image">

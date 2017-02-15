@@ -8,7 +8,7 @@
 			<posy>80</posy>
 			<include>dialog_zoom_animation</include>
 			<visible>!Window.IsVisible(addonsettings)</visible>
-			<include name="big_dialog">	
+			<include content="big_dialog">	
 				<param name="bottom_posy" value="2000" />
 			</include>
 			<control type="label">
@@ -122,12 +122,6 @@
 						<height>45</height>
 						<label>5</label>
 					</control>
-					<control type="button" id="10">
-						<description>Changelog</description>
-						<width>260</width>
-						<height>45</height>
-						<label>24054</label>
-					</control>
 					<control type="button" id="12">
 						<description>Run</description>
 						<width>260</width>
@@ -146,46 +140,46 @@
 					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 					<orientation>vertical</orientation>
 					<control type="group">
-						<visible>!IsEmpty(ListItem.Property(Addon.Creator))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
+						<visible>!IsEmpty(ListItem.AddonCreator)</visible>
+						<include content="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[21863]:" />
 							<param name="posx2" value="680" />
 							<param name="width2" value="680" />
-							<param name="label2" value="$INFO[ListItem.Property(Addon.Creator)]" />
+							<param name="label2" value="$INFO[ListItem.AddonCreator]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
+						<include content="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[21863]:" />
 							<param name="posx2" value="150" />
 							<param name="width2" value="650" />
-							<param name="label2" value="$INFO[ListItem.Property(Addon.Creator)]" />
+							<param name="label2" value="$INFO[ListItem.AddonCreator]" />
 						</include>
 					</control>
 					<control type="group">
-						<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
+						<visible>!IsEmpty(ListItem.AddonVersion)</visible>
+						<include content="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[24051]" />
 							<param name="posx2" value="680" />
 							<param name="width2" value="680" />
-							<param name="label2" value="$INFO[ListItem.Property(Addon.Version)]" />
+							<param name="label2" value="$INFO[ListItem.AddonVersion]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
+						<include content="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[24051]" />
 							<param name="posx2" value="150" />
 							<param name="width2" value="650" />
-							<param name="label2" value="$INFO[ListItem.Property(Addon.Version)]" />
+							<param name="label2" value="$INFO[ListItem.AddonVersion]" />
 						</include>
 					</control>
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Property(Addon.ID))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
+						<include content="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value=":$LOCALIZE[560]" />
@@ -193,7 +187,7 @@
 							<param name="width2" value="680" />
 							<param name="label2" value="$INFO[ListItem.Property(Addon.ID)]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
+						<include content="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="140" />
 							<param name="label1" value="$LOCALIZE[560]:" />
@@ -203,27 +197,27 @@
 						</include>
 					</control>
 					<control type="group">
-						<visible>!IsEmpty(ListItem.Property(Addon.Type))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
+						<visible>!IsEmpty(ListItem.AddonType)</visible>
+						<include content="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[564]:" />
 							<param name="posx2" value="680" />
 							<param name="width2" value="680" />
-							<param name="label2" value="$INFO[ListItem.Property(Addon.Type)]" />
+							<param name="label2" value="$INFO[ListItem.AddonType]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
+						<include content="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[564]:" />
 							<param name="posx2" value="150" />
 							<param name="width2" value="650" />
-							<param name="label2" value="$INFO[ListItem.Property(Addon.Type)]" />
+							<param name="label2" value="$INFO[ListItem.AddonType]" />
 						</include>
 					</control>
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Property(Addon.Status))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
+						<include content="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[126]:" />
@@ -231,7 +225,7 @@
 							<param name="width2" value="680" />
 							<param name="label2" value="$INFO[ListItem.Property(Addon.Status)]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
+						<include content="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="140" />
 							<param name="label1" value="$LOCALIZE[126]:" />
@@ -241,22 +235,22 @@
 						</include>
 					</control>
 					<control type="group">
-						<visible>!IsEmpty(ListItem.Property(Addon.Summary))</visible>
-						<include name="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
+						<visible>!IsEmpty(ListItem.AddonSummary)</visible>
+						<include content="dialogvideoinfo_label" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="800" />
 							<param name="width1" value="120" />
 							<param name="label1" value="$LOCALIZE[20037]:" />
 							<param name="posx2" value="680" />
 							<param name="width2" value="680" />
-							<param name="label2" value="$INFO[ListItem.Property(Addon.Summary)]" />
+							<param name="label2" value="$INFO[ListItem.AddonSummary]" />
 						</include>
-						<include name="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
+						<include content="dialogvideoinfo_label" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 							<param name="posx1" value="0" />
 							<param name="width1" value="140" />
 							<param name="label1" value="$LOCALIZE[20037]:" />
 							<param name="posx2" value="150" />
 							<param name="width2" value="640" />
-							<param name="label2" value="$INFO[ListItem.Property(Addon.Summary)]" />
+							<param name="label2" value="$INFO[ListItem.AddonSummary]" />
 						</include>
 					</control>
 					<control type="group">
@@ -293,7 +287,7 @@
 					<font>font-22</font>
 					<include>align_tag</include>
 					<textcolor>grey_b</textcolor>
-					<label>$INFO[ListItem.Property(Addon.Description)]</label>
+					<label>$INFO[ListItem.AddonDescription]</label>
 					<pagecontrol>61</pagecontrol>
 					<animation effect="slide" end="-300" time="0" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">Conditional</animation>
 					<autoscroll time="3000" delay="45000" repeat="15000">!Control.HasFocus(61) + Skin.HasSetting(AutoScroll)</autoscroll>

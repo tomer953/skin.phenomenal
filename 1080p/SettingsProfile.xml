@@ -25,106 +25,6 @@
 				<itemgap>0</itemgap>
 				<orientation>vertical</orientation>
 
-				<!-- Appearance -->
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>480</label>
-					<font>menu</font>
-					<textcolor>$VAR[main_color]</textcolor>
-					<texturenofocus>main/main_focus.png</texturenofocus>
-					<include>button_settings</include>
-					<visible>Window.IsActive(appearancesettings) + IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
-				</control>
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>480</label>
-					<font>menu</font>
-					<include>button_settings</include>
-					<onclick>ActivateWindow(appearancesettings)</onclick>
-					<visible>!Window.IsActive(appearancesettings) | !IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
-				</control>
-				<!-- Videos -->
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>3</label>
-					<font>menu</font>
-					<textcolor>$VAR[main_color]</textcolor>
-					<texturenofocus>main/main_focus.png</texturenofocus>
-					<include>button_settings</include>
-					<visible>Window.IsActive(videossettings)</visible>
-				</control>
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>3</label>
-					<font>menu</font>
-					<include>button_settings</include>
-					<onclick>ActivateWindow(videossettings)</onclick>
-					<visible>!Window.IsActive(videossettings)</visible>
-				</control>
-				<!-- Music -->
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>2</label>
-					<font>menu</font>
-					<textcolor>$VAR[main_color]</textcolor>
-					<texturenofocus>main/main_focus.png</texturenofocus>
-					<include>button_settings</include>
-					<visible>Window.IsActive(musicsettings)</visible>
-				</control>
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>2</label>
-					<font>menu</font>
-					<include>button_settings</include>
-					<onclick>ActivateWindow(musicsettings)</onclick>
-					<visible>!Window.IsActive(musicsettings)</visible>
-				</control>
-				<!-- Pictures -->
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>1</label>
-					<font>menu</font>
-					<textcolor>$VAR[main_color]</textcolor>
-					<texturenofocus>main/main_focus.png</texturenofocus>
-					<include>button_settings</include>
-					<visible>Window.IsActive(picturessettings)</visible>
-				</control>
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>1</label>
-					<font>menu</font>
-					<include>button_settings</include>
-					<onclick>ActivateWindow(picturessettings)</onclick>
-					<visible>!Window.IsActive(picturessettings)</visible>
-				</control>
-				<!-- Weather -->
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>8</label>
-					<font>menu</font>
-					<textcolor>$VAR[main_color]</textcolor>
-					<texturenofocus>main/main_focus.png</texturenofocus>
-					<include>button_settings</include>
-					<visible>Window.IsActive(weathersettings)</visible>
-				</control>
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>8</label>
-					<font>menu</font>
-					<include>button_settings</include>
-					<onclick>ActivateWindow(weathersettings)</onclick>
-					<visible>!Window.IsActive(weathersettings)</visible>
-				</control>
 				<!-- System -->
 				<control type="button">
 					<width>300</width>
@@ -243,17 +143,6 @@
 					<font>menu</font>
 					<include>button_settings</include>
 					<onclick>ActivateWindow(filemanager)</onclick>
-				</control>
-				<!-- Level of settings -->
-				<control type="button">
-					<width>300</width>
-					<height>57</height>
-					<label>$LOCALIZE[31001]</label>
-					<font>menu</font>
-					<include>button_settings</include>
-					<onclick>SetProperty(ChangeSettingsLevel,true)</onclick>
-					<onclick>ActivateWindow(appearancesettings)</onclick>
-
 				</control>
 				<!-- Seperator -->
 				<control type="image">

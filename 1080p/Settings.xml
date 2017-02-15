@@ -56,62 +56,42 @@
 				<ondown>9000</ondown>
 				<orientation>vertical</orientation>
 
-				<!-- Appearance -->
+				<!-- Interface Settings -->
 				<control type="button" id="1">
 					<width>300</width>
 					<height>57</height>
-					<label>480</label>
+					<label>14207</label>
 					<font>menu</font>
-
 					<include>button_settings</include>
-					<onclick>ActivateWindow(appearancesettings)</onclick>
-					<onleft>ActivateWindow(appearancesettings)</onleft>
+					<onclick>ActivateWindow(InterfaceSettings)</onclick>
+					<onleft>ActivateWindow(InterfaceSettings)</onleft>
 					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 				</control>
-				<!-- Videos -->
+				
+				<!-- PlayerSettings -->
 				<control type="button" id="2">
 					<width>300</width>
 					<height>57</height>
-					<label>3</label>
+					<label>14201</label>
 					<font>menu</font>
 					<include>button_settings</include>
-					<onclick>ActivateWindow(videossettings)</onclick>
-					<onleft>ActivateWindow(videossettings)</onleft>
+					<onclick>ActivateWindow(PlayerSettings)</onclick>
+					<onleft>ActivateWindow(PlayerSettings)</onleft>
 					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 				</control>
-				<!-- Music -->
+				
+				<!-- MediaSettings -->
 				<control type="button" id="3">
 					<width>300</width>
 					<height>57</height>
-					<label>2</label>
+					<label>14212</label>
 					<font>menu</font>
 					<include>button_settings</include>
-					<onclick>ActivateWindow(musicsettings)</onclick>
-					<onleft>ActivateWindow(musicsettings)</onleft>
+					<onclick>ActivateWindow(MediaSettings)</onclick>
+					<onleft>ActivateWindow(MediaSettings)</onleft>
 					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 				</control>
-				<!-- Pictures -->
-				<control type="button" id="4">
-					<width>300</width>
-					<height>57</height>
-					<label>1</label>
-					<font>menu</font>
-					<include>button_settings</include>
-					<onclick>ActivateWindow(picturessettings)</onclick>
-					<onleft>ActivateWindow(picturessettings)</onleft>
-					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
-				</control>
-				<!-- Weather -->
-				<control type="button" id="5">
-					<width>300</width>
-					<height>57</height>
-					<label>8</label>
-					<font>menu</font>
-					<include>button_settings</include>
-					<onclick>ActivateWindow(weathersettings)</onclick>
-					<onleft>ActivateWindow(weathersettings)</onleft>
-					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
-				</control>
+				
 				<!-- System -->
 				<control type="button" id="6">
 					<width>300</width>
@@ -165,8 +145,19 @@
 					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 				</control>
 
-				<!-- Addons -->
+				<!-- Event Log -->
 				<control type="button" id="11">
+					<width>300</width>
+					<height>57</height>
+					<label>14111</label>
+					<font>menu</font>
+					<include>button_settings</include>
+					<onclick>ActivateWindow(eventlog)</onclick>
+					<onleft>ActivateWindow(eventlog)</onleft>
+					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
+				</control>
+				<!-- Addons -->
+				<control type="button" id="12">
 					<width>300</width>
 					<height>57</height>
 					<label>24001</label>
@@ -177,7 +168,7 @@
 					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 				</control>
 				<!-- Profiles -->
-				<control type="button" id="12">
+				<control type="button" id="13">
 					<width>300</width>
 					<height>57</height>
 					<label>13200</label>
@@ -188,7 +179,7 @@
 					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 				</control>
 				<!-- File Manager -->
-				<control type="button" id="13">
+				<control type="button" id="14">
 					<width>300</width>
 					<height>57</height>
 					<label>7</label>
@@ -198,19 +189,7 @@
 					<onleft>ActivateWindow(filemanager)</onleft>
 					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 				</control>
-				<!-- Level of settings -->
-				<control type="button" id="14">
-					<width>300</width>
-					<height>57</height>
-					<label>$LOCALIZE[31001]</label>
-					<font>menu</font>
-					<include>button_settings</include>
-					<onleft>SetProperty(ChangeSettingsLevel,true)</onleft>
-					<onleft>ActivateWindow(appearancesettings)</onleft>
-					<onclick>SetProperty(ChangeSettingsLevel,true)</onclick>
-					<onclick>ActivateWindow(appearancesettings)</onclick>
-					<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
-				</control>
+
 				<!-- Seperator -->
 				<control type="image" id="15">
 					<width>290</width>

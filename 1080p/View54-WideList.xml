@@ -61,7 +61,7 @@
 						<autoscroll time="3000" delay="4000" repeat="500">true</autoscroll>				
 					</control>
 					<!-- itemlayout Watched Status -->
-					<include name="watched_flag"><param name="color" value="grey"/></include>
+					<include content="watched_flag"><param name="color" value="grey"/></include>
 				</itemlayout>
 				<focusedlayout width="840" height="90">
 					<control type="image">
@@ -111,14 +111,14 @@
 					</control>
 
 					<!-- focuslayout Watched Status -->
-					<include name="watched_flag"><param name="color" value="grey_50"/></include>
+					<include content="watched_flag"><param name="color" value="grey_50"/></include>
 				</focusedlayout>
 			</control>
 
 
 
 			<!-- scroll -->
-			<include name="vertical_scroll">
+			<include content="vertical_scroll">
 				<param name="id" value="60" />
 				<param name="listid" value="54" />
 				<param name="posy">0</param>
@@ -359,7 +359,7 @@
 	</include>
 
 	<variable name="widelist_sublabel">
-		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Creator),, • ]$INFO[ListItem.Property(Addon.Version)]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.AddonCreator,, • ]$INFO[ListItem.AddonVersion]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Year]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.Duration]</value>
 		<value condition="Container.Content(musicvideos)">$INFO[ListItem.Year]$INFO[ListItem.Artist, • ]</value>
@@ -371,8 +371,8 @@
 	</variable>
 	<include name="watched_flag">
 		<definition>
-			<include name="watched_flag_rtl" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)"><param name="posx" value="$PARAM[posx]"/><param name="color" value="$PARAM[color]"/></include>
-			<include name="watched_flag_ltr" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)"><param name="posx" value="$PARAM[posx]"/><param name="color" value="$PARAM[color]"/></include>
+			<include content="watched_flag_rtl" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)"><param name="posx" value="$PARAM[posx]"/><param name="color" value="$PARAM[color]"/></include>
+			<include content="watched_flag_ltr" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)"><param name="posx" value="$PARAM[posx]"/><param name="color" value="$PARAM[color]"/></include>
 		</definition>
 	</include>
 	<include name="watched_flag_rtl">

@@ -14,7 +14,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[Container(9002).ListItem.Label]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[Container(9002).ListItem.Label]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[Container(9002).ListItem.Year]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.Property(Addon.Version)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.AddonVersion]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[Container(9002).ListItem.Label]</value>
 		<value></value>
 	</variable>
@@ -24,7 +24,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">[B]$INFO[Container(9002).ListItem.Label][/B]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">[B]$INFO[Container(9002).ListItem.Season,$LOCALIZE[20373] ] $INFO[Container(9002).ListItem.Episode,$LOCALIZE[20359] ][/B]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)">$INFO[Container(9002).ListItem.Artist]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.Property(Addon.Creator)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.AddonCreator]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)">$INFO[Container(9002).ListItem.Property(StartTime)]$INFO[Container(9002).ListItem.Title, - ]</value>
 		<value>$INFO[Container(9002).ListItem.Label2]</value>
 	</variable>
@@ -33,14 +33,14 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),tvshows)">$INFO[Container(9002).ListItem.Year,, • ]$INFO[Container(9002).ListItem.Rating,, • ]$INFO[Container(9002).ListItem.Duration,, $LOCALIZE[12391] • ]$INFO[Container(9002).ListItem.Premiered]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),episodes)">$INFO[Container(9002).ListItem.Year,, • ]$INFO[Container(9002).ListItem.Rating,, • ]$INFO[Container(9002).ListItem.Duration,, $LOCALIZE[12391] • ]$INFO[Container(9002).ListItem.Premiered]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),music)"></value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.Property(Addon.Version)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),addon)">$INFO[Container(9002).ListItem.AddonVersion]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgetType),pvr)"></value>
 		<value></value>
 	</variable>
 
 	<variable name="widget_plot">
 		<value condition="!IsEmpty(Container(9002).ListItem.Property(Album_Description))">$INFO[Container(9002).ListItem.Property(Album_Description)]</value>
-		<value condition="!IsEmpty(Container(9002).ListItem.Property(Addon.Description))">$INFO[Container(9002).ListItem.Property(Addon.Description)]</value>
+		<value condition="!IsEmpty(Container(9002).ListItem.AddonDescription)">$INFO[Container(9002).ListItem.AddonDescription]</value>
 		<value condition="!IsEmpty(Container(9002).ListItem.Property(Plot))">$INFO[Container(9002).ListItem.Property(Plot)]</value>
 		<value>$INFO[Container(9002).ListItem.Plot]</value>
 	</variable>
@@ -165,7 +165,7 @@
 	</include>
 	<include name="top_bar_home_rtl">
 		<control type="group">
-			<animation effect="slide" start="0" end="0,-100" time="300" condition="Skin.HasSetting(Home_HideTopBar) | Window.IsVisible(volumebar) | Window.IsVisible(BusyDialog) | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(infodialog)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-100" time="300" condition="Skin.HasSetting(Home_HideTopBar) | Window.IsVisible(volumebar) | Window.IsVisible(BusyDialog) | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(Notification)">Conditional</animation>
 			<!-- RSS -->
 			<control type="group">
 				<posx>10</posx>
@@ -390,7 +390,7 @@
 
 	<include name="top_bar_home_ltr">
 		<control type="group">
-			<animation effect="slide" start="0" end="0,-100" time="300" condition="Skin.HasSetting(Home_HideTopBar) | Window.IsVisible(volumebar) | Window.IsVisible(BusyDialog) | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(infodialog)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-100" time="300" condition="Skin.HasSetting(Home_HideTopBar) | Window.IsVisible(volumebar) | Window.IsVisible(BusyDialog) | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(Notification)">Conditional</animation>
 			<!-- RSS -->
 			<control type="group">
 				<posx>1100</posx>

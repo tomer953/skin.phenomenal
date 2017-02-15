@@ -8,10 +8,10 @@
 			<posx>160</posx>
 			<posy>80</posy>
 			<include>dialog_zoom_animation</include>
-			<include name="big_dialog">
+			<include content="big_dialog">
 				<param name="width" value="1600" />
 			</include>
-			<include name="right_shadow">
+			<include content="right_shadow">
 					<param name="posx" value="750" />
 					<param name="posy" value="140" />
 					<param name="width" value="20" />

@@ -7,7 +7,7 @@
 	</coordinates>
 	<controls>
 		<control type="group">
-			<visible>!Window.IsVisible(InfoDialog)</visible>
+			<visible>!Window.IsVisible(Notification)</visible>
 			<control type="image">
 				<description>background image</description>
 				<posx>0</posx>

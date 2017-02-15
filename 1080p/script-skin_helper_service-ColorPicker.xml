@@ -53,14 +53,14 @@
 						<height>20</height>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
-					<control type="image">
+					<!-- <control type="image">
 						<left>0</left>
 						<top>0</top>
 						<width>44</width>
 						<height>20</height>
 						<texture background="true">main/favs.png</texture>
 						<visible>StringCompare(Window.Property(current.colorstring),ListItem.Label)</visible>
-					</control>
+					</control> -->
 				</itemlayout>
 				<focusedlayout height="44" width="44">
 					<control type="image">
@@ -70,14 +70,14 @@
 						<height>44</height>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
-					<control type="image">
+					<!-- <control type="image">
 						<left>0</left>
 						<top>-10</top>
 						<width>44</width>
 						<height>44</height>
 						<texture background="true">main/favs.png</texture>
 						<visible>StringCompare(Window.Property(current.colorstring),ListItem.Label)</visible>
-					</control>
+					</control> -->
 					<control type="image">
 						<left>0</left>
 						<top>-10</top>
@@ -146,8 +146,8 @@
 					<textcolor>white</textcolor>
 					<texturenofocus colordiffuse="black" border="5">panel_trans.png</texturenofocus>
 				</control>
+				<!-- opacity slider -->
 				<control type="slider" id="3015">
-					<!-- opacity slider -->
 					<posx>0</posx>
 					<posy>135</posy>
 					<width>250</width>
@@ -182,13 +182,13 @@
 				<textcolor>$INFO[Window.Property(colorstring)]</textcolor>
 				<label>$INFO[Window.Property(colorstring)]</label>
 			</control> 
-			<control type="image">
+			<!-- <control type="image">
 				<left>200</left>
 				<top>300</top>
 				<width>120</width>
 				<height>40</height>
 				<texture background="true" diffuse="posterdiffuse.png" colordiffuse="$INFO[Window.Property(colorstring)]">white.png</texture>
-			</control>
+			</control> -->
 
 		</control>
 	</controls>

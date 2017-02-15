@@ -9,7 +9,7 @@
 			<posx>360</posx>
 			<posy>80</posy>
 			<include>dialog_zoom_animation</include>
-			<include name="big_dialog">
+			<include content="big_dialog">
 				<param name="bottom_posy" value="2000" />
 			</include>
 			<control type="label" id="411">
@@ -137,12 +137,12 @@
 				<control type="radiobutton" id="416"> 
 					<width>324</width>
 					<label>749</label>
-					<include name="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
+					<include content="radiobutton_alignment" condition="StringCompare(System.Language,Hebrew) | Skin.HasSetting(Prefer_RTL)">
 						<param name="radioposx" value="200" />
 						<param name="radioposy" value="3" />
 						<param name="textoffsetx" value="15" />
 					</include>
-					<include name="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
+					<include content="radiobutton_alignment" condition="!StringCompare(System.Language,Hebrew) + !Skin.HasSetting(Prefer_RTL)">
 						<param name="radioposx" value="10" />
 						<param name="radioposy" value="0" />
 						<param name="textoffsetx" value="60" />

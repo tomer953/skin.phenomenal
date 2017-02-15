@@ -43,7 +43,7 @@
 					<texture background="true">main/main_menu.png</texture>
 					<include>fanart_fade_level</include>
 				</control>
-				<include name="left_shadow">
+				<include content="left_shadow">
 					<param name="posx" value="1368" />
 					<param name="posy" value="0" />
 					<param name="width" value="20" />
@@ -505,14 +505,14 @@
 
 
 			<!-- scroll -->
-			<include name="vertical_scroll">
+			<include content="vertical_scroll">
 				<param name="id" value="60" />
 				<param name="listid" value="50" />
 				<param name="posy">0</param>
 				<param name="height">1080</param>
 			</include>
 			<!-- Flags -->
-			<include name="flags_movies"><param name="posy">806</param></include>
+			<include content="flags_movies"><param name="posy">806</param></include>
 			<!--CDART movies -->
 			<control type="group">
 				<left>2300</left>
@@ -733,7 +733,7 @@
 					<texture background="true">main/main_menu.png</texture>
 					<include>fanart_fade_level</include>
 				</control>
-				<include name="right_shadow">
+				<include content="right_shadow">
 					<param name="posx" value="532" />
 					<param name="posy" value="0" />
 					<param name="width" value="20" />
@@ -1192,14 +1192,14 @@
 
 
 			<!-- scroll -->
-			<include name="vertical_scroll">
+			<include content="vertical_scroll">
 				<param name="id" value="60" />
 				<param name="listid" value="50" />
 				<param name="posy">0</param>
 				<param name="height">1080</param>
 			</include>
 			<!-- Flags -->
-			<include name="flags_movies"><param name="posy">806</param></include>
+			<include content="flags_movies"><param name="posy">806</param></include>
 			<!--CDART movies -->
 			<control type="group">
 				<left>2840</left>
@@ -1796,7 +1796,7 @@
 	</include>
 	
 	<variable name="fanart_sublabel">
-		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Creator),, • ]$INFO[ListItem.Property(Addon.Version)]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.AddonCreator,, • ]$INFO[ListItem.AddonVersion]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Year]</value>
 		<value condition="Container.Content(songs)"></value>
 		<value condition="Container.Content(musicvideos)">$INFO[ListItem.Year]$INFO[ListItem.Artist, • ]</value>
