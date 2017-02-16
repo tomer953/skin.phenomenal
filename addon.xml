@@ -27,17 +27,17 @@
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
-			<screenshot>resources/screenshot-01.jpg</screenshot>
-			<screenshot>resources/screenshot-02.jpg</screenshot>
-			<screenshot>resources/screenshot-03.jpg</screenshot>
-			<screenshot>resources/screenshot-04.jpg</screenshot>
-			<screenshot>resources/screenshot-05.jpg</screenshot>
-			<screenshot>resources/screenshot-06.jpg</screenshot>
-			<screenshot>resources/screenshot-07.jpg</screenshot>
-			<screenshot>resources/screenshot-08.jpg</screenshot>
-			<screenshot>resources/screenshot-09.jpg</screenshot>
-			<screenshot>resources/screenshot-10.jpg</screenshot>
-			<screenshot>resources/screenshot-11.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-01.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-02.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-03.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-04.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-05.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-06.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-07.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-08.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-09.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-10.jpg</screenshot>
+			<screenshot>_screenshots/screenshot-11.jpg</screenshot>
 		</assets>
 	</extension>
 </addon>
