@@ -232,6 +232,19 @@
 						<onclick>ActivateWindow(PVROSDGuide)</onclick>
 						<visible>!Skin.HasSetting(KioskMode) + VideoPlayer.Content(LiveTV)</visible>
 					</control>
+					-<control type="button" id="921">
+					    <description>TV - Teletext</description>
+						<width>64</width>
+						<height>64</height>
+						<label>Teletext</label>
+						<font>-</font>
+						<texturenofocus colordiffuse="grey_a">defaultmusicplaylists.png</texturenofocus>
+						<texturefocus colordiffuse="$VAR[main_color]">defaultmusicplaylists.png</texturefocus>
+						<onclick>Dialog.Close(VideoOSD)</onclick>
+						<onclick>ActivateWindow(Teletext)</onclick>
+						<visible>VideoPlayer.Content(LiveTV)</visible>
+						<oninfo>Skin.ToggleSetting(OSDInfo)</oninfo>
+					</control>
 					<control type="button" id="912">
 						<description>Subtitles button</description>
 						<width>64</width>
