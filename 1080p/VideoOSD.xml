@@ -230,7 +230,7 @@
 						<texturenofocus colordiffuse="grey_a">osd/tv2.png</texturenofocus>
 						<texturefocus colordiffuse="$VAR[main_color]">osd/tv2.png</texturefocus>
 						<onclick>ActivateWindow(PVROSDGuide)</onclick>
-						<visible>!Skin.HasSetting(KioskMode) + VideoPlayer.Content(LiveTV)</visible>
+						<visible>!Skin.HasSetting(KioskMode) + VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg</visible>
 					</control>
 					-<control type="button" id="912">
 					    <description>TV - Teletext</description>
