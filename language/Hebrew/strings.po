@@ -27,7 +27,7 @@ msgstr "רמת הרשאות"
 
 msgctxt "#31002"
 msgid "Phenomenal"
-msgstr "פנומנל"
+msgstr "Phenomenal"
 
 # Skin.Shortcuts
 msgctxt "#31003"
