@@ -88,7 +88,7 @@ msgstr "האם אתה בטוח שברצונך לאפס את כל התפריטי�
 
 msgctxt "#31017"
 msgid "Icon Overlay"
-msgstr "שכבת ציפוי לסמליל"
+msgstr "שכבת ציפוי לסמל"
 
 msgctxt "#31018"
 msgid "This skin is integrated with the skinshortcuts script to provide you maximized flexibility in how you want to arrange your homescreen menu’s. You’re able to add and delete tiles on the homescreen, change the images, define submenus etc. Click the button below to get started modifying the skin menu’s to your own preferences."
@@ -124,11 +124,11 @@ msgstr "צבע טקסט RSS"
 
 msgctxt "#31026"
 msgid "Show Weather Icon"
-msgstr "הצג סמליל מזג האוויר"
+msgstr "הצג סמל מזג האוויר"
 
 msgctxt "#31027"
 msgid "Choose Weather Icons"
-msgstr "בחר סמלילי למזג האוויר"
+msgstr "בחר סמלים למזג האוויר"
 
 msgctxt "#31028"
 msgid "Use Custom Splash Screen (video or image)"
@@ -168,7 +168,7 @@ msgstr "בחר צבע טקסט"
 
 msgctxt "#31037"
 msgid "Search Youtube"
-msgstr "חיפוש ביו-טיוב"
+msgstr "חיפוש ב-Youtube"
 
 msgctxt "#31038"
 msgid "Auto move to Full Screen when playing music"
@@ -224,7 +224,7 @@ msgstr "זמן סיום"
 
 msgctxt "#31051"
 msgid "Icons Color (when no focus)"
-msgstr "צבע סמלילים (כאשר לא בפוקוס)"
+msgstr "צבע סמלים (כאשר לא בפוקוס)"
 
 msgctxt "#31052"
 msgid "Rotating Fanarts Delay (seconds)"
@@ -440,7 +440,7 @@ msgstr "תשתמש בתכני היישומון כרקע"
 
 msgctxt "#31105"
 msgid "Pulsar - use original title instead of default title"
-msgstr "פולסר- תשתמש בכותרת בשפה המקומית במקום כותרת מקורית"
+msgstr "Pulsar - תשתמש בכותרת בשפה המקומית במקום כותרת מקורית"
 
 msgctxt "#31106"
 msgid "Miscellaneous options"
@@ -576,7 +576,7 @@ msgstr "זהה לצבע הכיתוב"
 
 msgctxt "#31141"
 msgid "Original Icon Color (no overlay)"
-msgstr "צבע סמליל מקורי - ללא ציפוי"
+msgstr "צבע סמל מקורי - ללא ציפוי"
 
 msgctxt "#31142"
 msgid "Same as Skin Color"
@@ -584,11 +584,11 @@ msgstr "זהה לצבע המעטפת"
 
 msgctxt "#31143"
 msgid "Icon Color - Focused"
-msgstr "צבע הסמליל - מסומן"
+msgstr "צבע הסמל - מסומן"
 
 msgctxt "#31144"
 msgid "Icon Color - No Focused"
-msgstr "צבע הסמליל - לא מסומן"
+msgstr "צבע הסמל - לא מסומן"
 
 msgctxt "#31145"
 msgid "Sorry, no Upcoming Concerts found for this artist."
@@ -600,7 +600,7 @@ msgstr "הופעות"
 
 msgctxt "#31147"
 msgid "Youtube Videos"
-msgstr "סרטונים מיו-טיוב"
+msgstr "סרטונים מ-Youtube"
 
 msgctxt "#31148"
 msgid "Most Loved Videos"
@@ -616,7 +616,7 @@ msgstr "הצג שעה ותאריך בלבד"
 
 msgctxt "#31151"
 msgid "Use Tiles Layout (Eminence Style)"
-msgstr "תשתמש בתצוגת אריחים (סגנון אמיננס)"
+msgstr "תשתמש בתצוגת אריחים (סגנון Eminence)"
 
 msgctxt "#31152"
 msgid "Shutdown menu"
@@ -636,7 +636,7 @@ msgstr "תשתמש בפאנארט נוסף"
 
 msgctxt "#31156"
 msgid "Side-menu icon"
-msgstr "סמליל לתפריט צד"
+msgstr "סמל לתפריט צד"
 
 msgctxt "#31157"
 msgid "Prefer Poster"
@@ -644,7 +644,7 @@ msgstr "העדף פוסטר"
 
 msgctxt "#31158"
 msgid "Custom Genre Icons"
-msgstr "סמלילי סגנונות מותאמים אישית"
+msgstr "סמלי סגנונות מותאמים אישית"
 
 msgctxt "#31159"
 msgid "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library - Set video playback options - Change video listing options[CR]Set subtitle fonts"
@@ -765,7 +765,7 @@ msgstr "סמל"
 
 msgctxt "#31220"
 msgid "ClearArt"
-msgstr "אמנות שקופה"
+msgstr "(ClearArt)אמנות שקופה"
 
 msgctxt "#31221"
 msgid "Extra Fanart"
@@ -801,7 +801,7 @@ msgstr "פרטי כותב"
 
 msgctxt "#31229"
 msgid "DiscArt"
-msgstr "גרפיקת דיסק"
+msgstr "גרפיקת דיסק (DiscArt)"
 
 msgctxt "#31230"
 msgid "Fake DiscArt"
